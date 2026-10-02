@@ -1,0 +1,344 @@
+{
+  "comparado_em": "2026-10-02T01:15:15.630014+00:00",
+  "metodo": "Shapely 2.1.2; GeoJSON oficial outSR=4326, where=1=1, outFields=*, returnGeometry=true. Razões de área em graus² são diagnósticas, não hectares nem certificação jurídica. Sem reparação ou merge entre fontes.",
+  "limite_referencia": "https://arcgis.itajai.sc.gov.br/server/rest/services/limite_municipal/FeatureServer/0",
+  "fontes": [
+    {
+      "fonte": "https://arcgis.itajai.sc.gov.br/server/rest/services/Limites_Bairros/FeatureServer/0",
+      "total": 35,
+      "nomes": [
+        "Arraial dos Cunha",
+        "Baia",
+        "Barra do Rio",
+        "Brilhante",
+        "Brilhante II",
+        "Cabeçudas",
+        "Campeche",
+        "Canhanduba",
+        "Carvalho",
+        "Centro",
+        "Cidade Nova",
+        "Cordeiros",
+        "Dom Bosco",
+        "Espinheiros",
+        "Fazenda",
+        "Fazendinha",
+        "Imaruí",
+        "Itaipava",
+        "KM12",
+        "Laranjeiras",
+        "Limoeiro",
+        "Murta",
+        "Nossa Senhora das Graças",
+        "Paciência",
+        "Praia Brava de Itajaí",
+        "Ressacada",
+        "Rio Novo - Colônia Japonesa",
+        "Rio do Meio",
+        "Salseiros",
+        "Santa Regina",
+        "São João",
+        "São Judas",
+        "São Roque",
+        "São Vicente",
+        "Vila Operária"
+      ],
+      "agregados_sem_nome_exato": [
+        "Praia Brava",
+        "Portal 2",
+        "Brilhante I"
+      ],
+      "descricao": "",
+      "crs_origem": {
+        "wkid": 31982,
+        "latestWkid": 31982,
+        "xyTolerance": 0.001,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -5120900,
+        "falseY": 1900,
+        "xyUnits": 10000,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "campos": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID",
+          "alias": "OBJECTID",
+          "length": null
+        },
+        {
+          "name": "nome",
+          "type": "esriFieldTypeString",
+          "alias": "nome",
+          "length": 254
+        },
+        {
+          "name": "numero",
+          "type": "esriFieldTypeDouble",
+          "alias": "numero",
+          "length": null
+        },
+        {
+          "name": "descricao",
+          "type": "esriFieldTypeString",
+          "alias": "descricao",
+          "length": 254
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble",
+          "alias": "st_area(shape)",
+          "length": null
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble",
+          "alias": "st_length(shape)",
+          "length": null
+        }
+      ],
+      "nomes_nulos": 0,
+      "nomes_duplicados": [],
+      "geometrias_duplicadas": 0,
+      "geometrias_invalidas": [],
+      "cobertura_limite_fracao_angular": 0.9583776457402866,
+      "exterior_limite_fracao_angular": 0.01562569663882562,
+      "sobreposicao_fracao_angular": 1.688544384122718e-05,
+      "resposta_geojson_sha256": "bb5ad5c2bc80fc9d192caf690204da240826a0d56b7d40871de75d1e092c1c2a"
+    },
+    {
+      "fonte": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/bairros2025/FeatureServer/0",
+      "total": 34,
+      "nomes": [
+        "Arraial dos Cunha",
+        "Baia",
+        "Barra do Rio",
+        "Brilhante",
+        "Brilhante II",
+        "Cabeçudas",
+        "Campeche",
+        "Canhanduba",
+        "Carvalho",
+        "Centro",
+        "Cidade Nova",
+        "Cordeiros",
+        "Dom Bosco",
+        "Espinheiros",
+        "Fazenda",
+        "Fazendinha",
+        "Itaipava",
+        "KM12",
+        "Laranjeiras",
+        "Limoeiro",
+        "Murta",
+        "Nossa Senhora das Graças",
+        "Paciência",
+        "Praia Brava",
+        "Ressacada",
+        "Rio Novo - Colônia Japonesa",
+        "Rio do Meio",
+        "Salseiros",
+        "Santa Regina",
+        "São João",
+        "São Judas",
+        "São Roque",
+        "São Vicente",
+        "Vila Operária"
+      ],
+      "agregados_sem_nome_exato": [
+        "Imaruí",
+        "Portal 2",
+        "Brilhante I"
+      ],
+      "descricao": "",
+      "crs_origem": {
+        "falseM": -100000,
+        "xyTolerance": 0.001,
+        "mUnits": 10000,
+        "zUnits": 10000,
+        "latestWkid": 3857,
+        "zTolerance": 0.001,
+        "wkid": 102100,
+        "xyUnits": 10000,
+        "mTolerance": 0.001,
+        "falseX": -20037700,
+        "falseY": -30241100,
+        "falseZ": -100000
+      },
+      "campos": [
+        {
+          "name": "fid",
+          "type": "esriFieldTypeOID",
+          "alias": "fid",
+          "length": 4
+        },
+        {
+          "name": "nome",
+          "type": "esriFieldTypeString",
+          "alias": "nome",
+          "length": 80
+        },
+        {
+          "name": "memorial",
+          "type": "esriFieldTypeString",
+          "alias": "memorial",
+          "length": 254
+        },
+        {
+          "name": "SHAPE__Length",
+          "type": "esriFieldTypeDouble",
+          "alias": "SHAPE__Length",
+          "length": null
+        },
+        {
+          "name": "SHAPE__Area",
+          "type": "esriFieldTypeDouble",
+          "alias": "SHAPE__Area",
+          "length": null
+        }
+      ],
+      "nomes_nulos": 0,
+      "nomes_duplicados": [],
+      "geometrias_duplicadas": 0,
+      "geometrias_invalidas": [],
+      "cobertura_limite_fracao_angular": 0.9585156511437971,
+      "exterior_limite_fracao_angular": 0.015623061103355207,
+      "sobreposicao_fracao_angular": 1.667833513631678e-05,
+      "resposta_geojson_sha256": "686c1a254354bd065679fce940e722bb9f7316f869c67eb44e720a019c89b3b2"
+    },
+    {
+      "fonte": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/bairros_Itajai/FeatureServer/0",
+      "total": 35,
+      "nomes": [
+        "Arraial dos Cunha",
+        "Baia",
+        "Barra do Rio",
+        "Brilhante",
+        "Brilhante II",
+        "Cabeçudas",
+        "Campeche",
+        "Canhanduba",
+        "Carvalho",
+        "Centro",
+        "Cidade Nova",
+        "Cordeiros",
+        "Dom Bosco",
+        "Espinheiros",
+        "Fazenda",
+        "Fazendinha",
+        "Imaruí",
+        "Itaipava",
+        "KM12",
+        "Laranjeiras",
+        "Limoeiro",
+        "Murta",
+        "Nossa Senhora das Graças",
+        "Paciência",
+        "Praia Brava",
+        "Ressacada",
+        "Rio Novo - Colônia Japonesa",
+        "Rio do Meio",
+        "Salseiros",
+        "Santa Regina",
+        "São João",
+        "São Judas",
+        "São Roque",
+        "São Vicente",
+        "Vila Operária"
+      ],
+      "agregados_sem_nome_exato": [
+        "Portal 2",
+        "Brilhante I"
+      ],
+      "descricao": "",
+      "crs_origem": {
+        "falseM": -100000,
+        "xyTolerance": 0.001,
+        "mUnits": 10000,
+        "zUnits": 10000,
+        "latestWkid": 31982,
+        "zTolerance": 0.001,
+        "wkid": 31982,
+        "xyUnits": 10000,
+        "mTolerance": 0.001,
+        "falseX": -5120900,
+        "falseY": 1900,
+        "falseZ": -100000
+      },
+      "campos": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID",
+          "alias": "OBJECTID",
+          "length": 4
+        },
+        {
+          "name": "id",
+          "type": "esriFieldTypeInteger",
+          "alias": "id",
+          "length": null
+        },
+        {
+          "name": "numero",
+          "type": "esriFieldTypeDouble",
+          "alias": "numero",
+          "length": null
+        },
+        {
+          "name": "lei",
+          "type": "esriFieldTypeString",
+          "alias": "lei",
+          "length": 50
+        },
+        {
+          "name": "acesso_a_lei",
+          "type": "esriFieldTypeString",
+          "alias": "acesso_a_lei",
+          "length": 500
+        },
+        {
+          "name": "nome_1",
+          "type": "esriFieldTypeString",
+          "alias": "nome_1",
+          "length": 50
+        },
+        {
+          "name": "descricao_1",
+          "type": "esriFieldTypeString",
+          "alias": "descricao_1",
+          "length": 100
+        },
+        {
+          "name": "area_em_km",
+          "type": "esriFieldTypeDouble",
+          "alias": "area_em_km",
+          "length": null
+        },
+        {
+          "name": "SHAPE__Length",
+          "type": "esriFieldTypeDouble",
+          "alias": "SHAPE__Length",
+          "length": null
+        },
+        {
+          "name": "SHAPE__Area",
+          "type": "esriFieldTypeDouble",
+          "alias": "SHAPE__Area",
+          "length": null
+        }
+      ],
+      "nomes_nulos": 0,
+      "nomes_duplicados": [],
+      "geometrias_duplicadas": 0,
+      "geometrias_invalidas": [],
+      "cobertura_limite_fracao_angular": 0.9583776462128895,
+      "exterior_limite_fracao_angular": 0.01562569532180133,
+      "sobreposicao_fracao_angular": 1.6885332560229394e-05,
+      "resposta_geojson_sha256": "1c23f4400349745714df0d3c704f67202d5b9d2d297ad00542b9fd00a3b5da46"
+    }
+  ]
+}

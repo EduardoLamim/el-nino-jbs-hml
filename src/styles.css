@@ -1,0 +1,11 @@
+:root { font-family: system-ui, sans-serif; color: #243343; background: #f6f7f8; }
+body { margin: 0 auto; max-width: 960px; padding: 24px; }
+h1 { font-size: 1.6rem; }
+nav { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+a { color: #174d7c; }
+a[aria-current="page"] { font-weight: bold; text-decoration-thickness: 3px; }
+a:focus-visible { outline: 3px solid #174d7c; outline-offset: 4px; }
+aside, section { padding: 20px; margin-bottom: 20px; border: 1px solid #ccd3da; background: white; }
+.impact-form label { display: grid; gap: 4px; margin: 12px 0; }
+.impact-form input, .impact-form select, .impact-form textarea { font: inherit; padding: 8px; max-width: 100%; box-sizing: border-box; }
+.impact-form button { margin: 8px 12px 0 0; padding: 8px 16px; }

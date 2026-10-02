@@ -1,0 +1,3263 @@
+{
+  "versao": 2,
+  "gerado_em": "2026-10-02T01:09:46.984Z",
+  "semantica": "contexto_estatico_sem_condicao_atual",
+  "fontes": [
+    {
+      "id": "bairros",
+      "nome": "Bairros municipais — bairros_Itajai",
+      "tipo": "territorial",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/bairros_Itajai/FeatureServer/0",
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "35 unidades; geometrias preservadas; referência horizontal original EPSG:31982, saída WGS84 longitude/latitude."
+    },
+    {
+      "id": "historico",
+      "nome": "Histórico municipal de inundações",
+      "tipo": "historico",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer",
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "Referências por período; não são contagem de enchentes nem condição atual."
+    },
+    {
+      "id": "vias",
+      "nome": "Trechos com histórico de alagamento",
+      "tipo": "historico",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1",
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "Somente trecho_alagado = '1'; não representa mobilidade atual."
+    },
+    {
+      "id": "hand",
+      "nome": "Vias classificadas em cenários",
+      "tipo": "modelagem",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0",
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "Interseção com catálogo 10–400 cm; sem cenário ativado, previsão ou equivalência com telemetria."
+    },
+    {
+      "id": "v17",
+      "nome": "Plano de Contingência V17 — 22/12/2025",
+      "tipo": "administrativo",
+      "url": "https://defesacivil.itajai.sc.gov.br/documentos/Plano-de-Contingencia-de-Inundacao-ALTERADO-EM-22-12-25.pdf",
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "Zonas administrativas/operacionais; não são unidades hidrológicas."
+    },
+    {
+      "id": "jbs",
+      "nome": "Agregados JBS validados pelo solicitante",
+      "tipo": "agregado_validado",
+      "url": null,
+      "consultado_em": "2026-10-02T01:09:46.984Z",
+      "observacao": "Transcrição exclusiva dos agregados autorizados para a Fase 04; sem dados individuais."
+    }
+  ],
+  "resumo_jbs": {
+    "colaboradores_total": 380,
+    "colaboradores_itajai": 292,
+    "colaboradores_outros_municipios": 88,
+    "fonte_id": "jbs"
+  },
+  "zonas": [
+    {
+      "numero": 1,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Salseiros",
+        "Espinheiros",
+        "Espinheirinhos",
+        "Volta de Cima",
+        "São Roque",
+        "São Francisco de Assis",
+        "Santa Regina",
+        "Portal I e II"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 2,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Cordeiros",
+        "Murta"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 3,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "São Vicente",
+        "Rio Bonito",
+        "Bambuzal",
+        "Nilo Bittencourt"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 4,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Cidade Nova",
+        "Carvalho",
+        "Ressacada"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 5,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "São João",
+        "Barra do Rio",
+        "Imaruí",
+        "Nova Brasília"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 6,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "São Judas",
+        "Dom Bosco",
+        "Nossa Senhora das Graças"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 7,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Centro",
+        "Vila Operária"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 8,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Fazenda",
+        "Fazendinha",
+        "Cabeçudas",
+        "Praia Brava"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 9,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Itaipava",
+        "Rio do Meio",
+        "Canhanduba",
+        "KM12",
+        "Arraial dos Cunha",
+        "Bahia",
+        "São Pedro"
+      ],
+      "fonte_id": "v17"
+    },
+    {
+      "numero": 10,
+      "natureza": "administrativa_operacional",
+      "localidades": [
+        "Paciência",
+        "Brilhante I",
+        "Brilhante II",
+        "Laranjeiras",
+        "Campeche",
+        "Limoeiro"
+      ],
+      "fonte_id": "v17"
+    }
+  ],
+  "metodologia": {
+    "relacao_espacial": "esriSpatialRelIntersects",
+    "crs_consulta": 4326,
+    "limite_da_intersecao": "Inclui toque de borda; não implica bairro inteiro atingido. Ausência significa ausência de interseção nas camadas consultadas.",
+    "agregacao_historica": "Camadas agrupadas por referência temporal; 2011 anual/setembro reunidos. Não se contabilizam enchentes."
+  },
+  "bairros": [
+    {
+      "id": "itajai-1",
+      "identificador_fonte": 1,
+      "nome_bruto": "Barra do Rio",
+      "nome": "Barra do Rio",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 5,
+      "colaboradores_jbs": 10,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 12
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 12
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 15
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-2",
+      "identificador_fonte": 2,
+      "nome_bruto": "Imaruí",
+      "nome": "Imaruí",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 5,
+      "colaboradores_jbs": 2,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 12
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 21
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-3",
+      "identificador_fonte": 3,
+      "nome_bruto": "Laranjeiras",
+      "nome": "Laranjeiras",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 10,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-4",
+      "identificador_fonte": 4,
+      "nome_bruto": "Espinheiros",
+      "nome": "Espinheiros",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 1,
+      "colaboradores_jbs": 10,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 4
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-5",
+      "identificador_fonte": 5,
+      "nome_bruto": "Fazenda",
+      "nome": "Fazenda",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 8,
+      "colaboradores_jbs": 10,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-6",
+      "identificador_fonte": 6,
+      "nome_bruto": "Cabeçudas",
+      "nome": "Cabeçudas",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 8,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-7",
+      "identificador_fonte": 7,
+      "nome_bruto": "Itaipava",
+      "nome": "Itaipava",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 9,
+      "colaboradores_jbs": 7,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 3
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-8",
+      "identificador_fonte": 8,
+      "nome_bruto": "Santa Regina",
+      "nome": "Santa Regina",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 1,
+      "colaboradores_jbs": 11,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-35",
+      "identificador_fonte": 35,
+      "nome_bruto": "São Judas",
+      "nome": "São Judas",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 6,
+      "colaboradores_jbs": 9,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-10",
+      "identificador_fonte": 10,
+      "nome_bruto": "Rio Novo - Colônia Japonesa",
+      "nome": "Rio Novo - Colônia Japonesa",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": null,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-11",
+      "identificador_fonte": 11,
+      "nome_bruto": "Vila Operária",
+      "nome": "Vila Operária",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 7,
+      "colaboradores_jbs": 5,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-12",
+      "identificador_fonte": 12,
+      "nome_bruto": "KM12",
+      "nome": "KM12",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 9,
+      "colaboradores_jbs": 1,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 3
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-13",
+      "identificador_fonte": 13,
+      "nome_bruto": "Cidade Nova",
+      "nome": "Cidade Nova",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 4,
+      "colaboradores_jbs": 29,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 11
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-14",
+      "identificador_fonte": 14,
+      "nome_bruto": "Brilhante",
+      "nome": "Brilhante",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": null,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 3
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-15",
+      "identificador_fonte": 15,
+      "nome_bruto": "Nossa Senhora das Graças",
+      "nome": "Nossa Senhora das Graças",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 6,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-16",
+      "identificador_fonte": 16,
+      "nome_bruto": "Dom Bosco",
+      "nome": "Dom Bosco",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 6,
+      "colaboradores_jbs": 11,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 10
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-32",
+      "identificador_fonte": 32,
+      "nome_bruto": "Arraial dos Cunha",
+      "nome": "Arraial dos Cunha",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 9,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 4
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-17",
+      "identificador_fonte": 17,
+      "nome_bruto": "Limoeiro",
+      "nome": "Limoeiro",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 10,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-18",
+      "identificador_fonte": 18,
+      "nome_bruto": "Centro",
+      "nome": "Centro",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 7,
+      "colaboradores_jbs": 8,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 9
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-19",
+      "identificador_fonte": 19,
+      "nome_bruto": "Salseiros",
+      "nome": "Salseiros",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 1,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 6
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-20",
+      "identificador_fonte": 20,
+      "nome_bruto": "Campeche",
+      "nome": "Campeche",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 10,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-21",
+      "identificador_fonte": 21,
+      "nome_bruto": "Fazendinha",
+      "nome": "Fazendinha",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 8,
+      "colaboradores_jbs": 3,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-22",
+      "identificador_fonte": 22,
+      "nome_bruto": "Murta",
+      "nome": "Murta",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 2,
+      "colaboradores_jbs": 16,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 12
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 17
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 14
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 38
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-23",
+      "identificador_fonte": 23,
+      "nome_bruto": "Brilhante II",
+      "nome": "Brilhante II",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 10,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-33",
+      "identificador_fonte": 33,
+      "nome_bruto": "Paciência",
+      "nome": "Paciência",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 10,
+      "colaboradores_jbs": 1,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-24",
+      "identificador_fonte": 24,
+      "nome_bruto": "Rio do Meio",
+      "nome": "Rio do Meio",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 9,
+      "colaboradores_jbs": 3,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-25",
+      "identificador_fonte": 25,
+      "nome_bruto": "Baia",
+      "nome": "Baia",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": null,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-26",
+      "identificador_fonte": 26,
+      "nome_bruto": "Cordeiros",
+      "nome": "Cordeiros",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 2,
+      "colaboradores_jbs": 38,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 5
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 15
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 10
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 9
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 47
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-27",
+      "identificador_fonte": 27,
+      "nome_bruto": "São João",
+      "nome": "São João",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 5,
+      "colaboradores_jbs": 37,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-28",
+      "identificador_fonte": 28,
+      "nome_bruto": "São Vicente",
+      "nome": "São Vicente",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 3,
+      "colaboradores_jbs": 67,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 4
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 4
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 6
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 8
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-29",
+      "identificador_fonte": 29,
+      "nome_bruto": "Canhanduba",
+      "nome": "Canhanduba",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 9,
+      "colaboradores_jbs": 0,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 3
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          },
+          {
+            "periodo": "2013-07",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 6,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_julho",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-30",
+      "identificador_fonte": 30,
+      "nome_bruto": "Ressacada",
+      "nome": "Ressacada",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 4,
+      "colaboradores_jbs": 6,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 1
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-31",
+      "identificador_fonte": 31,
+      "nome_bruto": "Carvalho",
+      "nome": "Carvalho",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 4,
+      "colaboradores_jbs": 2,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 5
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 5
+              }
+            ]
+          },
+          {
+            "periodo": "2013-09",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 7,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2014-06",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 8,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2014_junho",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2015-10",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 9,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+                "quantidade_feicoes_intersectadas": 3
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-34",
+      "identificador_fonte": 34,
+      "nome_bruto": "São Roque",
+      "nome": "São Roque",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 1,
+      "colaboradores_jbs": 2,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "1983",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 0,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1983",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "1984",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 1,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_1984",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2011",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 4,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2011",
+                "quantidade_feicoes_intersectadas": 2
+              },
+              {
+                "fonte_id": "historico",
+                "camada_id": 5,
+                "camada_nome": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+                "quantidade_feicoes_intersectadas": 2
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    },
+    {
+      "id": "itajai-9",
+      "identificador_fonte": 9,
+      "nome_bruto": "Praia Brava",
+      "nome": "Praia Brava",
+      "fonte_id": "bairros",
+      "zona_defesa_civil": 8,
+      "colaboradores_jbs": 2,
+      "historico_inundacao": {
+        "natureza": "historico",
+        "possui_registro": true,
+        "referencias": [
+          {
+            "periodo": "2001",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 2,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2001",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          },
+          {
+            "periodo": "2008",
+            "camadas": [
+              {
+                "fonte_id": "historico",
+                "camada_id": 3,
+                "camada_nome": "gisdb.sde.defesa_civil_area_atingida_2008",
+                "quantidade_feicoes_intersectadas": 1
+              }
+            ]
+          }
+        ]
+      },
+      "vias_historicas_alagamento": {
+        "natureza": "historico",
+        "possui_registro": false,
+        "fonte_id": "vias",
+        "filtro": "trecho_alagado = '1'"
+      },
+      "susceptibilidade_hand": {
+        "natureza": "susceptibilidade_modelada",
+        "possui_intersecao": true,
+        "fonte_id": "hand",
+        "filtro": "nivel_cm >= 10 AND nivel_cm <= 400",
+        "ativacao": "nenhuma"
+      }
+    }
+  ],
+  "localidades": [
+    {
+      "id": "localidade-portal-2",
+      "nome_exibicao": "Portal 2",
+      "colaboradores_jbs": 1,
+      "zona_defesa_civil": 1,
+      "bairro_referencia": "Espinheiros",
+      "bairro_referencia_id": "itajai-4",
+      "correspondencia": "referencia_informada",
+      "fundamento": "Referência Portal 2 → Espinheiros autorizada pelo solicitante; agregado separado, sem herdar contexto espacial.",
+      "historico_inundacao": null,
+      "vias_historicas_alagamento": null,
+      "susceptibilidade_hand": null
+    },
+    {
+      "id": "localidade-brilhante-i",
+      "nome_exibicao": "Brilhante I",
+      "colaboradores_jbs": 1,
+      "zona_defesa_civil": 10,
+      "bairro_referencia": null,
+      "bairro_referencia_id": null,
+      "correspondencia": "sem_correspondencia",
+      "fundamento": "Nome sem correspondência exata na base; não equiparado a Brilhante.",
+      "historico_inundacao": null,
+      "vias_historicas_alagamento": null,
+      "susceptibilidade_hand": null
+    }
+  ]
+}

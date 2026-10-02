@@ -1,0 +1,116 @@
+{
+  "component": "Monitoramento",
+  "props": {
+    "secao": "barragens",
+    "municipioId": 1,
+    "estacoes": [
+      {
+        "id": 1,
+        "nome": "Barragem Ituporanga",
+        "codigo": "barragemSul",
+        "fonte": "Barragens MKS",
+        "atualizacao_esperada_segundos": 600,
+        "medido_em": "2026-10-01T10:00:00+00:00",
+        "qualidade": {
+          "estado": "atrasado",
+          "medido_em": "2026-10-01T10:00:00+00:00"
+        },
+        "ocupacao_percentual": 57.32,
+        "serie": [
+          {
+            "medido_em": "2026-09-30T10:00:00+00:00",
+            "montante_m": 21.98
+          },
+          {
+            "medido_em": "2026-09-30T13:36:00+00:00",
+            "montante_m": 22.19
+          },
+          {
+            "medido_em": "2026-09-30T20:00:00+00:00",
+            "montante_m": 22.22
+          },
+          {
+            "medido_em": "2026-10-01T10:00:00+00:00",
+            "montante_m": 25.94
+          }
+        ],
+        "ultima_variacao_m": 3.72,
+        "montante_m": 25.94,
+        "altura_maxima_m": 40,
+        "comportas_abertas": 2,
+        "comportas_fechadas": 3,
+        "extravasor_m": 0
+      },
+      {
+        "id": 2,
+        "nome": "Barragem Taió",
+        "codigo": "barragemOeste",
+        "fonte": "Barragens MKS",
+        "atualizacao_esperada_segundos": 600,
+        "medido_em": "2026-10-01T10:00:00+00:00",
+        "qualidade": {
+          "estado": "atrasado",
+          "medido_em": "2026-10-01T10:00:00+00:00"
+        },
+        "ocupacao_percentual": 30.11,
+        "serie": [
+          {
+            "medido_em": "2026-09-30T10:00:00+00:00",
+            "montante_m": 13.85
+          },
+          {
+            "medido_em": "2026-09-30T13:37:00+00:00",
+            "montante_m": 14.03
+          },
+          {
+            "medido_em": "2026-09-30T20:00:00+00:00",
+            "montante_m": 14.15
+          },
+          {
+            "medido_em": "2026-10-01T10:00:00+00:00",
+            "montante_m": 14.4
+          }
+        ],
+        "ultima_variacao_m": 0.25,
+        "montante_m": 14.4,
+        "altura_maxima_m": 23.3,
+        "comportas_abertas": 2,
+        "comportas_fechadas": 5,
+        "extravasor_m": 0
+      },
+      {
+        "id": 3,
+        "nome": "Barragem José Boiteux",
+        "codigo": "barragemNorte",
+        "fonte": "Barragens MKS",
+        "atualizacao_esperada_segundos": 600,
+        "medido_em": "2026-10-01T10:00:00+00:00",
+        "qualidade": {
+          "estado": "atrasado",
+          "medido_em": "2026-10-01T10:00:00+00:00"
+        },
+        "ocupacao_percentual": 17.66,
+        "serie": [
+          {
+            "medido_em": "2026-09-30T10:00:00+00:00",
+            "montante_m": 22.5
+          },
+          {
+            "medido_em": "2026-09-30T20:00:00+00:00",
+            "montante_m": 21.25
+          },
+          {
+            "medido_em": "2026-10-01T10:00:00+00:00",
+            "montante_m": 19.35
+          }
+        ],
+        "ultima_variacao_m": -1.9,
+        "montante_m": 19.35,
+        "altura_maxima_m": 46.7,
+        "comportas_abertas": null,
+        "comportas_fechadas": null,
+        "extravasor_m": 0
+      }
+    ]
+  }
+}
