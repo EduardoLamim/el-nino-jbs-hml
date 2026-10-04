@@ -1,0 +1,40 @@
+name: Validar aplicação e artefato Pages
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run data:validate
+      - name: Build estático de verificação (sem credenciais)
+        run: npm run pages:build
+      - run: npm run pages:validate
+      - name: Instalar navegador de teste
+        run: npx playwright install --with-deps chromium
+      - name: Servir e exercitar artefato sob subpath
+        run: |
+          npm run pages:preview > "$RUNNER_TEMP/pages-preview.log" 2>&1 &
+          npm run pages:smoke
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+          retention-days: 7

@@ -1,0 +1,3957 @@
+{
+  "phase": "07.1 discovery only",
+  "date": "2026-10-03",
+  "institution": "Prefeitura de Itajaí; Governo de Santa Catarina; provedores e projetos identificados por URL",
+  "method": {
+    "origin": "https://example.github.io (origem sintética; não é o domínio real de deploy)",
+    "bytes": "UTF-8 de corpo descomprimido; compact: JSON.stringify; gzip: compressão local Node, não tamanho de transferência garantido",
+    "geometry": "coordenadas originais retornadas, sem simplificação; outSR=4326; vértices incluem fechamento de anéis",
+    "noTilesDownloaded": true,
+    "noProductionChanges": true
+  },
+  "requests": [
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0?f=pjson",
+      "utc": "2026-10-03T16:04:04.9673714Z",
+      "name": "scenarios",
+      "bytes": 15717,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inunda%C3%A7%C3%A3o_cotas/FeatureServer/layers?f=pjson",
+      "utc": "2026-10-03T16:04:05.1755492Z",
+      "name": "cotas",
+      "bytes": 37606,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/mapa",
+      "utc": "2026-10-03T16:04:05.3322912Z",
+      "name": "map",
+      "bytes": 11773,
+      "cors": null
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/mancha_inundacao/MapServer?f=pjson",
+      "utc": "2026-10-03T16:04:06.3296120Z",
+      "name": "raster",
+      "bytes": 2874,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/layers?f=pjson",
+      "utc": "2026-10-03T16:04:06.5598128Z",
+      "name": "historyLayers",
+      "bytes": 67975,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/0b7b849710b54e678637440696821823/resources/config/config.json?f=json",
+      "utc": "2026-10-03T16:04:06.8343874Z",
+      "name": "app",
+      "bytes": 136250,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Restituicao_2024?f=pjson",
+      "utc": "2026-10-03T16:04:07.0999865Z",
+      "name": "rest2024",
+      "bytes": 2796,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/mancha_inundacao_final/FeatureServer/0?f=pjson",
+      "utc": "2026-10-03T16:04:07.3152375Z",
+      "name": "polygons",
+      "bytes": 9488,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/defesacivil?f=pjson",
+      "utc": "2026-10-03T16:04:07.4751989Z",
+      "name": "defense",
+      "bytes": 80,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer?f=pjson",
+      "utc": "2026-10-03T16:04:07.6163745Z",
+      "name": "history",
+      "bytes": 5604,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1?f=pjson",
+      "utc": "2026-10-03T16:04:07.7924236Z",
+      "name": "roads",
+      "bytes": 11524,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "status": 200,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted?f=pjson",
+      "utc": "2026-10-03T16:04:10.1263454Z",
+      "name": "hosted",
+      "bytes": 54244,
+      "cors": [
+        "https://example.github.io"
+      ]
+    },
+    {
+      "name": "bundle",
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/build/assets/app-CS6ae12O.js",
+      "utc": "2026-10-03T16:06:23.047Z",
+      "status": 200,
+      "bytes": 488159,
+      "cors": null,
+      "sha256": "e176ea386d9e9c9b56129c2cd11d110f237ed075e15cc5d7cfe845476f2b477e"
+    },
+    {
+      "name": "ortho",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restituição_2020/MapServer?f=pjson",
+      "utc": "2026-10-03T16:06:23.328Z",
+      "status": 200,
+      "bytes": 5589,
+      "cors": "https://example.github.io",
+      "sha256": "b02eab8c13241e4e94e96276a22273faf4f64cdf5059e0ac8049d8653f84d478"
+    },
+    {
+      "name": "basemap",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer?f=pjson",
+      "utc": "2026-10-03T16:06:23.369Z",
+      "status": 200,
+      "bytes": 3486,
+      "cors": "https://example.github.io",
+      "sha256": "ba11883535a12cf8fcf288a5b5fb14ecaf608416dff77ec52e1ae091b0cc95d0"
+    },
+    {
+      "name": "style",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/styles/root.json",
+      "utc": "2026-10-03T16:06:23.412Z",
+      "status": 200,
+      "bytes": 6667,
+      "cors": "https://example.github.io",
+      "sha256": "90e11f235e354cd46cd78b372b5a1c773971751360605e58fd63cfe55d29e4b9"
+    },
+    {
+      "name": "cbers",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/CBERS_4A_WPM_20230513_corret_tif/MapServer?f=pjson",
+      "utc": "2026-10-03T16:06:23.537Z",
+      "status": 200,
+      "bytes": 2676,
+      "cors": "https://example.github.io",
+      "sha256": "fc94e494b92b065779ba9556253e7059ae2b923acf1e232b5ceda6e26b0584d6"
+    },
+    {
+      "name": "cbers2",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Cbers_4a_2m_18_ProjectRaster/MapServer?f=pjson",
+      "utc": "2026-10-03T16:06:23.598Z",
+      "status": 200,
+      "bytes": 3076,
+      "cors": "https://example.github.io",
+      "sha256": "8c13f7023556b75b772a7e404f7bea98736d4729fddd76cb3a58cb60b580e0e0"
+    },
+    {
+      "name": "sigsc",
+      "url": "https://sigsc.sc.gov.br/sigserver/SIGSC/wms?service=WMS&request=GetCapabilities",
+      "utc": "2026-10-03T16:06:23.785Z",
+      "status": 200,
+      "bytes": 233523,
+      "cors": "*",
+      "sha256": "5ebbf02a652a0e208f357db188d4231aa50d2d3cd8952dae9ceede7842103e3b"
+    },
+    {
+      "name": "scenarioService",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer?f=pjson",
+      "utc": "2026-10-03T16:06:23.829Z",
+      "status": 200,
+      "bytes": 1684,
+      "cors": "https://example.github.io",
+      "sha256": "30395839dc7d8ee40744273d40d73d72f86b450b6df5b51f705c57e8b619b945"
+    },
+    {
+      "name": "history0Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:28.458Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "name": "history0Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/0/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:28.728Z",
+      "status": 200,
+      "bytes": 46361,
+      "cors": "https://example.github.io",
+      "sha256": "58a2b6cfb31354cc99ff5082e2065bb9a82fc6929b6ebb90f695089797c4c211"
+    },
+    {
+      "name": "history0Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/0/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:28.856Z",
+      "status": 200,
+      "bytes": 46483,
+      "cors": "https://example.github.io",
+      "sha256": "3ec37dd6e21dd475dba39349086a343b220440f55ca3424d54c59d45d6ffdb31"
+    },
+    {
+      "name": "history1Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/1/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:28.948Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "name": "history1Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/1/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:29.221Z",
+      "status": 200,
+      "bytes": 230863,
+      "cors": "https://example.github.io",
+      "sha256": "13001deabed2b6f9132905a6e0fbaa715ec60b90470d517c3fccc4a71f6db5ac"
+    },
+    {
+      "name": "history1Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/1/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:29.457Z",
+      "status": 200,
+      "bytes": 230965,
+      "cors": "https://example.github.io",
+      "sha256": "bd01680c9072f996140a40eeba8806d3c78eb5b1e4eefd0b5a1548d106de2d88"
+    },
+    {
+      "name": "history2Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/2/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:29.565Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "name": "history2Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/2/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:29.673Z",
+      "status": 200,
+      "bytes": 34453,
+      "cors": "https://example.github.io",
+      "sha256": "364e761802accd1cb04d85f9b32d0cf465e46471b549a2ed4b2c26e562ba9788"
+    },
+    {
+      "name": "history2Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/2/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:29.780Z",
+      "status": 200,
+      "bytes": 34561,
+      "cors": "https://example.github.io",
+      "sha256": "e3f2caf03f78caeea5ece961ce76994b22f9c1ced252b22ab2ab31e5556b71fc"
+    },
+    {
+      "name": "history3Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/3/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:29.863Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "name": "history3Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/3/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:30.329Z",
+      "status": 200,
+      "bytes": 856221,
+      "cors": "https://example.github.io",
+      "sha256": "8b8fdcadbaa67f890727b288545058dfc1df61c9c6f979991241bcb2ad0fd693"
+    },
+    {
+      "name": "history3Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/3/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:30.913Z",
+      "status": 200,
+      "bytes": 856303,
+      "cors": "https://example.github.io",
+      "sha256": "68d762ea112e6e2540f5d94bb2cd1e19d2470210dcc1b9f00993549e0724d9d5"
+    },
+    {
+      "name": "history4Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/4/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:31.031Z",
+      "status": 200,
+      "bytes": 12,
+      "cors": "https://example.github.io",
+      "sha256": "0f4e0b9614f4f181a6a33d47b05f67c3c1a974b8bddfc20139dce6d3ce0beb21"
+    },
+    {
+      "name": "history4Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/4/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:31.192Z",
+      "status": 200,
+      "bytes": 126097,
+      "cors": "https://example.github.io",
+      "sha256": "4853d5a532465798052476762b5908254d7309835c9a03abd7508c722a654c45"
+    },
+    {
+      "name": "history4Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/4/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:32.045Z",
+      "status": 200,
+      "bytes": 124714,
+      "cors": "https://example.github.io",
+      "sha256": "a4bdefb6ace857e3e8476c7a6c20aeced4abdf67c0846a501d10d342ed327f4c"
+    },
+    {
+      "name": "history5Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/5/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:32.141Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "a7b59f14220279bf034e35863bb5c8f0e489b130e214b6eead2d04fe26f2ea8b"
+    },
+    {
+      "name": "history5Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/5/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:32.578Z",
+      "status": 200,
+      "bytes": 571291,
+      "cors": "https://example.github.io",
+      "sha256": "ea77388eb0cb1cd7c0fc65bf66379aefe1e29d2f9eda8e31e8cbfc7baa3abc22"
+    },
+    {
+      "name": "history5Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/5/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.052Z",
+      "status": 200,
+      "bytes": 569869,
+      "cors": "https://example.github.io",
+      "sha256": "846fd57f5235052ed7d75d95222e9e2df6a5e76309f97ac02982f061287efdb0"
+    },
+    {
+      "name": "history6Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/6/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:33.163Z",
+      "status": 200,
+      "bytes": 12,
+      "cors": "https://example.github.io",
+      "sha256": "d3884a655094762fdb8366eccad5d19e7ed4e90e2cfe25582220dd94c714bd16"
+    },
+    {
+      "name": "history6Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/6/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.266Z",
+      "status": 200,
+      "bytes": 22735,
+      "cors": "https://example.github.io",
+      "sha256": "58040e1806538aa410b9bc89993a0b7ad422ea28bf1487a42875ce4fdcba6826"
+    },
+    {
+      "name": "history6Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/6/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.362Z",
+      "status": 200,
+      "bytes": 20626,
+      "cors": "https://example.github.io",
+      "sha256": "3d694289ad9e9efb61bba3434ec92ba47dc942dced82ab939ccef872bd3e289d"
+    },
+    {
+      "name": "history7Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/7/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:33.445Z",
+      "status": 200,
+      "bytes": 12,
+      "cors": "https://example.github.io",
+      "sha256": "e103489b933f7a7fd968ae204df00ab9cd3a641124de917d44fb058ca1d3462c"
+    },
+    {
+      "name": "history7Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/7/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.554Z",
+      "status": 200,
+      "bytes": 26161,
+      "cors": "https://example.github.io",
+      "sha256": "2d08eb082fbf5f62842ab3fa7613cfdc99e72c6190a0fd7b98ec6200297b56f6"
+    },
+    {
+      "name": "history7Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/7/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.659Z",
+      "status": 200,
+      "bytes": 23572,
+      "cors": "https://example.github.io",
+      "sha256": "71df41a7f7200b35ddf948428401ba0ac2b5e6354e17425246d66dbeb5b220eb"
+    },
+    {
+      "name": "history8Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/8/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:33.740Z",
+      "status": 200,
+      "bytes": 12,
+      "cors": "https://example.github.io",
+      "sha256": "6834b3d0a252b8e9631f3f2aa7178b8b2661497e7c396ca6029c462b0676e9a1"
+    },
+    {
+      "name": "history8Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/8/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.841Z",
+      "status": 200,
+      "bytes": 28071,
+      "cors": "https://example.github.io",
+      "sha256": "8cb04000e83433e0eeeb2dc00175bc2da11cac48813c4429ea3b6ef075a93f11"
+    },
+    {
+      "name": "history8Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/8/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:33.942Z",
+      "status": 200,
+      "bytes": 25626,
+      "cors": "https://example.github.io",
+      "sha256": "4f4bb07fc6c360c265fc851e73c771fc3dccf4a69be2203d17e88f3e24844c5a"
+    },
+    {
+      "name": "history9Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/9/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:34.024Z",
+      "status": 200,
+      "bytes": 13,
+      "cors": "https://example.github.io",
+      "sha256": "48452767ee67314e7d49d517e7452d67551c9f9450f7e4821c71f87a413c231f"
+    },
+    {
+      "name": "history9Geo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/9/query?f=geojson&where=1%3D1&outFields=objectid&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:34.195Z",
+      "status": 200,
+      "bytes": 58609,
+      "cors": "https://example.github.io",
+      "sha256": "2b32d1598c3e132dd55bb47c386efe0ed139c9a4e83d99a6861fffcd0bcf57f3"
+    },
+    {
+      "name": "history9Raw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/9/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=100&orderByFields=objectid",
+      "utc": "2026-10-03T16:06:34.309Z",
+      "status": 200,
+      "bytes": 32473,
+      "cors": "https://example.github.io",
+      "sha256": "e1de867fe47a4d7d68a5bdac8b82394b27965f44b42ce1b506ce3fcc56784a42"
+    },
+    {
+      "name": "roadsGeomCount",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1/query?f=json&where=trecho_alagado+%3D+%271%27&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:34.386Z",
+      "status": 200,
+      "bytes": 13,
+      "cors": "https://example.github.io",
+      "sha256": "0cfa91ccb64dd049d0b7c6100ad30975ad1f7adda09e3a033d6fd8a237741271"
+    },
+    {
+      "name": "roadsGeomGeo0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1/query?f=geojson&where=trecho_alagado+%3D+%271%27&outFields=fid%2Cnome%2Ccod%2Ccodsecao%2Ctarget_fid%2Ctrecho_alagado%2Cdata&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:06:34.504Z",
+      "status": 200,
+      "bytes": 185926,
+      "cors": "https://example.github.io",
+      "sha256": "891dc59dda03ffc39a0212c76225299e1ee26fd027679a3c1d6259f7e1949ad3"
+    },
+    {
+      "name": "roadsGeomRaw",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1/query?f=json&where=trecho_alagado+%3D+%271%27&outFields=fid%2Cnome%2Ccod%2Ccodsecao%2Ctarget_fid%2Ctrecho_alagado%2Cdata&returnGeometry=true&resultRecordCount=100&orderByFields=fid",
+      "utc": "2026-10-03T16:06:34.571Z",
+      "status": 200,
+      "bytes": 24766,
+      "cors": "https://example.github.io",
+      "sha256": "ff9ae8c474015f12649766025dea59ead041b3702d34c19fb591e4b24c504ee5"
+    },
+    {
+      "name": "scenarioGroups",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=json&where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22count%22%2C%22onStatisticField%22%3A%22fid%22%2C%22outStatisticFieldName%22%3A%22n%22%7D%5D&groupByFieldsForStatistics=nivel_cm%2Ctransb_m%2Cfaixa_10cm&orderByFields=nivel_cm&returnGeometry=false",
+      "utc": "2026-10-03T16:06:35.114Z",
+      "status": 200,
+      "bytes": 3931,
+      "cors": "https://example.github.io",
+      "sha256": "b9168e6d5ddeb683aeae4de75d1bd7c0d6b33877685b2095f56a69783abe869a"
+    },
+    {
+      "name": "polygonsCount",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/mancha_inundacao_final/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:35.186Z",
+      "status": 200,
+      "bytes": 14,
+      "cors": "https://example.github.io",
+      "sha256": "eeb1182025addb9edb6e08316e1916a7a9659f925a8da7a49f6529257cfaddbe"
+    },
+    {
+      "name": "polygonsSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/mancha_inundacao_final/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=true&resultRecordCount=3&outSR=4326",
+      "utc": "2026-10-03T16:06:35.236Z",
+      "status": 200,
+      "bytes": 8795,
+      "cors": "https://example.github.io",
+      "sha256": "b8033eeb74acb9abd29a3b558d2086667ce073a6dd8e77bfc850426bb7933af4"
+    },
+    {
+      "name": "cotas0Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:35.323Z",
+      "status": 200,
+      "bytes": 15,
+      "cors": "https://example.github.io",
+      "sha256": "aa114957e63f3480242ad3168973414bed2730dc084b18fc2e692e7fe63cdeaf"
+    },
+    {
+      "name": "cotas0Sample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=true&resultRecordCount=3&outSR=4326",
+      "utc": "2026-10-03T16:06:35.370Z",
+      "status": 200,
+      "bytes": 1603,
+      "cors": "https://example.github.io",
+      "sha256": "1c48da75ac5dd24cb0587fb2356df94d418051d30db8aa17d74ff1c84af5a73e"
+    },
+    {
+      "name": "cotas1Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/1/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:35.437Z",
+      "status": 200,
+      "bytes": 15,
+      "cors": "https://example.github.io",
+      "sha256": "9ccb32e93402bd7348ed99c152611bada6ab16f17d57806b245df71cf67f24bd"
+    },
+    {
+      "name": "cotas1Sample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/1/query?f=json&where=1%3D1&outFields=*&returnGeometry=true&resultRecordCount=3&outSR=4326",
+      "utc": "2026-10-03T16:06:35.497Z",
+      "status": 200,
+      "bytes": 1601,
+      "cors": "https://example.github.io",
+      "sha256": "8751f56e7b12451bb888dbec2e13a64514564bab4f3709a988e8921bcc18f868"
+    },
+    {
+      "name": "cotas2Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/2/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:35.552Z",
+      "status": 200,
+      "bytes": 14,
+      "cors": "https://example.github.io",
+      "sha256": "1f5316e48743a78c631faa3b763fd696007a5f30968535b73c2e4099c2708d07"
+    },
+    {
+      "name": "cotas2Sample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/2/query?f=json&where=1%3D1&outFields=*&returnGeometry=true&resultRecordCount=3&outSR=4326",
+      "utc": "2026-10-03T16:06:35.595Z",
+      "status": 200,
+      "bytes": 3555,
+      "cors": "https://example.github.io",
+      "sha256": "063b115d1c2a1751fb5f2407eeeac0a30b7cbd7234e19f46cd10d4b4b8f1999c"
+    },
+    {
+      "name": "cotas3Count",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/3/query?f=json&where=1%3D1&returnCountOnly=true",
+      "utc": "2026-10-03T16:06:35.680Z",
+      "status": 200,
+      "bytes": 15,
+      "cors": "https://example.github.io",
+      "sha256": "ae6a1f31e84cd81c2146078c94fadb743595fab842763051cbc08f33f7944aa2"
+    },
+    {
+      "name": "cotas3Sample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/3/query?f=json&where=1%3D1&outFields=*&returnGeometry=true&resultRecordCount=3&outSR=4326",
+      "utc": "2026-10-03T16:06:35.726Z",
+      "status": 200,
+      "bytes": 2014,
+      "cors": "https://example.github.io",
+      "sha256": "4e71831bc053eeb0f9ae97a029924df05b1d1734c3aaf354272b42fcaae64b5f"
+    },
+    {
+      "name": "mapChunk",
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/build/assets/MapaEstacoes-CJ9hUd5B.js",
+      "utc": "2026-10-03T16:08:41.703Z",
+      "status": 200,
+      "bytes": 153327,
+      "cors": null,
+      "sha256": "cd8d16ef9b604045706a0e3880325a0c12707c55034719080c7f2f1529f90d3f"
+    },
+    {
+      "name": "iteme21545ff02fc444bb016964411feddd9",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/e21545ff02fc444bb016964411feddd9?f=pjson",
+      "utc": "2026-10-03T16:08:41.933Z",
+      "status": 200,
+      "bytes": 1669,
+      "cors": "https://example.github.io",
+      "sha256": "a7a055623799ab4e5a80ebe524de9b6157d0d858f6e87c6aad713f3149713bc3"
+    },
+    {
+      "name": "datae21545ff02fc444bb016964411feddd9",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/e21545ff02fc444bb016964411feddd9/data?f=pjson",
+      "utc": "2026-10-03T16:08:41.979Z",
+      "status": 200,
+      "bytes": 0,
+      "cors": "https://example.github.io",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "item6986e7e35651447aa1a7ab9eee316487",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/6986e7e35651447aa1a7ab9eee316487?f=pjson",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "name": "data6986e7e35651447aa1a7ab9eee316487",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/6986e7e35651447aa1a7ab9eee316487/data?f=pjson",
+      "utc": "2026-10-03T16:08:52.377Z",
+      "status": 200,
+      "bytes": 5392,
+      "cors": "https://example.github.io",
+      "sha256": "ccede34c6675365b80cb7129ca51e6d9b2a5690229a359517dbda8a4122e96df"
+    },
+    {
+      "name": "item99d0c21086bf4abfa1f16a29b9188713",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/99d0c21086bf4abfa1f16a29b9188713?f=pjson",
+      "utc": "2026-10-03T16:08:52.425Z",
+      "status": 200,
+      "bytes": 1509,
+      "cors": "https://example.github.io",
+      "sha256": "08f42d95f0c79c20a25d095f8ca043f78d3d5428fcda7d56b1338470886341a8"
+    },
+    {
+      "name": "data99d0c21086bf4abfa1f16a29b9188713",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/99d0c21086bf4abfa1f16a29b9188713/data?f=pjson",
+      "utc": "2026-10-03T16:08:52.491Z",
+      "status": 200,
+      "bytes": 4456,
+      "cors": "https://example.github.io",
+      "sha256": "ed91df254a20462553304896750221d731ed88e75eb095ad4d6d7bc38d796472"
+    },
+    {
+      "name": "item7fbdedd0f88a414bb97343ebf20f02ef",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/7fbdedd0f88a414bb97343ebf20f02ef?f=pjson",
+      "utc": "2026-10-03T16:08:52.540Z",
+      "status": 200,
+      "bytes": 1396,
+      "cors": "https://example.github.io",
+      "sha256": "8e9a73ef9b19c1b32a50999665dcd888e95dc85a2e3e3e9fde9cbf482a151411"
+    },
+    {
+      "name": "data7fbdedd0f88a414bb97343ebf20f02ef",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/7fbdedd0f88a414bb97343ebf20f02ef/data?f=pjson",
+      "utc": "2026-10-03T16:08:52.583Z",
+      "status": 200,
+      "bytes": 0,
+      "cors": "https://example.github.io",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "basemapSearch",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/search?f=json&q=title%3Abasemap_itajai&num=50",
+      "utc": "2026-10-03T16:08:53.755Z",
+      "status": 200,
+      "bytes": 1284,
+      "cors": "https://example.github.io",
+      "sha256": "b5fa69207075c603d31b89fe1a36c28d300c7f43e5ab4be863931514b450f8aa"
+    },
+    {
+      "name": "scenarioRelated",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/6986e7e35651447aa1a7ab9eee316487/relatedItems?f=json&relationshipType=Service2Service&direction=reverse",
+      "utc": "2026-10-03T16:08:53.804Z",
+      "status": 200,
+      "bytes": 29,
+      "cors": "https://example.github.io",
+      "sha256": "dd2fec35b5c33b30c67992dbe43b565d7e19259339f381294a63ca945d15880f"
+    },
+    {
+      "name": "sigscWmts",
+      "url": "https://sigsc.sc.gov.br/sigserver/gwc/service/wmts?SERVICE=WMTS&REQUEST=GetCapabilities",
+      "utc": "2026-10-03T16:08:53.944Z",
+      "status": 200,
+      "bytes": 14883,
+      "cors": "*",
+      "sha256": "7146aa836b0b57f917ae4f4694b11a0ded5cc5d95dac6152c0b02a57c79aab11"
+    },
+    {
+      "name": "scenarioGeo10_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+10&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.303Z",
+      "status": 200,
+      "bytes": 80208,
+      "cors": "https://example.github.io",
+      "sha256": "c16a40563f8a588b946ab9e9f90b9ac766ea0df0f6de607919ab16325a011759"
+    },
+    {
+      "name": "scenarioGeo30_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+30&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.387Z",
+      "status": 200,
+      "bytes": 179535,
+      "cors": "https://example.github.io",
+      "sha256": "daf027915434ba8d5d76e31fa6068741a4f659e130294b610264cebc6012db54"
+    },
+    {
+      "name": "scenarioGeo40_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+40&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.559Z",
+      "status": 200,
+      "bytes": 225807,
+      "cors": "https://example.github.io",
+      "sha256": "d56add9115f1ed78558aa2091919082b00b1ccd3d491e05e2a63b3028ce25fd1"
+    },
+    {
+      "name": "scenarioGeo50_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+50&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.622Z",
+      "status": 200,
+      "bytes": 261958,
+      "cors": "https://example.github.io",
+      "sha256": "550fe39e18687f24b41b4fc375ed80a3dc2e54c4d5e4933f1f2fc38d77fee9c5"
+    },
+    {
+      "name": "scenarioGeo20_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+20&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.676Z",
+      "status": 200,
+      "bytes": 130624,
+      "cors": "https://example.github.io",
+      "sha256": "1be84e4917f03872554e8f7ff2372f7da329c6a312b5a5dab9b8e55a798b6e84"
+    },
+    {
+      "name": "scenarioGeo60_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+60&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.771Z",
+      "status": 200,
+      "bytes": 17669,
+      "cors": "https://example.github.io",
+      "sha256": "c00cefa98e9e42ffe8276fd9454a124f40b2686884a0b380b389f80b6b93b65c"
+    },
+    {
+      "name": "scenarioGeo60_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+60&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:54.791Z",
+      "status": 200,
+      "bytes": 278552,
+      "cors": "https://example.github.io",
+      "sha256": "7372b6a32a9fc4f1eb5a0b910ea08ee12df1a5df3c53d7ce2e7531813623d721"
+    },
+    {
+      "name": "scenarioGeo70_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+70&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.001Z",
+      "status": 200,
+      "bytes": 49472,
+      "cors": "https://example.github.io",
+      "sha256": "6a10b15edece37aa3fd8b8bce9655fc3bd517a46c4428460dd12594f03662c37"
+    },
+    {
+      "name": "scenarioGeo80_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+80&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.022Z",
+      "status": 200,
+      "bytes": 278491,
+      "cors": "https://example.github.io",
+      "sha256": "296ff9de2b27b37c00db6a898ffd90ab9bccb3ac2deeab5dbc58391c76cd5df9"
+    },
+    {
+      "name": "scenarioGeo80_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+80&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.144Z",
+      "status": 200,
+      "bytes": 82677,
+      "cors": "https://example.github.io",
+      "sha256": "e36b3fdf6750b29c43d7393e6d80d30716169e02375c619a403bf63c16b88ccc"
+    },
+    {
+      "name": "scenarioGeo90_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+90&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.292Z",
+      "status": 200,
+      "bytes": 120799,
+      "cors": "https://example.github.io",
+      "sha256": "b7c3330a6e1000ae223082a103e72b66a8b1ee44000ba3cdf32964d38fad1d30"
+    },
+    {
+      "name": "scenarioGeo90_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+90&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.351Z",
+      "status": 200,
+      "bytes": 278596,
+      "cors": "https://example.github.io",
+      "sha256": "0c889674a0b18de2628e50f4272be2a6b4ec874993255105d4457b802864d58c"
+    },
+    {
+      "name": "scenarioGeo100_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+100&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.495Z",
+      "status": 200,
+      "bytes": 277905,
+      "cors": "https://example.github.io",
+      "sha256": "f0d961387e955ddab43827a6237eba18d6211bbdaecb7521ba4922388a2aa27a"
+    },
+    {
+      "name": "scenarioGeo100_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+100&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.541Z",
+      "status": 200,
+      "bytes": 159348,
+      "cors": "https://example.github.io",
+      "sha256": "6705282eb025f76f62638507c38f6267584a158303dacdb3da68639fc66d66b2"
+    },
+    {
+      "name": "scenarioGeo70_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+70&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.576Z",
+      "status": 200,
+      "bytes": 278743,
+      "cors": "https://example.github.io",
+      "sha256": "2a13cf949f8c35676df669c99afc340d3f77365d2c24580a40ac339f66921988"
+    },
+    {
+      "name": "scenarioGeo110_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+110&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.722Z",
+      "status": 200,
+      "bytes": 281834,
+      "cors": "https://example.github.io",
+      "sha256": "0110dfb00df99a3edf1c60fe020fa8b6614f8cf5f6372152eea8f23da0e9610d"
+    },
+    {
+      "name": "scenarioGeo110_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+110&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.757Z",
+      "status": 200,
+      "bytes": 254798,
+      "cors": "https://example.github.io",
+      "sha256": "367d3735ce4eda2145a52fe0553cf3a4a04a9beb95a6939daaf53dfa5102f1fd"
+    },
+    {
+      "name": "scenarioGeo120_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+120&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.936Z",
+      "status": 200,
+      "bytes": 43474,
+      "cors": "https://example.github.io",
+      "sha256": "dce6e264250a8cdaf5a1723ce4f71120ba920a36070e9cbeb9f9a9aae6022978"
+    },
+    {
+      "name": "scenarioGeo120_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+120&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:55.955Z",
+      "status": 200,
+      "bytes": 283124,
+      "cors": "https://example.github.io",
+      "sha256": "52cd588fe989be2187564561e35b91b6e853a7183e6f8ea31f03c6ef8a77ff17"
+    },
+    {
+      "name": "scenarioGeo120_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+120&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.029Z",
+      "status": 200,
+      "bytes": 282341,
+      "cors": "https://example.github.io",
+      "sha256": "9f7bbd03dd9d15ecca88c89f1da02d41ef2c3b40090e1eb7ffe9561422a1e055"
+    },
+    {
+      "name": "scenarioGeo130_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+130&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.089Z",
+      "status": 200,
+      "bytes": 282352,
+      "cors": "https://example.github.io",
+      "sha256": "af5a2d9e25651980a2c55abfb63e49d3b63f235fb51cd51abf5ce5d861ce12dc"
+    },
+    {
+      "name": "scenarioGeo130_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+130&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.198Z",
+      "status": 200,
+      "bytes": 282913,
+      "cors": "https://example.github.io",
+      "sha256": "733e7e1ccc46a3b0bf22d4e7316f29716ef5e73d271521158bd1fc740025d1e4"
+    },
+    {
+      "name": "scenarioGeo140_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+140&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.239Z",
+      "status": 200,
+      "bytes": 282737,
+      "cors": "https://example.github.io",
+      "sha256": "03b9021c3f8c8e154338a7e215977d63b479dc67c9ad897f49ff25fae2748fb0"
+    },
+    {
+      "name": "scenarioGeo140_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+140&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.418Z",
+      "status": 200,
+      "bytes": 81151,
+      "cors": "https://example.github.io",
+      "sha256": "b295810595f695b2be5fff5b6d1890e31e0ec40c29634375d7c827d325707015"
+    },
+    {
+      "name": "scenarioGeo140_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+140&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.429Z",
+      "status": 200,
+      "bytes": 282930,
+      "cors": "https://example.github.io",
+      "sha256": "3dc0ef68656c707d9c011b3497784f065ed3a460a3ed128e7c17c8bf4dc44c9d"
+    },
+    {
+      "name": "scenarioGeo130_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+130&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.488Z",
+      "status": 200,
+      "bytes": 88935,
+      "cors": "https://example.github.io",
+      "sha256": "281c0abe36a58e0f2e8ffaf0e6557c2d84d3b8f06547f505c64d3cbf374cb549"
+    },
+    {
+      "name": "scenarioGeo150_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+150&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.576Z",
+      "status": 200,
+      "bytes": 282446,
+      "cors": "https://example.github.io",
+      "sha256": "a354586cd3ecbb6234799246a921abb40d93c73c447f6ad3ec1d1c2a122ab51e"
+    },
+    {
+      "name": "scenarioGeo150_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+150&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.664Z",
+      "status": 200,
+      "bytes": 283195,
+      "cors": "https://example.github.io",
+      "sha256": "340d7d8b9ceddc5eef056954b28177909012ecb858a4f71d058c25a9e253fab5"
+    },
+    {
+      "name": "scenarioGeo160_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+160&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.730Z",
+      "status": 200,
+      "bytes": 282504,
+      "cors": "https://example.github.io",
+      "sha256": "15d1404043fcdf3f55d7bf37439c3c2841d6012d2487af935ed0ffb8bc304777"
+    },
+    {
+      "name": "scenarioGeo160_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+160&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.906Z",
+      "status": 200,
+      "bytes": 283073,
+      "cors": "https://example.github.io",
+      "sha256": "7dcc815dac484c1893b9968bf2f9a4433b81c2d1437b9438c8eea6c44bc4d400"
+    },
+    {
+      "name": "scenarioGeo160_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+160&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.940Z",
+      "status": 200,
+      "bytes": 204236,
+      "cors": "https://example.github.io",
+      "sha256": "d06bcd9bec97e0a465866660f0e292051b8cd57be23dcbf50574fc77c561d995"
+    },
+    {
+      "name": "scenarioGeo150_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+150&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:56.953Z",
+      "status": 200,
+      "bytes": 112733,
+      "cors": "https://example.github.io",
+      "sha256": "9ac62fac55b3213cbe905994a3f6c8dc9729b376ebd710036a70d062bc585e7f"
+    },
+    {
+      "name": "scenarioGeo170_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+170&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.069Z",
+      "status": 200,
+      "bytes": 282520,
+      "cors": "https://example.github.io",
+      "sha256": "1fe2836807986538e4645ef45df5800dd51e1642486d32efcf8a06472043bd51"
+    },
+    {
+      "name": "scenarioGeo170_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+170&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.187Z",
+      "status": 200,
+      "bytes": 283070,
+      "cors": "https://example.github.io",
+      "sha256": "386c10e22688da6df621664c08efe29f8ebe3ee75e46cbfa876290fe7e656535"
+    },
+    {
+      "name": "scenarioGeo170_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+170&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.227Z",
+      "status": 200,
+      "bytes": 25081,
+      "cors": "https://example.github.io",
+      "sha256": "c253afb713461ec02f55a0f2664a451aaf8f934f264989918a32148e57003f3b"
+    },
+    {
+      "name": "scenarioGeo180_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+180&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.352Z",
+      "status": 200,
+      "bytes": 282361,
+      "cors": "https://example.github.io",
+      "sha256": "d2672ed1f1249d2e09837d4b0a5b3bbdf546ad5dc3acc07c689e11e24b6b7556"
+    },
+    {
+      "name": "scenarioGeo170_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+170&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.455Z",
+      "status": 200,
+      "bytes": 283362,
+      "cors": "https://example.github.io",
+      "sha256": "e02c0a1bff95c4aa2b39c3db63f8f9cc201aecc33b28d3e841a9ec194cbb987d"
+    },
+    {
+      "name": "scenarioGeo180_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+180&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.468Z",
+      "status": 200,
+      "bytes": 282817,
+      "cors": "https://example.github.io",
+      "sha256": "7f25f39552aec5bce92a6216c78e785bde7e31bda566b7c4553d258231015f4d"
+    },
+    {
+      "name": "scenarioGeo180_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+180&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.609Z",
+      "status": 200,
+      "bytes": 282878,
+      "cors": "https://example.github.io",
+      "sha256": "32183ea0031cfed7322a336dba011dcbc7cdd0ed38a81b47642c03fc3ec08e30"
+    },
+    {
+      "name": "scenarioGeo190_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+190&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.629Z",
+      "status": 200,
+      "bytes": 282337,
+      "cors": "https://example.github.io",
+      "sha256": "88f8951286f06f23a0037f5b3ef4f786ed12e00dc54ce770e512271ddc0fe841"
+    },
+    {
+      "name": "scenarioGeo190_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+190&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.777Z",
+      "status": 200,
+      "bytes": 283139,
+      "cors": "https://example.github.io",
+      "sha256": "37b284a7868f0343b58a975d7cced42575db29f29318897029e564ec31cfe7d9"
+    },
+    {
+      "name": "scenarioGeo190_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+190&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.877Z",
+      "status": 200,
+      "bytes": 283018,
+      "cors": "https://example.github.io",
+      "sha256": "55ffba568990ad0d09be5428055c56747eed2d0b8cbf77e8cead863e19bf30a1"
+    },
+    {
+      "name": "scenarioGeo180_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+180&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:57.917Z",
+      "status": 200,
+      "bytes": 121707,
+      "cors": "https://example.github.io",
+      "sha256": "bd30e4f9cf453148a4bea6b220b751ba75076dcfb310ec0903481fb48ea87b58"
+    },
+    {
+      "name": "scenarioGeo190_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+190&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.020Z",
+      "status": 200,
+      "bytes": 283520,
+      "cors": "https://example.github.io",
+      "sha256": "19f8fbd9079034a3cd0a10f782bda972d2ed1702e0ee08506713074a85689089"
+    },
+    {
+      "name": "scenarioGeo190_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+190&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.036Z",
+      "status": 200,
+      "bytes": 11187,
+      "cors": "https://example.github.io",
+      "sha256": "dccc67fac230f195f7673d0b123746a860adae396f65fc48039e2105f073738c"
+    },
+    {
+      "name": "scenarioGeo200_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+200&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.192Z",
+      "status": 200,
+      "bytes": 281134,
+      "cors": "https://example.github.io",
+      "sha256": "3064dc1b5918715beae842557e38209fb724f4322481caf30aeeadf7a917d759"
+    },
+    {
+      "name": "scenarioGeo200_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+200&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.261Z",
+      "status": 200,
+      "bytes": 281201,
+      "cors": "https://example.github.io",
+      "sha256": "c77a0391d92ac4b115482e9468c582914fc6740e4ee2bf580810c4e113e868d1"
+    },
+    {
+      "name": "scenarioGeo200_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+200&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.359Z",
+      "status": 200,
+      "bytes": 280081,
+      "cors": "https://example.github.io",
+      "sha256": "e9651f46f5736a9ecbc9f04928a80fd1f3fd971421753b0a99bfa8ce30341391"
+    },
+    {
+      "name": "scenarioGeo200_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+200&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.448Z",
+      "status": 200,
+      "bytes": 281160,
+      "cors": "https://example.github.io",
+      "sha256": "dba0d78c83969c09d6c3d2811d19e63a41209cf3c478fafed4afe28abe8c57d8"
+    },
+    {
+      "name": "scenarioGeo200_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+200&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.486Z",
+      "status": 200,
+      "bytes": 152957,
+      "cors": "https://example.github.io",
+      "sha256": "d036d13774c54974cb3ab26198b19e5c764ec037669f57b134a41f32b7f0f452"
+    },
+    {
+      "name": "scenarioGeo210_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+210&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.633Z",
+      "status": 200,
+      "bytes": 282887,
+      "cors": "https://example.github.io",
+      "sha256": "fd45d8437b8b2cdb18be97dd728db8197da61722026a1a887c23e4b70fedbccb"
+    },
+    {
+      "name": "scenarioGeo210_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+210&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.722Z",
+      "status": 200,
+      "bytes": 283006,
+      "cors": "https://example.github.io",
+      "sha256": "b712ed5793eff06c0aa7b08f773607a21e81b028bfec83d26f6f4ac2d3063ccd"
+    },
+    {
+      "name": "scenarioGeo210_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+210&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.807Z",
+      "status": 200,
+      "bytes": 281783,
+      "cors": "https://example.github.io",
+      "sha256": "60c5567330e1e572cbcbdd3cd8ce1e502b2127f3a2bfbae2d44e655ad6508d70"
+    },
+    {
+      "name": "scenarioGeo210_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+210&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.885Z",
+      "status": 200,
+      "bytes": 283395,
+      "cors": "https://example.github.io",
+      "sha256": "66778244c62245e0a72747bb411f50763af2afb97bd7adeffe01a01c459cbe06"
+    },
+    {
+      "name": "scenarioGeo210_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+210&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:58.954Z",
+      "status": 200,
+      "bytes": 279935,
+      "cors": "https://example.github.io",
+      "sha256": "8e0ef162043d9d1e792e0c748f3c0c20b0becf50c9127ea08012c85e0a4fb83b"
+    },
+    {
+      "name": "scenarioGeo220_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.072Z",
+      "status": 200,
+      "bytes": 282911,
+      "cors": "https://example.github.io",
+      "sha256": "da726f17e3778b2e44f677aa910f082b0816e48ca7f763cfff1e90dc02706687"
+    },
+    {
+      "name": "scenarioGeo220_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.189Z",
+      "status": 200,
+      "bytes": 282911,
+      "cors": "https://example.github.io",
+      "sha256": "7bd79c46ddbc73bb89637cbcb4978ea64d02975db71aa3fdb99af596c409622b"
+    },
+    {
+      "name": "scenarioGeo220_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.255Z",
+      "status": 200,
+      "bytes": 281740,
+      "cors": "https://example.github.io",
+      "sha256": "50db73e8f86f40d4fa61bb6ce36a29a90d7eda129994bcaa6bc20e38fe01a984"
+    },
+    {
+      "name": "scenarioGeo220_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.282Z",
+      "status": 200,
+      "bytes": 283002,
+      "cors": "https://example.github.io",
+      "sha256": "ddde28c9a0b677197133d59e049f6aa72fdff689cbf085968d262c08647a1fe8"
+    },
+    {
+      "name": "scenarioGeo220_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.363Z",
+      "status": 200,
+      "bytes": 283537,
+      "cors": "https://example.github.io",
+      "sha256": "824840c434e5d4e95ce33e4c24d430babefe5612cfc6e7d2c03f17968697a79b"
+    },
+    {
+      "name": "scenarioGeo230_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.421Z",
+      "status": 200,
+      "bytes": 281840,
+      "cors": "https://example.github.io",
+      "sha256": "7413675913835fb695f6313548af58bd43df16ba8ce421c0b6bb41b60f91bc92"
+    },
+    {
+      "name": "scenarioGeo230_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.539Z",
+      "status": 200,
+      "bytes": 282890,
+      "cors": "https://example.github.io",
+      "sha256": "4af02723cbfc26143b8b9f3ea213b6e8c77a5d1b9eda7752b3ed9ce936cbd9b6"
+    },
+    {
+      "name": "scenarioGeo230_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.594Z",
+      "status": 200,
+      "bytes": 282966,
+      "cors": "https://example.github.io",
+      "sha256": "c67cce021004db9a47feda833cb947b33532513b2f600b617c6cd0ae8e68925b"
+    },
+    {
+      "name": "scenarioGeo220_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+220&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.749Z",
+      "status": 200,
+      "bytes": 177582,
+      "cors": "https://example.github.io",
+      "sha256": "2f045008a13fb9259cfd4fde484b7e5d3ade2b52665dc664cea9d8bf053cdac1"
+    },
+    {
+      "name": "scenarioGeo230_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.786Z",
+      "status": 200,
+      "bytes": 282968,
+      "cors": "https://example.github.io",
+      "sha256": "005e44fc6ce20a3b839e39ea1c297d459da9411f1dd155fa8dcc0b8d9cca632a"
+    },
+    {
+      "name": "scenarioGeo230_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.853Z",
+      "status": 200,
+      "bytes": 283287,
+      "cors": "https://example.github.io",
+      "sha256": "69d5d9b53c67c506e9c559f5bbb412bb81454365e9a48582f418ab6cf5eae2a0"
+    },
+    {
+      "name": "scenarioGeo240_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:08:59.973Z",
+      "status": 200,
+      "bytes": 281843,
+      "cors": "https://example.github.io",
+      "sha256": "c4754e1890a21afcffd6b41c7f9b139ad75eef37529d0260158a378bc6230afd"
+    },
+    {
+      "name": "scenarioGeo240_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.041Z",
+      "status": 200,
+      "bytes": 282940,
+      "cors": "https://example.github.io",
+      "sha256": "da656f088378a9573caeb470f29b068e751e634c85953548aec528c4e11e5061"
+    },
+    {
+      "name": "scenarioGeo240_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.161Z",
+      "status": 200,
+      "bytes": 283059,
+      "cors": "https://example.github.io",
+      "sha256": "c163e11597d1ebb7c487ecadfb3ca1394d5bda71e62faceb531dbaa527d42213"
+    },
+    {
+      "name": "scenarioGeo230_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+230&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.263Z",
+      "status": 200,
+      "bytes": 274987,
+      "cors": "https://example.github.io",
+      "sha256": "82f9005ce6fd120c22aaeed3d741b5d7aed75a892d47931c26cd7b3b9d31244e"
+    },
+    {
+      "name": "scenarioGeo240_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.277Z",
+      "status": 200,
+      "bytes": 283058,
+      "cors": "https://example.github.io",
+      "sha256": "d4717b6d43481874bcad3a151c2c4876809abca61bbf5675f6f9ebd977ca5d1d"
+    },
+    {
+      "name": "scenarioGeo240_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.452Z",
+      "status": 200,
+      "bytes": 283300,
+      "cors": "https://example.github.io",
+      "sha256": "84411685af3803f863e9aa527f2fd5f2005f4e50cf6614696aadf93fdb01e847"
+    },
+    {
+      "name": "scenarioGeo250_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.481Z",
+      "status": 200,
+      "bytes": 281838,
+      "cors": "https://example.github.io",
+      "sha256": "2ff517a0edb2800a193c344267e30fc79cb53f65fd6fd1882fcb7722dfa0f69b"
+    },
+    {
+      "name": "scenarioGeo240_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+240&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.768Z",
+      "status": 200,
+      "bytes": 250665,
+      "cors": "https://example.github.io",
+      "sha256": "6bbe90a607e1e0cd7bef05caf0c560086e7cd195dc616564d169820a94ba8642"
+    },
+    {
+      "name": "scenarioGeo250_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.777Z",
+      "status": 200,
+      "bytes": 282803,
+      "cors": "https://example.github.io",
+      "sha256": "b96f353d1d90dee0e7fe573b375ca277afe0497c341853fa19f8e4d7f4a63401"
+    },
+    {
+      "name": "scenarioGeo250_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:00.950Z",
+      "status": 200,
+      "bytes": 283039,
+      "cors": "https://example.github.io",
+      "sha256": "410c82540836e1ca43f1016499e990615e57016162380ebc07e2f509b3305739"
+    },
+    {
+      "name": "scenarioGeo250_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.018Z",
+      "status": 200,
+      "bytes": 282993,
+      "cors": "https://example.github.io",
+      "sha256": "d632442a75ef00fbaad4888d759e085420600689b887a8ec98382835b862f4a0"
+    },
+    {
+      "name": "scenarioGeo250_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.188Z",
+      "status": 200,
+      "bytes": 210279,
+      "cors": "https://example.github.io",
+      "sha256": "88fc085612fe8a5b72220ac054fcd33932113ccadf370775c5aecde9b117aa48"
+    },
+    {
+      "name": "scenarioGeo260_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.223Z",
+      "status": 200,
+      "bytes": 281971,
+      "cors": "https://example.github.io",
+      "sha256": "e22c5464a5800e9cb96d88d1d214de138c67b4ef2b0e79eb4cfcf3732f75f117"
+    },
+    {
+      "name": "scenarioGeo250_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+250&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.286Z",
+      "status": 200,
+      "bytes": 283128,
+      "cors": "https://example.github.io",
+      "sha256": "c7ec03dd569ad29e1876d9fb391bc5dd2db20851c04a72263aa10b7e31cab6ae"
+    },
+    {
+      "name": "scenarioGeo260_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.385Z",
+      "status": 200,
+      "bytes": 283150,
+      "cors": "https://example.github.io",
+      "sha256": "d7c493db3eb571c28962d69fa81731c18068f71d49447507f22dd248765af700"
+    },
+    {
+      "name": "scenarioGeo260_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.481Z",
+      "status": 200,
+      "bytes": 282803,
+      "cors": "https://example.github.io",
+      "sha256": "38aa7a042cefae96960680dfcd06d26b215c29bd3c20d834504352a41cabb9ce"
+    },
+    {
+      "name": "scenarioGeo260_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.625Z",
+      "status": 200,
+      "bytes": 283112,
+      "cors": "https://example.github.io",
+      "sha256": "3c45253039d61d6695291357425df1a518087016e5997c0a8e76917d48270b16"
+    },
+    {
+      "name": "scenarioGeo260_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.706Z",
+      "status": 200,
+      "bytes": 240340,
+      "cors": "https://example.github.io",
+      "sha256": "eb54edfc659bb694a03c58ef99f2bfba9f687528d7935e7125418d86383dc585"
+    },
+    {
+      "name": "scenarioGeo270_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.845Z",
+      "status": 200,
+      "bytes": 281912,
+      "cors": "https://example.github.io",
+      "sha256": "a2cccf5ed8ea56999dd16c4ba0fd00308b60803e3f915ef0be53ae3e7023a246"
+    },
+    {
+      "name": "scenarioGeo260_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+260&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.854Z",
+      "status": 200,
+      "bytes": 282989,
+      "cors": "https://example.github.io",
+      "sha256": "e8721201857566906a5a5b636b75b54dea05b26dc4d8491749b43d52bf56de8d"
+    },
+    {
+      "name": "scenarioGeo270_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:01.932Z",
+      "status": 200,
+      "bytes": 283326,
+      "cors": "https://example.github.io",
+      "sha256": "f890d8edd872dbc488a01ecb8b5e5101292ad9c1e3877b79c161c3240e539657"
+    },
+    {
+      "name": "scenarioGeo270_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.185Z",
+      "status": 200,
+      "bytes": 283307,
+      "cors": "https://example.github.io",
+      "sha256": "496ff0fb7ac34ef4203ceb16874437c77ffc4425f8f80ec839e65f235c5b33dd"
+    },
+    {
+      "name": "scenarioGeo270_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.359Z",
+      "status": 200,
+      "bytes": 283077,
+      "cors": "https://example.github.io",
+      "sha256": "001114bf8a51514a2405d512d7f321554012af9dc118e473cb127e5fcab169dc"
+    },
+    {
+      "name": "scenarioGeo270_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.449Z",
+      "status": 200,
+      "bytes": 256718,
+      "cors": "https://example.github.io",
+      "sha256": "d883da76dfeb06c4219362c159ccbb21a083added41cd5093ef3f3e858ff52e7"
+    },
+    {
+      "name": "scenarioGeo280_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.694Z",
+      "status": 200,
+      "bytes": 283138,
+      "cors": "https://example.github.io",
+      "sha256": "e9fa947ff875bb3bc0e40c22d4a993adcf8d94083b5f426a68fdf96aba9694df"
+    },
+    {
+      "name": "scenarioGeo270_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+270&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.790Z",
+      "status": 200,
+      "bytes": 282966,
+      "cors": "https://example.github.io",
+      "sha256": "45a5dfda1f31561b5c24f0c78be6a448ee1e6bdf2711a339a0e043dad083b513"
+    },
+    {
+      "name": "scenarioGeo280_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.851Z",
+      "status": 200,
+      "bytes": 281900,
+      "cors": "https://example.github.io",
+      "sha256": "6f0e3c583c6e6a605fb81390c0cfcfda9cab317fc91e2f785ebc864a03fa6ea1"
+    },
+    {
+      "name": "scenarioGeo280_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:02.961Z",
+      "status": 200,
+      "bytes": 282932,
+      "cors": "https://example.github.io",
+      "sha256": "0a80d9a04160d5c558c3cabf3597b1c829ecb015f7b6b0e7152ea93b77e9c06b"
+    },
+    {
+      "name": "scenarioGeo280_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.137Z",
+      "status": 200,
+      "bytes": 283240,
+      "cors": "https://example.github.io",
+      "sha256": "708a91d6ffe0d64d7db0d40467d1e9140243b66aa3160660353b6f526e8e3f7c"
+    },
+    {
+      "name": "scenarioGeo280_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.185Z",
+      "status": 200,
+      "bytes": 216075,
+      "cors": "https://example.github.io",
+      "sha256": "9463d994e2de6be02060fdd4381a4c1941c5268fd0cbf66f123d901a26f49618"
+    },
+    {
+      "name": "scenarioGeo280_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+280&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.375Z",
+      "status": 200,
+      "bytes": 282989,
+      "cors": "https://example.github.io",
+      "sha256": "028dc65a209ecd5e3692124bd5bda102fe85ee60bdcbbd25813a22d3c34cae5f"
+    },
+    {
+      "name": "scenarioGeo290_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.421Z",
+      "status": 200,
+      "bytes": 281854,
+      "cors": "https://example.github.io",
+      "sha256": "aa1008020ed8f2eef5f190473c8551faa031b6877c238ae17c9dfd3012d54c9f"
+    },
+    {
+      "name": "scenarioGeo290_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.429Z",
+      "status": 200,
+      "bytes": 283167,
+      "cors": "https://example.github.io",
+      "sha256": "6f224b4c91702e3736eb0ed31283722ec48974999a4bd392304ed3f617ed5712"
+    },
+    {
+      "name": "scenarioGeo290_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.749Z",
+      "status": 200,
+      "bytes": 283062,
+      "cors": "https://example.github.io",
+      "sha256": "d6bb1e28beb8e0c2df19b90312b704a0a8abc7ee3650e8447869837546e43499"
+    },
+    {
+      "name": "scenarioGeo290_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.780Z",
+      "status": 200,
+      "bytes": 283169,
+      "cors": "https://example.github.io",
+      "sha256": "30a0f42c505358fa252813aa4a5209c3b883084279c56beb5dcf568b68b18763"
+    },
+    {
+      "name": "scenarioGeo290_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:03.837Z",
+      "status": 200,
+      "bytes": 282976,
+      "cors": "https://example.github.io",
+      "sha256": "8e5c156405f8ac417e94e0dad9f49119583af8b60b099ea221d9c73eea2d3018"
+    },
+    {
+      "name": "scenarioGeo290_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+290&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.023Z",
+      "status": 200,
+      "bytes": 202567,
+      "cors": "https://example.github.io",
+      "sha256": "f96ebd2085adada349711e71a10bb7422627c2fd6f2d226b02c2593a222b69cc"
+    },
+    {
+      "name": "scenarioGeo300_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.034Z",
+      "status": 200,
+      "bytes": 279955,
+      "cors": "https://example.github.io",
+      "sha256": "a1ba74cfc4885d344f2af6027938d281c5f3b2bf2f1daae96b9c4d33bad54ad3"
+    },
+    {
+      "name": "scenarioGeo300_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.317Z",
+      "status": 200,
+      "bytes": 281164,
+      "cors": "https://example.github.io",
+      "sha256": "cd7fe42a34521f2de1f7d0c70fb4088e83fdb23015ea06a79c9326eb26d82b75"
+    },
+    {
+      "name": "scenarioGeo300_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.329Z",
+      "status": 200,
+      "bytes": 280883,
+      "cors": "https://example.github.io",
+      "sha256": "4c832fcfa73be0c81084b524ddfcc601eb68b27ab8ed1ce76d211184f06f4174"
+    },
+    {
+      "name": "scenarioGeo300_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.363Z",
+      "status": 200,
+      "bytes": 281222,
+      "cors": "https://example.github.io",
+      "sha256": "076eeb985779b6db11bd3bf7f3976e2a68b5703b082380e990d8fd3f562d4903"
+    },
+    {
+      "name": "scenarioGeo300_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.533Z",
+      "status": 200,
+      "bytes": 171111,
+      "cors": "https://example.github.io",
+      "sha256": "502b37ffad846f627bba9b64af7144087d2e041bb838e30bfc76c9a7a1bd5821"
+    },
+    {
+      "name": "scenarioGeo310_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.644Z",
+      "status": 200,
+      "bytes": 282059,
+      "cors": "https://example.github.io",
+      "sha256": "09fb0fe10ca8d4db980668ef86e52533a67ab07fdcbeeb71a90682fc6a4c5abb"
+    },
+    {
+      "name": "scenarioGeo310_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.815Z",
+      "status": 200,
+      "bytes": 283054,
+      "cors": "https://example.github.io",
+      "sha256": "da734cc7399d208d5fdf7dc0ac33468c0cc2c96cb7620879e4c3c09ea06d6321"
+    },
+    {
+      "name": "scenarioGeo300_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+300&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.826Z",
+      "status": 200,
+      "bytes": 281031,
+      "cors": "https://example.github.io",
+      "sha256": "786dded2c46e9728f5228ffe0a2ef2c3ac309cb486fe44ef6e26bc2a20ed5a4a"
+    },
+    {
+      "name": "scenarioGeo310_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:04.904Z",
+      "status": 200,
+      "bytes": 283209,
+      "cors": "https://example.github.io",
+      "sha256": "0582284c89256997eb9584752c01f2bf9ac907683a1f1f334f8e7042b0c52234"
+    },
+    {
+      "name": "scenarioGeo310_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.100Z",
+      "status": 200,
+      "bytes": 283140,
+      "cors": "https://example.github.io",
+      "sha256": "d91c8070758088edeb015e3134b8ef2e881eadd09a13dcc632ae9b51ba938036"
+    },
+    {
+      "name": "scenarioGeo310_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.113Z",
+      "status": 200,
+      "bytes": 117452,
+      "cors": "https://example.github.io",
+      "sha256": "84769a3dde0ef89b408176d50d965b1cfad7aa6381dd56ea15b7253724ad0a5b"
+    },
+    {
+      "name": "scenarioGeo310_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+310&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.303Z",
+      "status": 200,
+      "bytes": 285136,
+      "cors": "https://example.github.io",
+      "sha256": "415e11e66fb41ba5205d4b41a069d35364732ce67ff6c4671baeac59a6c039bd"
+    },
+    {
+      "name": "scenarioGeo320_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.385Z",
+      "status": 200,
+      "bytes": 286338,
+      "cors": "https://example.github.io",
+      "sha256": "62accaf154a9a6b80c946ae6aca718cbb9ea9e4e88da9ecd21c96ff7e4eb62ae"
+    },
+    {
+      "name": "scenarioGeo320_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.397Z",
+      "status": 200,
+      "bytes": 285019,
+      "cors": "https://example.github.io",
+      "sha256": "c0951f8d89dfac926e5414884caac3f673d0fe015b8498a7a996cad3080d0a05"
+    },
+    {
+      "name": "scenarioGeo320_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.662Z",
+      "status": 200,
+      "bytes": 286632,
+      "cors": "https://example.github.io",
+      "sha256": "a8973256bc865f236c2c431a599a8d5bf043f8c99833338f3bbafc2d1fd2a3e6"
+    },
+    {
+      "name": "scenarioGeo320_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.670Z",
+      "status": 200,
+      "bytes": 287033,
+      "cors": "https://example.github.io",
+      "sha256": "1cb796f84cd252430f34dd442f8d7c0f4656927240d3118502b03e3f7c79318b"
+    },
+    {
+      "name": "scenarioGeo320_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.785Z",
+      "status": 200,
+      "bytes": 286432,
+      "cors": "https://example.github.io",
+      "sha256": "d8d30af9157144270c97182c15cfb4055af3e9675d11562f17dd880a61f1925b"
+    },
+    {
+      "name": "scenarioGeo320_5000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+320&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=5000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.829Z",
+      "status": 200,
+      "bytes": 44884,
+      "cors": "https://example.github.io",
+      "sha256": "a6d0ea6cc06110ed350c9254281bfbf5d97cad3457633ae9c4deea741bdac4dc"
+    },
+    {
+      "name": "scenarioGeo330_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+330&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:05.947Z",
+      "status": 200,
+      "bytes": 285183,
+      "cors": "https://example.github.io",
+      "sha256": "a47ea17b020ccbc376b1c423926d7fdc46b609a734243f1988c4dd986a98ac5b"
+    },
+    {
+      "name": "scenarioGeo330_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+330&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.087Z",
+      "status": 200,
+      "bytes": 285944,
+      "cors": "https://example.github.io",
+      "sha256": "69f5180d3d7f90904355a73cec0f2f03ce9aeebd15b515234b109f0d6914ec1b"
+    },
+    {
+      "name": "scenarioGeo330_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+330&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.208Z",
+      "status": 200,
+      "bytes": 286066,
+      "cors": "https://example.github.io",
+      "sha256": "b60ba43d25cf1bf6d1e6f7ce1e7e780e5f0397c6c6423e9842be0e8c800d0574"
+    },
+    {
+      "name": "scenarioGeo330_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+330&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.263Z",
+      "status": 200,
+      "bytes": 286031,
+      "cors": "https://example.github.io",
+      "sha256": "e947cba5c49a35607022d8f77d985be6a5e4477d6d1b71d39336b7bccf9e3957"
+    },
+    {
+      "name": "scenarioGeo330_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+330&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.349Z",
+      "status": 200,
+      "bytes": 256269,
+      "cors": "https://example.github.io",
+      "sha256": "2f8ffb2ae368b8d77b35bd2fd0a97f473a603b066277ec246c756f15d79d2434"
+    },
+    {
+      "name": "scenarioGeo340_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+340&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.467Z",
+      "status": 200,
+      "bytes": 285161,
+      "cors": "https://example.github.io",
+      "sha256": "93758bf744ce75b17fba02249e545807f263e8a590465fea1933935def2cea2a"
+    },
+    {
+      "name": "scenarioGeo340_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+340&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.633Z",
+      "status": 200,
+      "bytes": 286228,
+      "cors": "https://example.github.io",
+      "sha256": "60a81a562a5570ddf927e249e77a1e66dd902975a35a120056d28a5ad42be0f6"
+    },
+    {
+      "name": "scenarioGeo340_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+340&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.722Z",
+      "status": 200,
+      "bytes": 286316,
+      "cors": "https://example.github.io",
+      "sha256": "6be0618f302af0f035f420f39e77765be6bcc95d2ddd733973015f5e6e217662"
+    },
+    {
+      "name": "scenarioGeo340_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+340&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.756Z",
+      "status": 200,
+      "bytes": 286145,
+      "cors": "https://example.github.io",
+      "sha256": "21a733ba13a0297e91fa968fafb8065bc12da86eb64136a240dab39d5d968244"
+    },
+    {
+      "name": "scenarioGeo340_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+340&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:06.878Z",
+      "status": 200,
+      "bytes": 198471,
+      "cors": "https://example.github.io",
+      "sha256": "c1d834ba22af5c1859c31fd8d39f59685ff90d6624bec8378896c313ede7d3aa"
+    },
+    {
+      "name": "scenarioGeo350_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+350&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.015Z",
+      "status": 200,
+      "bytes": 285070,
+      "cors": "https://example.github.io",
+      "sha256": "4cdff4c3b57c74c705811b10f3ce828221640f3c2265e2a220348d536469ea32"
+    },
+    {
+      "name": "scenarioGeo350_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+350&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.143Z",
+      "status": 200,
+      "bytes": 286038,
+      "cors": "https://example.github.io",
+      "sha256": "35ac30f7c2471ff07aeaf5d4ea8662b0dbc5721210bdba32bd618b21970e0871"
+    },
+    {
+      "name": "scenarioGeo350_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+350&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.280Z",
+      "status": 200,
+      "bytes": 286202,
+      "cors": "https://example.github.io",
+      "sha256": "5778281eda38407fbbf66b6bf7a9cf9c19b9333ff6551b7f2175cde2c805b83a"
+    },
+    {
+      "name": "scenarioGeo350_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+350&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.372Z",
+      "status": 200,
+      "bytes": 174807,
+      "cors": "https://example.github.io",
+      "sha256": "4b910ff1383e1c92303c1c34f23e31d48031bd90b135ebef9bbfd9cba0ce77c1"
+    },
+    {
+      "name": "scenarioGeo350_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+350&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.468Z",
+      "status": 200,
+      "bytes": 286274,
+      "cors": "https://example.github.io",
+      "sha256": "478f62dc8de960a11f002e5e3379e27d23b0ed166d483fdc345d6075f5c14d80"
+    },
+    {
+      "name": "scenarioGeo360_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+360&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.578Z",
+      "status": 200,
+      "bytes": 285428,
+      "cors": "https://example.github.io",
+      "sha256": "4b6bec060fb880c9ff7b738b6408f2f5f4c3c7f660e5e68ab8128334a0dd1c1d"
+    },
+    {
+      "name": "scenarioGeo360_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+360&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.695Z",
+      "status": 200,
+      "bytes": 286148,
+      "cors": "https://example.github.io",
+      "sha256": "422d86d6fb00b841f6c86d74569526c9bb8daa578877cbc3dc13e1b189f34b13"
+    },
+    {
+      "name": "scenarioGeo360_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+360&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.807Z",
+      "status": 200,
+      "bytes": 286419,
+      "cors": "https://example.github.io",
+      "sha256": "a285e0d281c8abc15ee2fdfa1a7b3f975dab4dd1af28a992c9a128ac685eabb9"
+    },
+    {
+      "name": "scenarioGeo360_4000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+360&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=4000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.824Z",
+      "status": 200,
+      "bytes": 78250,
+      "cors": "https://example.github.io",
+      "sha256": "0e3d0c338597581c689fd6b2ac0aef99a21faf7a9751f5d9b04bab834a0d262e"
+    },
+    {
+      "name": "scenarioGeo360_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+360&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:07.871Z",
+      "status": 200,
+      "bytes": 286180,
+      "cors": "https://example.github.io",
+      "sha256": "8bc1971eeb20ded6e81047b16a4de262c61c67157501727ffc342da4982af3ac"
+    },
+    {
+      "name": "scenarioGeo370_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+370&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.075Z",
+      "status": 200,
+      "bytes": 285993,
+      "cors": "https://example.github.io",
+      "sha256": "0d7585609bdd3dace584b2248dfb57970c59f7b6ee1f0389ed8bf836c876b78b"
+    },
+    {
+      "name": "scenarioGeo370_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+370&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.108Z",
+      "status": 200,
+      "bytes": 285289,
+      "cors": "https://example.github.io",
+      "sha256": "2da26d381e1f3d9737f086fc576c83c4a506d1169c27c5cb9a1d243bfcc193b0"
+    },
+    {
+      "name": "scenarioGeo370_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+370&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.312Z",
+      "status": 200,
+      "bytes": 286231,
+      "cors": "https://example.github.io",
+      "sha256": "8f3fcb5bade350122e3c8b49229b5bc01daa0f406781145fc310986b8cdac885"
+    },
+    {
+      "name": "scenarioGeo370_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+370&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.330Z",
+      "status": 200,
+      "bytes": 275439,
+      "cors": "https://example.github.io",
+      "sha256": "133dd29a1e322fcd5fdb7b23265965941e260c241d93698d059992f9f7b9245f"
+    },
+    {
+      "name": "scenarioGeo380_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+380&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.409Z",
+      "status": 200,
+      "bytes": 285609,
+      "cors": "https://example.github.io",
+      "sha256": "f0bdfe5b211e2dfddb3e88772f08f3b73df8648c7f1a677396d4b4d8de8b1f02"
+    },
+    {
+      "name": "scenarioGeo380_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+380&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.600Z",
+      "status": 200,
+      "bytes": 286176,
+      "cors": "https://example.github.io",
+      "sha256": "554f788f2ea33534043d792581b70dd38dcdf7fba2d515ab6c89b3e2ebbeda37"
+    },
+    {
+      "name": "scenarioGeo380_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+380&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.645Z",
+      "status": 200,
+      "bytes": 218774,
+      "cors": "https://example.github.io",
+      "sha256": "99b2baf45f4c841dfae00b49891cab3c572d7e33d2ceba59d5c7c16bde215796"
+    },
+    {
+      "name": "scenarioGeo380_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+380&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.707Z",
+      "status": 200,
+      "bytes": 286250,
+      "cors": "https://example.github.io",
+      "sha256": "b08a71c295862686913b94d6d3772c2b7972c7eac2868206c8d0b143a34531cd"
+    },
+    {
+      "name": "scenarioGeo390_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+390&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.827Z",
+      "status": 200,
+      "bytes": 285499,
+      "cors": "https://example.github.io",
+      "sha256": "c265d37bb253813a819d82ee5dbe7624bbaf6d73fd9fc869552cd0376b17c90c"
+    },
+    {
+      "name": "scenarioGeo390_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+390&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:08.891Z",
+      "status": 200,
+      "bytes": 286447,
+      "cors": "https://example.github.io",
+      "sha256": "46ca8884322ef72dd2107af53a6cfd3936770a5b6b89cfdfd291fa46f4ff82fc"
+    },
+    {
+      "name": "scenarioGeo390_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+390&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.062Z",
+      "status": 200,
+      "bytes": 194898,
+      "cors": "https://example.github.io",
+      "sha256": "2e21cf56fe57f0420bc263f89ca9b6863acd92be32941895001e336de0a40c99"
+    },
+    {
+      "name": "scenarioGeo390_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+390&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.149Z",
+      "status": 200,
+      "bytes": 286155,
+      "cors": "https://example.github.io",
+      "sha256": "a72c5c8086f1f79b8633dd68675e1ff6ace8c6a0e94be639d72d54604bc5f363"
+    },
+    {
+      "name": "scenarioGeo400_0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+400&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=0&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.197Z",
+      "status": 200,
+      "bytes": 283539,
+      "cors": "https://example.github.io",
+      "sha256": "985961b99fba549a731aa287fcc36023fc6e3068c7462c7555a16965448fe49f"
+    },
+    {
+      "name": "scenarioGeo400_1000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+400&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=1000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.323Z",
+      "status": 200,
+      "bytes": 284053,
+      "cors": "https://example.github.io",
+      "sha256": "69268dffbccd03f5e96c6d4a55bf413a7217f871c74b36f9b407da18c098600e"
+    },
+    {
+      "name": "scenarioGeo400_3000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+400&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=3000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.392Z",
+      "status": 200,
+      "bytes": 128683,
+      "cors": "https://example.github.io",
+      "sha256": "90302249e2bffa412416dcbae3719d6d324ed361cc83e5214a351be63efde7cb"
+    },
+    {
+      "name": "scenarioGeo400_2000",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=geojson&where=nivel_cm+%3D+400&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&outSR=4326&returnGeometry=true&resultOffset=2000&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:09.585Z",
+      "status": 200,
+      "bytes": 284043,
+      "cors": "https://example.github.io",
+      "sha256": "95fbb59f236d481504d3c230b5307986f7eb45bef589a245c2ef9eae0626e7ca"
+    },
+    {
+      "name": "scenarioRawSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=json&where=1%3D1&outFields=fid%2Cid_trecho%2Cid_via_ori%2Cnivel_cm%2Ctransb_m%2Cfaixa_10cm&returnGeometry=true&resultRecordCount=1000&orderByFields=fid",
+      "utc": "2026-10-03T16:09:11.377Z",
+      "status": 200,
+      "bytes": 210521,
+      "cors": "https://example.github.io",
+      "sha256": "1545ee242438f69ec9e886e45b4c6e5e957768b182e84fe67abc8e515fd6c572"
+    },
+    {
+      "name": "mismatch",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=json&where=nivel_cm+%3C%3E+transb_m*100&returnCountOnly=true",
+      "utc": "2026-10-03T16:09:11.550Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+    },
+    {
+      "name": "cotaMismatch",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=json&where=nivel_cm+%3C%3E+cota_via_publico&returnCountOnly=true",
+      "utc": "2026-10-03T16:09:11.776Z",
+      "status": 200,
+      "bytes": 13,
+      "cors": "https://example.github.io",
+      "sha256": "fe33cc9b83934cef38606100e16786e479f392c19784217bdfc1ad237d0427bf"
+    },
+    {
+      "name": "nullLevel",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer/0/query?f=json&where=nivel_cm+IS+NULL&returnCountOnly=true",
+      "utc": "2026-10-03T16:09:11.926Z",
+      "status": 200,
+      "bytes": 11,
+      "cors": "https://example.github.io",
+      "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+    },
+    {
+      "name": "item6986e7e35651447aa1a7ab9eee316487",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/6986e7e35651447aa1a7ab9eee316487?f=json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:06.938Z",
+      "status": 200,
+      "bytes": 1243,
+      "gzip": 597,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=utf-8",
+      "sha256": "704181700a220d605787e7bd89a3e4d2e916de84a1cd0c1c5206024b4023ceb5"
+    },
+    {
+      "name": "item7a110ef9198540068341e6908c6bf298",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/7a110ef9198540068341e6908c6bf298?f=json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:06.987Z",
+      "status": 200,
+      "bytes": 1365,
+      "gzip": 745,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=utf-8",
+      "sha256": "531adaa73ea97ede17d3d1d0ffdfd21fe8be88cc63abe5859be48a3461e6810f"
+    },
+    {
+      "name": "originView",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_view/FeatureServer/0?f=json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:07.149Z",
+      "status": 200,
+      "bytes": 11452,
+      "gzip": 2622,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=UTF-8",
+      "sha256": "85beffef4ecea81083f2916fce510e0527bc75450a637f26cda320a59ea9b21d"
+    },
+    {
+      "name": "scenarioOriginSearch",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/search?f=json&q=vias_atingidas_nivel&num=100",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:07.203Z",
+      "status": 200,
+      "bytes": 3249,
+      "gzip": 837,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=utf-8",
+      "sha256": "3b48c55301e72e3ee878b8f58dc59f7b678d5ed042d68532f3d48c5f5c0ae70f"
+    },
+    {
+      "name": "polygonItem",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/4c3bc1fa171241ecb28b398537aa4c55?f=json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:07.253Z",
+      "status": 200,
+      "bytes": 1229,
+      "gzip": 669,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=utf-8",
+      "sha256": "1b6c51331d2460bc09e6c1d5e5f11680bb20d94c7842c3d873e0f4573171d7fe"
+    },
+    {
+      "name": "historyItem",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/32c4ca9500d6497fa47f3c92a17618f3?f=json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:07.301Z",
+      "status": 200,
+      "bytes": 1253,
+      "gzip": 709,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=utf-8",
+      "sha256": "89cbd115819a539b860d500e1ce22d130406f6d08f76bcd9d63aa1a763957c33"
+    },
+    {
+      "name": "osmHeaders",
+      "url": "https://tile.openstreetmap.org/0/0/0.png",
+      "method": "HEAD",
+      "utc": "2026-10-03T16:11:07.404Z",
+      "status": 200,
+      "bytes": 0,
+      "gzip": 20,
+      "cors": "*",
+      "contentType": "image/png",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "dcTileHeaders",
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/img/portal/mapa/13/2988/4731.jpg",
+      "method": "HEAD",
+      "utc": "2026-10-03T16:11:07.544Z",
+      "status": 200,
+      "bytes": 0,
+      "gzip": 20,
+      "cors": null,
+      "contentType": "image/jpeg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "esriImagery",
+      "url": "https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer?f=pjson",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:07.687Z",
+      "status": 200,
+      "bytes": 63,
+      "gzip": 83,
+      "cors": "*",
+      "contentType": "text/plain",
+      "sha256": "404d387cab919fabf5bf0f937c0ccb99f9d0ad1f2ccff60e2ea627df4138de08"
+    },
+    {
+      "name": "leafletSize",
+      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.078Z",
+      "status": 200,
+      "bytes": 147552,
+      "gzip": 42706,
+      "cors": "*",
+      "contentType": "text/javascript; charset=utf-8",
+      "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a"
+    },
+    {
+      "name": "olSize",
+      "url": "https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.218Z",
+      "status": 200,
+      "bytes": 1043059,
+      "gzip": 291207,
+      "cors": "*",
+      "contentType": "application/javascript; charset=utf-8",
+      "sha256": "b89af8ec3b76f564d515fd07fed3ec414aecf8f33f685b77b607451cb0c2029f"
+    },
+    {
+      "name": "maplibrePackage",
+      "url": "https://unpkg.com/maplibre-gl/package.json",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.391Z",
+      "status": 200,
+      "bytes": 6565,
+      "gzip": 2028,
+      "cors": "*",
+      "contentType": "application/json",
+      "sha256": "43279ee38f2ef83bc695f6f8bfb4df098a14c49662291c126cf4a0cb477507a0"
+    },
+    {
+      "name": "maplibreSize",
+      "url": "https://unpkg.com/maplibre-gl@6.11.2/dist/maplibre-gl.js",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.436Z",
+      "status": 404,
+      "bytes": 50,
+      "gzip": 60,
+      "cors": null,
+      "contentType": "text/plain;charset=UTF-8",
+      "sha256": "1d9766aa4a6964962f74eb277b6dd932de7c02868fb0d2d82c398aaaf7f2d671"
+    },
+    {
+      "name": "roadsRawFull",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1/query?f=json&where=trecho_alagado+%3D+%271%27&outFields=fid%2Cnome%2Ccod%2Ccodsecao%2Ctarget_fid%2Ctrecho_alagado%2Cdata&returnGeometry=true&resultRecordCount=1000&orderByFields=fid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.565Z",
+      "status": 200,
+      "bytes": 145474,
+      "gzip": 25746,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=UTF-8",
+      "sha256": "3d8b1d0ee2af648615a5f75b4ac7c832ff402b43ea4f62295ec90c7152ddb389"
+    },
+    {
+      "name": "history9RawFull",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/9/query?f=json&where=1%3D1&outFields=objectid&returnGeometry=true&resultRecordCount=1000&orderByFields=objectid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.725Z",
+      "status": 200,
+      "bytes": 51308,
+      "gzip": 13241,
+      "cors": "https://example.github.io",
+      "contentType": "application/json;charset=UTF-8",
+      "sha256": "86aadb1d933c74b8222d554aa64ac3c6c19d2cc0f283dc6f38b463ec66d7d17d"
+    },
+    {
+      "name": "polygonsGeoSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/mancha_inundacao_final/FeatureServer/0/query?f=geojson&where=1%3D1&outFields=objectid1&outSR=4326&returnGeometry=true&resultRecordCount=100&orderByFields=objectid1",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.921Z",
+      "status": 200,
+      "bytes": 692112,
+      "gzip": 97181,
+      "cors": "https://example.github.io",
+      "contentType": "application/geo+json;charset=UTF-8",
+      "sha256": "0a2a3e0b96a5ead392d7e88053f4db7ba8903030cb07e6f4ae0b4e9141f836ba"
+    },
+    {
+      "name": "cotas0GeoSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/0/query?f=geojson&where=1%3D1&outFields=fid%2Cdn&outSR=4326&returnGeometry=true&resultRecordCount=100&orderByFields=fid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:08.985Z",
+      "status": 200,
+      "bytes": 39147,
+      "gzip": 9465,
+      "cors": "https://example.github.io",
+      "contentType": "application/geo+json;charset=UTF-8",
+      "sha256": "6e9ed8c29e86f75f73d85ce81db03bc1eb1044fab0134b165fd277b3825a3b98"
+    },
+    {
+      "name": "cotas1GeoSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/1/query?f=geojson&where=1%3D1&outFields=fid%2Cdn&outSR=4326&returnGeometry=true&resultRecordCount=100&orderByFields=fid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:09.049Z",
+      "status": 200,
+      "bytes": 41749,
+      "gzip": 10327,
+      "cors": "https://example.github.io",
+      "contentType": "application/geo+json;charset=UTF-8",
+      "sha256": "3762dab250798582ddd306377a81d8bb3ecc8de4b3c0e47bf6e2299752faf7b4"
+    },
+    {
+      "name": "cotas2GeoSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/2/query?f=geojson&where=1%3D1&outFields=fid%2Cdn&outSR=4326&returnGeometry=true&resultRecordCount=100&orderByFields=fid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:09.130Z",
+      "status": 200,
+      "bytes": 66963,
+      "gzip": 18881,
+      "cors": "https://example.github.io",
+      "contentType": "application/geo+json;charset=UTF-8",
+      "sha256": "b3c060f5ec47575defd26eb94ce66cbeb5dea2f46d75ef117b28cd2ea1266467"
+    },
+    {
+      "name": "cotas3GeoSample",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer/3/query?f=geojson&where=1%3D1&outFields=fid%2Cdn&outSR=4326&returnGeometry=true&resultRecordCount=100&orderByFields=fid",
+      "method": "GET",
+      "utc": "2026-10-03T16:11:09.228Z",
+      "status": 200,
+      "bytes": 69827,
+      "gzip": 19829,
+      "cors": "https://example.github.io",
+      "contentType": "application/geo+json;charset=UTF-8",
+      "sha256": "5997900d875bf1dac4e5927a2725e1e3a8bcdada2a3bd24126468259d60db043"
+    },
+    {
+      "name": "maplibreSize",
+      "url": "https://unpkg.com/maplibre-gl@6.11.2/dist/maplibre-gl.mjs",
+      "utc": "2026-10-03T16:12:23.617Z",
+      "status": 200,
+      "bytes": 590228,
+      "gzip": 150454,
+      "sha256": "3f55566295583644617fe17d008a36c580414b8c71dd2e1fcff1309de6fdee5d"
+    },
+    {
+      "name": "publication",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_publicacao_populacao/FeatureServer/layers?f=json",
+      "utc": "2026-10-03T16:12:23.920Z",
+      "status": 200,
+      "bytes": 9276,
+      "gzip": 2403,
+      "sha256": "940927d7374fff5b69265721fb6908c89da959bb4369f427e16bdf3ac19df1b9"
+    },
+    {
+      "name": "originRelated",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/2cb71ccf9439497c89547b2989283f6c/relatedItems?f=json&relationshipType=Service2Service&direction=reverse",
+      "utc": "2026-10-03T16:12:23.967Z",
+      "status": 200,
+      "bytes": 29,
+      "gzip": 49,
+      "sha256": "dd2fec35b5c33b30c67992dbe43b565d7e19259339f381294a63ca945d15880f"
+    },
+    {
+      "name": "publicationItem",
+      "url": "https://arcgis.itajai.sc.gov.br/portal/sharing/rest/content/items/77ac524790464843ba2f3ce8543d0520?f=json",
+      "utc": "2026-10-03T16:12:24.010Z",
+      "status": 200,
+      "bytes": 1262,
+      "gzip": 664,
+      "sha256": "1d106932fc985526c9ed7660b38f266fd1c1fc2440cde37641c13199ef237e1f"
+    }
+  ],
+  "geometry": [
+    {
+      "key": "history0",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/0",
+      "name": "gisdb.sde.defesa_civil_area_atingida_1983",
+      "count": 1,
+      "fetched": 1,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 46361,
+      "bytesCompact": 45304,
+      "gzip": 17248,
+      "vertices": 1106,
+      "rawSampleCount": 1,
+      "rawSampleBytes": 46483,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "gisdb.sde.defesa_civil_area_atingida_1983.area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "hectares",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history1",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/1",
+      "name": "gisdb.sde.defesa_civil_area_atingida_1984",
+      "count": 1,
+      "fetched": 1,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 230863,
+      "bytesCompact": 225521,
+      "gzip": 83615,
+      "vertices": 5521,
+      "rawSampleCount": 1,
+      "rawSampleBytes": 230965,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "sum_area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "sum_hectar",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history2",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/2",
+      "name": "gisdb.sde.defesa_civil_area_atingida_2001",
+      "count": 1,
+      "fetched": 1,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 34453,
+      "bytesCompact": 33708,
+      "gzip": 13009,
+      "vertices": 820,
+      "rawSampleCount": 1,
+      "rawSampleBytes": 34561,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "sum_area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "sum_hectar",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history3",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/3",
+      "name": "gisdb.sde.defesa_civil_area_atingida_2008",
+      "count": 1,
+      "fetched": 1,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 856221,
+      "bytesCompact": 836531,
+      "gzip": 306181,
+      "vertices": 20489,
+      "rawSampleCount": 1,
+      "rawSampleBytes": 856303,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "text",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history4",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/4",
+      "name": "gisdb.sde.defesa_civil_area_atingida_2011",
+      "count": 32,
+      "fetched": 32,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 126097,
+      "bytesCompact": 123262,
+      "gzip": 44674,
+      "vertices": 2936,
+      "rawSampleCount": 32,
+      "rawSampleBytes": 124714,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "areas",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history5",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/5",
+      "name": "gisdb.sde.defesa_civil_cotas_2011_setembro",
+      "count": 5,
+      "fetched": 5,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 571291,
+      "bytesCompact": 558057,
+      "gzip": 196086,
+      "vertices": 13578,
+      "rawSampleCount": 5,
+      "rawSampleBytes": 569869,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "situa",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history6",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/6",
+      "name": "gisdb.sde.defesa_civil_cotas_2013_julho",
+      "count": 48,
+      "fetched": 48,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 22735,
+      "bytesCompact": 22323,
+      "gzip": 5308,
+      "vertices": 424,
+      "rawSampleCount": 48,
+      "rawSampleBytes": 20626,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "situa",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history7",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/7",
+      "name": "gisdb.sde.defesa_civil_cotas_2013_setembro",
+      "count": 58,
+      "fetched": 58,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 26161,
+      "bytesCompact": 25702,
+      "gzip": 7008,
+      "vertices": 481,
+      "rawSampleCount": 58,
+      "rawSampleBytes": 23572,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "situa",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history8",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/8",
+      "name": "gisdb.sde.defesa_civil_cotas_2014_junho",
+      "count": 55,
+      "fetched": 55,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 28071,
+      "bytesCompact": 27561,
+      "gzip": 7713,
+      "vertices": 534,
+      "rawSampleCount": 55,
+      "rawSampleBytes": 25626,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "situa",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "history9",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer/9",
+      "name": "gisdb.sde.defesa_civil_cotas_2015_outubro",
+      "count": 155,
+      "fetched": 155,
+      "pages": 1,
+      "geometryType": "esriGeometryPolygon",
+      "sr": {
+        "wkid": 4326,
+        "latestWkid": 4326,
+        "xyTolerance": 8.983152841195215e-9,
+        "zTolerance": 0.001,
+        "mTolerance": 0.001,
+        "falseX": -400,
+        "falseY": -400,
+        "xyUnits": 11258999068426.24,
+        "falseZ": -100000,
+        "zUnits": 10000,
+        "falseM": -100000,
+        "mUnits": 10000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 58609,
+      "bytesCompact": 57667,
+      "gzip": 13422,
+      "vertices": 1014,
+      "rawSampleCount": 100,
+      "rawSampleBytes": 32473,
+      "fields": [
+        {
+          "name": "objectid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "situa",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true
+    },
+    {
+      "key": "roadsGeom",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/View__vias_alagamentos/FeatureServer/1",
+      "name": "Sistema_viario_alagamentos",
+      "count": 555,
+      "fetched": 555,
+      "pages": 1,
+      "geometryType": "esriGeometryPolyline",
+      "sr": {
+        "falseM": -100000,
+        "xyTolerance": 0.001,
+        "mUnits": 10000,
+        "zUnits": 10000,
+        "latestWkid": 31982,
+        "zTolerance": 0.001,
+        "wkid": 31982,
+        "xyUnits": 10000,
+        "mTolerance": 0.001,
+        "falseX": -5120900,
+        "falseY": 1900,
+        "falseZ": -100000
+      },
+      "max": 1000,
+      "formats": "JSON, geoJSON, PBF",
+      "bytesGeoResponses": 185926,
+      "bytesCompact": 185881,
+      "gzip": 31858,
+      "vertices": 1543,
+      "rawSampleCount": 100,
+      "rawSampleBytes": 24766,
+      "exactGeometryDuplicates": 0,
+      "uniqueTarget": 536,
+      "fields": [
+        {
+          "name": "fid",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "join_count",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "target_fid",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "cod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "codsecao",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "largura",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "passeioe",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "passeiod",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "hierarquia",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "zonadm",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "nome",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "leidata",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "cod_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "codsecao_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "largura_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "passeioe_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "passeiod_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "hierarqu_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "zonadm_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "nome_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "leidata_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "trecho_alagado",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "data",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "trecho_alagado_11",
+          "type": "esriFieldTypeString"
+        }
+      ],
+      "pagination": true,
+      "distinctNames": 176,
+      "distinctCodes": 176,
+      "dates": [
+        {
+          "v": "null",
+          "n": 473
+        },
+        {
+          "v": "1696734000000",
+          "n": 26
+        },
+        {
+          "v": "1696820400000",
+          "n": 52
+        },
+        {
+          "v": "1696906800000",
+          "n": 4
+        }
+      ]
+    }
+  ],
+  "scenarios": {
+    "groups": [
+      {
+        "transb_m": 0.1,
+        "faixa_10cm": "0.00 a 0.10 m",
+        "nivel_cm": 10,
+        "n": 288,
+        "fetched": 288,
+        "vertices": 602,
+        "bytesCompact": 80163,
+        "gzip": 13428,
+        "pages": 1
+      },
+      {
+        "transb_m": 0.2,
+        "faixa_10cm": "0.10 a 0.20 m",
+        "nivel_cm": 20,
+        "n": 473,
+        "fetched": 473,
+        "vertices": 952,
+        "bytesCompact": 130579,
+        "gzip": 21482,
+        "pages": 1
+      },
+      {
+        "transb_m": 0.3,
+        "faixa_10cm": "0.20 a 0.30 m",
+        "nivel_cm": 30,
+        "n": 646,
+        "fetched": 646,
+        "vertices": 1301,
+        "bytesCompact": 179490,
+        "gzip": 29176,
+        "pages": 1
+      },
+      {
+        "transb_m": 0.4,
+        "faixa_10cm": "0.30 a 0.40 m",
+        "nivel_cm": 40,
+        "n": 810,
+        "fetched": 810,
+        "vertices": 1627,
+        "bytesCompact": 225762,
+        "gzip": 36315,
+        "pages": 1
+      },
+      {
+        "transb_m": 0.5,
+        "faixa_10cm": "0.40 a 0.50 m",
+        "nivel_cm": 50,
+        "n": 939,
+        "fetched": 939,
+        "vertices": 1891,
+        "bytesCompact": 261913,
+        "gzip": 41983,
+        "pages": 1
+      },
+      {
+        "transb_m": 0.6,
+        "faixa_10cm": "0.50 a 0.60 m",
+        "nivel_cm": 60,
+        "n": 1063,
+        "fetched": 1063,
+        "vertices": 2132,
+        "bytesCompact": 296091,
+        "gzip": 47314,
+        "pages": 2
+      },
+      {
+        "transb_m": 0.7,
+        "faixa_10cm": "0.60 a 0.70 m",
+        "nivel_cm": 70,
+        "n": 1177,
+        "fetched": 1177,
+        "vertices": 2365,
+        "bytesCompact": 328085,
+        "gzip": 52418,
+        "pages": 2
+      },
+      {
+        "transb_m": 0.8,
+        "faixa_10cm": "0.70 a 0.80 m",
+        "nivel_cm": 80,
+        "n": 1296,
+        "fetched": 1296,
+        "vertices": 2599,
+        "bytesCompact": 361038,
+        "gzip": 57698,
+        "pages": 2
+      },
+      {
+        "transb_m": 0.9,
+        "faixa_10cm": "0.80 a 0.90 m",
+        "nivel_cm": 90,
+        "n": 1432,
+        "fetched": 1432,
+        "vertices": 2878,
+        "bytesCompact": 399265,
+        "gzip": 63952,
+        "pages": 2
+      },
+      {
+        "transb_m": 1,
+        "faixa_10cm": "0.90 a 1.00 m",
+        "nivel_cm": 100,
+        "n": 1573,
+        "fetched": 1573,
+        "vertices": 3164,
+        "bytesCompact": 437123,
+        "gzip": 69930,
+        "pages": 2
+      },
+      {
+        "transb_m": 1.1,
+        "faixa_10cm": "1.00 a 1.10 m",
+        "nivel_cm": 110,
+        "n": 1900,
+        "fetched": 1900,
+        "vertices": 3822,
+        "bytesCompact": 536502,
+        "gzip": 83787,
+        "pages": 2
+      },
+      {
+        "transb_m": 1.2,
+        "faixa_10cm": "1.10 a 1.20 m",
+        "nivel_cm": 120,
+        "n": 2153,
+        "fetched": 2153,
+        "vertices": 4325,
+        "bytesCompact": 608724,
+        "gzip": 95065,
+        "pages": 3
+      },
+      {
+        "transb_m": 1.3,
+        "faixa_10cm": "1.20 a 1.30 m",
+        "nivel_cm": 130,
+        "n": 2314,
+        "fetched": 2314,
+        "vertices": 4641,
+        "bytesCompact": 653985,
+        "gzip": 101947,
+        "pages": 3
+      },
+      {
+        "transb_m": 1.4,
+        "faixa_10cm": "1.30 a 1.40 m",
+        "nivel_cm": 140,
+        "n": 2286,
+        "fetched": 2286,
+        "vertices": 4597,
+        "bytesCompact": 646603,
+        "gzip": 101652,
+        "pages": 3
+      },
+      {
+        "transb_m": 1.5,
+        "faixa_10cm": "1.40 a 1.50 m",
+        "nivel_cm": 150,
+        "n": 2398,
+        "fetched": 2398,
+        "vertices": 4819,
+        "bytesCompact": 678159,
+        "gzip": 106192,
+        "pages": 3
+      },
+      {
+        "transb_m": 1.6,
+        "faixa_10cm": "1.50 a 1.60 m",
+        "nivel_cm": 160,
+        "n": 2721,
+        "fetched": 2721,
+        "vertices": 5470,
+        "bytesCompact": 769598,
+        "gzip": 120329,
+        "pages": 3
+      },
+      {
+        "transb_m": 1.7,
+        "faixa_10cm": "1.60 a 1.70 m",
+        "nivel_cm": 170,
+        "n": 3088,
+        "fetched": 3088,
+        "vertices": 6215,
+        "bytesCompact": 873733,
+        "gzip": 136194,
+        "pages": 4
+      },
+      {
+        "transb_m": 1.8,
+        "faixa_10cm": "1.70 a 1.80 m",
+        "nivel_cm": 180,
+        "n": 3430,
+        "fetched": 3430,
+        "vertices": 6878,
+        "bytesCompact": 969463,
+        "gzip": 151239,
+        "pages": 4
+      },
+      {
+        "transb_m": 1.9,
+        "faixa_10cm": "1.80 a 1.90 m",
+        "nivel_cm": 190,
+        "n": 4039,
+        "fetched": 4039,
+        "vertices": 8128,
+        "bytesCompact": 1142816,
+        "gzip": 178015,
+        "pages": 5
+      },
+      {
+        "transb_m": 2,
+        "faixa_10cm": "1.90 a 2.00 m",
+        "nivel_cm": 200,
+        "n": 4543,
+        "fetched": 4543,
+        "vertices": 9137,
+        "bytesCompact": 1276148,
+        "gzip": 200518,
+        "pages": 5
+      },
+      {
+        "transb_m": 2.1,
+        "faixa_10cm": "2.00 a 2.10 m",
+        "nivel_cm": 210,
+        "n": 4987,
+        "fetched": 4987,
+        "vertices": 10027,
+        "bytesCompact": 1410621,
+        "gzip": 219396,
+        "pages": 5
+      },
+      {
+        "transb_m": 2.2,
+        "faixa_10cm": "2.10 a 2.20 m",
+        "nivel_cm": 220,
+        "n": 5626,
+        "fetched": 5626,
+        "vertices": 11308,
+        "bytesCompact": 1591213,
+        "gzip": 247193,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.3,
+        "faixa_10cm": "2.20 a 2.30 m",
+        "nivel_cm": 230,
+        "n": 5971,
+        "fetched": 5971,
+        "vertices": 11990,
+        "bytesCompact": 1688468,
+        "gzip": 261724,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.4,
+        "faixa_10cm": "2.30 a 2.40 m",
+        "nivel_cm": 240,
+        "n": 5885,
+        "fetched": 5885,
+        "vertices": 11819,
+        "bytesCompact": 1664395,
+        "gzip": 258683,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.5,
+        "faixa_10cm": "2.40 a 2.50 m",
+        "nivel_cm": 250,
+        "n": 5743,
+        "fetched": 5743,
+        "vertices": 11524,
+        "bytesCompact": 1623610,
+        "gzip": 252228,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.6,
+        "faixa_10cm": "2.50 a 2.60 m",
+        "nivel_cm": 260,
+        "n": 5849,
+        "fetched": 5849,
+        "vertices": 11745,
+        "bytesCompact": 1653895,
+        "gzip": 256833,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.7,
+        "faixa_10cm": "2.60 a 2.70 m",
+        "nivel_cm": 270,
+        "n": 5906,
+        "fetched": 5906,
+        "vertices": 11878,
+        "bytesCompact": 1670836,
+        "gzip": 260023,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.8,
+        "faixa_10cm": "2.70 a 2.80 m",
+        "nivel_cm": 280,
+        "n": 5763,
+        "fetched": 5763,
+        "vertices": 11578,
+        "bytesCompact": 1629804,
+        "gzip": 253622,
+        "pages": 6
+      },
+      {
+        "transb_m": 2.9,
+        "faixa_10cm": "2.80 a 2.90 m",
+        "nivel_cm": 290,
+        "n": 5715,
+        "fetched": 5715,
+        "vertices": 11487,
+        "bytesCompact": 1616325,
+        "gzip": 251307,
+        "pages": 6
+      },
+      {
+        "transb_m": 3,
+        "faixa_10cm": "2.90 a 3.00 m",
+        "nivel_cm": 300,
+        "n": 5608,
+        "fetched": 5608,
+        "vertices": 11273,
+        "bytesCompact": 1574896,
+        "gzip": 246692,
+        "pages": 6
+      },
+      {
+        "transb_m": 3.1,
+        "faixa_10cm": "3.00 a 3.10 m",
+        "nivel_cm": 310,
+        "n": 5410,
+        "fetched": 5410,
+        "vertices": 10879,
+        "bytesCompact": 1533580,
+        "gzip": 238539,
+        "pages": 6
+      },
+      {
+        "transb_m": 3.2,
+        "faixa_10cm": "3.10 a 3.20 m",
+        "nivel_cm": 320,
+        "n": 5156,
+        "fetched": 5156,
+        "vertices": 10414,
+        "bytesCompact": 1475868,
+        "gzip": 228686,
+        "pages": 6
+      },
+      {
+        "transb_m": 3.3,
+        "faixa_10cm": "3.20 a 3.30 m",
+        "nivel_cm": 330,
+        "n": 4895,
+        "fetched": 4895,
+        "vertices": 9836,
+        "bytesCompact": 1399108,
+        "gzip": 216592,
+        "pages": 5
+      },
+      {
+        "transb_m": 3.4,
+        "faixa_10cm": "3.30 a 3.40 m",
+        "nivel_cm": 340,
+        "n": 4692,
+        "fetched": 4692,
+        "vertices": 9446,
+        "bytesCompact": 1341936,
+        "gzip": 208139,
+        "pages": 5
+      },
+      {
+        "transb_m": 3.5,
+        "faixa_10cm": "3.40 a 3.50 m",
+        "nivel_cm": 350,
+        "n": 4610,
+        "fetched": 4610,
+        "vertices": 9274,
+        "bytesCompact": 1318006,
+        "gzip": 203993,
+        "pages": 5
+      },
+      {
+        "transb_m": 3.6,
+        "faixa_10cm": "3.50 a 3.60 m",
+        "nivel_cm": 360,
+        "n": 4273,
+        "fetched": 4273,
+        "vertices": 8605,
+        "bytesCompact": 1222040,
+        "gzip": 189754,
+        "pages": 5
+      },
+      {
+        "transb_m": 3.7,
+        "faixa_10cm": "3.60 a 3.70 m",
+        "nivel_cm": 370,
+        "n": 3961,
+        "fetched": 3961,
+        "vertices": 7970,
+        "bytesCompact": 1132652,
+        "gzip": 175687,
+        "pages": 4
+      },
+      {
+        "transb_m": 3.8,
+        "faixa_10cm": "3.70 a 3.80 m",
+        "nivel_cm": 380,
+        "n": 3764,
+        "fetched": 3764,
+        "vertices": 7580,
+        "bytesCompact": 1076509,
+        "gzip": 167192,
+        "pages": 4
+      },
+      {
+        "transb_m": 3.9,
+        "faixa_10cm": "3.80 a 3.90 m",
+        "nivel_cm": 390,
+        "n": 3680,
+        "fetched": 3680,
+        "vertices": 7417,
+        "bytesCompact": 1052699,
+        "gzip": 163521,
+        "pages": 4
+      },
+      {
+        "transb_m": 4,
+        "faixa_10cm": "3.90 a 4.00 m",
+        "nivel_cm": 400,
+        "n": 3452,
+        "fetched": 3452,
+        "vertices": 6943,
+        "bytesCompact": 980018,
+        "gzip": 153594,
+        "pages": 4
+      }
+    ],
+    "total": 139515,
+    "uniqueOids": 139515,
+    "uniqueRoadIds": 5713,
+    "uniqueSegmentIds": 139515,
+    "exactGeometryDuplicates": 0,
+    "crossLevelExactDuplicates": 0,
+    "bytesCompact": 39510120,
+    "gzip": 6158470,
+    "vertices": 280536,
+    "roadIdsWithMultipleLevels": 5258
+  },
+  "metadata": {
+    "ortho": {
+      "serviceItemId": "e21545ff02fc444bb016964411feddd9",
+      "name": "ortoimg2020",
+      "mapName": "ortoimg2020",
+      "capabilities": "TilesOnly,Tilemap",
+      "fullExtent": {
+        "xmin": -5439934.400357209,
+        "ymin": -3130090.114507566,
+        "xmax": -5412449.085306261,
+        "ymax": -3103249.5415325263,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "minLOD": 10,
+      "maxLOD": 20,
+      "exportTilesAllowed": true,
+      "supportedExtensions": ""
+    },
+    "basemap": {
+      "name": "basemap_itajai",
+      "capabilities": "TilesOnly,Tilemap",
+      "fullExtent": {
+        "xmin": -20037508.342787,
+        "ymin": -20037508.342787,
+        "xmax": 20037508.342787,
+        "ymax": 20037508.342787,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "minLOD": 0,
+      "maxLOD": 19,
+      "exportTilesAllowed": false,
+      "supportedExtensions": ""
+    },
+    "style": {
+      "sources": {
+        "esri": {
+          "type": "vector",
+          "bounds": [
+            -180,
+            -85.0511,
+            180,
+            85.0511
+          ],
+          "minzoom": 0,
+          "maxzoom": 22,
+          "scheme": "xyz",
+          "url": "../../"
+        }
+      },
+      "layers": [
+        {
+          "id": "background",
+          "type": "background"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_municipioslimitrofes/0",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_limitesintermunicipaisitajai",
+          "type": "fill"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_areaconstruidabasemap/1",
+          "type": "fill"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_hidtrechosdrenagem",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_hidmassadrenagem",
+          "type": "fill"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_parques",
+          "type": "fill"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_divisaoperimetrourbano",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.viewsistemaviario3857",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_portoplanodesenvzoneamento",
+          "type": "fill"
+        },
+        {
+          "id": "novo mapa/linhapreamar/lines",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_relevocurvassimplificadas",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_divisaoadministrativa/0",
+          "type": "line"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_municipioslimitrofes/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_hidtrechosdrenagem/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_parques/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_divisaoperimetrourbano/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.viewsistemaviario3857/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_portoplanodesenvzoneamento/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/linhapreamar/lines/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_relevocurvassimplificadas/label/Class 1",
+          "type": "symbol"
+        },
+        {
+          "id": "novo mapa/gisdb.itajai.view_basemap_divisaoadministrativa/label/Class 1",
+          "type": "symbol"
+        }
+      ]
+    },
+    "history": {
+      "serviceItemId": "32c4ca9500d6497fa47f3c92a17618f3",
+      "description": "",
+      "copyrightText": "",
+      "capabilities": "Query,Create,Update,Delete,Uploads,Editing,Extract",
+      "supportedQueryFormats": "JSON",
+      "maxRecordCount": 1000,
+      "fullExtent": {
+        "xmin": -48.87170334563673,
+        "ymin": -27.049591450387634,
+        "xmax": -48.62449818595254,
+        "ymax": -26.836154988615217,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326,
+          "xyTolerance": 8.983152841195215e-9,
+          "zTolerance": 0.001,
+          "mTolerance": 0.001,
+          "falseX": -400,
+          "falseY": -400,
+          "xyUnits": 11258999068426.24,
+          "falseZ": -100000,
+          "zUnits": 10000,
+          "falseM": -100000,
+          "mUnits": 10000
+        }
+      }
+    },
+    "roads": {
+      "serviceItemId": "6a28ba3105f04ce0b0ae16875f98b80a",
+      "name": "Sistema_viario_alagamentos",
+      "description": "",
+      "copyrightText": "",
+      "capabilities": "Query",
+      "geometryType": "esriGeometryPolyline",
+      "supportedQueryFormats": "JSON, geoJSON, PBF",
+      "objectIdField": "fid",
+      "maxRecordCount": 1000,
+      "extent": {
+        "ymin": 7003643.4279,
+        "xmin": 711544.6864,
+        "ymax": 7029233.6556,
+        "xmax": 735605.8152999999,
+        "spatialReference": {
+          "falseM": -100000,
+          "xyTolerance": 0.001,
+          "mUnits": 10000,
+          "zUnits": 10000,
+          "latestWkid": 31982,
+          "zTolerance": 0.001,
+          "wkid": 31982,
+          "xyUnits": 10000,
+          "mTolerance": 0.001,
+          "falseX": -5120900,
+          "falseY": 1900,
+          "falseZ": -100000
+        }
+      }
+    },
+    "scenarios": {
+      "serviceItemId": "6986e7e35651447aa1a7ab9eee316487",
+      "name": "vias_atingidas_nivel",
+      "description": "",
+      "copyrightText": "",
+      "capabilities": "Query",
+      "geometryType": "esriGeometryPolyline",
+      "supportedQueryFormats": "JSON, geoJSON, PBF",
+      "objectIdField": "fid",
+      "maxRecordCount": 1000,
+      "extent": {
+        "ymin": 7003682.3022,
+        "xmin": 712146.0800999999,
+        "ymax": 7029233.656,
+        "xmax": 735473.2800000003,
+        "spatialReference": {
+          "falseM": -100000,
+          "xyTolerance": 0.001,
+          "mUnits": 10000,
+          "zUnits": 10000,
+          "latestWkid": 31982,
+          "zTolerance": 0.001,
+          "wkid": 31982,
+          "xyUnits": 10000,
+          "mTolerance": 0.001,
+          "falseX": -5120900,
+          "falseY": 1900,
+          "falseZ": -100000
+        }
+      }
+    },
+    "raster": {
+      "serviceItemId": "7fbdedd0f88a414bb97343ebf20f02ef",
+      "mapName": "Map",
+      "description": "",
+      "copyrightText": "",
+      "capabilities": "Query,Map,Data",
+      "supportedQueryFormats": "JSON, geoJSON, PBF",
+      "maxRecordCount": 2000,
+      "fullExtent": {
+        "xmin": 710930.1176547036,
+        "ymin": 7000805.302154107,
+        "xmax": 736228.117654704,
+        "ymax": 7029523.302154108,
+        "spatialReference": {
+          "wkid": 31982,
+          "latestWkid": 31982,
+          "xyTolerance": 0.001,
+          "zTolerance": 0.001,
+          "mTolerance": 0.001,
+          "falseX": -5120900,
+          "falseY": 1900,
+          "xyUnits": 10000,
+          "falseZ": -100000,
+          "zUnits": 10000,
+          "falseM": -100000,
+          "mUnits": 10000
+        }
+      },
+      "exportTilesAllowed": false,
+      "supportedExtensions": ""
+    },
+    "polygons": {
+      "serviceItemId": "4c3bc1fa171241ecb28b398537aa4c55",
+      "name": "polygons",
+      "description": "",
+      "copyrightText": "",
+      "capabilities": "Query",
+      "geometryType": "esriGeometryPolygon",
+      "supportedQueryFormats": "JSON, geoJSON, PBF",
+      "objectIdField": "objectid1",
+      "maxRecordCount": 2000,
+      "extent": {
+        "ymin": -3135601.6279999986,
+        "xmin": -5440054.040899998,
+        "ymax": -3106542.7173000015,
+        "xmax": -5412519.987399999,
+        "spatialReference": {
+          "falseM": -100000,
+          "xyTolerance": 0.001,
+          "mUnits": 10000,
+          "zUnits": 10000,
+          "latestWkid": 3857,
+          "zTolerance": 0.001,
+          "wkid": 102100,
+          "xyUnits": 148923141.92838538,
+          "mTolerance": 0.001,
+          "falseX": -20037700,
+          "falseY": -30241100,
+          "falseZ": -100000
+        }
+      }
+    },
+    "cotas": {},
+    "publication": {}
+  },
+  "limits": [
+    "Polígonos candidatos a cenários foram apenas amostrados em 100 feições por camada; não há equivalência semântica comprovada.",
+    "Ausência de duplicatas geométricas exatas não prova ausência de interseções parciais.",
+    "Metadados acessíveis não estabelecem licença de reutilização.",
+    "Uma falha transitória no item público foi resolvida por nova consulta; endpoint legado .js do MapLibre retornou 404 e foi substituído pelo .mjs declarado no package.json.",
+    "Não houve benchmark mobile nem teste integrado de renderização."
+  ],
+  "integrity": {
+    "differences": [],
+    "before": 63,
+    "after": 63
+  },
+  "validation": {
+    "geometryResponses": 168,
+    "totalFeatures": 140427,
+    "nullGeometries": 0,
+    "duplicateIdsWithinPage": 0,
+    "scenarioGeojsonResponseBytes": 39523464,
+    "scenarioRaw1000SampleBytes": 210521,
+    "productionFilesVerified": 63
+  },
+  "portalItems": {
+    "iteme21545ff02fc444bb016964411feddd9": {
+      "id": "e21545ff02fc444bb016964411feddd9",
+      "title": "Ortoimagem restituição 2020",
+      "description": "Realizada pela empresa Engemap, data do voo: dez/2020",
+      "snippet": "aeroimagem engemap 2020",
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restituição_2020/MapServer",
+      "modified": 1641399597058
+    },
+    "item7a110ef9198540068341e6908c6bf298": {
+      "id": "7a110ef9198540068341e6908c6bf298",
+      "title": "basemap_itajai_urb",
+      "description": "<div style='text-align:Left;font-size:12pt'><p><span>basemap_sem_estilo</span></p></div>",
+      "snippet": "basemap_itajai",
+      "licenseInfo": "",
+      "accessInformation": "",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer",
+      "modified": 1788383978568
+    },
+    "item6986e7e35651447aa1a7ab9eee316487": {
+      "id": "6986e7e35651447aa1a7ab9eee316487",
+      "title": "vias_atingidas_nivel_inundacao_publica_view",
+      "description": null,
+      "snippet": "defesa civil",
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_inundacao_publica_view/FeatureServer",
+      "modified": 1789780539151
+    },
+    "item99d0c21086bf4abfa1f16a29b9188713": {
+      "id": "99d0c21086bf4abfa1f16a29b9188713",
+      "title": "Inundação cotas",
+      "description": "",
+      "snippet": "Teste lucas",
+      "licenseInfo": "",
+      "accessInformation": "",
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Inundação_cotas/FeatureServer",
+      "modified": 1736168980902
+    },
+    "item7fbdedd0f88a414bb97343ebf20f02ef": {
+      "id": "7fbdedd0f88a414bb97343ebf20f02ef",
+      "title": "mancha_inundacao",
+      "description": null,
+      "snippet": "Hand",
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/mancha_inundacao/MapServer",
+      "modified": 1789151890309
+    },
+    "historyItem": {
+      "id": "32c4ca9500d6497fa47f3c92a17618f3",
+      "title": "historico_inundacoes",
+      "description": null,
+      "snippet": "Histórico de Inundações Itajaí",
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/historico_inundacoes/FeatureServer",
+      "modified": 1736169674446
+    },
+    "polygonItem": {
+      "id": "4c3bc1fa171241ecb28b398537aa4c55",
+      "title": "mancha_inundacao_final",
+      "description": null,
+      "snippet": null,
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/mancha_inundacao_final/FeatureServer",
+      "modified": 1758629931081
+    },
+    "publicationItem": {
+      "id": "77ac524790464843ba2f3ce8543d0520",
+      "title": "vias_atingidas_nivel_publicacao_populacao",
+      "description": null,
+      "snippet": null,
+      "licenseInfo": null,
+      "accessInformation": null,
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/vias_atingidas_nivel_publicacao_populacao/FeatureServer",
+      "modified": 1789779959655
+    }
+  }
+}

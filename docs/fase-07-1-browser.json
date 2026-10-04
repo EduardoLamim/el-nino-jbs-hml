@@ -1,0 +1,107 @@
+{
+  "utc": "2026-10-03T22:20:09.998Z",
+  "browser": "154.0.4258.53",
+  "checks": [
+    {
+      "name": "Dashboard não carrega OpenLayers nem históricos",
+      "passed": true
+    },
+    {
+      "name": "Cartográfica real: estilo/sprites/PBF e renderização",
+      "passed": true
+    },
+    {
+      "name": "Aérea real: tiles e renderização",
+      "passed": true
+    },
+    {
+      "name": "Histórico 1983/2008 e 555 vias via arquivos locais sob demanda",
+      "passed": true
+    },
+    {
+      "name": "Mobile 390: sem overflow, controles, histórico/vias, falha dupla de base, teclado, DC e alerta preservados",
+      "passed": true,
+      "dims": {
+        "width": 390,
+        "scroll": 390,
+        "map": 362
+      }
+    },
+    {
+      "name": "Mobile 320: sem overflow, controles, histórico/vias, falha dupla de base, teclado, DC e alerta preservados",
+      "passed": true,
+      "dims": {
+        "width": 320,
+        "scroll": 320,
+        "map": 292
+      }
+    },
+    {
+      "name": "Falha dos dois datasets opcionais mantém mapa e detalhes de DC",
+      "passed": true
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/styles/root.json",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/sprites/sprite.json",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/sprites/sprite.png",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/373.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/372.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/374.pbf",
+      "status": 404
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/372.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/373.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/374.pbf",
+      "status": 404
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/746",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/747",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/746",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/747",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/745",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/745",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

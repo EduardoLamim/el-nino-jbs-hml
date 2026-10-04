@@ -1,50 +1,45 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Navegacao } from './components/Navegacao';
-import { Placeholder, paginas, type Pagina } from './pages/Placeholder';
+import { paginas, type Pagina } from './pages/Placeholder';
 import { useDados } from './hooks/useDados';
-import { rotuloNivel } from './utils/format';
-import { ImpactoJbs } from './components/ImpactoJbs';
+import { PainelOperacional } from './components/Operational';
+import { Dashboard } from './pages/Dashboard';
+import { Monitoramento, secoes, type SecaoMonitoramento } from './pages/Monitoramento';
+import { CompactOperational } from './components/CompactOperational';
+import { ActionPlan } from './pages/ActionPlan';
+const TerritoryMapPage = lazy(() => import('./pages/TerritoryMap').then(m => ({ default: m.TerritoryMapPage })));
+import type { EstadoImpacto } from './domain/impact';
 
-function paginaAtual(): Pagina | null {
-  const rota = window.location.hash.replace(/^#\/?/, '') || 'dashboard';
-  return Object.hasOwn(paginas, rota) ? rota as Pagina : null;
+function rotaAtual() {
+  const [pagina = 'dashboard', secao, ...resto] = (window.location.hash.replace(/^#\/?/, '') || 'dashboard').split('/');
+  const valida = Object.hasOwn(paginas, pagina) && resto.length === 0 && (!secao || (pagina === 'monitoramento' && Object.hasOwn(secoes, secao)));
+  return { pagina: valida ? pagina as Pagina : null, secao: (secao ?? 'rios') as SecaoMonitoramento };
 }
 export default function App() {
-  const [pagina, setPagina] = useState(paginaAtual);
+  const [rota, setRota] = useState(rotaAtual);
   const dados = useDados();
+  const [impacto, setImpacto] = useState<EstadoImpacto>({ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' });
   useEffect(() => {
-    const atualizar = () => setPagina(paginaAtual());
+    const atualizar = () => setRota(rotaAtual());
     window.addEventListener('hashchange', atualizar);
     return () => window.removeEventListener('hashchange', atualizar);
   }, []);
+  const carregado = dados.estado === 'carregado' ? dados.dados : null;
   return <>
-    <header><h1>Monitoramento El Niño — JBS Terminais</h1>
-      <p>Fase 05 · Validação funcional de Impacto JBS · Itajaí/SC</p>
-      <p>Retrato da última coleta. Consulte os horários e a qualidade das fontes.</p>
-      <Navegacao atual={pagina} /></header>
-    <main>
-      <ImpactoJbs />
-      <aside aria-label="Disponibilidade dos dados" aria-live="polite">
-        {dados.estado === 'carregando' && <p>Carregando contratos locais…</p>}
-        {dados.estado === 'erro' && <p role="alert">{dados.mensagem}</p>}
-        {dados.estado === 'carregado' && <>
-          <p>Condição ambiental automática: <strong>{rotuloNivel(dados.dados.status.nivel_jbs.nivel)}</strong></p>
-          <p>Qualidade: {dados.dados.status.qualidade_monitoramento.estado.replaceAll('_', ' ')}</p>
-          <p>Coleta: {dados.dados.status.atualizado_em ?? 'Não disponível'} · Desde: {dados.dados.status.nivel_jbs.desde ?? 'Não reconstruível'}</p>
-          <h2>Gatilhos ativos</h2>
-          {dados.dados.status.nivel_jbs.gatilhos.length === 0 && <p>Nenhum gatilho de risco conhecido nesta coleta.</p>}
-          <ul>{dados.dados.status.nivel_jbs.gatilhos.map(g => <li key={`${g.tipo}-${g.origem}`}>
-            {g.descricao} {g.stale && <strong>Última condição conhecida — fonte degradada.</strong>}
-            {g.tipo === 'estacao_hidrologica' && <span> Nível: {g.nivel_observado_m ?? '—'} m;
-              limite: {g.limite_responsavel_m ?? '—'} m; tendência: {g.tendencia};
-              normalização: {g.normalizacao?.leituras_abaixo ?? 0}/3.</span>}
-            <span> Horário da fonte: {g.atualizado_em ?? 'Não informado'}. {g.motivo}</span>
-          </li>)}</ul>
-          <h2>Qualidade do monitoramento</h2>
-          <ul>{dados.dados.status.qualidade_monitoramento.problemas.map((problema, i) => <li key={i}>{problema}</li>)}</ul>
-        </>}
-      </aside>
-      {pagina ? <Placeholder pagina={pagina} /> : <section><h2>Página não encontrada</h2><a href="#/dashboard">Voltar ao Dashboard</a></section>}
-    </main>
+    <a className="skip-link" href="#conteudo" onClick={e => { e.preventDefault(); document.getElementById('conteudo')?.focus(); }}>Ir para o conteúdo</a>
+    <header className="app-header"><div className="brand"><span className="brand-mark" aria-hidden="true">JBS</span><div><p className="eyebrow">JBS Terminais · Itajaí / SC</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /></header>
+    <main id="conteudo" tabIndex={-1}>
+      {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
+      <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários e a qualidade das fontes.</p>
+      {dados.estado === 'carregando' && <p role="status">Carregando dados…</p>}
+      {dados.estado === 'erro' && <p className="card" role="alert">{dados.mensagem}</p>}
+      {/* Mantém a mesma assinatura/instância de Impacto JBS ao navegar. */}
+      <div hidden={rota.pagina !== 'dashboard'}><PainelOperacional status={carregado?.status} onEstado={setImpacto} />
+        {carregado && <Dashboard status={carregado.status} territorio={carregado.territorio} />}</div>
+      {rota.pagina === 'monitoramento' && carregado && <Monitoramento status={carregado.status} secao={rota.secao} />}
+      {rota.pagina === 'mapa' && carregado && <Suspense fallback={<p role="status">Carregando mapa…</p>}><TerritoryMapPage status={carregado.status} territorio={carregado.territorio} /></Suspense>}
+      {rota.pagina === 'plano-de-acao' && <ActionPlan status={carregado?.status} territorio={carregado?.territorio} impacto={impacto} />}
+      {!rota.pagina && <section className="card"><h2>Página não encontrada</h2><a href="#/dashboard">Voltar ao Dashboard</a></section>}
+    </main><footer>JBS Terminais · Apoio à decisão do Comitê El Niño <span>Horários de Brasília</span></footer>
   </>;
 }

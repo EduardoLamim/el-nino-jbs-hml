@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import { comandoImpactoSchema, labelsImpacto, tipoImpactoSchema } from '../domain/impact';
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { comandoImpactoSchema, labelsImpacto, tipoImpactoSchema, type EstadoImpacto } from '../domain/impact';
 import { criarImpactoStore } from '../services/impact';
+import { horario } from '../utils/presentation';
 
-export function ImpactoJbs() {
+export function ImpactoJbs({ painelAmbiental, contextoAmbiental, onEstado }: { painelAmbiental?: ReactNode; contextoAmbiental?: ReactNode; onEstado?: (estado: EstadoImpacto) => void } = {}) {
   const [store] = useState(criarImpactoStore);
   const estado = useSyncExternalStore(store.subscribe, store.snapshot);
+  // Compartilha somente o snapshot público para apresentação; mantém um único store/Realtime.
+  useEffect(() => { onEstado?.(estado); }, [estado, onEstado]);
   const [operacao, setOperacao] = useState<'ativar' | 'encerrar' | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [mensagem, setMensagem] = useState('');
@@ -13,18 +16,18 @@ export function ImpactoJbs() {
   const alvo = useRef<string | null>(null);
   useEffect(() => { store.iniciar(); return () => store.parar(); }, [store]);
   const ativo = estado.dado?.ativo === true;
-  return <section aria-label="Impacto JBS" style={ativo ? { background: '#161616', color: '#fff', padding: '1rem' } : { padding: '1rem', border: '1px solid #777' }}>
-    <h2>{ativo ? '⚫ IMPACTO JBS' : 'Impacto JBS'}</h2>
-    <p>Impacto físico confirmado no Terminal, em infraestrutura crítica, área operacional ou acesso operacional imediato.</p>
+  return <>{!ativo && painelAmbiental}<section aria-label="Impacto JBS" className={ativo ? 'operational impact-active' : 'terminal-card card'}>
+    <h2>{ativo ? '⚫ IMPACTO JBS' : painelAmbiental ? 'Condição do Terminal' : 'Impacto JBS'}</h2>
+    {ativo && <p className="lead">Impacto físico confirmado no Terminal, em infraestrutura crítica, área operacional ou acesso operacional imediato.</p>}
     <div aria-live="polite">
       {!estado.dado && <p>Estado operacional JBS indisponível. Não foi possível verificar se existe Impacto JBS ativo.</p>}
-      {estado.dado?.ativo && <p>{labelsImpacto[estado.dado.tipo]} · Acionado em {new Date(estado.dado.acionado_em).toLocaleString('pt-BR')}</p>}
-      {estado.dado && !estado.dado.ativo && <p>{estado.qualidade === 'confirmado' ? 'Nenhum Impacto JBS ativo na última consulta confirmada.' : 'Último estado conhecido: inativo. A condição atual não foi confirmada.'}</p>}
+      {estado.dado?.ativo && <p className="impact-type">{labelsImpacto[estado.dado.tipo]} · Acionado em {horario(estado.dado.acionado_em)}</p>}
+      {estado.dado && !estado.dado.ativo && <p>{estado.qualidade === 'confirmado' ? painelAmbiental ? 'Nenhum impacto físico confirmado.' : 'Nenhum Impacto JBS ativo na última consulta confirmada.' : 'Último estado conhecido: inativo. A condição atual não foi confirmada.'}</p>}
       {estado.qualidade === 'degradado' && <p>Estado degradado/desatualizado. Último estado conhecido preservado; confirmação pendente.</p>}
-      <p>Última confirmação: {estado.confirmado_em ? new Date(estado.confirmado_em).toLocaleString('pt-BR') : 'Nenhuma'}.</p>
-      {estado.realtime !== 'conectado' && <p>Sincronização em reconexão; reconciliação automática a cada minuto.</p>}
+      <p className="meta">Última confirmação: {estado.confirmado_em ? horario(estado.confirmado_em) : 'Nenhuma'}.</p>
+      {estado.realtime !== 'conectado' && <p className="meta">Sincronização em reconexão; atualização automática a cada minuto.</p>}
     </div>
-    <p>A condição ambiental automática permanece independente e está disponível abaixo.</p>
+    {ativo && contextoAmbiental}
     {!operacao && <button type="button" onClick={() => { alvo.current = estado.dado?.ativo ? estado.dado.impacto_id : null;
       setOperacao(ativo ? 'encerrar' : 'ativar'); setMensagem(''); }}>{ativo ? 'Encerrar Impacto JBS' : 'Acionar Impacto JBS'}</button>}
     {operacao && <form className="impact-form" autoComplete="off" onSubmit={async e => {
@@ -50,5 +53,5 @@ export function ImpactoJbs() {
       </fieldset>
     </form>}
     <p role="status">{mensagem}</p>
-  </section>;
+  </section></>;
 }

@@ -2,6 +2,8 @@
 
 Fixtures não são fallback de produção. Nenhuma contém dados de colaboradores, cookies ou sessões.
 
+- `status-operacional.json`: snapshot público aprovado de 01/10/2026, recuperado de `HEAD` (`88f6739`) na Fase 08. Fixa entradas dos testes de UI/histerese para que uma coleta operacional posterior não altere suas expectativas. Não é utilizado pelo build nem como recuperação automática.
+
 - `situacao-atencao.json`, `alertas-null.json`: respostas públicas reais da Defesa Civil em 01/10/2026.
 - `rios.json`, `chuvas.json`, `barragens.json`: recortes do `data-page` oficial, com estações e séries completas; removidos props de navegação e histórico adicional não utilizado.
 - `epagri-municipio.json`: somente a entrada real Itajaí/4208203 do catálogo `https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni`, obtida em 01/10/2026.
