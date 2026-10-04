@@ -3,7 +3,7 @@ import { dia, horario, maximoChuva, medida, qualidade } from '../utils/presentat
 
 export function ResumoChuva({ status }: { status: Status }) {
   const validas = Object.values(status.chuvas).filter(e => e.chuva_1_h_mm !== null && Number.isFinite(e.chuva_1_h_mm) && e.qualidade !== 'indisponivel');
-  return <section className="card"><p className="eyebrow">Situação atual</p><h2>Chuva — Itajaí</h2>
+  return <section className="card rain-card"><p className="eyebrow">Situação atual</p><h2>Chuva — Itajaí</h2>
     {(['chuva_1_h_mm', 'chuva_24_h_mm'] as const).map(campo => {
       const max = maximoChuva(status, campo);
       return <div className="rain-summary" key={campo}><span>{campo === 'chuva_1_h_mm' ? 'Maior registro — última 1h' : 'Maior acumulado — 24h'}</span>
@@ -20,7 +20,7 @@ export function ResumoChuva({ status }: { status: Status }) {
 }
 
 export function PrevisaoDias({ previsao, resumo = false }: { previsao: Previsao; resumo?: boolean }) {
-  return <section className={resumo ? 'card' : 'forecast-section'} aria-label="Previsão Epagri/Ciram">
+  return <section className={resumo ? 'card forecast-card' : 'forecast-section'} aria-label="Previsão Epagri/Ciram">
     <p className="eyebrow">Epagri/Ciram · {previsao.municipio ?? 'Localidade não informada'}</p><h2>Previsão</h2>
     <p>Informação meteorológica para consulta.</p>
     <p className="meta">Consulta: {horario(previsao.coletado_em)}{previsao.atualizado_em && ` · Atualização da fonte: ${previsao.atualizado_em.length === 10 ? dia(previsao.atualizado_em) : horario(previsao.atualizado_em)}`}</p>

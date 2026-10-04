@@ -27,8 +27,8 @@ export function PainelOperacional({ status, onEstado }: { status?: Status; onEst
   const contexto = <><p className="underlying">Condição ambiental: <strong>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</strong></p>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}</>;
   const painel = <section className={`operational level-${nivel ?? 'desconhecido'}`} aria-label="Nível de Alerta JBS">
-    <p className="eyebrow">Nível de Alerta JBS</p><h2>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</h2>
-    <p className="lead">{nivel === 'normalidade' ? 'Condição ambiental em Normalidade na última avaliação disponível.' : nivel ? 'A condição ambiental é sustentada pelas fontes abaixo.' : 'Não foi possível determinar a condição ambiental.'}</p>
+    <div className="level-overview"><p className="eyebrow">Nível de Alerta JBS</p><h2>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</h2>
+    <p className="lead">{nivel === 'normalidade' ? 'Condição ambiental em Normalidade na última avaliação disponível.' : nivel ? 'A condição ambiental é sustentada pelas fontes abaixo.' : 'Não foi possível determinar a condição ambiental.'}</p></div>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}
   </section>;
   return <ImpactoJbs painelAmbiental={painel} contextoAmbiental={contexto} onEstado={onEstado} />;

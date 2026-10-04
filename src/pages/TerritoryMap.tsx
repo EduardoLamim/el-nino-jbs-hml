@@ -15,7 +15,7 @@ export const avisoHistorico = 'Áreas com registros históricos de inundação. 
 export const avisoVias = 'Trechos/feições associados a registros históricos de inundação. Não representa a condição atual das vias.';
 
 export function TerritoryMap({ status, territorio, geo }: { status: Status; territorio: Territorio; geo: BairrosGeojson | null }) {
-  const [camadas, setCamadas] = useState({ bairros: true, exposicao: true, estacoes: true, historico: false, vias: false });
+  const [camadas, setCamadas] = useState({ bairros: true, exposicao: true, estacoes: true, historico: false, vias: false, nomes: false });
   const [base, setBase] = useState<BaseMapa>('simplificada');
   const [falhaBase, setFalhaBase] = useState<BaseMapa | null>(null);
   const [falhaMotor, setFalhaMotor] = useState(false);
@@ -59,7 +59,8 @@ export function TerritoryMap({ status, territorio, geo }: { status: Status; terr
       <p className="map-disclaimer">Informações territoriais representam exposição e vulnerabilidade histórica e não significam impacto real atual.</p>
     </div><aside className="map-sidebar">
       <details className="card map-layer-controls" open><summary>Camadas do mapa</summary>
-        {([['bairros', 'Limites dos bairros'], ['exposicao', 'Exposição agregada JBS'], ['estacoes', 'Estações hidrológicas DC01–DC11'], ['historico', 'Histórico de inundação'], ['vias', 'Vias com histórico de inundação']] as const).map(([key, label]) => <label key={key}><input type="checkbox" checked={camadas[key]} onChange={e => setCamadas(v => ({ ...v, [key]: e.target.checked }))} />{label}</label>)}
+        {([['bairros', 'Limites dos bairros'], ['nomes', 'Nomes dos bairros'], ['exposicao', 'Exposição agregada JBS'], ['estacoes', 'Estações hidrológicas DC01–DC11'], ['historico', 'Histórico de inundação'], ['vias', 'Vias com histórico de inundação']] as const).map(([key, label]) => <label key={key}><input type="checkbox" checked={camadas[key]} onChange={e => setCamadas(v => ({ ...v, [key]: e.target.checked }))} />{label}</label>)}
+        <p className="meta layer-hint">Os nomes se ajustam ao espaço disponível. Amplie o mapa para visualizar mais bairros.</p>
         {camadas.historico && <div className="historical-control"><label htmlFor="referencia-historica">Referência histórica</label><select id="referencia-historica" value={referencia} onChange={e => setReferencia(e.target.value)}>{referenciasHistoricas.map((r, i) => <option value={`historico-${i}`} key={r}>{r}</option>)}</select><p>{avisoHistorico}</p><p className="meta">As duas referências de 2011 não representam automaticamente dois eventos independentes.</p></div>}
         {camadas.vias && <p>{avisoVias}</p>}
         {([['Histórico', camadas.historico, historico], ['Vias históricas', camadas.vias, vias]] as const).map(([nome, enabled, dado]) => enabled && <div key={nome} aria-live="polite">{dado.carregando && <p>Carregando {nome.toLowerCase()}…</p>}{dado.erro && <p role="status">{nome} indisponível. As demais camadas permanecem funcionais. Desative e ative a camada para tentar novamente.</p>}{dado.geo && dado.arquivo && <p className="meta">{dado.arquivo.referencia}: {dado.arquivo.contagem} feições. Prefeitura de Itajaí / Defesa Civil. Coleta: {horario(dado.arquivo.coletado_em)}. <a href={`${import.meta.env.BASE_URL}data/historico/manifesto.json`}>Proveniência</a></p>}</div>)}

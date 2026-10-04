@@ -18,7 +18,7 @@ export function Dashboard({ status, territorio }: { status: Status; territorio: 
   const concentracoes = [...territorio.bairros].sort((a, b) => b.colaboradores_jbs - a.colaboradores_jbs).slice(0, 3);
   return <div className="dashboard-grid">
     <SituacaoOficial status={status} />
-    <section className="card"><p className="eyebrow">Visão das estações</p><h2>Rios</h2><p>11 estações monitoradas</p>
+    <section className="card river-summary-card"><p className="eyebrow">Visão das estações</p><h2>Rios</h2><p>11 estações monitoradas</p>
       <div className="river-counts">{nivelSchema.options.map(n => <div key={n}><strong>{rios.contagem[n]}</strong><span>{rotuloNivel(n)}</span></div>)}
         {rios.contagem.desconhecido > 0 && <div><strong>{rios.contagem.desconhecido}</strong><span>Sem estado confirmado</span></div>}</div>
       <p>Maior severidade: <strong>{rotuloNivel(rios.maior)}</strong></p>

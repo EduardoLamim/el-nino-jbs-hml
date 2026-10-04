@@ -9,6 +9,7 @@ import { CompactOperational } from './components/CompactOperational';
 import { ActionPlan } from './pages/ActionPlan';
 const TerritoryMapPage = lazy(() => import('./pages/TerritoryMap').then(m => ({ default: m.TerritoryMapPage })));
 import type { EstadoImpacto } from './domain/impact';
+import logo from './assets/jbs-terminais-branco.png';
 
 function rotaAtual() {
   const [pagina = 'dashboard', secao, ...resto] = (window.location.hash.replace(/^#\/?/, '') || 'dashboard').split('/');
@@ -27,7 +28,7 @@ export default function App() {
   const carregado = dados.estado === 'carregado' ? dados.dados : null;
   return <>
     <a className="skip-link" href="#conteudo" onClick={e => { e.preventDefault(); document.getElementById('conteudo')?.focus(); }}>Ir para o conteúdo</a>
-    <header className="app-header"><div className="brand"><span className="brand-mark" aria-hidden="true">JBS</span><div><p className="eyebrow">JBS Terminais · Itajaí / SC</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /></header>
+    <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /></header>
     <main id="conteudo" tabIndex={-1}>
       {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
       <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários e a qualidade das fontes.</p>

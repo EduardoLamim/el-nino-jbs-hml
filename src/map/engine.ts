@@ -17,9 +17,10 @@ import type { BairrosGeojson, Territorio } from '../domain/territory';
 import type { ColecaoHistorica } from '../domain/map-layers';
 import { aereaUrl, estiloUrl, adaptarEstilo, SaudeBase, type BaseMapa } from './basemaps';
 import 'ol/ol.css';
+import { pontoDoNome, estiloNome } from './neighborhood-labels';
 
 export type Selecao = { tipo: 'bairro' | 'localidade'; id: string } | { tipo: 'estacao'; id: typeof codigoHidrologicoSchema.options[number] } | null;
-export type Camadas = { bairros: boolean; exposicao: boolean; estacoes: boolean };
+export type Camadas = { bairros: boolean; exposicao: boolean; estacoes: boolean; nomes?: boolean };
 export const cores = { normalidade: '#257c52', atencao: '#e5ba24', alerta: '#c96615', emergencia: '#b33338', desconhecido: '#7e8992' };
 const format = new GeoJSON();
 const ler = (geo: unknown) => format.readFeatures(geo, { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
@@ -28,8 +29,10 @@ export function criarMapa(target: HTMLElement, selecionar: (s: Selecao) => void,
   const bairros = new VectorLayer({ source: new VectorSource() });
   const historico = new VectorLayer({ source: new VectorSource(), style: new Style({ fill: new Fill({ color: 'rgba(115,78,158,.24)' }), stroke: new Stroke({ color: '#74519c', width: 1.8, lineDash: [7, 4] }) }) });
   const vias = new VectorLayer({ source: new VectorSource(), style: new Style({ stroke: new Stroke({ color: '#397cac', width: 3, lineDash: [5, 5] }) }) });
-  const estacoes = new VectorLayer({ source: new VectorSource(), declutter: false });
-  const map = new Map({ target, layers: [base, bairros, historico, vias, estacoes], controls: controls({ zoom: false, rotate: false, attribution: false }),
+  const nomes = new VectorLayer({ source: new VectorSource(), visible: false, declutter: 'orientacao', zIndex: 3,
+    properties: { id: 'nomes-bairros' }, renderOrder: (a, b) => String(a.get('nome')).localeCompare(String(b.get('nome')), 'pt-BR') });
+  const estacoes = new VectorLayer({ source: new VectorSource(), declutter: 'orientacao', zIndex: 4 });
+  const map = new Map({ target, layers: [base, bairros, historico, vias, estacoes, nomes], controls: controls({ zoom: false, rotate: false, attribution: false }),
     view: new View({ projection: 'EPSG:3857', center: fromLonLat([-48.74, -26.94]), zoom: 11, minZoom: 9, maxZoom: 20, enableRotation: false }) });
   map.on('singleclick', event => {
     const hit = map.forEachFeatureAtPixel(event.pixel, f => f.get('selecao') as Selecao, { hitTolerance: 8, layerFilter: l => l === bairros || l === estacoes });
@@ -55,9 +58,15 @@ export function criarMapa(target: HTMLElement, selecionar: (s: Selecao) => void,
     map,
     update(status: Status, territorio: Territorio, geo: BairrosGeojson | null, camadas: Camadas, selection: Selecao) {
       if (anterior !== geo) {
-        anterior = geo; bairros.getSource()!.clear();
-        if (geo) { const fs = ler(geo); fs.forEach(f => f.set('selecao', { tipo: 'bairro', id: f.getId() })); bairros.getSource()!.addFeatures(fs); if (!fitted) { fit(); fitted = true; } }
+        anterior = geo; bairros.getSource()!.clear(); nomes.getSource()!.clear();
+        if (geo) { const fs = ler(geo); fs.forEach(f => {
+          f.set('selecao', { tipo: 'bairro', id: f.getId() });
+          const point = pontoDoNome(f);
+          if (point) { const label = new Feature({ geometry: point, nome: f.get('nome') }); label.setId(f.getId()); nomes.getSource()!.addFeature(label); }
+        }); bairros.getSource()!.addFeatures(fs); if (!fitted) { fit(); fitted = true; } }
       }
+      nomes.setVisible(camadas.nomes === true);
+      nomes.setStyle(f => estiloNome(String(f.get('nome')), map.getView().getZoom() ?? 11));
       const max = Math.max(1, ...territorio.bairros.map(b => b.colaboradores_jbs));
       const counts = new globalThis.Map(territorio.bairros.map(b => [b.id, b.colaboradores_jbs]));
       bairros.setVisible(camadas.bairros || camadas.exposicao);
@@ -70,8 +79,8 @@ export function criarMapa(target: HTMLElement, selecionar: (s: Selecao) => void,
         const f = new Feature({ geometry: new Point(fromLonLat([e.longitude, e.latitude])), selecao: { tipo: 'estacao', id: codigo } });
         f.setId(codigo);
         const stale = estado?.stale || e.qualidade === 'atrasado' || e.qualidade === 'indisponivel';
-        f.setStyle(new Style({ image: new Circle({ radius: selection?.id === codigo ? 11 : 8, fill: new Fill({ color: cores[estado?.nivel ?? 'desconhecido'] }), stroke: new Stroke({ color: '#fff', width: 3, lineDash: stale ? [3, 2] : undefined }) }),
-          text: new Text({ text: codigo, offsetX: 30, font: 'bold 12px Arial', fill: new Fill({ color: '#263b4a' }), stroke: new Stroke({ color: '#fff', width: 3 }) }) }));
+        f.setStyle(new Style({ image: new Circle({ declutterMode: 'obstacle', radius: selection?.id === codigo ? 11 : 8, fill: new Fill({ color: cores[estado?.nivel ?? 'desconhecido'] }), stroke: new Stroke({ color: '#fff', width: 3, lineDash: stale ? [3, 2] : undefined }) }),
+          text: new Text({ declutterMode: 'obstacle', text: codigo, offsetX: 30, font: 'bold 12px Arial', fill: new Fill({ color: '#263b4a' }), stroke: new Stroke({ color: '#fff', width: 3 }) }) }));
         estacoes.getSource()!.addFeature(f);
       }
     },
