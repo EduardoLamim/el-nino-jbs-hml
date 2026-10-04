@@ -1,0 +1,596 @@
+{
+  "utc": "2026-10-04T16:29:35.489Z",
+  "baseline": "Inventário capturado antes da Fase 09, entrega local aprovada da Fase 08",
+  "counts": {
+    "intact": 137,
+    "changed": 1,
+    "created": 5,
+    "removed": 0
+  },
+  "intact": [
+    {
+      "sha256": "723EB82F05E0ADBB258DB50BF94FBECF04850ED2E74109C1259D17D7248C142F",
+      "path": ".env.example"
+    },
+    {
+      "sha256": "C4BD8026DED478AE0366B4CD42D82CB00F33895B16AEB382A00B03A9100975DE",
+      "path": ".gitattributes"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": ".github/workflows/.gitkeep"
+    },
+    {
+      "sha256": "153158BEE9A4B5B8D4E74CC8D059C11A40B210B4E06BF3288E697DF50C2809B1",
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "sha256": "CC77C82EB8D05FE9038975056F76BA78C2B595F75C060FFBC5CE9833095E9C3F",
+      "path": ".github/workflows/deploy-pages.yml"
+    },
+    {
+      "sha256": "98E3CECC6BD88CBD06E3B75E7102610D8079CA151212DE9D7C2D49DB627E74DB",
+      "path": ".gitignore"
+    },
+    {
+      "sha256": "EC55794607C63D3B026484A5E377FE2EDC134548593FFEA314338F2B493B9C33",
+      "path": "docs/fase-02.md"
+    },
+    {
+      "sha256": "A22CA62E57E666BFF53E29139B1C4A1FE6D03894B37900A6D7EF17A647E5A371",
+      "path": "docs/fase-03.md"
+    },
+    {
+      "sha256": "797EE287684EF131F9085568F8056C62684E11A12267B25A2295BBF6340789B4",
+      "path": "docs/fase-04-1-mobilidade-atual-descoberta.md"
+    },
+    {
+      "sha256": "38E563508B32535AE0613FA071FFFD2E3D8595BE768F7884282AE627FBC111AC",
+      "path": "docs/fase-04-comparacao-bases.json"
+    },
+    {
+      "sha256": "90971885B8C0F366371F6B82BB3F06D1153EBFA8AE838B5425EB9B8B6C704238",
+      "path": "docs/fase-04-consultas.json"
+    },
+    {
+      "sha256": "2973E21CAC18F28C8C4A46FFF047DA782368C1A3C168C313ACF9B5140AA892CD",
+      "path": "docs/fase-04-descoberta-tecnica.md"
+    },
+    {
+      "sha256": "6102874543160AB4E25645545FA66CDE8688A730360263B007A8070D1A9DAB7D",
+      "path": "docs/fase-04-validacao-geometrica.json"
+    },
+    {
+      "sha256": "4036DB695612DBBE4AB188D0E150A7D0AF35056C0888BCCACF05872C59DFA477",
+      "path": "docs/fase-04.md"
+    },
+    {
+      "sha256": "352866E4419464E804FBB96242999A4644BD7152420B60B4903DD3868E0EE54C",
+      "path": "docs/fase-05.md"
+    },
+    {
+      "sha256": "F78AA843F84949F626F33AD076EED11E177AAB414F6FDB06C2D2767A1625FD30",
+      "path": "docs/fase-06-integridade.json"
+    },
+    {
+      "sha256": "7D6D048681CEE12455B9E6729694CBC64F606B9BFDA47D3D2EA06239EB0876AE",
+      "path": "docs/fase-06.md"
+    },
+    {
+      "sha256": "2A129340070E0CD1591A9118BECA6DAC0B164C3FE0FD92D5B9EB930FAC0F6453",
+      "path": "docs/fase-07-1-browser.json"
+    },
+    {
+      "sha256": "323D15F466C77682CA049A76A137FAAD0746A11EBC5CFD4F966E2F712068CBD0",
+      "path": "docs/fase-07-1-discovery.md"
+    },
+    {
+      "sha256": "FEB5E865DFB2E331565E667C2C00266332F86400B346DFF148C264DEF2FA1CB0",
+      "path": "docs/fase-07-1-evidencias.json"
+    },
+    {
+      "sha256": "60CE704BAF71D75B130F10096FE2AC6A1B554AD8008744C4906709147EA49DCC",
+      "path": "docs/fase-07-1-implementacao.md"
+    },
+    {
+      "sha256": "518E01E549C1E1EAD50967FBBC28911604AA346999CB39A1D8BA1162E1ECB2BE",
+      "path": "docs/fase-07-1-integridade.json"
+    },
+    {
+      "sha256": "B818D5222DF54E71AD8A99600D75501BAC45FCB74F3FC1BBC1B032290B4C02BD",
+      "path": "docs/fase-07-integridade.json"
+    },
+    {
+      "sha256": "3D9E1714B6512592831BA64D5E0CC09F6075371400717624017CB6CF7DC3224F",
+      "path": "docs/fase-07.md"
+    },
+    {
+      "sha256": "FEFAC51516257127E15581B1FB946E12BAC81FA6E6A2D565BC045A1BB1A2AE5F",
+      "path": "docs/fase-08-browser.json"
+    },
+    {
+      "sha256": "359EC6DAD236CF457EE483B6FE807A0FBFD401E64ED62CB38CB63708D0A052CD",
+      "path": "docs/fase-08-implementacao.md"
+    },
+    {
+      "sha256": "90BC6D69F1E2376D34C94489E130AA6F9030EFD5B2E5E02A47BC361FEED3F652",
+      "path": "docs/fase-08-integridade.json"
+    },
+    {
+      "sha256": "766CFDEAE14019AC3C6201814EBDC5A99D85D869F1FF4FD4420715C2A0FBFABD",
+      "path": "docs/operacao.md"
+    },
+    {
+      "sha256": "45989D7862562071AE22CB9221FE6796EA95B4551299259CFE3AF57C574698EA",
+      "path": "eslint.config.js"
+    },
+    {
+      "sha256": "D104D746C9B6771484F4084E5EA6BE9E057FA7F75155D0C45A9092E9AF28EDBA",
+      "path": "index.html"
+    },
+    {
+      "sha256": "DCD8CB304ACAE8A5C86DB8CDFCAA18F924CDA4A7144B6D2AEE771242108FCDB8",
+      "path": "package-lock.json"
+    },
+    {
+      "sha256": "26C9C56A4DE0CF8E083CED00AA8DBDEA770F6FB76CDDA59741F54CE2FE201EC9",
+      "path": "package.json"
+    },
+    {
+      "sha256": "60D4A9DBEBAFBFD54A8C167AF513E61D6E0775681F59863B4AD6588774D871E9",
+      "path": "Plano-de-Contingencia-de-Inundacao-ALTERADO-EM-22-12-25.pdf"
+    },
+    {
+      "sha256": "60018B85B6BDD3B8711905F679BCC6C49CE138FD13610D0DAB753519612480FA",
+      "path": "public/data/bairros.geojson"
+    },
+    {
+      "sha256": "8376C16E7DCBEF81915F7447330EE92E5825FB092D4DF526084416A4D5578166",
+      "path": "public/data/historico/historico-0-8376c16e7dcbef81915f7447330ee92e5825fb092d4df526084416a4d5578166.geojson"
+    },
+    {
+      "sha256": "027F148526A7362EDBC69D1D6E691CF5EF670748E25072E3F4C92A9E3189096A",
+      "path": "public/data/historico/historico-1-027f148526a7362edbc69d1d6e691cf5ef670748e25072e3f4c92a9e3189096a.geojson"
+    },
+    {
+      "sha256": "F05E60F09C31FEFE9EBF540ED41A922BD72A52398E9010779BE34D5737AB4D66",
+      "path": "public/data/historico/historico-2-f05e60f09c31fefe9ebf540ed41a922bd72a52398e9010779be34d5737ab4d66.geojson"
+    },
+    {
+      "sha256": "10C1BA584A8DF92BC4E1251E951490C2DFF4BE29E207170F5E33255BE1DCAB1A",
+      "path": "public/data/historico/historico-3-10c1ba584a8df92bc4e1251e951490c2dff4be29e207170f5e33255be1dcab1a.geojson"
+    },
+    {
+      "sha256": "797C260D658BFEDB53F92284C60871D2FC120A5FB3AFF8D7FC826B9F321D2122",
+      "path": "public/data/historico/historico-4-797c260d658bfedb53f92284c60871d2fc120a5fb3aff8d7fc826b9f321d2122.geojson"
+    },
+    {
+      "sha256": "3B40244EE961A40101C0800087ABF3A89C95CDFD8C3A1CD06BC01468C5321B0C",
+      "path": "public/data/historico/historico-5-3b40244ee961a40101c0800087abf3a89c95cdfd8c3a1cd06bc01468c5321b0c.geojson"
+    },
+    {
+      "sha256": "C328356856C267E7044009DCF25BC11F4E615146CADB9AC56BE0487A966BE785",
+      "path": "public/data/historico/historico-6-c328356856c267e7044009dcf25bc11f4e615146cadb9ac56be0487a966be785.geojson"
+    },
+    {
+      "sha256": "86F92E79732D1C3AA08476E75CDB344AF6BBC2DB77A0B5F6AEA96521F53E3A59",
+      "path": "public/data/historico/historico-7-86f92e79732d1c3aa08476e75cdb344af6bbc2db77a0b5f6aea96521f53e3a59.geojson"
+    },
+    {
+      "sha256": "9D77935CDA5182404582E82A8B4A654BCCFF543EC7B9EB8A7B16605C806C3B29",
+      "path": "public/data/historico/historico-8-9d77935cda5182404582e82a8b4a654bccff543ec7b9eb8a7b16605c806c3b29.geojson"
+    },
+    {
+      "sha256": "723E06A82EAFB7FF94C539D97CD5D0664E1DFFFA1D460EE4DC4B5AD2E5C5F606",
+      "path": "public/data/historico/historico-9-723e06a82eafb7ff94c539d97cd5d0664e1dfffa1d460ee4dc4b5ad2e5c5f606.geojson"
+    },
+    {
+      "sha256": "B8770B8F9DBE81642EC396253CD7D8AD18F96F9F84A416BAC75411FB607DAACB",
+      "path": "public/data/historico/manifesto.json"
+    },
+    {
+      "sha256": "FD550BACDF987B6A80A80F3A114A6D317E14EAF087E719870910DF17EDEB4B83",
+      "path": "public/data/historico/vias-historicas-fd550bacdf987b6a80a80f3a114a6d317e14eaf087e719870910df17edeb4b83.geojson"
+    },
+    {
+      "sha256": "9D1FDF8D86B04C4BAB56209EFD889FFDE05202ECC09362F1B866E91BD47DE222",
+      "path": "public/data/territorio.json"
+    },
+    {
+      "sha256": "7006D25BC75236918481ECFED143A817E8C69CAC35472CFC4C913594642AD055",
+      "path": "README.md"
+    },
+    {
+      "sha256": "D5E5948A6D8F098213F46200BA9FCA4DB9D26684D06A2F9E7167B4BA949C6562",
+      "path": "scripts/automation/pages-config.ts"
+    },
+    {
+      "sha256": "4076943E7BA69427DCB126968B3B6C48BD787AEA8DDED0E6FF0ED2DAAF9482C9",
+      "path": "scripts/automation/smoke.ts"
+    },
+    {
+      "sha256": "532C2EA496677450ACCA252D79EA7F950AAA7208E3D4E24C9E7F1BDE8A12E555",
+      "path": "scripts/automation/status.ts"
+    },
+    {
+      "sha256": "2336E71F95E902F9AD0FFF8286ED4C7A0585F4EF222C287A9A8207831F5BEDF8",
+      "path": "scripts/automation/update.ts"
+    },
+    {
+      "sha256": "44392C0F2838B66AE7E1FED6E3C63148CE2F9344F8734BD3994CF21FE67D1CAB",
+      "path": "scripts/automation/validate.ts"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": "scripts/collectors/.gitkeep"
+    },
+    {
+      "sha256": "065E284B358435ADAA90321A07E3B7EEF0299BB26C1E42C469FCCFE2ACB50199",
+      "path": "scripts/collectors/collect.ts"
+    },
+    {
+      "sha256": "8F972DC77EC586D433074B716A2D6F19AE007874541CC6D3A55A4537CB37406D",
+      "path": "scripts/collectors/epagri.ts"
+    },
+    {
+      "sha256": "77ECDF3F0E06AC6A85E26A914C99677BBE74ADB1E653553873098CD72B056BA8",
+      "path": "scripts/collectors/http.ts"
+    },
+    {
+      "sha256": "0E8C7CE04860AD6962A402137FEFBBD9F8C8C20255FC075169E4068945C91464",
+      "path": "scripts/collectors/normalize.ts"
+    },
+    {
+      "sha256": "624ECFB9B8B95007307731F90EE597C5CAF06D5E67439DEF249575645307EBE8",
+      "path": "scripts/collectors/pipeline.ts"
+    },
+    {
+      "sha256": "BF2A844EBB6CFC00E4AF75B113D1B0177BABDAE4C725F41B5722F5A2904C2A10",
+      "path": "scripts/collectors/previous-status.ts"
+    },
+    {
+      "sha256": "4CF4B43EB4209AA6B96888C98424D103ACE0FF72756B5CBB44D9DEEC3DBEF9ED",
+      "path": "scripts/collectors/sources.ts"
+    },
+    {
+      "sha256": "3D8E1AD09A626AB2FE9E223D600C69D6643F453B190A8ACBD04646511680EE66",
+      "path": "scripts/collectors/structured.ts"
+    },
+    {
+      "sha256": "2BB77DD444F0FAF0F8755FD29FD63166AAF05D70FA1D2BD2963DA59A466F35C7",
+      "path": "scripts/map/collect.ts"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": "scripts/territorial/.gitkeep"
+    },
+    {
+      "sha256": "7EC297574E8C2CED3EA09A4A332CCF180C4523A57671E931EE931709B6236753",
+      "path": "scripts/territory/config.ts"
+    },
+    {
+      "sha256": "05445406E4FD114908B6A459FC287C38EF5183C0CAB19F9FDCC7681AEF35EF10",
+      "path": "scripts/territory/generate.ts"
+    },
+    {
+      "sha256": "CB1C8CC3B1EE731EA369478A46C4DBC96F0D87184B858EB01B0CD065EB67C16C",
+      "path": "scripts/territory/geometry.ts"
+    },
+    {
+      "sha256": "F7B912B552174D90D3F3DF882106F953A713D14EF77D4F122D7973D3073F3DF7",
+      "path": "scripts/territory/validate_geometry.py"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": "scripts/validation/.gitkeep"
+    },
+    {
+      "sha256": "06AD4177494E61F35E4C6CE7F349521D7CF1E42CDBAFA8F5D20AE89AB923A4ED",
+      "path": "src/App.tsx"
+    },
+    {
+      "sha256": "009D869BD8E9B45ABF4558EE83CB23BFC90C7C352E65A8D78193FD835E72C9F3",
+      "path": "src/components/CompactOperational.tsx"
+    },
+    {
+      "sha256": "45BAB337095E86DA054574E533FC762FA6CBDE7F671ECD425E5BF68AAA178CF2",
+      "path": "src/components/ImpactoJbs.tsx"
+    },
+    {
+      "sha256": "5434B2827D74A6F8BCA38F480270B8BD9B7A6613EA527AF642CA266BE01B107B",
+      "path": "src/components/MapDetails.tsx"
+    },
+    {
+      "sha256": "7D1C32BCC1CB2FDC3BE43A25F5D5AC14056DA666790361F05B2A46BA370A8831",
+      "path": "src/components/Navegacao.tsx"
+    },
+    {
+      "sha256": "8E6CE0AFF1D1C45CCB1229A7378E83A129D6A82468FE1F83387F7CF3645003DD",
+      "path": "src/components/Operational.tsx"
+    },
+    {
+      "sha256": "B1F51A72005B9B848C351938901B5C885A4A60C61ADB22655A6F6AFA2C137741",
+      "path": "src/components/RiverChart.tsx"
+    },
+    {
+      "sha256": "70D5CCA569B5E34EA687169688773856F216DB4E62BA1B752A3D101861215F1A",
+      "path": "src/components/Weather.tsx"
+    },
+    {
+      "sha256": "A1BC234363A31A6A30B1F7CB3124B6A02D2C47B15DB614A1634E7F5ACAE2F346",
+      "path": "src/content/action-plans.ts"
+    },
+    {
+      "sha256": "F62B29D1FFD848FABE6ACE588261D79666EFC30A8D82A5D72D5F94C6DA46BA57",
+      "path": "src/domain/alert-engine.ts"
+    },
+    {
+      "sha256": "9CA3D3689DAAA6D361B0FC166EDDBA0D3210AE21576ACEC17AAB4F8DC5C2931F",
+      "path": "src/domain/contracts.ts"
+    },
+    {
+      "sha256": "D722BCD06AA14074652F2978EACF7E2288EB15F90A23D3EC9FF5A998AD41D861",
+      "path": "src/domain/hydrology.ts"
+    },
+    {
+      "sha256": "8E65E8B09B0690AD5CA6B18D3D374FEAE9869F9492E26DA92598A363A73E4E02",
+      "path": "src/domain/impact.ts"
+    },
+    {
+      "sha256": "B6D75C9AC7A3E4E53B4B9C6A6C1F8205EEFB0A2D48B53ABD869E91D90C328484",
+      "path": "src/domain/map-layers.ts"
+    },
+    {
+      "sha256": "B0586061C1499C143BF891F30056B88AB8A65B6D9FB53460146A530FDF21B49A",
+      "path": "src/domain/territory.ts"
+    },
+    {
+      "sha256": "EF3627E7B1E632FE01B532BB707B368A0B19656AAD8AF5361559274B1047F043",
+      "path": "src/hooks/useDados.ts"
+    },
+    {
+      "sha256": "46555945021BEF91C67961FB6D475C43C00BE42998A7C1811B64B8D8E2E2F827",
+      "path": "src/hooks/useHistoryLayer.ts"
+    },
+    {
+      "sha256": "E0A12B080D820A7519F87D494DADD6AF075385A2FC9275283222267E2BAD2EF0",
+      "path": "src/main.tsx"
+    },
+    {
+      "sha256": "5D8C7783AEA517901A1DAB088BA6772C8B32F92E02ABC3801A7D9B1A92F5650F",
+      "path": "src/map/basemaps.ts"
+    },
+    {
+      "sha256": "2C55029E913323C0B841392A039B8D8A9525230A94D9AF9268BE7576CCDE19EC",
+      "path": "src/map/engine.ts"
+    },
+    {
+      "sha256": "63B23F4545676D56D85EC2192D14E8CAC7CBA1073B4D8A5E3EF981721A357B86",
+      "path": "src/pages/ActionPlan.tsx"
+    },
+    {
+      "sha256": "9140C3347B7A870E95CE216D57801E82E7916A22DF672EB21165AD8AA6CC4A4D",
+      "path": "src/pages/Dashboard.tsx"
+    },
+    {
+      "sha256": "D4CE80510CDAF13DAAF252E409F38E5F8BB041021B01FFB6A2B904A5D700928F",
+      "path": "src/pages/Monitoramento.tsx"
+    },
+    {
+      "sha256": "81A5626F66758EDEADC3D025741C206123A25919DD381B23B731C1B6DE02BFB8",
+      "path": "src/pages/Placeholder.tsx"
+    },
+    {
+      "sha256": "D76F580CCE45F43CF642265B747F78EE46D043F4A0799F05A0747A1C5F212483",
+      "path": "src/pages/TerritoryMap.tsx"
+    },
+    {
+      "sha256": "DFC43F79F090E3886F12FA60AF26134CC74F60E319E54DDEA05188407777D100",
+      "path": "src/services/data.ts"
+    },
+    {
+      "sha256": "0CA826EB8B925C6AC9EE3FB16CE0D96AB1FB43C1F8142D016EE20EB48D756F01",
+      "path": "src/services/history-data.ts"
+    },
+    {
+      "sha256": "013213D08DB5211601DC16EAA3275228A01DAA18E4491759845E6F98C7E481E6",
+      "path": "src/services/impact.ts"
+    },
+    {
+      "sha256": "67C3FD9020471CF25A8E4E1AE4C672C32CDC3C5B97B452911B0EA97E8BF8C893",
+      "path": "src/services/map-data.ts"
+    },
+    {
+      "sha256": "C931609C41A69C8682E99ED8FB9ABDE8C530686F06173B23C848728A5A90A23E",
+      "path": "src/styles.css"
+    },
+    {
+      "sha256": "9B01C3BD95ACC35E33C903596486A5D80FE4B7332142C11750DB6632B669CDF0",
+      "path": "src/utils/format.ts"
+    },
+    {
+      "sha256": "D4E5A3F9DBBF2494960172DD74EFC0E0667BE9D8DCB43F2EA26C350F92C5027D",
+      "path": "src/utils/presentation.ts"
+    },
+    {
+      "sha256": "2C41F45404E5E457FE31E919A6DC5693EE7C5A708A3761302BA9F464ED2BB2EB",
+      "path": "supabase/config.toml"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": "supabase/functions/.gitkeep"
+    },
+    {
+      "sha256": "EE89628086F1927837F1F65AD86C1238B415101B1733D56F284D56554F532556",
+      "path": "supabase/functions/deno.d.ts"
+    },
+    {
+      "sha256": "B2FFF411C1B97005F7A3F55F4E5FB71A9EC99FFE7FB00C66F1B2F776763248AD",
+      "path": "supabase/functions/impacto-jbs/handler.ts"
+    },
+    {
+      "sha256": "C6BD8C16DAE67292FFBB509360A9707F1C3CECC4E8099887D0A2E13D8A16BD62",
+      "path": "supabase/functions/impacto-jbs/index.ts"
+    },
+    {
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "path": "supabase/migrations/.gitkeep"
+    },
+    {
+      "sha256": "63C21557486DB2AE05F77209511E3B355CDFE499B236FBF5036C331CBC84A438",
+      "path": "supabase/migrations/202610020001_impactos_jbs.sql"
+    },
+    {
+      "sha256": "15EE7C5B7C0AE8245F94AC74ECC050DCEBE37A7148374EBAA6781378FF69501E",
+      "path": "supabase/tsconfig.json"
+    },
+    {
+      "sha256": "F51B18027739C8B2903A541D268BE23D3B9F358D42A55EBDFC23FC08BB655BB6",
+      "path": "tests/alert-engine.test.ts"
+    },
+    {
+      "sha256": "6EFA8916684A56A5B2F081167CE95C167B609E389F785C4371CB0F395482B8A8",
+      "path": "tests/collectors.test.ts"
+    },
+    {
+      "sha256": "2336BCEF4AD24C1A7752BFE4448314DC3CB1092598237A91C83DFFE01E0192D1",
+      "path": "tests/contracts.test.ts"
+    },
+    {
+      "sha256": "519D99D1C7C87C5E29F3C48B720FA80476B8AC21D34BEE34162863A3EAA4117C",
+      "path": "tests/epagri.test.ts"
+    },
+    {
+      "sha256": "BA5F3EA40E95F49BCE11942F375EBD3882EB837976EDA5C0CB78B9B99CA7B485",
+      "path": "tests/fixtures/alertas-null.json"
+    },
+    {
+      "sha256": "A12922A80D5FEE915DF2FFB53F4384EE58DF4A8412D8CEE52CBE39A0E52DBE62",
+      "path": "tests/fixtures/barragens.json"
+    },
+    {
+      "sha256": "D1965003F6296D8ACB672B51D5C7C155C5799A81D24DB2DE43C39D6595D70737",
+      "path": "tests/fixtures/chuvas.json"
+    },
+    {
+      "sha256": "7D3F8B42C9244A7F531FD9567E6C5D44608AECA3E5EFB59C0D4F92F101491483",
+      "path": "tests/fixtures/epagri-itajai.json"
+    },
+    {
+      "sha256": "B3BBF0519D6A08BB106B0D9AE3DBBB79054AB9CC9646A633CC88346138FE97CE",
+      "path": "tests/fixtures/epagri-municipio.json"
+    },
+    {
+      "sha256": "376419C46C67756D31331A25DE18714BCD5A8A33F9BCF03B6A7F8F559CA85F0D",
+      "path": "tests/fixtures/README.md"
+    },
+    {
+      "sha256": "950C46719C061E6216EDA3FBD40A41EB0B39B55B1C76A73C101E6D3E4160DCB1",
+      "path": "tests/fixtures/rios.json"
+    },
+    {
+      "sha256": "C4F71F7F72FFB7CBD41DF92A6C92465F1B5122E334D8E74DE7F492767B610D1F",
+      "path": "tests/fixtures/situacao-atencao.json"
+    },
+    {
+      "sha256": "8702E180296545F8CB6CDBADC796AAE6EE629CF0F92934B680E4BD6134125406",
+      "path": "tests/fixtures/status-operacional.json"
+    },
+    {
+      "sha256": "A3CE0779A2254D327136E4E1E9980D2EA0F07A693493B2D7091345E4C1039B25",
+      "path": "tests/impact-db.test.ts"
+    },
+    {
+      "sha256": "AE69B6BD3D3AA8CEC6641B428A5E6D30F7116EE5054883D31AB7DF70495C653B",
+      "path": "tests/impact-edge.test.ts"
+    },
+    {
+      "sha256": "B3C5851D412944C7BBA2170DC4F85CA88FF51BE60D43902746EE2C310AEDDBB5",
+      "path": "tests/impact-integration.test.ts"
+    },
+    {
+      "sha256": "1DF944911F5400E2939A6EA0C320E041A3914263167596F684F2EF395429EBC1",
+      "path": "tests/impact-ui.test.tsx"
+    },
+    {
+      "sha256": "DCAE7084569B2BAD1EC06A6EF62B10445503B0EBCBA75B90E0D14598CF3FE485",
+      "path": "tests/impact.test.ts"
+    },
+    {
+      "sha256": "00E1BCAAF00C70CD5D28BF7B55E1A052170A9632D05975145C959A22C830E04A",
+      "path": "tests/phase06.test.tsx"
+    },
+    {
+      "sha256": "33EF4D30A0A3C1FBB8F9DA8D0708E81F12904442875E5721327DFE675FBAA27E",
+      "path": "tests/phase07.test.tsx"
+    },
+    {
+      "sha256": "768AD92B139A5B772342EA55CD407712A957A1B65B21B4EBD2146DD7E70143BF",
+      "path": "tests/phase071-data.test.ts"
+    },
+    {
+      "sha256": "CF02F0698F9C9BCBC44E64CFE17EA339B51641E19B67D3F8F1DED7ECADC3D486",
+      "path": "tests/phase071-engine.test.ts"
+    },
+    {
+      "sha256": "8FDD1A71F611779D24F065807E8C7A94B325EDC5530D13D49741E6DF4E30E206",
+      "path": "tests/phase071-ui.test.tsx"
+    },
+    {
+      "sha256": "3992C604B925CBA33B04B33070108AB39407DF3775AC117700ED72577F31580A",
+      "path": "tests/phase08.test.ts"
+    },
+    {
+      "sha256": "AEDA1F19FBC1899986A246E84D6DECC2D178FCB9672D656EF0E92DB34DE5C413",
+      "path": "tests/previous-status.test.ts"
+    },
+    {
+      "sha256": "9D71FCA2DD013E8511ED7F71D65B5F478DAB4DBAF551BF815AC6E55F63CECAF0",
+      "path": "tests/territory.test.ts"
+    },
+    {
+      "sha256": "8FAC3339BDEC0B7F0C2B9D7843AA6CC8CED9109790A4ED5BAD764CCAC03A3763",
+      "path": "tsconfig.json"
+    },
+    {
+      "sha256": "735A282D055DEEBC2D5742806DCC0CF3B55113A568939E0EB521E5CEA44934DE",
+      "path": "vite.config.ts"
+    }
+  ],
+  "changed": [
+    {
+      "path": "public/data/status.json",
+      "before": "CF7B644F5426D64FCAAF95186881AC56495A0B3EF72307A97136018F70A9673A",
+      "after": "1F992D665B9712E44BF342D6037F95045CE8B24B73D8DB748126CA8D4D069032",
+      "reason": "Coletas reais do workflow HML; atualização do snapshot e memória."
+    }
+  ],
+  "created": [
+    {
+      "path": "docs/fase-09-browser.json",
+      "sha256": "20E51D7376B233AAA1711E836D1001A2D1099DDA3A3D5FF65F2C3C8E63D48A3B",
+      "reason": "Relatório/evidência de homologação HML."
+    },
+    {
+      "path": "docs/fase-09-evidencias.json",
+      "sha256": "BC66FE26498C199E9171930C35111B59AAED623F59BDC455930BBDA678639E8E",
+      "reason": "Relatório/evidência de homologação HML."
+    },
+    {
+      "path": "docs/fase-09-homologacao.md",
+      "sha256": "5B1CA8EC0A91CF8C5294D4593E9982D2F51F3D15119AF6328531158D1BCB618A",
+      "reason": "Relatório/evidência de homologação HML."
+    },
+    {
+      "path": "tests/phase09.test.ts",
+      "sha256": "57E015E5CD3E1578DB1A582159BCEFE3DBAF8DF3B6B17DA7926F0599AD5CDD72",
+      "reason": "Testes controlados de falha da Fase 09."
+    },
+    {
+      "path": "docs/fase-09-integridade.json",
+      "sha256": null,
+      "reason": "Inventário de integridade; hash próprio omitido para evitar autorreferência."
+    }
+  ],
+  "removed": []
+}
