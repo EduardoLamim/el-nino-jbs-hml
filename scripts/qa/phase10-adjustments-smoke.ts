@@ -12,6 +12,17 @@ try{for(const width of [1440,768,390,320]){
   await p.goto(origin+'/el-nino-jbs-hml/#/'+route);await p.getByRole('heading',{name:route==='dashboard'?'Exposição Territorial JBS':route==='mapa'?'Mapa':route==='plano-de-acao'?/^Plano de Ação/:'Monitoramento',exact:true}).waitFor();
   if(route==='dashboard'){await p.getByText('Nenhum impacto físico confirmado.',{exact:true}).waitFor();assert(await p.getByAltText('Defesa Civil',{exact:true}).isVisible());assert(await p.getByText('Última atualização da Defesa Civil:',{exact:false}).isVisible());for(const [name,selector] of [['defesa-civil','.official'],['chuva','.rain-card'],['previsao','.forecast-card'],['territorio','.exposure']] as const)await p.locator(selector).screenshot({path:`${output}/${name}-${width}.png`});}
   const visible=await p.locator('body').innerText();assert(!/Parcialmente degradado|Qualidade não informada|Ver informações de qualidade|O que sustenta a condição ambiental/.test(visible));
+  if(route==='dashboard'){
+   const totals=await p.locator('.exposure-totals').boundingBox(), heading=await p.locator('.exposure > h3').boundingBox();
+   assert(totals&&heading); if(width>850)assert(Math.abs(totals.y-heading.y)<=4,'Concentrações devem alinhar ao topo dos indicadores');
+   else assert(heading.y>=totals.y+totals.height,'Mobile preserva concentrações abaixo dos indicadores');
+  }
+  if(route.startsWith('monitoramento/'))assert(!visible.includes('Coleta JBS:'));
+  if(route==='monitoramento/chuva'){assert(!visible.includes('Valores da última coleta'));assert(await p.getByRole('heading',{name:'Chuva — Estações',exact:true}).isVisible());assert(await p.getByRole('columnheader',{name:'Atualização',exact:true}).isVisible());}
+  if(route==='monitoramento/previsao'){
+   const h=await p.locator('.forecast-section > h2').boundingBox(), source=await p.locator('.forecast-section > .source-context').boundingBox();
+   assert(h&&source);assert(source.y-h.y-h.height<=6,'Fonte deve ficar próxima do título');
+  }
   if(route==='monitoramento/rios'){
    await p.getByText('Detalhar DC01',{exact:true}).click();await p.getByText('Consultar valores da série',{exact:true}).first().click();const station=p.getByRole('article',{name:'Estação DC01'});assert(!/Localização:|Qualidade/.test(await station.innerText()));const rows=await station.locator('tbody tr td:first-child').allTextContents();assert(rows.length>1);await station.screenshot({path:`${output}/rio-serie-${width}.png`});
   }

@@ -3,7 +3,6 @@ import { rotuloNivel } from '../utils/format';
 import { horario, medida, tendencia } from '../utils/presentation';
 import { RiverChart } from '../components/RiverChart';
 import { PrevisaoDias } from '../components/Weather';
-import { QualidadeDados } from '../components/Operational';
 
 export const secoes = { rios: 'Rios', chuva: 'Chuva', previsao: 'Previsão', barragens: 'Barragens' } as const;
 export type SecaoMonitoramento = keyof typeof secoes;
@@ -33,8 +32,8 @@ export function Rios({ status }: { status: Status }) {
 export function Chuva({ status }: { status: Status }) {
   const estacoes = Object.values(status.chuvas);
   const colunas = [['chuva_10_min_mm', '10 min'], ['chuva_1_h_mm', '1h'], ['chuva_6_h_mm', '6h'], ['chuva_12_h_mm', '12h'], ['chuva_24_h_mm', '24h'], ['chuva_48_h_mm', '48h']] as const;
-  return <section className="card"><h2>Chuva — estações</h2><p>Acumulados oficiais por estação, em milímetros.</p>
-    {!estacoes.length ? <p>Dados de chuva indisponíveis.</p> : <div className="table-scroll" tabIndex={0} role="region" aria-label="Acumulados de chuva por estação"><table><caption>Valores da última coleta · horários de Brasília</caption><thead><tr><th>Estação</th>{colunas.map(([,label]) => <th key={label}>{label}</th>)}<th>Atualização</th></tr></thead>
+  return <section className="card"><h2>Chuva — Estações</h2><p>Acumulados oficiais por estação, em milímetros.</p>
+    {!estacoes.length ? <p>Dados de chuva indisponíveis.</p> : <div className="table-scroll" tabIndex={0} role="region" aria-label="Acumulados de chuva por estação"><table><thead><tr><th>Estação</th>{colunas.map(([,label]) => <th key={label}>{label}</th>)}<th>Atualização</th></tr></thead>
       <tbody>{estacoes.map(e => <tr key={e.codigo}><th scope="row">{e.codigo}<small>{e.nome}</small>{e.qualidade === 'indisponivel' && <small>Dado indisponível.</small>}{e.qualidade === 'atrasado' && <small>Sem dado recente.</small>}</th>{colunas.map(([key]) => <td key={key}>{medida(e[key])}</td>)}<td>{horario(e.medido_em)}</td></tr>)}</tbody></table></div>}
   </section>;
 }
@@ -50,7 +49,6 @@ export function Barragens({ status }: { status: Status }) {
 export function Monitoramento({ status, secao = 'rios' }: { status: Status; secao?: SecaoMonitoramento }) {
   return <><div className="page-heading"><h2>Monitoramento</h2><p className="source-context">Defesa Civil de Itajaí · Epagri/Ciram</p><p>Leituras, evolução e condições das fontes.</p></div>
     <nav className="section-nav" aria-label="Seções de Monitoramento">{Object.entries(secoes).map(([key, label]) => <a key={key} href={`#/monitoramento/${key}`} aria-current={secao === key ? 'page' : undefined}>{label}</a>)}</nav>
-    <QualidadeDados status={status} />
     {secao === 'rios' && <Rios status={status} />}{secao === 'chuva' && <Chuva status={status} />}{secao === 'previsao' && <PrevisaoDias previsao={status.previsao} />}{secao === 'barragens' && <Barragens status={status} />}
   </>;
 }

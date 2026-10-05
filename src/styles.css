@@ -266,7 +266,7 @@ main { max-width: 1376px; padding-top: 22px; }
 .forecast-day dd { font-size: 1.05rem; }
 .exposure { border-top: 1px solid var(--line); background: #f8fafb; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 30px; }
 .exposure > .eyebrow, .exposure > h2, .exposure > p { grid-column: 1 / -1; }
-.exposure-totals { grid-column: 1; grid-row: span 2; gap: 24px; }
+.exposure-totals { grid-column: 1; grid-row: 3; align-self: start; gap: 24px; }
 .exposure-totals p { flex: 1; font-size: .88rem; }
 .exposure-totals strong { font-size: 2.3rem; letter-spacing: -.05em; }
 .exposure > h3 { font-size: .85rem; margin-bottom: 0; align-self: end; }
@@ -416,6 +416,7 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 /* Fase 10 — ajustes após validação visual, preservando o grid mobile. */
 .source-context { color: var(--muted, #526e80); font-size: .78rem; margin: 5px 0 18px; }
+.forecast-section > h2 { margin-bottom: 0; }
 .official-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .official-heading img { flex: 0 0 auto; }
 .official-heading h2 { margin: 0; }

@@ -3,3 +3,7 @@ project_id = "monitoramento-el-nino-jbs"
 [functions.impacto-jbs]
 verify_jwt = false
 # Publishable key não é JWT. A função verifica apikey, origem e PIN server-side.
+
+[functions.trigger-monitoramento]
+verify_jwt = false
+# Autorização dedicada server-side validada antes do dispatch; não usa chave pública.
