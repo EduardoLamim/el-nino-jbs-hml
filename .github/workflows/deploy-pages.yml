@@ -1,7 +1,7 @@
 name: Atualizar estado operacional e preparar Pages
 on:
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '2,12,22,32,42,52 * * * *'
   workflow_dispatch:
     inputs:
       publish:

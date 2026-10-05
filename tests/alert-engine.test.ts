@@ -207,10 +207,10 @@ describe('Fronteiras, cronologia e continuidade', () => {
     expect(avaliar(rio(3, -10, { qualidade: 'atrasado' }), estado(1)).nivel).toBe('atencao');
     expect(avaliar(rio(3, 1000, { qualidade: 'atrasado' }), estado(1)).nivel).toBe('atencao');
   });
-  it('consecutividade aceita 660 s e reinicia acima de 660 s', () => {
+  it('consecutividade aceita 720 s e reinicia acima de 720 s', () => {
     const prev = sequencia(estado(), [0, 0]);
-    expect(avaliar(rio(0, 31), prev).nivel).toBe('atencao');
-    expect(avaliar(rio(0, 31 + 1 / 60), prev)).toMatchObject({ nivel: 'alerta', normalizacao: { leituras_abaixo: 1 } });
+    expect(avaliar(rio(0, 32), prev).nivel).toBe('atencao');
+    expect(avaliar(rio(0, 32 + 1 / 60), prev)).toMatchObject({ nivel: 'alerta', normalizacao: { leituras_abaixo: 1 } });
   });
   it('intervalo esperado ausente não permite comprovar três consecutivas', () => {
     expect(sequencia(estado(), [0, 0, 0, 0], 10, { atualizacao_esperada_segundos: null }))

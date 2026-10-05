@@ -1,0 +1,11 @@
+import {readFileSync} from 'node:fs';
+import {expect,it} from 'vitest';
+import {avaliarRio,politicaHidrologica} from '../src/domain/hydrology';
+import type {EstacaoHidrologica} from '../src/domain/contracts';
+const instant=(s:number)=>new Date(Date.UTC(2026,9,5)+s*1000).toISOString();
+const river=(s:number,n=0):EstacaoHidrologica=>({codigo:'DC01',nome:'Fixture',latitude:null,longitude:null,nivel_m:n,tendencia:'estavel',limites:{atencao_m:1,alerta_m:2,emergencia_m:3},qualidade:'atualizado',medido_em:instant(s),atualizacao_esperada_segundos:600,serie_12h:[]});
+const evaluate=(r:EstacaoHidrologica,prev?:ReturnType<typeof avaliarRio>)=>avaliarRio('DC01',r,prev,instant(10000),politicaHidrologica);
+it.each([600,660,719,720])('três leituras em intervalos %ss normalizam em um único lote',gap=>{const prev=evaluate(river(0,2.5));const r=river(gap*3);r.serie_12h=[1,2,3].map(i=>({medido_em:instant(i*gap),nivel_m:0,qualidade:null}));expect(evaluate(r,prev).nivel).toBe('atencao');});
+it.each([720.001,721,900])('intervalo %ss quebra continuidade',gap=>{let prev=evaluate(river(0,2.5));prev=evaluate(river(600),prev);prev=evaluate(river(1200),prev);expect(evaluate(river(1200+gap),prev)).toMatchObject({nivel:'alerta',normalizacao:{leituras_abaixo:1}});});
+it('repetir uma leitura em três workflows não conta três leituras',()=>{let prev=evaluate(river(0,2.5));for(let i=0;i<3;i++)prev=evaluate(river(600),prev);expect(prev).toMatchObject({nivel:'alerta',normalizacao:{leituras_abaixo:1}});});
+it('cron de 10 minutos deslocado, serialização e persistência preservadas',()=>{const w=readFileSync('.github/workflows/deploy-pages.yml','utf8');expect(w).toContain("cron: '2,12,22,32,42,52 * * * *'");expect(w).toContain('cancel-in-progress: false');expect(w).toContain('group: operational-pages');expect(w).toContain('npm run automation:update');expect(politicaHidrologica.tolerancia_intervalo_segundos).toBe(120);});

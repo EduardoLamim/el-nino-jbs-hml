@@ -17,7 +17,7 @@ Geometrias históricas seguem fluxo separado: fonte oficial → coleta/validaç�
 | `.github/workflows/ci.yml` | Push em `main`, pull request e manual | Lint, testes, dados, typecheck, build Pages, validação do artefato e smoke test de navegador sem depender de disponibilidade GIS |
 | `.github/workflows/deploy-pages.yml` | Schedule e manual na branch padrão | Coleta operacional, validações, snapshot persistido, artefato Pages e publicação opcional |
 
-O schedule usa minutos **07, 22, 37 e 52 de cada hora UTC**: frequência-alvo de 15 minutos, sem garantia de pontualidade. GitHub pode atrasar ou omitir execuções sob carga; em repositórios públicos, schedules também podem ser desabilitados após inatividade. Não tratar horário de execução como horário da medição. Ver [documentação de schedules](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+O schedule usa minutos **02, 12, 22, 32, 42 e 52 de cada hora UTC** (`2,12,22,32,42,52 * * * *`): frequência-alvo de 10 minutos, sem garantia de pontualidade. GitHub pode atrasar ou omitir execuções sob carga; em repositórios públicos, schedules também podem ser desabilitados após inatividade. Não tratar horário de execução como horário da medição. Ver [documentação de schedules](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
 
 Em Actions, selecione **Atualizar estado operacional e preparar Pages → Run workflow**, usando a branch padrão. `publish=false` prepara dados e artefato sem deploy. `publish=true` autoriza o deploy daquele ciclo. A variável `PAGES_DEPLOY_ENABLED=true` habilita deploy em todos os ciclos, inclusive agendados. Ausente/false mantém apenas preparação. O antigo deploy automático por push foi substituído por CI no push e pelo workflow operacional; isso evita publicar um snapshot desatualizado junto a mudanças de código.
 
@@ -50,7 +50,7 @@ O frontend aprovado aceita o projeto Supabase indicado acima. A origem CORS é p
 
 O arquivo anterior contém a memória compacta completa em `motor`: estados retidos, última leitura, limites e contadores. A automação lê e valida esse arquivo antes de consultar as fontes. Snapshot ausente/corrompido aborta; recuperar uma versão válida, sem inicialização silenciosa de contadores. A entrada em produção parte do snapshot válido versionado já existente.
 
-Cada coleta continua usando `coletar()` e o motor aprovado, sem novos thresholds. Escalada é imediata; redução exige três **leituras** consecutivas válidas, não três execuções do Actions. A série oficial pode fornecer leituras entre ciclos. Duplicatas, lacunas acima do intervalo oficial + 60 s, atraso e invalidade continuam com o tratamento da Fase 03. Schedule de 15 minutos não modifica essa tolerância.
+Cada coleta continua usando `coletar()` e o motor aprovado, sem novos thresholds. Escalada é imediata; redução exige três **leituras** consecutivas válidas, não três execuções do Actions. A série oficial pode fornecer leituras entre ciclos. Duplicatas, lacunas acima do intervalo oficial + 120 s, atraso e invalidade continuam com o tratamento da Fase 03. A revisão autorizada da Fase 10 ampliou a tolerância de 60 para 120 s: para intervalo oficial de 600 s, até 720 s é consecutivo; acima disso a sequência reinicia. A regra permanece baseada em três leituras oficiais.
 
 Há duas classes de resultado:
 

@@ -31,9 +31,10 @@ export default function App() {
     <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /></header>
     <main id="conteudo" tabIndex={-1}>
       {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
-      <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários e a qualidade das fontes.</p>
+      <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários das leituras e da coleta JBS.</p>
       {dados.estado === 'carregando' && <p role="status">Carregando dados…</p>}
       {dados.estado === 'erro' && <p className="card" role="alert">{dados.mensagem}</p>}
+      {dados.estado === 'carregado' && dados.aviso && <p className="snapshot-note" role="status">{dados.aviso}</p>}
       {/* Mantém a mesma assinatura/instância de Impacto JBS ao navegar. */}
       <div hidden={rota.pagina !== 'dashboard'}><PainelOperacional status={carregado?.status} onEstado={setImpacto} />
         {carregado && <Dashboard status={carregado.status} territorio={carregado.territorio} />}</div>

@@ -15,8 +15,8 @@ export function ActionPlan({ status, territorio, impacto }: { status?: Status; t
   const referencia = consulta !== null && consulta !== vigente;
   const municipal = territorio?.fontes.find(f => f.id === 'v17');
   return <section className="action-plan" aria-label="Plano de Ação">
-    <div className="page-heading"><p className="eyebrow">Orientações operacionais JBS</p>
-      <h2>{referencia ? `Consulta — ${plano!.titulo}` : plano ? `Plano de Ação — ${plano.titulo}` : 'Plano de Ação — nível não confirmado'}</h2>
+    <div className="page-heading">
+      <h2>{referencia ? `Consulta — ${plano!.titulo}` : plano ? `Plano de Ação — ${plano.titulo}` : 'Plano de Ação — nível não confirmado'}</h2><p className="source-context">Orientações operacionais JBS</p>
       {referencia && <p className="consultation">O Nível de Alerta JBS atual permanece {vigente === 'impacto' ? '⚫ Impacto JBS' : `${ambiental ? simbolos[ambiental] : ''} ${rotuloNivel(ambiental)}`}.</p>}
       {!impacto.dado && <p className="meta">A condição do Terminal não foi confirmada. O plano ambiental disponível não confirma ausência de impacto físico.</p>}
       {impacto.qualidade === 'degradado' && <p className="stale">Último estado operacional conhecido preservado; confirmação pendente.</p>}
@@ -24,7 +24,7 @@ export function ActionPlan({ status, territorio, impacto }: { status?: Status; t
     <section className="plan-reasons" aria-label="Motivo do nível"><h3>Por que estamos neste nível?</h3>
       {impacto.dado?.ativo && <div><p><strong>{labelsImpacto[impacto.dado.tipo]}</strong> · Acionado em {horario(impacto.dado.acionado_em)}</p>
         <p>Condição ambiental: {ambiental ? simbolos[ambiental] : ''} {rotuloNivel(ambiental)}</p></div>}
-      {status ? <Gatilhos status={status} /> : <p>Gatilhos ambientais indisponíveis.</p>}
+      {status ? <Gatilhos status={status} titulo={false} /> : <p>Gatilhos ambientais indisponíveis.</p>}
     </section>
     {plano ? <article className={`plan-guidance ${referencia ? 'plan-reference' : `level-${vigente === 'impacto' ? 'impacto' : vigente}`}`}>
       <p className="eyebrow">{referencia ? 'Plano de referência · consulta' : 'Orientações do nível vigente'}</p>

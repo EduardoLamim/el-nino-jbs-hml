@@ -23,7 +23,7 @@ export function ImpactoJbs({ painelAmbiental, contextoAmbiental, onEstado }: { p
       {!estado.dado && <p>Estado operacional JBS indisponível. Não foi possível verificar se existe Impacto JBS ativo.</p>}
       {estado.dado?.ativo && <p className="impact-type">{labelsImpacto[estado.dado.tipo]} · Acionado em {horario(estado.dado.acionado_em)}</p>}
       {estado.dado && !estado.dado.ativo && <p>{estado.qualidade === 'confirmado' ? painelAmbiental ? 'Nenhum impacto físico confirmado.' : 'Nenhum Impacto JBS ativo na última consulta confirmada.' : 'Último estado conhecido: inativo. A condição atual não foi confirmada.'}</p>}
-      {estado.qualidade === 'degradado' && <p>Estado degradado/desatualizado. Último estado conhecido preservado; confirmação pendente.</p>}
+      {estado.qualidade === 'degradado' && <p>Último estado conhecido preservado; confirmação atual pendente.</p>}
       <p className="meta">Última confirmação: {estado.confirmado_em ? horario(estado.confirmado_em) : 'Nenhuma'}.</p>
       {estado.realtime !== 'conectado' && <p className="meta">Sincronização em reconexão; atualização automática a cada minuto.</p>}
     </div>

@@ -44,7 +44,7 @@ try{
   const p=await browser.newPage({viewport:{width,height:960},hasTouch:true});
   await p.goto(origin+base+'#/mapa');const t=p.getByRole('checkbox',{name:'Nomes dos bairros'});await t.check();
   await p.getByLabel('Consultar bairro ou localidade').selectOption({label:'São Vicente · 67 residentes'});await p.getByRole('article',{name:'Detalhe territorial São Vicente'}).waitFor();
-  await p.getByRole('button',{name:'Ampliar mapa'}).click();await p.getByRole('button',{name:'Mover mapa para leste'}).click();
+  await p.getByRole('button',{name:'Ampliar mapa'}).click();await p.getByRole('region',{name:'Mapa interativo de bairros e estações'}).focus();await p.keyboard.press('ArrowRight');
   assert(await t.isChecked());assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await t.focus();await p.keyboard.press('Tab');await p.keyboard.press('Shift+Tab');
   assert(await t.evaluate(el=>el===document.activeElement&&getComputedStyle(el).outlineStyle!=='none'));

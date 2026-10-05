@@ -1,15 +1,14 @@
 import type { EstacaoHidrologica, EstadoRio } from '../domain/contracts';
 import type { Territorio } from '../domain/territory';
-import { horario, medida, qualidade, tendencia } from '../utils/presentation';
+import { horario, medida, tendencia } from '../utils/presentation';
 import { rotuloNivel } from '../utils/format';
 
 export function StationDetails({ codigo, estacao, estado }: { codigo: string; estacao?: EstacaoHidrologica; estado?: EstadoRio }) {
-  return <article className="map-detail" aria-label={`Detalhe ${codigo}`}><p className="eyebrow">Condição da estação</p><h3>{codigo} · {estacao?.nome ?? estado?.nome ?? 'Identificação não informada'}</h3>
+  return <article className="map-detail" aria-label={`Detalhe ${codigo}`}><h3>{codigo} · {estacao?.nome ?? estado?.nome ?? 'Identificação não informada'}</h3><p className="source-context">Condição da estação</p>
     <p>Estado vigente: <strong>{rotuloNivel(estado?.nivel ?? null)}</strong></p><p>Nível da leitura: {medida(estacao?.nivel_m, 'm')} · {tendencia(estacao?.tendencia)}</p>
-    <p className="meta">Leitura: {horario(estacao?.medido_em)} · {estacao ? qualidade(estacao.qualidade) : 'Indisponível'}</p>
-    {estado?.stale && <p className="stale">Última condição conhecida preservada — fonte degradada.</p>}
+    <p className="meta">Leitura: {horario(estacao?.medido_em)}</p>{(!estacao || estacao.nivel_m === null || estacao.qualidade === 'indisponivel') && <p>Dado indisponível.</p>}
+    {estado?.stale && <p className="stale">Sem dado recente. Última condição conhecida preservada.</p>}
     <dl className="thresholds"><div><dt>Atenção</dt><dd>{medida(estacao?.limites.atencao_m, 'm')}</dd></div><div><dt>Alerta</dt><dd>{medida(estacao?.limites.alerta_m, 'm')}</dd></div><div><dt>Emergência</dt><dd>{medida(estacao?.limites.emergencia_m, 'm')}</dd></div></dl>
-    <p className="meta">Localização: {estacao?.latitude != null && estacao.longitude != null ? `${estacao.latitude}, ${estacao.longitude}` : 'Coordenadas não informadas'}</p>
     <a href="#/monitoramento/rios">Ver no Monitoramento</a>
   </article>;
 }

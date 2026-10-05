@@ -51,7 +51,7 @@ describe('Fase 06 — Dashboard e Impacto JBS', () => {
     ctx.store = new ImpactoStore({ consultar: async () => { throw Error('offline'); }, executar: vi.fn(), assinar: () => () => {} },
       { ler: () => JSON.stringify({ versao: 1, dado: ativo, confirmado_em: '2020-01-01T00:00:00Z' }), gravar: vi.fn() });
     render(<PainelOperacional status={s} />);
-    expect(await screen.findByText(/Estado degradado\/desatualizado/)).toBeTruthy();
+    expect(await screen.findByText(/Último estado conhecido preservado; confirmação atual pendente/)).toBeTruthy();
     expect(screen.getByRole('heading', { name: '⚫ IMPACTO JBS' })).toBeTruthy();
   });
   it('cliente sem confirmação não afirma ausência de impacto', async () => {
@@ -91,9 +91,9 @@ describe('Fase 06 — Dashboard e Impacto JBS', () => {
     expect(screen.queryByText(/colaboradores afetados|bairro atingido|área em alerta atual/i)).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Barragens' })).toBeNull();
   });
-  it('qualidade degradada permanece visível', async () => {
+  it('qualidade permanece interna, sem diagnóstico técnico na UI', async () => {
     s.qualidade_monitoramento.estado = 'degradado'; render(<PainelOperacional status={s} />);
-    await screen.findByText('Nenhum impacto físico confirmado.'); expect(screen.getByText('Degradado')).toBeTruthy();
+    await screen.findByText('Nenhum impacto físico confirmado.'); expect(screen.queryByText('Degradado')).toBeNull(); expect(s.qualidade_monitoramento.estado).toBe('degradado');
   });
 });
 
@@ -111,9 +111,9 @@ describe('Fase 06 — Rios', () => {
     render(<Rios status={s} />);
     expect(screen.getAllByRole('article')).toHaveLength(11);
     const rio = within(screen.getByRole('article', { name: 'Estação DC01' }));
-    expect(rio.getByText('7,89 m')).toBeTruthy(); expect(rio.getByText(/Atrasado/)).toBeTruthy();
+    expect(rio.getByText('7,89 m')).toBeTruthy(); expect(rio.getByText(/Sem dado recente/)).toBeTruthy();
     expect(rio.getByText(/Última condição conhecida/)).toBeTruthy();
-    expect(within(screen.getByRole('article', { name: 'Estação DC02' })).getByText(/Indisponível/)).toBeTruthy();
+    expect(within(screen.getByRole('article', { name: 'Estação DC02' })).getByText(/Dado indisponível/)).toBeTruthy();
   });
   it('normalização aparece apenas no detalhe e mantém nível vigente', async () => {
     s.motor!.rios.DC01!.normalizacao.leituras_abaixo = 2; s.motor!.rios.DC01!.stale = false;

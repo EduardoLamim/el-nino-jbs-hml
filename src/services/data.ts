@@ -1,7 +1,7 @@
 import { parseStatus, parseTerritorio } from '../domain/contracts';
 
 async function carregarJson(arquivo: string, signal?: AbortSignal): Promise<unknown> {
-  const resposta = await fetch(`${import.meta.env.BASE_URL}data/${arquivo}`, { signal });
+  const resposta = await fetch(`${import.meta.env.BASE_URL}data/${arquivo}`, { signal, ...(arquivo === 'status.json' ? { cache: 'no-cache' as const } : {}) });
   if (!resposta.ok) throw new Error(`Falha ao carregar ${arquivo}: HTTP ${resposta.status}`);
   return resposta.json() as Promise<unknown>;
 }

@@ -58,7 +58,7 @@ describe('Fase 07 — regressão funcional do mapa migrado', () => {
   });
   it('indisponibilidade preserva condição conhecida', async () => {
     s.motor!.rios.DC01!.nivel='emergencia';s.motor!.rios.DC01!.stale=true;s.rios.DC01!.qualidade='indisponivel';s.rios.DC01!.nivel_m=null;
-    mapa();await userEvent.selectOptions(screen.getByLabelText('Consultar estação'),'DC01');const detail=within(screen.getByRole('article',{name:'Detalhe DC01'}));expect(detail.getByText(/fonte degradada/)).toBeTruthy();expect(detail.getByText(/Emergência/, { selector: 'strong' })).toBeTruthy();
+    mapa();await userEvent.selectOptions(screen.getByLabelText('Consultar estação'),'DC01');const detail=within(screen.getByRole('article',{name:'Detalhe DC01'}));expect(detail.getByText(/Sem dado recente/)).toBeTruthy();expect(detail.getByText(/Emergência/, { selector: 'strong' })).toBeTruthy();
   });
   it('sem coordenadas não estima posição e sem estado não afirma normalidade', () => {
     s.rios.DC02!.latitude=null;s.motor!.rios.DC03!.nivel=null;mapa();expect(screen.getByText(/Sem coordenadas disponíveis para desenhar: DC02/)).toBeTruthy();expect(within(screen.getByLabelText('Consultar estação')).getByRole('option',{name:/DC03.*Desconhecido/})).toBeTruthy();
@@ -158,7 +158,7 @@ describe('Fase 07 — barra global e integração', () => {
   it('barra com estado desconhecido não afirma terminal sem impacto', async () => {
     render(<CompactOperational status={s} impacto={desconhecido} />);
     expect(screen.getByText('Condição do Terminal sem confirmação atual.')).toBeTruthy();
-    await userEvent.click(screen.getByText('Qualidade / confirmação'));
+    expect(screen.queryByText('Qualidade / confirmação')).toBeNull();
     expect(screen.getByText(/Não foi possível verificar se existe Impacto JBS ativo/)).toBeTruthy();
   });
   it('navegação compartilha um único store, sem barra no Dashboard e com atualização no Plano', async () => {

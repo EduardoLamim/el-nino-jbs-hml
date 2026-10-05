@@ -27,6 +27,6 @@ export function RiverChart({ estacao }: { estacao: EstacaoHidrologica }) {
       <path d={caminho} fill="none" stroke="#236b87" strokeWidth="2.5" />
       {validas.map((p, i) => <circle key={i} cx={x(p.medido_em!)} cy={y(p.nivel_m!)} r="2" fill="#236b87"><title>{horario(p.medido_em)} · {medida(p.nivel_m, 'm')}</title></circle>)}
     </svg><p className="chart-period meta"><span>De {horario(serie[0]!.medido_em)}</span><span>Até {horario(serie.at(-1)!.medido_em)}</span></p><p className="meta">Horários de Brasília. Pontos sem nível ou indisponíveis interrompem a linha.</p>
-    <details><summary>Consultar valores da série</summary><div className="table-scroll" tabIndex={0} role="region" aria-label={`Valores da série ${estacao.codigo}`}><table><thead><tr><th>Horário</th><th>Nível</th><th>Qualidade</th></tr></thead><tbody>{serie.map((p, i) => <tr key={i}><td>{horario(p.medido_em)}</td><td>{medida(p.nivel_m, 'm')}</td><td>{p.qualidade ?? 'Não informada'}</td></tr>)}</tbody></table></div></details>
+    <details><summary>Consultar valores da série</summary><div className="table-scroll" tabIndex={0} role="region" aria-label={`Valores da série ${estacao.codigo}`}><table><thead><tr><th>Horário</th><th>Nível</th></tr></thead><tbody>{[...serie].reverse().map((p, i) => <tr key={i}><td>{horario(p.medido_em)}</td><td>{medida(p.nivel_m, 'm')}</td></tr>)}</tbody></table></div></details>
   </figure>;
 }

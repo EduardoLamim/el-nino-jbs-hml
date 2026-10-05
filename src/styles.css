@@ -414,3 +414,28 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 }
 @media (max-width: 350px) { .forecast-card .forecast-days { grid-template-columns: 1fr; } .brand h1 { font-size: 1rem; } .brand-logo { width: 66px; } .card { padding: 18px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+/* Fase 10 — ajustes após validação visual, preservando o grid mobile. */
+.source-context { color: var(--muted, #526e80); font-size: .78rem; margin: 5px 0 18px; }
+.official-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.official-heading img { flex: 0 0 auto; }
+.official-heading h2 { margin: 0; }
+.official-heading .source-context { margin: 5px 0 0; }
+.official-flag { border-left: 4px solid var(--level-color, #7e8992); padding: 7px 12px; background: var(--level-bg, #f3f6f8); }
+.collection-time { grid-column: 1 / -1; font-size: .78rem; color: inherit; opacity: .85; margin-top: 18px; padding-top: 14px; border-top: 1px solid #768d9b33; }
+.forecast-condition, .icon-title { display: flex; align-items: center; gap: 10px; }
+.weather-icon { flex: 0 0 auto; color: #346982; }
+.river-station { border-left: 4px solid var(--level-color, #7e8992); }
+.exposure > .source-context { grid-column: 1 / -1; }
+.exposure > h3 { align-self: start; grid-column: 2; grid-row: 3; margin-top: 0; padding-top: 3px; }
+.exposure > .concentrations { grid-column: 2; grid-row: 3; margin-top: 30px; align-self: start; }
+.map-bases { position: relative; padding-top: 35px; }
+.map-bases legend { position: absolute; top: 12px; left: 16px; padding: 0; background: #fff; }
+.historical-notice { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+.historical-control { margin-top: 20px; }
+.action-plan { max-width: none; margin: 0; }
+.plan-guidance > .eyebrow { margin-bottom: 18px; }
+.plan-guidance > h3 { margin-top: 22px; margin-bottom: 12px; }
+.plan-guidance > ol + .meta { margin-top: 22px; }
+@media (max-width: 850px) { .exposure > .concentrations { margin-top: 8px; } .exposure > h3 { margin-top: 18px; } }
+@media (max-width: 600px) { .map-bases { padding-top: 35px; } .map-toolbar { grid-template-columns: 44px 44px minmax(0,1fr); } .map-toolbar button:nth-child(3) { grid-column: auto; } }
+.operational > .collection-time { padding-bottom: 20px; }

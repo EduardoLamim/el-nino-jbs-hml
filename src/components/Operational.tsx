@@ -1,25 +1,23 @@
 import type { Status } from '../domain/contracts';
 import { rotuloNivel } from '../utils/format';
-import { horario, qualidade, simbolos } from '../utils/presentation';
+import { horario, simbolos } from '../utils/presentation';
 import { ImpactoJbs } from './ImpactoJbs';
 import type { EstadoImpacto } from '../domain/impact';
 
-export function Gatilhos({ status }: { status: Status }) {
-  return <div className="triggers"><h3>O que sustenta a condição ambiental</h3>
+export function Gatilhos({ status, titulo = true }: { status: Status; titulo?: boolean }) {
+  return <div className="triggers">{titulo && <h3>Por que estamos neste nível?</h3>}
     {status.nivel_jbs.gatilhos.length ? <ul>{status.nivel_jbs.gatilhos.map(g => <li key={`${g.tipo}-${g.origem}`}>
-      <strong>{g.tipo === 'situacao_oficial' ? 'Defesa Civil de Itajaí' : `${g.origem} · ${g.nome ?? status.rios[g.origem]?.nome ?? 'Estação hidrológica'}`}</strong>
+      <strong>{g.tipo === 'situacao_oficial' ? `Defesa Civil de Itajaí está em ${rotuloNivel(g.severidade)}.` : `${g.origem} atingiu nível de ${rotuloNivel(g.severidade)}.`}</strong>
+      {g.tipo === 'estacao_hidrologica' && <span>{g.nome ?? status.rios[g.origem]?.nome ?? 'Estação hidrológica'}</span>}
       <span>{rotuloNivel(g.severidade)}{g.tipo === 'estacao_hidrologica' && g.nivel_observado_m != null ? ` · ${g.nivel_observado_m.toLocaleString('pt-BR')} m` : ''}</span>
-      {g.stale && <small>Última condição conhecida — fonte degradada.</small>}
+      {g.stale && <small>Sem dado recente. Última condição conhecida preservada.</small>}
       <small>Fonte: {horario(g.atualizado_em)}</small>
-    </li>)}</ul> : <p>{status.nivel_jbs.nivel === 'normalidade' ? 'Nenhum gatilho elevado na última avaliação disponível.' : 'Não há gatilhos disponíveis para explicar a condição.'}</p>}
+    </li>)}</ul> : <p>{status.nivel_jbs.nivel === 'normalidade' ? 'Nenhum indicador monitorado exige elevação do nível neste momento.' : 'Não há gatilhos disponíveis para explicar a condição.'}</p>}
   </div>;
 }
 
 export function QualidadeDados({ status }: { status: Status }) {
-  return <div className="data-quality"><span>Qualidade dos dados: <strong>{qualidade(status.qualidade_monitoramento.estado)}</strong></span>
-    <span>Coleta: {horario(status.atualizado_em)} · Horários de Brasília</span>
-    {status.qualidade_monitoramento.problemas.length > 0 && <details><summary>Ver informações de qualidade</summary><ul>{status.qualidade_monitoramento.problemas.map((p, i) => <li key={i}>{p}</li>)}</ul></details>}
-  </div>;
+  return <div className="collection-time">Coleta JBS: {horario(status.atualizado_em)} · Horários de Brasília</div>;
 }
 
 export function PainelOperacional({ status, onEstado }: { status?: Status; onEstado?: (estado: EstadoImpacto) => void }) {

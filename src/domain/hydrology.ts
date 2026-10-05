@@ -6,9 +6,9 @@ export interface PoliticaHidrologica {
   tolerancia_intervalo_segundos: number;
   atrasado_permite_escalada: boolean;
 }
-// Decisões confirmadas pelo usuário na Fase 03; não são limiares hidrológicos.
+// Política da Fase 03; tolerância ampliada para 120s na revisão autorizada da Fase 10.
 export const politicaHidrologica: Readonly<PoliticaHidrologica> = {
-  tolerancia_intervalo_segundos: 60, atrasado_permite_escalada: true,
+  tolerancia_intervalo_segundos: 120, atrasado_permite_escalada: true,
 };
 const iso = z.string().datetime({ offset: true });
 export function tempo(valor: string | null | undefined): number | null {
