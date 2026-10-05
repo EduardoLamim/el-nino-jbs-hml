@@ -15,9 +15,9 @@ Geometrias históricas seguem fluxo separado: fonte oficial → coleta/validaç�
 | Arquivo | Disparo | Responsabilidade |
 | --- | --- | --- |
 | `.github/workflows/ci.yml` | Push em `main`, pull request e manual | Lint, testes, dados, typecheck, build Pages, validação do artefato e smoke test de navegador sem depender de disponibilidade GIS |
-| `.github/workflows/deploy-pages.yml` | Schedule e manual na branch padrão | Coleta operacional, validações, snapshot persistido, artefato Pages e publicação opcional |
+| `.github/workflows/deploy-pages.yml` | `workflow_dispatch` pela Edge/Cron HML ou manual na branch padrão | Coleta operacional, validações, snapshot persistido, artefato Pages e publicação opcional |
 
-O schedule usa minutos **02, 12, 22, 32, 42 e 52 de cada hora UTC** (`2,12,22,32,42,52 * * * *`): frequência-alvo de 10 minutos, sem garantia de pontualidade. GitHub pode atrasar ou omitir execuções sob carga; em repositórios públicos, schedules também podem ser desabilitados após inatividade. Não tratar horário de execução como horário da medição. Ver [documentação de schedules](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+O **Supabase Cron é o único agendador automático HML**, nos minutos **02, 12, 22, 32, 42 e 52 de cada hora UTC** (`2,12,22,32,42,52 * * * *`). O gatilho `schedule` do GitHub foi removido por autorização explícita após a investigação; a frequência Supabase foi preservada. O workflow mantém `workflow_dispatch` e todas as etapas originais. Essa correção elimina a duplicidade de agendadores, mas não garante disponibilidade dos runners. Não tratar horário de execução como horário da medição. A nova homologação de 12 ciclos permanece pendente.
 
 Em Actions, selecione **Atualizar estado operacional e preparar Pages → Run workflow**, usando a branch padrão. `publish=false` prepara dados e artefato sem deploy. `publish=true` autoriza o deploy daquele ciclo. A variável `PAGES_DEPLOY_ENABLED=true` habilita deploy em todos os ciclos, inclusive agendados. Ausente/false mantém apenas preparação. O antigo deploy automático por push foi substituído por CI no push e pelo workflow operacional; isso evita publicar um snapshot desatualizado junto a mudanças de código.
 

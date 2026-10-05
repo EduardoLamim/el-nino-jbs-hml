@@ -2,6 +2,10 @@
 
 ## Estado desta rodada
 
+**Correção mínima autorizada após a investigação:** removidas somente as duas linhas de `on.schedule` do workflow GitHub. Supabase permanece como único agendador automático, com frequência inalterada. `workflow_dispatch`, concurrency, `cancel-in-progress: false` e pipeline integral preservados. Esta decisão posterior substitui a condição anterior de manter o schedule até 12 ciclos. Não foi iniciada nova homologação, nem efetuado retry manual. O histórico abaixo descreve a implantação e a tentativa anterior.
+
+**Ação manual para observabilidade:** a CLI precisa de perfil autenticado em conta que tenha acesso ao HML `ufeahglxwygvlugfsopi`. No terminal, executar `supabase login --profile el-nino-hml` e concluir o login no navegador com essa conta. Depois, `supabase whoami --profile el-nino-hml --output-format json` e `supabase projects list --profile el-nino-hml --output json`; confirmar que o projeto HML aparece. Não enviar token/secret pelo chat e não conceder acesso público aos schemas internos. O vínculo local já aponta para o HML e não precisa de novo `link`. A consulta administrativa posterior deve usar explicitamente esse perfil. Nenhum login, troca de perfil ou grant foi feito pelo agente nesta rodada.
+
 05/10/2026: retomado após confirmação “Secret salvo”. **Implementação local validada; Edge e Cron HML ativos; homologação dos 12 ciclos em andamento.** Não declarar esta rodada concluída até o fechamento da matriz de ciclos e remoção do schedule GitHub.
 
 Foram lidos `fase-10-finalizacao.md`, `fase-10-investigacao-atualizacao.md` e `operacao.md`. A consulta administrativa confirmou a presença de `GITHUB_DISPATCH_TOKEN`, sem ler seu valor. A pausa anterior foi resolvida pelo solicitante.
@@ -18,7 +22,7 @@ Supabase Cron HML → Edge `trigger-monitoramento` → GitHub REST `workflow_dis
 - Job proposto: `monitoramento-hml-10min`; expressão `2,12,22,32,42,52 * * * *` (UTC).
 - Sem migração de coletor/motor ou armazenamento ambiental no Supabase. Histerese continua 600s + 120s, com três leituras oficiais válidas consecutivas.
 
-O schedule GitHub permanece intacto até comprovar 12 ciclos automáticos consecutivos pelo caminho novo. Depois será removido apenas esse gatilho, preservando `workflow_dispatch`, concurrency, validações e persistência fast-forward.
+Plano original da transição: manter schedule até 12 ciclos. **Substituído pela autorização posterior registrada acima:** retirada antecipada somente do gatilho GitHub para eliminar a disputa comprovada pela fila pendente.
 
 ## Ação manual necessária — credencial GitHub
 
