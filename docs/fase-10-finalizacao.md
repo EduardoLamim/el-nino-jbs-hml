@@ -2,6 +2,8 @@
 
 Data: 04/10/2026. Ambiente: **HML**. Implementação: `e62a2a80f8336473a40a702cbf8d1120e87ea926`.
 
+**Atualização de 05/10/2026:** a seção [Ajustes pós-validação visual](#ajustes-pós-validação-visual) registra a rodada posterior solicitada. As seções anteriores preservam o histórico da primeira entrega; textos de qualidade, controles direcionais e política temporal ali descritos foram substituídos somente nos pontos autorizados nesta revisão.
+
 ## Objetivo e escopo
 
 Refinar a identidade, a hierarquia e a utilização operacional da aplicação homologada na Fase 09, preservando suas regras. A única adição de controle é **Nomes dos bairros**, de natureza cartográfica. Referências: [homologação da Fase 09](fase-09-homologacao.md), [Fase 08](fase-08-implementacao.md), [evolução geoespacial](fase-07-1-implementacao.md) e [operação](operacao.md).
@@ -196,3 +198,95 @@ Documentação criada: este relatório, `fase-10-performance.json`, `fase-10-int
 ## Encerramento
 
 Fase 10 concluída tecnicamente no mesmo HML. **49 itens atendidos + um não aplicável = 50 itens avaliados, zero pendências técnicas.** Nenhuma regressão operacional foi encontrada nas verificações realizadas. A aplicação e este relatório estão disponíveis para validação do solicitante. Não foi criado PRD, Supabase novo, repositório novo ou V2. A promoção HML → PRD depende de aprovação explícita em etapa separada.
+
+## Ajustes pós-validação visual
+
+Rodada solicitada em 05/10/2026, exclusivamente dentro da Fase 10. Commit de implementação: `c78b2953e6e3ee46ca0abd5f2f3d04adc4d03150`. O feedback aprovou a distribuição mobile e pediu linguagem menos técnica, ajustes de identidade/ícones, espaçamento, mapa e investigação da atualização dos dados, além de autorizar alvo de coleta de 10 minutos e tolerância adicional de 120s.
+
+### Ajustes executados
+
+| Feedback | Implementação |
+|---|---|
+| Retirar diagnóstico de qualidade | Removidos badges, coluna de qualidade, diagnóstico global e detalhes internos da UI. Qualidade permanece no schema, JSON, motor, logs e testes. O horário da coleta JBS permanece explícito. |
+| Manter indisponibilidade verdadeira | Mantidos “Dado indisponível”, “Sem dado recente”, estado desconhecido e avisos de confirmação pendente; ausência nunca vira Normalidade. |
+| Defesa Civil | [SVG do próprio portal oficial](https://monitoramento.defesacivil.itajai.sc.gov.br/img/portal/logo_defesa.svg), 1.521 bytes, dimensão de apresentação 48 × 47. Cor do nível usa `nivelPorFlag`, sem interpretar conteúdo livre. |
+| Horário oficial | Campo confirmado em `situacao-atual.data.atualizado_em`; rótulo “Última atualização da Defesa Civil”, com data e hora para distinguir os dias. Separado de “Coleta JBS”. |
+| Chuva | SVG leve, sem foto; removida explicação metodológica, preservados máximos e N/M da última 1h. |
+| Previsão | Mesmos ícones no Dashboard e Monitoramento. Mapeamento exato das condições comprovadas no JSON atual/fixture oficial: “Encoberto com chuva”, “Nebulosidade variável e chuva isolada” e “Céu encoberto”. Texto permanece; condição nova recebe símbolo informativo neutro, sem inferência meteorológica. |
+| Contexto territorial | Card mantém tamanho/peso, 292/88 e agregados. Concentrações alinhadas ao topo da região dos indicadores no desktop, sem relação com rios ou alerta. |
+| Rios | Acento lateral usa exclusivamente nível calculado pelo motor. Coordenadas retiradas dos detalhes textuais, preservadas nos dados/mapa. Tabela da série mostra mais recente primeiro, sem coluna qualidade; gráfico mantém ordenação temporal própria e gaps. |
+| Mapa | Removidos botões direcionais, links de proveniência/datasets/fontes técnicas e explicações técnicas das bases. Mouse, touch, drag, wheel, zoom, setas do teclado, nomes e seletores preservados. |
+| Base e avisos | Legend da base dentro da superfície branca, sem borda atravessando o texto. Avisos históricos e de vias com separação vertical, preservando histórico ≠ condição atual. |
+| Contextos e títulos | Fontes/contextos dos cards e páginas passam para baixo dos títulos. Identificação institucional do cabeçalho e rótulo operacional mantidos. |
+| Motivos do nível | “Por que estamos neste nível?” e explicação clara quando não há gatilho elevado; motivos de elevação usam apenas gatilhos existentes. |
+| Plano | Sem título duplicado nos motivos, alinhado ao grid principal, com respiro após consulta, objetivos e antes do aviso final. Regras do conteúdo não alteradas. |
+| Mobile | Estrutura anterior preservada em 390/320px; apenas os ajustes solicitados adaptados. |
+
+### Investigação e política temporal
+
+O [relatório específico de investigação](fase-10-investigacao-atualizacao.md) contém a cadeia portal → resposta → parser/coletor → Actions → commit → Pages → frontend, headers, horários e diferenças por estação. A reprodução localizou a diferença antes da coleta: ausência de novos ciclos agendados, enquanto fonte e parser já disponibilizavam leituras novas. Pages e Git continham o mesmo arquivo antigo, inclusive em consulta sem cache prévio. O motivo interno de o agendador GitHub não emitir os disparos não é observável pela API e não foi inventado.
+
+Também foi corrigida a aba que antes carregava dados uma única vez: releitura a cada 600s quando visível e ao retornar à aba, `no-cache` para revalidar status, proteção contra consultas simultâneas e snapshot regressivo. Falha preserva o último snapshot com aviso. Isso não cria dados novos no Pages nem substitui o coletor.
+
+Cron final: **`2,12,22,32,42,52 * * * *`**, UTC, alvo de **10 minutos**. Continuidade: **600 + 120 = 720 segundos**, mantendo **três leituras oficiais válidas**, inclusive em um lote, e quebra acima da tolerância. A mudança não promete execução pontual do GitHub Actions nem elimina por si só a lacuna observada. Documentação operacional atualizada em [operação](operacao.md).
+
+### Testes e gates
+
+**302 testes aprovados em 23 arquivos: 271 casos preservados + 31 novos.** Seis expectativas antigas de qualidade/indisponibilidade e continuidade foram adaptadas ao comportamento expressamente solicitado, sem apagar casos. Os testes de domínio/integração de qualidade continuam ativos.
+
+- `phase10-adjustments.test.tsx`: 18 casos de ausência de diagnóstico, dados preservados, quatro flags oficiais/horário/logo, ausência real, cinco estados DC, série descendente, chuva, condições meteorológicas e Plano.
+- `phase10-cadence.test.ts`: nove casos para 600/660/719/720s, quebra em 720,001/721/900s, repetição de leitura e cron/serialização. Um lote com três leituras normaliza; três execuções da mesma leitura não.
+- `phase10-refresh.test.tsx`: quatro casos de releitura, retorno à aba/limpeza, falha preservando dados, rejeição de snapshot antigo e prevenção de duplicação de requisição.
+- `phase10-adjustments-smoke.ts`: 28 combinações de página/largura, mais recortes de componentes. Verifica ausência de textos/links técnicos, teclado do mapa real, nomes, histórico/vias, Plano, dados do Terminal e ausência de overflow.
+- Smoke pré-existente e smoke dos nomes reexecutados com GIS real, fallback duplo e estado preto simulado no cliente. O teste de pan passou a utilizar a seta do teclado após a remoção autorizada do botão visual.
+
+| Gate local | Resultado |
+|---|---|
+| `npm test` | 302/302 |
+| `npm run lint` | Aprovado |
+| `npm run typecheck` | Aprovado |
+| `npm run typecheck:edge` | Aprovado também em execução explícita |
+| `npm run pages:build` | Aprovado com configuração pública do HML |
+| `npm run data:validate` | Aprovado; 11 datasets históricos íntegros |
+| `npm run pages:validate` | Aprovado; 23 arquivos, 3.810.835 bytes no artefato local |
+| actionlint 1.7.12 | Aprovado; `-shellcheck= -pyflakes=` |
+| Smoke navegador | [Geral/GIS](fase-10-atualizacao/browser-local.json), [nomes](fase-10-atualizacao/nomes-local.json), [28 cenários de ajustes](fase-10-visual/ajustes-local/checks.json) aprovados |
+
+Sem novas dependências. JS principal do build com configuração pública: 564,39KB / 160,02KB gzip; JS do mapa: 361,38KB / 106,40KB gzip; CSS global: 28,55KB / 7,07KB gzip. Logo oficial é SVG leve incorporado pelo build. O aviso preexistente de chunk principal acima de 500KB permanece. Lazy loading do mapa/histórico e ausência de GIS no Dashboard foram preservados.
+
+### Evidências visuais
+
+Capturados 52 PNGs locais: sete páginas/seções em quatro larguras (28), quatro cards em quatro larguras (16), rio/série expandida (4) e seletor da base (4). Não há overflow em 1440, 768, 390 ou 320px. Exemplos:
+
+| Componente | Evidência local |
+|---|---|
+| Dashboard | [1440](fase-10-visual/ajustes-local/dashboard-1440.png), [768](fase-10-visual/ajustes-local/dashboard-768.png), [390](fase-10-visual/ajustes-local/dashboard-390.png), [320](fase-10-visual/ajustes-local/dashboard-320.png) |
+| Defesa Civil / chuva | [Defesa Civil](fase-10-visual/ajustes-local/defesa-civil-1440.png), [chuva](fase-10-visual/ajustes-local/chuva-1440.png) |
+| Previsão | [Dashboard](fase-10-visual/ajustes-local/previsao-1440.png), [Monitoramento](fase-10-visual/ajustes-local/monitoramento-previsao-1440.png) |
+| Contexto territorial | [Desktop](fase-10-visual/ajustes-local/territorio-1440.png), [320](fase-10-visual/ajustes-local/territorio-320.png) |
+| Rios e série | [Rios](fase-10-visual/ajustes-local/monitoramento-rios-1440.png), [DC01 expandido](fase-10-visual/ajustes-local/rio-serie-1440.png) |
+| Mapa / histórico / vias | [1440](fase-10-visual/ajustes-local/mapa-1440.png), [390](fase-10-visual/ajustes-local/mapa-390.png), [320](fase-10-visual/ajustes-local/mapa-320.png) |
+| Base do mapa | [Desktop](fase-10-visual/ajustes-local/base-1440.png), [320](fase-10-visual/ajustes-local/base-320.png) |
+| Plano e espaçamentos | [1440](fase-10-visual/ajustes-local/plano-de-acao-1440.png), [320](fase-10-visual/ajustes-local/plano-de-acao-320.png) |
+
+Capturas locais utilizam o snapshot anterior à publicação para conferir apresentação; a confirmação de atualização real é feita separadamente no HML. Os recortes foram inspecionados, além das assertivas automatizadas. A captura de página restaura o scroll ao topo e reenquadra o mapa depois de testar pan, evitando sobreposição artificial da barra sticky na evidência.
+
+### CI, HML e reconhecimento do schedule
+
+O [CI 37262180903](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37262180903) e o [deploy 37262201726](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37262201726) passaram. Etapas em [CI](fase-10-atualizacao/ci.json) e [deploy](fase-10-atualizacao/deploy.json). A coleta real gerou o snapshot `04:08:31.270Z`, persistido em `ebf163973c62dc1bbfda76bbe03c227e85795de6` e servido pelo Pages. [Hashes Git/Pages iguais](fase-10-atualizacao/git-pages.json), [comparação temporal](fase-10-atualizacao/comparacao-depois.json) e [timestamp do frontend](fase-10-atualizacao/frontend-depois.json) registrados.
+
+[52 capturas remotas / 28 cenários](fase-10-visual/ajustes-hml/checks.json), incluindo [Dashboard](fase-10-visual/ajustes-hml/dashboard-1440.png), [Defesa Civil](fase-10-visual/ajustes-hml/defesa-civil-1440.png), [rio/série](fase-10-visual/ajustes-hml/rio-serie-1440.png), [Mapa 390](fase-10-visual/ajustes-hml/mapa-390.png), [Mapa 320](fase-10-visual/ajustes-hml/mapa-320.png) e [Plano](fase-10-visual/ajustes-hml/plano-de-acao-1440.png), aprovados. O [smoke geral com GIS](fase-10-atualizacao/browser-hml.json) e o [smoke dos nomes](fase-10-atualizacao/nomes-hml.json) passaram. Uma corrida do teste de fallback foi corrigida: clicar a base indisponível deve terminar na Simplificada, portanto o teste não exige que o rádio defeituoso continue marcado. Não houve mudança do fallback do produto.
+
+[Supabase somente leitura](fase-10-atualizacao/supabase.json): revisão 10 inativa e Realtime `SUBSCRIBED`; nenhum acionamento/encerramento remoto. Nenhuma regressão encontrada nas verificações. O novo cron foi confirmado no arquivo remoto e o workflow continua ativo; [observação dos disparos](fase-10-atualizacao/schedule.json) registrada separadamente do ciclo manual.
+
+Foi observada a [execução automática 37302698228](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37302698228), criada às `11:24:12Z` e concluída com sucesso às `11:25:24Z`, já com a revisão contendo o novo cron. O snapshot `11:24:31.852Z` foi persistido em `8807dba6b9dd3b7bf76820e2f05a649e5d0bab95`; [Git e Pages coincidem](fase-10-atualizacao/git-pages-schedule.json). [Etapas do ciclo](fase-10-atualizacao/schedule-jobs.json) registradas.
+
+**O agendamento foi reconhecido, mas a frequência efetiva de 10 minutos não foi demonstrada.** Houve 7h15min56s entre o ciclo manual e esse automático, sem outro ciclo listado; a limitação de atraso do GitHub permanece material para o uso operacional. O relatório não declara a defasagem de horas definitivamente resolvida pela alteração de frequência. Detalhes e horários no [relatório de investigação](fase-10-investigacao-atualizacao.md).
+
+A [releitura no navegador](fase-10-atualizacao/refresh-browser.json) foi confirmada com relógio controlado e respostas locais: duas consultas, rótulo alterado de 01:08 para 01:18, sem escrita remota. A [auditoria de escopo](fase-10-atualizacao/integridade.json) registra os arquivos protegidos intactos e as exceções autorizadas.
+
+### Limitações e encerramento desta rodada
+
+O agendador GitHub continua sem SLA. Nova condição de previsão não mapeada mantém texto e ícone neutro, sem previsão inferida. O estado ativo preto foi verificado por fixture no cliente; não foram enviados comandos de Impacto. As regras territoriais, 292/88, DC01–DC11, thresholds, Supabase/Edge/RPC/PIN/Realtime, GIS, fallback e regras do Plano foram preservadas. As únicas alterações operacionais são tolerância autorizada e cron; a releitura do snapshot corrige a atualização do cliente.
+
+Rodada de ajustes concluída e disponível no mesmo HML para **nova validação visual do solicitante**. Todos os gates de implementação passaram e o disparo automático foi observado. Permanece a ressalva operacional de pontualidade descrita acima; não se afirma que o cron de 10 minutos garante disponibilidade de dados recentes. Nenhum GO-LIVE, ambiente PRD, Supabase novo, repositório novo ou V2 foi iniciado.

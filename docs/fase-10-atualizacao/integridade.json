@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-05T11:30:38.150Z",
+  "baseline": "00909b9532b8d42349f8fa862accecc6e8e11899",
+  "code": "c78b2953e6e3ee46ca0abd5f2f3d04adc4d03150",
+  "protectedUnchanged": [
+    "src/domain/contracts.ts",
+    "src/domain/alert-engine.ts",
+    "src/services/impact.ts",
+    "src/content/action-plans.ts",
+    "src/map/engine.ts",
+    "src/map/basemaps.ts",
+    "scripts/collectors/",
+    "supabase/",
+    "public/data/historico/"
+  ],
+  "exceptions": [
+    "src/domain/hydrology.ts: somente tolerância 60→120s e comentário",
+    ".github/workflows/deploy-pages.yml: somente cron",
+    "public/data/status.json: snapshot automático",
+    "src/hooks/useDados.ts e src/services/data.ts: correção da releitura/cache do cliente"
+  ],
+  "changed": [
+    ".github/workflows/deploy-pages.yml",
+    "docs/operacao.md",
+    "public/data/status.json",
+    "scripts/qa/phase10-adjustments-smoke.ts",
+    "scripts/qa/phase10-smoke.ts",
+    "src/App.tsx",
+    "src/assets/defesa-civil.svg",
+    "src/components/CompactOperational.tsx",
+    "src/components/ImpactoJbs.tsx",
+    "src/components/MapDetails.tsx",
+    "src/components/Operational.tsx",
+    "src/components/RiverChart.tsx",
+    "src/components/Weather.tsx",
+    "src/components/WeatherIcon.tsx",
+    "src/domain/hydrology.ts",
+    "src/hooks/useDados.ts",
+    "src/pages/ActionPlan.tsx",
+    "src/pages/Dashboard.tsx",
+    "src/pages/Monitoramento.tsx",
+    "src/pages/TerritoryMap.tsx",
+    "src/services/data.ts",
+    "src/styles.css",
+    "tests/alert-engine.test.ts",
+    "tests/phase06.test.tsx",
+    "tests/phase07.test.tsx",
+    "tests/phase10-adjustments.test.tsx",
+    "tests/phase10-cadence.test.ts",
+    "tests/phase10-refresh.test.tsx"
+  ]
+}

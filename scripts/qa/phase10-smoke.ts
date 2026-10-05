@@ -37,7 +37,7 @@ try{
  await page.getByRole('checkbox',{name:'Histórico de inundação',exact:true}).check();await page.getByText(/1983: 1 feições/).waitFor();
  await page.getByRole('checkbox',{name:'Vias com histórico de inundação',exact:true}).check();await page.getByText(/555 feições/).waitFor();assert(await toggle.isChecked());
  await page.route('https://arcgis.itajai.sc.gov.br/**',r=>r.abort());
- for(const name of ['Aérea','Cartográfica']){await page.getByRole('radio',{name,exact:true}).check();await page.getByText(`Base ${name} indisponível.`,{exact:false}).waitFor({timeout:25000});assert(await toggle.isChecked());}
+ for(const name of ['Aérea','Cartográfica']){await page.getByRole('radio',{name,exact:true}).click();await page.getByText(`Base ${name} indisponível.`,{exact:false}).waitFor({timeout:25000});assert(await toggle.isChecked());}
  report.checks.push('Nomes nas bases testadas; histórico/vias e fallback duplo preservados com nomes ativos.');
  await page.close();
  for(const width of [768,390,320]){

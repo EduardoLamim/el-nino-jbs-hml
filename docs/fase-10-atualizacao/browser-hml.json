@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-05T04:11:14.574Z",
+  "browser": "154.0.4258.53",
+  "base": "/el-nino-jbs-hml/",
+  "checks": [
+    "Navegação pelas quatro páginas; formulário Impacto acessível sem enviar comando; Dashboard sem chunks do mapa.",
+    "Acesso direto e refresh em rotas hash, incluindo seções de Monitoramento.",
+    "OpenLayers, 35 bairros, 11 DC, histórico e vias locais sob subpath.",
+    "Cartográfica e Aérea reais renderizadas no build Pages, com estilos/sprites/PBF/tiles municipais.",
+    "Mobile 390: quatro páginas sem overflow; fallback duplo, camadas locais, seleção e alerta preservados.",
+    "Mobile 320: quatro páginas sem overflow; fallback duplo, camadas locais, seleção e alerta preservados.",
+    "Nenhum request local 404/falho nem exceção JavaScript; erros de rede GIS simulados registrados separadamente."
+  ],
+  "localFailures": [],
+  "errors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "gis": [
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/styles/root.json",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/sprites/sprite.json",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/resources/sprites/sprite.png",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/373.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/373.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/374.pbf",
+      "status": 404
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/372.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/591/372.pbf",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/basemap_itajai_urb/VectorTileServer/tile/10/592/374.pbf",
+      "status": 404
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/747",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/747",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/745",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/745",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1182/746",
+      "status": 200
+    },
+    {
+      "url": "https://arcgis.itajai.sc.gov.br/server/rest/services/Hosted/Ortoimagem_restitui%C3%A7%C3%A3o_2020/MapServer/tile/11/1183/746",
+      "status": 200
+    }
+  ]
+}

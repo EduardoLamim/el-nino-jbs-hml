@@ -1,0 +1,190 @@
+{
+  "utc": "2026-10-05T04:11:57.786Z",
+  "responses": {
+    "portal": {
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
+      "started": "2026-10-05T04:11:57.030Z",
+      "ended": "2026-10-05T04:11:57.189Z",
+      "status": 200,
+      "headers": {
+        "date": "Mon, 05 Oct 2026 04:11:55 GMT",
+        "age": null,
+        "cache-control": "no-cache, private",
+        "last-modified": null,
+        "etag": null
+      },
+      "sha256": "1b7b885f665a0323e6fb80ad85ccc3b7014e0733070054643220be6837b65f73"
+    },
+    "oficial": {
+      "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
+      "started": "2026-10-05T04:11:57.082Z",
+      "ended": "2026-10-05T04:11:57.180Z",
+      "status": 200,
+      "headers": {
+        "date": "Mon, 05 Oct 2026 04:11:55 GMT",
+        "age": null,
+        "cache-control": "no-cache, private",
+        "last-modified": null,
+        "etag": null
+      },
+      "sha256": "e257408b60e2d1fea6b8b90832ca72811f8e446600fce986ca884a0fdcd25c26"
+    },
+    "pages": {
+      "url": "https://eduardolamim.github.io/el-nino-jbs-hml/data/status.json",
+      "started": "2026-10-05T04:11:57.083Z",
+      "ended": "2026-10-05T04:11:57.160Z",
+      "status": 200,
+      "headers": {
+        "date": "Mon, 05 Oct 2026 04:11:55 GMT",
+        "age": "1",
+        "cache-control": "max-age=600",
+        "last-modified": "Mon, 05 Oct 2026 04:09:10 GMT",
+        "etag": "W/\"6ac322e6-442fb\""
+      },
+      "sha256": "5f0c9c52c14d7a2c0a7a84903c4ed17e6ce3d58b2f667416a3667256ef869fbf"
+    },
+    "pagesFresh": {
+      "url": "https://eduardolamim.github.io/el-nino-jbs-hml/data/status.json?audit=1791173517030",
+      "started": "2026-10-05T04:11:57.084Z",
+      "ended": "2026-10-05T04:11:57.155Z",
+      "status": 200,
+      "headers": {
+        "date": "Mon, 05 Oct 2026 04:11:55 GMT",
+        "age": "1",
+        "cache-control": "max-age=600",
+        "last-modified": "Mon, 05 Oct 2026 04:09:10 GMT",
+        "etag": "W/\"6ac322e6-442fb\""
+      },
+      "sha256": "5f0c9c52c14d7a2c0a7a84903c4ed17e6ce3d58b2f667416a3667256ef869fbf"
+    },
+    "epagri": {
+      "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
+      "started": "2026-10-05T04:11:57.085Z",
+      "ended": "2026-10-05T04:11:57.739Z",
+      "status": 200,
+      "headers": {
+        "date": "Mon, 05 Oct 2026 04:11:56 GMT",
+        "age": null,
+        "cache-control": null,
+        "last-modified": null,
+        "etag": null
+      },
+      "sha256": "1ece56145ff3810e7d4d027e14c76c4ec5a6c346981da7480b33b8fc0bbd5212"
+    }
+  },
+  "official": {
+    "data": {
+      "flag": "Normalidade",
+      "conteudo": "Emergência ligue 199 ou 193. Sala de Monitoramento e Alerta 24h.",
+      "atualizado_em": "2026-10-04T13:45:52-03:00"
+    }
+  },
+  "pagesGenerated": "2026-10-05T04:08:31.270Z",
+  "pagesCollected": "2026-10-05T04:08:29.965Z",
+  "localGenerated": "2026-10-05T04:08:31.270Z",
+  "stations": [
+    {
+      "code": "DC01",
+      "source": "2026-10-05T04:01:35.363000+00:00",
+      "seriesLast": "2026-10-05T04:01:35.363000+00:00",
+      "seriesMax": "2026-10-05T04:01:35.363000+00:00",
+      "normalized": "2026-10-05T04:01:35.363000+00:00",
+      "pages": "2026-10-05T03:51:35.394000+00:00",
+      "local": "2026-10-05T03:51:35.394000+00:00"
+    },
+    {
+      "code": "DC02",
+      "source": "2026-10-05T04:01:21.694000+00:00",
+      "seriesLast": "2026-10-05T04:01:21.694000+00:00",
+      "seriesMax": "2026-10-05T04:01:21.694000+00:00",
+      "normalized": "2026-10-05T04:01:21.694000+00:00",
+      "pages": "2026-10-05T03:51:21.694000+00:00",
+      "local": "2026-10-05T03:51:21.694000+00:00"
+    },
+    {
+      "code": "DC03",
+      "source": "2026-10-05T04:10:05.446000+00:00",
+      "seriesLast": "2026-10-05T04:10:05.446000+00:00",
+      "seriesMax": "2026-10-05T04:10:05.446000+00:00",
+      "normalized": "2026-10-05T04:10:05.446000+00:00",
+      "pages": "2026-10-05T03:50:12.882000+00:00",
+      "local": "2026-10-05T03:50:12.882000+00:00"
+    },
+    {
+      "code": "DC04",
+      "source": "2026-10-05T04:01:12.946000+00:00",
+      "seriesLast": "2026-10-05T04:01:12.946000+00:00",
+      "seriesMax": "2026-10-05T04:01:12.946000+00:00",
+      "normalized": "2026-10-05T04:01:12.946000+00:00",
+      "pages": "2026-10-05T03:51:13.102000+00:00",
+      "local": "2026-10-05T03:51:13.102000+00:00"
+    },
+    {
+      "code": "DC05",
+      "source": "2026-10-05T04:01:06.057000+00:00",
+      "seriesLast": "2026-10-05T04:01:06.057000+00:00",
+      "seriesMax": "2026-10-05T04:01:06.057000+00:00",
+      "normalized": "2026-10-05T04:01:06.057000+00:00",
+      "pages": "2026-10-05T03:51:05.947000+00:00",
+      "local": "2026-10-05T03:51:05.947000+00:00"
+    },
+    {
+      "code": "DC06",
+      "source": "2026-10-05T04:00:55.778000+00:00",
+      "seriesLast": "2026-10-05T04:00:55.778000+00:00",
+      "seriesMax": "2026-10-05T04:00:55.778000+00:00",
+      "normalized": "2026-10-05T04:00:55.778000+00:00",
+      "pages": "2026-10-05T03:50:55.669000+00:00",
+      "local": "2026-10-05T03:50:55.669000+00:00"
+    },
+    {
+      "code": "DC07",
+      "source": "2026-10-05T04:00:34.892000+00:00",
+      "seriesLast": "2026-10-05T04:00:34.892000+00:00",
+      "seriesMax": "2026-10-05T04:00:34.892000+00:00",
+      "normalized": "2026-10-05T04:00:34.892000+00:00",
+      "pages": "2026-10-05T03:50:34.892000+00:00",
+      "local": "2026-10-05T03:50:34.892000+00:00"
+    },
+    {
+      "code": "DC08",
+      "source": "2026-10-05T04:00:21.005000+00:00",
+      "seriesLast": "2026-10-05T04:00:21.005000+00:00",
+      "seriesMax": "2026-10-05T04:00:21.005000+00:00",
+      "normalized": "2026-10-05T04:00:21.005000+00:00",
+      "pages": "2026-10-05T03:50:20.895000+00:00",
+      "local": "2026-10-05T03:50:20.895000+00:00"
+    },
+    {
+      "code": "DC09",
+      "source": "2026-10-05T04:10:05.118000+00:00",
+      "seriesLast": "2026-10-05T04:10:05.118000+00:00",
+      "seriesMax": "2026-10-05T04:10:05.118000+00:00",
+      "normalized": "2026-10-05T04:10:05.118000+00:00",
+      "pages": "2026-10-05T03:50:11.898000+00:00",
+      "local": "2026-10-05T03:50:11.898000+00:00"
+    },
+    {
+      "code": "DC10",
+      "source": "2026-10-05T04:10:09.164000+00:00",
+      "seriesLast": "2026-10-05T04:10:09.164000+00:00",
+      "seriesMax": "2026-10-05T04:10:09.164000+00:00",
+      "normalized": "2026-10-05T04:10:09.164000+00:00",
+      "pages": "2026-10-05T03:50:06.758000+00:00",
+      "local": "2026-10-05T03:50:06.758000+00:00"
+    },
+    {
+      "code": "DC11",
+      "source": "2026-10-05T04:10:04.681000+00:00",
+      "seriesLast": "2026-10-05T04:10:04.681000+00:00",
+      "seriesMax": "2026-10-05T04:10:04.681000+00:00",
+      "normalized": "2026-10-05T04:10:04.681000+00:00",
+      "pages": "2026-10-05T03:50:03.696000+00:00",
+      "local": "2026-10-05T03:50:03.696000+00:00"
+    }
+  ],
+  "forecastConditions": [
+    "Encoberto com chuva",
+    "Nebulosidade variável e chuva isolada"
+  ]
+}
