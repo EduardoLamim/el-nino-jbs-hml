@@ -2,6 +2,10 @@
 
 Data: 04/10/2026. Ambiente: **HML**. Implementação: `e62a2a80f8336473a40a702cbf8d1120e87ea926`.
 
+**Fechamento adicional — Supabase Cron e quatro ajustes residuais:** [relatório específico](fase-10-supabase-cron.md). Implementação `93d4014`, 319 testes e CI aprovados, Edge/Cron ativos e ajustes publicados no HML pelo ciclo das 18:02 UTC de 05/10. Os 28 cenários visuais remotos, smokes GIS/fallback/nomes e mobile passaram. O bloco territorial desktop alinha ao topo dos indicadores; Monitoramento não apresenta a coleta global redundante; Chuva usa “Estações” e não apresenta a legenda removida; a fonte da previsão está próxima ao título. O mobile aprovado mantém sua distribuição e os horários individuais permanecem.
+
+A Edge usa apenas secrets server-side, valida autorização dedicada e dispara o workflow existente na main HML. Testes remotos rejeitaram chamadas anônimas; schema/função privados não têm acesso anon/authenticated. Motor, histerese 600+120s/três leituras, Impacto JBS e pipeline foram preservados. A rodada adicional permanece **em homologação**, dependente de 12 ciclos automáticos consecutivos e retirada posterior do schedule GitHub. `workflow_dispatch` manual continua disponível. As declarações de conclusão abaixo se referem às entregas anteriores, não substituem esse critério novo. Não houve GO-LIVE/PRD.
+
 **Atualização de 05/10/2026:** a seção [Ajustes pós-validação visual](#ajustes-pós-validação-visual) registra a rodada posterior solicitada. As seções anteriores preservam o histórico da primeira entrega; textos de qualidade, controles direcionais e política temporal ali descritos foram substituídos somente nos pontos autorizados nesta revisão.
 
 ## Objetivo e escopo

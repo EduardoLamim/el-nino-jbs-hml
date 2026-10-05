@@ -1,0 +1,700 @@
+[
+  {
+    "edge_response": {
+      "correlation_id": "9ce278ee-1cd3-4f9c-8405-712ccdec9a0c",
+      "received_at": "2026-10-05T17:52:00.266Z",
+      "dispatch_at": "2026-10-05T17:52:01.718Z",
+      "github_status": 200,
+      "workflow_run_id": 37351630017,
+      "result": "accepted"
+    },
+    "expected_at": "2026-10-05T17:52:00+00:00",
+    "http_status": 202,
+    "request_id": 2,
+    "requested_at": "2026-10-05T17:52:00.128856+00:00",
+    "timed_out": false,
+    "cron": {
+      "end_time": "2026-10-05T17:52:00.130182+00:00",
+      "return_message": "1 row",
+      "runid": 1,
+      "start_time": "2026-10-05T17:52:00.108893+00:00",
+      "status": "succeeded"
+    },
+    "run": {
+      "id": 37351630017,
+      "event": "workflow_dispatch",
+      "created_at": "2026-10-05T17:52:01Z",
+      "run_started_at": "2026-10-05T17:52:01Z",
+      "updated_at": "2026-10-05T17:53:09Z",
+      "conclusion": "success",
+      "url": "https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37351630017"
+    },
+    "jobs": [
+      {
+        "name": "prepare",
+        "conclusion": "success",
+        "started_at": "2026-10-05T17:52:05Z",
+        "completed_at": "2026-10-05T17:52:51Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-05T17:52:06Z",
+            "completed_at": "2026-10-05T17:52:07Z"
+          },
+          {
+            "name": "Ler ponta atual da branch padrão, inclusive em reexecuções antigas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-05T17:52:07Z",
+            "completed_at": "2026-10-05T17:52:10Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-05T17:52:10Z",
+            "completed_at": "2026-10-05T17:52:13Z"
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-05T17:52:13Z",
+            "completed_at": "2026-10-05T17:52:17Z"
+          },
+          {
+            "name": "Validar snapshot anterior e datasets locais",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-05T17:52:17Z",
+            "completed_at": "2026-10-05T17:52:17Z"
+          },
+          {
+            "name": "Coletar, aplicar motor existente e validar saída atômica",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-05T17:52:17Z",
+            "completed_at": "2026-10-05T17:52:24Z"
+          },
+          {
+            "name": "Validar aplicação",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-05T17:52:24Z",
+            "completed_at": "2026-10-05T17:52:37Z"
+          },
+          {
+            "name": "Build Pages com apenas as duas variáveis públicas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-05T17:52:37Z",
+            "completed_at": "2026-10-05T17:52:45Z"
+          },
+          {
+            "name": "Conferir conteúdo e integridade do artefato",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9,
+            "started_at": "2026-10-05T17:52:45Z",
+            "completed_at": "2026-10-05T17:52:45Z"
+          },
+          {
+            "name": "Persistir somente o snapshot validado para o próximo ciclo",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10,
+            "started_at": "2026-10-05T17:52:45Z",
+            "completed_at": "2026-10-05T17:52:47Z"
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11,
+            "started_at": "2026-10-05T17:52:47Z",
+            "completed_at": "2026-10-05T17:52:49Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21,
+            "started_at": "2026-10-05T17:52:49Z",
+            "completed_at": "2026-10-05T17:52:49Z"
+          },
+          {
+            "name": "Post Ler ponta atual da branch padrão, inclusive em reexecuções antigas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22,
+            "started_at": "2026-10-05T17:52:49Z",
+            "completed_at": "2026-10-05T17:52:49Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23,
+            "started_at": "2026-10-05T17:52:49Z",
+            "completed_at": "2026-10-05T17:52:49Z"
+          }
+        ]
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "started_at": "2026-10-05T17:52:56Z",
+        "completed_at": "2026-10-05T17:53:08Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-05T17:52:57Z",
+            "completed_at": "2026-10-05T17:52:58Z"
+          },
+          {
+            "name": "Run actions/configure-pages@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-05T17:52:58Z",
+            "completed_at": "2026-10-05T17:52:59Z"
+          },
+          {
+            "name": "Run actions/deploy-pages@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-05T17:52:59Z",
+            "completed_at": "2026-10-05T17:53:06Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-05T17:53:06Z",
+            "completed_at": "2026-10-05T17:53:06Z"
+          }
+        ]
+      },
+      {
+        "name": "source-diagnostics",
+        "conclusion": "skipped",
+        "started_at": "2026-10-05T17:53:09Z",
+        "completed_at": "2026-10-05T17:53:08Z",
+        "steps": []
+      }
+    ],
+    "commit": {
+      "sha": "b0858c211d39efabe8393e9843657f200f1e18c5",
+      "date": "2026-10-05T17:52:46Z"
+    },
+    "snapshot_at": "2026-10-05T17:52:24.139Z",
+    "collection": {
+      "situacao_atual": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
+        "qualidade": null,
+        "atualizado_em": "2026-10-05T14:20:20-03:00",
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.319Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Situação oficial não informa qualidade ou validade temporal."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
+            "coletado_em": "2026-10-05T17:52:18.319Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "alertas_ativo": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.352Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
+            "coletado_em": "2026-10-05T17:52:18.352Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "rios": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.353Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Séries sem qualidade explícita mantêm qualidade null; validade não inferida."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
+            "coletado_em": "2026-10-05T17:52:18.353Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "chuvas": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.354Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Campos de chuva ausentes ficam null; acumulados e séries não são recalculados."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
+            "coletado_em": "2026-10-05T17:52:18.354Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "barragens": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
+        "qualidade": "atrasado",
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.354Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
+            "coletado_em": "2026-10-05T17:52:18.354Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "epagri": {
+        "nome": "Epagri/Ciram",
+        "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T17:52:18.355Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
+          "UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
+            "coletado_em": "2026-10-05T17:52:18.355Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          },
+          {
+            "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
+            "coletado_em": "2026-10-05T17:52:21.552Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      }
+    },
+    "pages_at": "2026-10-05T17:52:24.139Z",
+    "snapshot_sha256": "61e04e662e2150daa566f7e8c27f484cb79a79e5cc71d5a9ae69c4f7c7361ea2",
+    "pages_sha256": "61e04e662e2150daa566f7e8c27f484cb79a79e5cc71d5a9ae69c4f7c7361ea2",
+    "observed_at": "2026-10-05T17:56:41.483Z",
+    "same_snapshot": true,
+    "published": true
+  },
+  {
+    "edge_response": {
+      "correlation_id": "4337ad1a-8c73-48ee-8827-067c97d52fb5",
+      "received_at": "2026-10-05T18:02:00.407Z",
+      "dispatch_at": "2026-10-05T18:02:02.103Z",
+      "github_status": 200,
+      "workflow_run_id": 37352896251,
+      "result": "accepted"
+    },
+    "expected_at": "2026-10-05T18:02:00+00:00",
+    "http_status": 202,
+    "request_id": 3,
+    "requested_at": "2026-10-05T18:02:00.116913+00:00",
+    "timed_out": false,
+    "cron": {
+      "end_time": "2026-10-05T18:02:00.118548+00:00",
+      "return_message": "1 row",
+      "runid": 2,
+      "start_time": "2026-10-05T18:02:00.081013+00:00",
+      "status": "succeeded"
+    },
+    "run": {
+      "id": 37352896251,
+      "event": "workflow_dispatch",
+      "created_at": "2026-10-05T18:02:01Z",
+      "run_started_at": "2026-10-05T18:02:01Z",
+      "updated_at": "2026-10-05T18:03:07Z",
+      "conclusion": "success",
+      "url": "https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37352896251"
+    },
+    "jobs": [
+      {
+        "name": "prepare",
+        "conclusion": "success",
+        "started_at": "2026-10-05T18:02:05Z",
+        "completed_at": "2026-10-05T18:02:52Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-05T18:02:06Z",
+            "completed_at": "2026-10-05T18:02:07Z"
+          },
+          {
+            "name": "Ler ponta atual da branch padrão, inclusive em reexecuções antigas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-05T18:02:07Z",
+            "completed_at": "2026-10-05T18:02:10Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-05T18:02:10Z",
+            "completed_at": "2026-10-05T18:02:12Z"
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-05T18:02:12Z",
+            "completed_at": "2026-10-05T18:02:15Z"
+          },
+          {
+            "name": "Validar snapshot anterior e datasets locais",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-05T18:02:15Z",
+            "completed_at": "2026-10-05T18:02:16Z"
+          },
+          {
+            "name": "Coletar, aplicar motor existente e validar saída atômica",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-05T18:02:16Z",
+            "completed_at": "2026-10-05T18:02:21Z"
+          },
+          {
+            "name": "Validar aplicação",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-05T18:02:21Z",
+            "completed_at": "2026-10-05T18:02:38Z"
+          },
+          {
+            "name": "Build Pages com apenas as duas variáveis públicas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-05T18:02:38Z",
+            "completed_at": "2026-10-05T18:02:47Z"
+          },
+          {
+            "name": "Conferir conteúdo e integridade do artefato",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9,
+            "started_at": "2026-10-05T18:02:47Z",
+            "completed_at": "2026-10-05T18:02:47Z"
+          },
+          {
+            "name": "Persistir somente o snapshot validado para o próximo ciclo",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10,
+            "started_at": "2026-10-05T18:02:47Z",
+            "completed_at": "2026-10-05T18:02:49Z"
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11,
+            "started_at": "2026-10-05T18:02:49Z",
+            "completed_at": "2026-10-05T18:02:50Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21,
+            "started_at": "2026-10-05T18:02:50Z",
+            "completed_at": "2026-10-05T18:02:50Z"
+          },
+          {
+            "name": "Post Ler ponta atual da branch padrão, inclusive em reexecuções antigas",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22,
+            "started_at": "2026-10-05T18:02:50Z",
+            "completed_at": "2026-10-05T18:02:50Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23,
+            "started_at": "2026-10-05T18:02:50Z",
+            "completed_at": "2026-10-05T18:02:50Z"
+          }
+        ]
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "started_at": "2026-10-05T18:02:56Z",
+        "completed_at": "2026-10-05T18:03:06Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-05T18:02:56Z",
+            "completed_at": "2026-10-05T18:02:58Z"
+          },
+          {
+            "name": "Run actions/configure-pages@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-05T18:02:58Z",
+            "completed_at": "2026-10-05T18:02:58Z"
+          },
+          {
+            "name": "Run actions/deploy-pages@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-05T18:02:58Z",
+            "completed_at": "2026-10-05T18:03:05Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-05T18:03:05Z",
+            "completed_at": "2026-10-05T18:03:05Z"
+          }
+        ]
+      },
+      {
+        "name": "source-diagnostics",
+        "conclusion": "skipped",
+        "started_at": "2026-10-05T18:03:07Z",
+        "completed_at": "2026-10-05T18:03:07Z",
+        "steps": []
+      }
+    ],
+    "commit": {
+      "sha": "3d6c4ca8228353b45739309e2fb02af580e94750",
+      "date": "2026-10-05T18:02:47Z"
+    },
+    "snapshot_at": "2026-10-05T18:02:21.185Z",
+    "collection": {
+      "situacao_atual": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
+        "qualidade": null,
+        "atualizado_em": "2026-10-05T14:20:20-03:00",
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.014Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Situação oficial não informa qualidade ou validade temporal."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
+            "coletado_em": "2026-10-05T18:02:17.014Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "alertas_ativo": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.053Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
+            "coletado_em": "2026-10-05T18:02:17.053Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "rios": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.055Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Séries sem qualidade explícita mantêm qualidade null; validade não inferida."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
+            "coletado_em": "2026-10-05T18:02:17.055Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "chuvas": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.056Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Campos de chuva ausentes ficam null; acumulados e séries não são recalculados."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
+            "coletado_em": "2026-10-05T18:02:17.056Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "barragens": {
+        "nome": "Defesa Civil de Itajaí",
+        "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
+        "qualidade": "atrasado",
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.057Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [],
+        "requisicoes": [
+          {
+            "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
+            "coletado_em": "2026-10-05T18:02:17.057Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      },
+      "epagri": {
+        "nome": "Epagri/Ciram",
+        "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
+        "qualidade": null,
+        "atualizado_em": null,
+        "atualizacao_esperada_segundos": null,
+        "coletado_em": "2026-10-05T18:02:17.058Z",
+        "resultado": "sucesso",
+        "motivo": null,
+        "avisos": [
+          "Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
+          "UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
+        ],
+        "requisicoes": [
+          {
+            "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
+            "coletado_em": "2026-10-05T18:02:17.058Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          },
+          {
+            "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
+            "coletado_em": "2026-10-05T18:02:19.639Z",
+            "http_status": 200,
+            "erro": null,
+            "resposta_erro": null
+          }
+        ]
+      }
+    },
+    "pages_at": "2026-10-05T18:02:21.185Z",
+    "snapshot_sha256": "0f60a2db950e5cf28970bfbfd422d8e38918d7341e1aac2cc72dd5364acf7f2e",
+    "pages_sha256": "0f60a2db950e5cf28970bfbfd422d8e38918d7341e1aac2cc72dd5364acf7f2e",
+    "observed_at": "2026-10-05T18:03:46.107Z",
+    "same_snapshot": true,
+    "published": true
+  }
+]

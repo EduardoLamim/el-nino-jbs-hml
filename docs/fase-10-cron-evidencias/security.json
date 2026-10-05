@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-05T17:54:28.100Z",
+  "checks": [
+    {
+      "method": "POST",
+      "authorization": "absent",
+      "status": 401,
+      "response": {
+        "error": "unauthorized"
+      }
+    },
+    {
+      "method": "GET",
+      "authorization": "absent",
+      "status": 405,
+      "response": {
+        "error": "method_not_allowed"
+      }
+    },
+    {
+      "method": "POST",
+      "authorization": "invalid",
+      "status": 401,
+      "response": {
+        "error": "unauthorized"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "cron_runs": [
+    {
+      "end_time": "2026-10-05T17:52:00.130182+00:00",
+      "return_message": "1 row",
+      "runid": 1,
+      "start_time": "2026-10-05T17:52:00.108893+00:00",
+      "status": "succeeded"
+    },
+    {
+      "end_time": "2026-10-05T18:02:00.118548+00:00",
+      "return_message": "1 row",
+      "runid": 2,
+      "start_time": "2026-10-05T18:02:00.081013+00:00",
+      "status": "succeeded"
+    }
+  ],
+  "jobs": [
+    {
+      "active": true,
+      "jobid": 1,
+      "jobname": "monitoramento-hml-10min",
+      "schedule": "2,12,22,32,42,52 * * * *"
+    }
+  ],
+  "observed_at": "2026-10-05T18:03:41.993418+00:00",
+  "requests": [
+    {
+      "edge_response": "{\"correlation_id\":\"cb5cdd65-19a4-46dc-b68a-00359ad475cf\",\"received_at\":\"2026-10-05T17:43:53.200Z\",\"dispatch_at\":\"2026-10-05T17:43:54.943Z\",\"github_status\":200,\"workflow_run_id\":37350606157,\"result\":\"accepted\"}",
+      "expected_at": "2026-10-05T17:42:00+00:00",
+      "http_status": 202,
+      "request_id": 1,
+      "requested_at": "2026-10-05T17:43:52.480287+00:00",
+      "timed_out": false
+    },
+    {
+      "edge_response": "{\"correlation_id\":\"9ce278ee-1cd3-4f9c-8405-712ccdec9a0c\",\"received_at\":\"2026-10-05T17:52:00.266Z\",\"dispatch_at\":\"2026-10-05T17:52:01.718Z\",\"github_status\":200,\"workflow_run_id\":37351630017,\"result\":\"accepted\"}",
+      "expected_at": "2026-10-05T17:52:00+00:00",
+      "http_status": 202,
+      "request_id": 2,
+      "requested_at": "2026-10-05T17:52:00.128856+00:00",
+      "timed_out": false
+    },
+    {
+      "edge_response": "{\"correlation_id\":\"4337ad1a-8c73-48ee-8827-067c97d52fb5\",\"received_at\":\"2026-10-05T18:02:00.407Z\",\"dispatch_at\":\"2026-10-05T18:02:02.103Z\",\"github_status\":200,\"workflow_run_id\":37352896251,\"result\":\"accepted\"}",
+      "expected_at": "2026-10-05T18:02:00+00:00",
+      "http_status": 202,
+      "request_id": 3,
+      "requested_at": "2026-10-05T18:02:00.116913+00:00",
+      "timed_out": false
+    }
+  ]
+}

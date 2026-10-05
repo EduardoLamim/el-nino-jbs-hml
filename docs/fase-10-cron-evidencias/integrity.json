@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-05T17:58:19.759Z",
+  "baseline": "a912a2b",
+  "implementation": "93d401487132efebeb7572d3d1d0faa25a24a43b",
+  "changed": [
+    "public/data/status.json",
+    "scripts/automation/activate-hml-cron.sql",
+    "scripts/automation/inspect-hml-cron.sql",
+    "scripts/qa/phase10-adjustments-smoke.ts",
+    "src/pages/Monitoramento.tsx",
+    "src/styles.css",
+    "supabase/config.toml",
+    "supabase/functions/trigger-monitoramento/handler.ts",
+    "supabase/functions/trigger-monitoramento/index.ts",
+    "supabase/migrations/202610050001_monitoramento_cron.sql",
+    "tests/phase10-cron.test.ts",
+    "tests/phase10-final-ui.test.tsx"
+  ],
+  "protectedPaths": [],
+  "artifact_secret_checks": [
+    "index-Aj0exDr1.js",
+    "index-Cr_ZOr3f.css",
+    "index-G8TLys8A.js",
+    "TerritoryMap-BFqRdnFi.js",
+    "TerritoryMap-BtPuoxOl.css"
+  ],
+  "workflow_pipeline_unchanged": true
+}

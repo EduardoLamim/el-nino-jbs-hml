@@ -4,6 +4,8 @@ Investigação iniciada em **05/10/2026**, no mesmo HML. Horários técnicos em 
 
 ## Resultado da investigação
 
+**Rodada posterior autorizada em 05/10/2026:** a solução escolhida para HML é Supabase Cron → Edge isolada → GitHub `workflow_dispatch`, preservando o pipeline. Edge e Cron estão ativos em homologação; o schedule anterior permanece temporariamente até comprovar 12 ciclos consecutivos. Ver [configuração, segurança e evidências](fase-10-supabase-cron.md). O diagnóstico histórico abaixo permanece válido; a observação de um único dispatch não resolve sozinha a limitação de cadência.
+
 A diferença foi localizada **antes da coleta, na ausência de novos ciclos agendados do GitHub Actions**. O Pages servia corretamente o último snapshot persistido, mas ele havia sido gerado horas antes. Não foi encontrado deslocamento de timezone nem perda de leituras pelo parser. O histórico de execuções não permite atribuir a ausência de disparos a uma causa interna específica da infraestrutura GitHub; não se afirma, sem evidência, que houve congestionamento específico ou descarte de determinada execução.
 
 Há um segundo problema confirmado no cliente anterior: `useDados` carregava os dados somente na montagem. Uma aba mantida aberta não consultava novamente o snapshot após uma publicação. Essa limitação foi corrigida nesta rodada. Não é a explicação principal da reprodução: até uma requisição nova ao Pages retornou o arquivo antigo.

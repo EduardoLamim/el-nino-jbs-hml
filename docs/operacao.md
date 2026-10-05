@@ -6,7 +6,7 @@ Escopo: Fase 08. Preparação técnica; não substitui a homologação da Fase 0
 
 Defesa Civil + Epagri/Ciram → coletores aprovados → normalização → motor existente + snapshot anterior → validação final → `public/data/status.json` por gravação atômica → build estático → validação do artefato → persistência do snapshot → upload → deploy opcional.
 
-Supabase continua responsável exclusivamente pelo Impacto JBS manual. Não há backend novo, banco ambiental ou série histórica operacional nova. Git versiona o arquivo de estado corrente para continuidade e recuperação; nenhum histórico adicional é exposto pelo painel.
+Supabase mantém o Impacto JBS manual e, na rodada final HML da Fase 10, passa também a orquestrar o dispatch por Cron e Edge isolada. Não há banco ambiental ou migração do coletor/motor. Somente metadados do agendamento são registrados em schema privado. Git versiona o arquivo de estado corrente para continuidade e recuperação; nenhum histórico adicional é exposto pelo painel. [Configuração e estado da homologação do Cron](fase-10-supabase-cron.md).
 
 Geometrias históricas seguem fluxo separado: fonte oficial → coleta/validação manual → arquivos locais por hash + manifesto → frontend sob demanda. Não são recolhidas pelo ciclo operacional.
 

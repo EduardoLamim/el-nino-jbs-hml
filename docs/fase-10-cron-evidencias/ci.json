@@ -1,0 +1,135 @@
+{
+  "id": 37351873289,
+  "sha": "93d401487132efebeb7572d3d1d0faa25a24a43b",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37351873289",
+  "jobs": [
+    {
+      "name": "validate",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-05T17:54:01Z",
+          "completed_at": "2026-10-05T17:54:02Z"
+        },
+        {
+          "name": "Run actions/checkout@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-05T17:54:02Z",
+          "completed_at": "2026-10-05T17:54:04Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-05T17:54:04Z",
+          "completed_at": "2026-10-05T17:54:05Z"
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-05T17:54:05Z",
+          "completed_at": "2026-10-05T17:54:11Z"
+        },
+        {
+          "name": "Run npm run lint",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-05T17:54:11Z",
+          "completed_at": "2026-10-05T17:54:14Z"
+        },
+        {
+          "name": "Run npm test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-05T17:54:14Z",
+          "completed_at": "2026-10-05T17:54:31Z"
+        },
+        {
+          "name": "Run npm run data:validate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-05T17:54:31Z",
+          "completed_at": "2026-10-05T17:54:32Z"
+        },
+        {
+          "name": "Build estático de verificação (sem credenciais)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-05T17:54:32Z",
+          "completed_at": "2026-10-05T17:54:41Z"
+        },
+        {
+          "name": "Run npm run pages:validate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-05T17:54:41Z",
+          "completed_at": "2026-10-05T17:54:41Z"
+        },
+        {
+          "name": "Instalar navegador de teste",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-05T17:54:41Z",
+          "completed_at": "2026-10-05T17:55:04Z"
+        },
+        {
+          "name": "Servir e exercitar artefato sob subpath",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-05T17:55:04Z",
+          "completed_at": "2026-10-05T17:55:35Z"
+        },
+        {
+          "name": "Run actions/upload-pages-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-05T17:55:35Z",
+          "completed_at": "2026-10-05T17:55:36Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-10-05T17:55:36Z",
+          "completed_at": "2026-10-05T17:55:36Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-05T17:55:36Z",
+          "completed_at": "2026-10-05T17:55:36Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-05T17:55:36Z",
+          "completed_at": "2026-10-05T17:55:36Z"
+        }
+      ]
+    }
+  ]
+}
