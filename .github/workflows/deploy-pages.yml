@@ -44,6 +44,8 @@ jobs:
         run: npm run pages:build
         env:
           REQUIRE_PUBLIC_CONFIG: 'true'
+          APP_ENV: ${{ github.repository == 'EduardoLamim/el-nino-jbs-hml' && 'hml' || 'production' }}
+          ENABLE_HML_SIMULATION: 'true'
           PAGES_BASE_PATH: ${{ vars.PAGES_BASE_PATH }}
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL || secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY || secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}

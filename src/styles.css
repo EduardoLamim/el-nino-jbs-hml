@@ -441,6 +441,11 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 @media (max-width: 600px) { .map-bases { padding-top: 35px; } .map-toolbar { grid-template-columns: 44px 44px minmax(0,1fr); } .map-toolbar button:nth-child(3) { grid-column: auto; } }
 .operational > .collection-time { padding-bottom: 20px; }
 /* V1: avisos de transição e consulta do mapa do Terminal. */
+.simulation-tools { margin:8px 0; font-size:.85rem; }
+.simulation-tools summary { cursor:pointer; color:#526a78; }
+.simulation-tools section { padding:16px; border:2px dashed #a76200; background:#fff6df; color:#352509; }
+.simulation-label { font-weight:800; letter-spacing:.05em; }
+.simulation-actions { display:flex; flex-wrap:wrap; gap:8px; }
 .app-header { flex-wrap:wrap; }
 .header-audio { margin-left:auto; max-width:100%; flex:0 1 245px; }
 .header-audio .audio-controls { justify-content:flex-end; gap:4px 8px; font-size:.75rem; }

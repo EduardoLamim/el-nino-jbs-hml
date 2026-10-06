@@ -27,6 +27,9 @@ jobs:
       - run: npm run data:validate
       - name: Build estático de verificação (sem credenciais)
         run: npm run pages:build
+        env:
+          APP_ENV: ${{ github.repository == 'EduardoLamim/el-nino-jbs-hml' && 'hml' || 'production' }}
+          ENABLE_HML_SIMULATION: 'true'
       - run: npm run pages:validate
       - name: Instalar navegador de teste
         run: npx playwright install --with-deps chromium

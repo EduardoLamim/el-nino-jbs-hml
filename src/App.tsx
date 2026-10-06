@@ -8,6 +8,7 @@ import { Monitoramento, secoes, type SecaoMonitoramento } from './pages/Monitora
 import { CompactOperational } from './components/CompactOperational';
 import { ActionPlan } from './pages/ActionPlan';
 import { LevelAlert } from './components/LevelAlert';
+import { HmlAlertSimulator } from './components/HmlAlertSimulator';
 const TerritoryMapPage = lazy(() => import('./pages/TerritoryMap').then(m => ({ default: m.TerritoryMapPage })));
 import type { EstadoImpacto } from './domain/impact';
 import logo from './assets/jbs-terminais-branco.png';
@@ -21,6 +22,7 @@ export default function App() {
   const [rota, setRota] = useState(rotaAtual);
   const dados = useDados();
   const [audioHost, setAudioHost] = useState<HTMLDivElement | null>(null);
+  const [simulationActive, setSimulationActive] = useState(false);
   const [impacto, setImpacto] = useState<EstadoImpacto>({ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' });
   useEffect(() => {
     const atualizar = () => setRota(rotaAtual());
@@ -32,7 +34,9 @@ export default function App() {
     <a className="skip-link" href="#conteudo" onClick={e => { e.preventDefault(); document.getElementById('conteudo')?.focus(); }}>Ir para o conteúdo</a>
     <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /><div className="header-audio" ref={setAudioHost} /></header>
     <main id="conteudo" tabIndex={-1}>
-      <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} />
+      {__HML_SIMULATION__ ? <HmlAlertSimulator nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} onActiveChange={setSimulationActive} />
+        : <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} />}
+      <div hidden={simulationActive}>
       {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
       <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários das leituras e da coleta JBS.</p>
       {dados.estado === 'carregando' && <p role="status">Carregando dados…</p>}
@@ -45,6 +49,7 @@ export default function App() {
       {rota.pagina === 'mapa' && carregado && <Suspense fallback={<p role="status">Carregando mapa…</p>}><TerritoryMapPage status={carregado.status} territorio={carregado.territorio} /></Suspense>}
       {rota.pagina === 'plano-de-acao' && <ActionPlan status={carregado?.status} territorio={carregado?.territorio} impacto={impacto} />}
       {!rota.pagina && <section className="card"><h2>Página não encontrada</h2><a href="#/dashboard">Voltar ao Dashboard</a></section>}
+      </div>
     </main><footer>JBS Terminais · Apoio à decisão do Comitê El Niño <span>Horários de Brasília</span></footer>
   </>;
 }
