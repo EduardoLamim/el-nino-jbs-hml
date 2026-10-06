@@ -20,6 +20,7 @@ function rotaAtual() {
 export default function App() {
   const [rota, setRota] = useState(rotaAtual);
   const dados = useDados();
+  const [audioHost, setAudioHost] = useState<HTMLDivElement | null>(null);
   const [impacto, setImpacto] = useState<EstadoImpacto>({ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' });
   useEffect(() => {
     const atualizar = () => setRota(rotaAtual());
@@ -29,9 +30,9 @@ export default function App() {
   const carregado = dados.estado === 'carregado' ? dados.dados : null;
   return <>
     <a className="skip-link" href="#conteudo" onClick={e => { e.preventDefault(); document.getElementById('conteudo')?.focus(); }}>Ir para o conteúdo</a>
-    <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /></header>
+    <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /><div className="header-audio" ref={setAudioHost} /></header>
     <main id="conteudo" tabIndex={-1}>
-      <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} />
+      <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} />
       {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
       <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários das leituras e da coleta JBS.</p>
       {dados.estado === 'carregando' && <p role="status">Carregando dados…</p>}

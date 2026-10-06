@@ -73,3 +73,41 @@ it('botão do mapa fica depois dos quatro links na mesma área de ações', () =
   expect(nav.querySelectorAll('a')).toHaveLength(4);
   expect(nav.lastElementChild?.contains(screen.getByText('Visualizar Mapa de Decisões do Terminal'))).toBe(true);
 });
+
+it('primeiro impacto ativo não alarma; somente inativo → ativo gera sirene e reconhecimento', () => {
+  const { rerender } = render(<StrictMode><LevelAlert nivel="normalidade" impactoAtivo={null} /></StrictMode>);
+  rerender(<StrictMode><LevelAlert nivel="normalidade" impactoAtivo={true} /></StrictMode>);
+  expect(play).not.toHaveBeenCalled();
+  rerender(<StrictMode><LevelAlert nivel="normalidade" impactoAtivo={false} /></StrictMode>);
+  expect(play).not.toHaveBeenCalled();
+  rerender(<StrictMode><LevelAlert nivel="normalidade" impactoAtivo={true} /></StrictMode>);
+  expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
+  expect(screen.getByText('Impacto físico no Terminal confirmado.')).toBeTruthy();
+  rerender(<StrictMode><LevelAlert nivel="normalidade" impactoAtivo={true} /></StrictMode>);
+  expect(play).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByText('Reconhecer alerta')); expect(stop).toHaveBeenCalled(); expect(screen.queryByRole('alert')).toBeNull();
+});
+it('Emergência e Impacto simultâneos exibem ambos os avisos e solicitam somente uma sirene', () => {
+  const { rerender } = render(<LevelAlert nivel="normalidade" impactoAtivo={false} />);
+  rerender(<LevelAlert nivel="emergencia" impactoAtivo={true} />);
+  expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
+  expect(screen.getByText('Normalidade → Emergência')).toBeTruthy();
+  expect(screen.getByText('Impacto JBS inativo → Impacto JBS ativo')).toBeTruthy();
+});
+it('falha de autoplay não suprime aviso de Impacto e ausência temporária não reseta referência', () => {
+  play.mockReturnValue(false);
+  const { rerender } = render(<LevelAlert nivel={null} impactoAtivo={false} />);
+  rerender(<LevelAlert nivel={null} impactoAtivo={null} />);
+  rerender(<LevelAlert nivel={null} impactoAtivo={true} />);
+  expect(screen.getByText('Impacto físico no Terminal confirmado.')).toBeTruthy();
+  expect(screen.getByText(/Alerta sonoro indisponível/)).toBeTruthy();
+});
+it('controles são renderizados no header sem ocupar uma linha no conteúdo', async () => {
+  const host = document.createElement('header'); document.body.append(host);
+  const { container, unmount } = render(<LevelAlert nivel="normalidade" audioHost={host} />);
+  expect(container.textContent).toBe(''); expect(host.textContent).toContain('Som desabilitado');
+  fireEvent.click(screen.getByText('Habilitar som')); await screen.findByText('Testar som');
+  expect(host.textContent).toContain('Som habilitado'); expect(container.textContent).toBe('');
+  fireEvent.click(screen.getByText('Desabilitar som')); expect(host.textContent).toContain('Som desabilitado');
+  unmount(); host.remove();
+});

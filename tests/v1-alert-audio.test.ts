@@ -23,7 +23,8 @@ it.each([['atencao', 2, 0.82], ['alerta', 6, 1.95], ['emergencia', 1, 6]] as con
   audio.stop(); expect(nodes.every(n => n.stop.mock.calls.length === 2)).toBe(true);
   audio.dispose(); expect(close).toHaveBeenCalledOnce();
 });
-it('Normalidade é silenciosa; novo padrão interrompe áudio anterior', async () => {
+it('Normalidade é silenciosa; sirene crítica tem prioridade sem sobreposição ou reinício', async () => {
   const { audio, nodes } = setup(); await audio.enable(); audio.play('normalidade'); expect(nodes).toHaveLength(0);
-  audio.play('emergencia'); audio.play('atencao'); expect(nodes[0]!.stop).toHaveBeenCalledTimes(2);
+  audio.play('emergencia'); audio.play('atencao'); audio.play('emergencia'); expect(nodes).toHaveLength(1); expect(nodes[0]!.stop).toHaveBeenCalledTimes(1);
+  audio.stop(); audio.play('atencao'); expect(nodes).toHaveLength(3);
 });

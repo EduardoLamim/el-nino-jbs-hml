@@ -441,7 +441,29 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 @media (max-width: 600px) { .map-bases { padding-top: 35px; } .map-toolbar { grid-template-columns: 44px 44px minmax(0,1fr); } .map-toolbar button:nth-child(3) { grid-column: auto; } }
 .operational > .collection-time { padding-bottom: 20px; }
 /* V1: avisos de transição e consulta do mapa do Terminal. */
-.level-alert-control { margin: 1rem 0; }
+.app-header { flex-wrap:wrap; }
+.header-audio { margin-left:auto; max-width:100%; flex:0 1 245px; }
+.header-audio .audio-controls { justify-content:flex-end; gap:4px 8px; font-size:.75rem; }
+.header-audio [role='status'] { flex-basis:100%; text-align:right; }
+.header-audio button { min-height:36px; padding:6px 9px; border:1px solid #517a90; font-size:.75rem; }
+@media (min-width:1101px) and (max-width:1350px) {
+  .app-header { flex-wrap:nowrap; gap:12px; }
+  .app-header nav a { padding:9px 7px; font-size:.8rem; }
+  .header-audio { flex-basis:220px; flex-shrink:0; }
+  .app-header .brand { gap:12px; }
+  .app-header .brand > div { padding-left:12px; }
+  .app-header .brand-logo { width:88px; }
+}
+@media (max-width:1100px) {
+  .header-audio { flex:auto; margin-left:0; align-self:stretch; }
+  .header-audio .audio-controls { justify-content:flex-end; }
+  .header-audio [role='status'] { flex-basis:auto; }
+  .header-audio button { min-height:44px; }
+}
+@keyframes alert-arrival { from { opacity:.35; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+.alert-entry { animation:alert-arrival 1.5s ease-out 1; }
+.impact-alert-confirmation { font-weight:700; }
+@media (prefers-reduced-motion:reduce) { .alert-entry { animation:none; } }
 .audio-controls, .decision-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:.65rem; }
 .audio-controls { font-size:.85rem; }
 .escalation-alert { margin-top:1rem; padding:1.25rem; border:3px solid #ffb454; border-radius:12px; background:#4a220d; color:#fff; box-shadow:0 0 0 3px #ffb45433; }
