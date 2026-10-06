@@ -5,6 +5,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 import { LevelAlert } from '../src/components/LevelAlert';
 import { DecisionMap, decisionMapUrl } from '../src/components/DecisionMap';
 import { AlertAudio } from '../src/services/alertAudio';
+import { ActionPlan } from '../src/pages/ActionPlan';
 
 const play = vi.spyOn(AlertAudio.prototype, 'play');
 const enable = vi.spyOn(AlertAudio.prototype, 'enable');
@@ -26,7 +27,7 @@ it.each([
   ['atencao', 'alerta'], ['atencao', 'emergencia'], ['alerta', 'emergencia'],
 ] as const)('agravamento %s → %s alerta uma vez, reconhece e não repete', (de, para) => {
   const { rerender } = render(<LevelAlert nivel={de} />);
-  rerender(<LevelAlert nivel={para} />); expect(screen.getByRole('alert')).toBeTruthy(); expect(play).toHaveBeenCalledTimes(1);
+  rerender(<LevelAlert nivel={para} />); expect(screen.getByRole('alert')).toBeTruthy(); expect(play).toHaveBeenCalledTimes(1); expect(play).toHaveBeenLastCalledWith(para);
   rerender(<LevelAlert nivel={para} />); expect(play).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole('button', { name: 'Reconhecer alerta' })); expect(stop).toHaveBeenCalled(); expect(screen.queryByRole('alert')).toBeNull();
   rerender(<LevelAlert nivel={para} />); expect(screen.queryByRole('alert')).toBeNull();
@@ -64,4 +65,11 @@ it('mapa carregado permite ampliar, reduzir, ajustar e reinicia ao reabrir', () 
   for (let i = 0; i < 8; i++) fireEvent.click(screen.getByText('Ampliar zoom')); expect(img.style.width).toBe('400%');
   fireEvent.click(screen.getByText('Ajustar à largura')); expect(img.style.width).toBe('100%');
   fireEvent.click(screen.getByText('Fechar mapa')); fireEvent.click(screen.getByText('Visualizar Mapa de Decisões do Terminal')); expect(screen.getByLabelText('Zoom').textContent).toBe('100%');
+});
+
+it('botão do mapa fica depois dos quatro links na mesma área de ações', () => {
+  render(<ActionPlan impacto={{ dado:null, qualidade:'desconhecido', confirmado_em:null, realtime:'reconectando' }} />);
+  const nav = screen.getByRole('navigation', { name:'Links operacionais' });
+  expect(nav.querySelectorAll('a')).toHaveLength(4);
+  expect(nav.lastElementChild?.contains(screen.getByText('Visualizar Mapa de Decisões do Terminal'))).toBe(true);
 });

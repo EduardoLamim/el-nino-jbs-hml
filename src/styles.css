@@ -448,7 +448,9 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 .escalation-alert h2 { margin-top:0; color:#fff; }
 .escalation-alert a { color:#fff; margin-left:1rem; text-decoration:underline; }
 .escalation-alert li { font-size:1.25rem; }
-.decision-map { margin:1rem 0; }
+.plan-links { display:flex; flex-wrap:wrap; align-items:center; }
+.plan-links .decision-map { margin:0 0 0 auto; max-width:100%; }
+.decision-map > button { max-width:100%; white-space:normal; }
 .decision-dialog { width:96vw; max-width:1800px; height:94dvh; max-height:96dvh; box-sizing:border-box; padding:1rem; border:1px solid #537089; border-radius:12px; background:#0b1d2b; color:#f4f8fb; }
 .decision-dialog[open] { display:flex; flex-direction:column; gap:.8rem; }
 .decision-dialog::backdrop { background:#000b; }

@@ -1,16 +1,29 @@
 import { expect, it, vi, afterEach } from 'vitest';
 import { AlertAudio } from '../src/services/alertAudio';
 afterEach(() => vi.unstubAllGlobals());
-it('áudio requer habilitação, programa somente três pulsos finitos e limpa ao reconhecer/sair', async () => {
-  const nodes: Array<{ start: ReturnType<typeof vi.fn>; stop: ReturnType<typeof vi.fn>; disconnect: ReturnType<typeof vi.fn> }> = [];
+function setup() {
+  const param = () => ({ setValueAtTime: vi.fn(), linearRampToValueAtTime: vi.fn() });
+  const oscillator = () => ({ frequency: param(), connect: vi.fn(), disconnect: vi.fn(), start: vi.fn(), stop: vi.fn(), onended: null });
+  const nodes: Array<ReturnType<typeof oscillator>> = [];
   const close = vi.fn(async () => {});
   vi.stubGlobal('AudioContext', class {
     state = 'running'; currentTime = 10; destination = {};
     resume = vi.fn(async () => {}); close = close;
-    createOscillator() { const node = { frequency: { value: 0 }, connect: vi.fn(), disconnect: vi.fn(), start: vi.fn(), stop: vi.fn(), onended: null }; nodes.push(node); return node; }
-    createGain() { return { gain: { setValueAtTime: vi.fn(), linearRampToValueAtTime: vi.fn() }, connect: vi.fn(), disconnect: vi.fn() }; }
+    createOscillator() { const node = oscillator(); nodes.push(node); return node; }
+    createGain() { return { gain: param(), connect: vi.fn(), disconnect: vi.fn() }; }
   });
-  const audio = new AlertAudio(); expect(audio.play()).toBe(false); await audio.enable(); expect(audio.play()).toBe(true);
-  expect(nodes).toHaveLength(3); expect(nodes.map(n => n.stop.mock.calls[0]?.[0])).toEqual([10.5, 11.3, 12.1]);
-  audio.stop(); expect(nodes.every(n => n.stop.mock.calls.length === 2)).toBe(true); audio.dispose(); expect(close).toHaveBeenCalledOnce(); expect(audio.play()).toBe(false);
+  return { audio: new AlertAudio(), nodes, close };
+}
+it.each([['atencao', 2, 0.82], ['alerta', 6, 1.95], ['emergencia', 1, 6]] as const)('%s tem padrão finito próprio e pode ser interrompido', async (nivel, count, duration) => {
+  const { audio, nodes, close } = setup();
+  expect(audio.play(nivel)).toBe(false); await audio.enable(); expect(audio.play(nivel)).toBe(true);
+  expect(nodes).toHaveLength(count); expect(nodes.at(-1)!.stop.mock.calls[0]![0]).toBeCloseTo(10 + duration);
+  if (nivel === 'emergencia') { expect(nodes[0]!.frequency.linearRampToValueAtTime).toHaveBeenCalledTimes(12); expect(nodes[0]!.frequency.linearRampToValueAtTime).toHaveBeenLastCalledWith(440, 16); }
+  else expect(nodes[0]!.frequency.setValueAtTime).toHaveBeenCalledWith(nivel === 'atencao' ? 520 : 800, 10);
+  audio.stop(); expect(nodes.every(n => n.stop.mock.calls.length === 2)).toBe(true);
+  audio.dispose(); expect(close).toHaveBeenCalledOnce();
+});
+it('Normalidade é silenciosa; novo padrão interrompe áudio anterior', async () => {
+  const { audio, nodes } = setup(); await audio.enable(); audio.play('normalidade'); expect(nodes).toHaveLength(0);
+  audio.play('emergencia'); audio.play('atencao'); expect(nodes[0]!.stop).toHaveBeenCalledTimes(2);
 });

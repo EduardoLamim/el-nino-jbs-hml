@@ -1,4 +1,6 @@
-/** Three short pulses, ending within 2.4 seconds; no timers or looping media. */
+import type { NivelJbs } from '../domain/contracts';
+
+/** Finite Web Audio patterns, selected exclusively by destination level. */
 export class AlertAudio {
   private context: AudioContext | null = null;
   private nodes: OscillatorNode[] = [];
@@ -7,22 +9,34 @@ export class AlertAudio {
     await this.context.resume();
     if (this.context.state !== 'running') throw new Error('Áudio bloqueado');
   }
-  play() {
+  play(nivel: NivelJbs) {
     this.stop();
+    if (nivel === 'normalidade') return true;
     const context = this.context;
     if (!context || context.state !== 'running') return false;
-    for (let i = 0; i < 3; i++) {
+    const sirene = nivel === 'emergencia';
+    const count = sirene ? 1 : nivel === 'atencao' ? 2 : 6;
+    const spacing = nivel === 'atencao' ? 0.6 : 0.35;
+    const duration = sirene ? 6 : nivel === 'atencao' ? 0.22 : 0.2;
+    const volume = nivel === 'atencao' ? 0.07 : 0.15;
+    for (let i = 0; i < count; i++) {
       const oscillator = context.createOscillator();
       const gain = context.createGain();
-      const start = context.currentTime + i * 0.8;
-      oscillator.frequency.value = i === 1 ? 880 : 660;
+      const start = context.currentTime + i * spacing;
+      oscillator.frequency.setValueAtTime(sirene ? 440 : nivel === 'atencao' ? 520 : i % 2 ? 1100 : 800, start);
+      if (sirene) {
+        for (let sweep = 0; sweep < 6; sweep++) {
+          oscillator.frequency.linearRampToValueAtTime(1100, start + sweep + 0.5);
+          oscillator.frequency.linearRampToValueAtTime(440, start + sweep + 1);
+        }
+      }
       gain.gain.setValueAtTime(0, start);
-      gain.gain.linearRampToValueAtTime(0.15, start + 0.03);
-      gain.gain.setValueAtTime(0.15, start + 0.35);
-      gain.gain.linearRampToValueAtTime(0, start + 0.45);
+      gain.gain.linearRampToValueAtTime(volume, start + 0.03);
+      gain.gain.setValueAtTime(volume, start + duration - 0.05);
+      gain.gain.linearRampToValueAtTime(0, start + duration);
       oscillator.connect(gain); gain.connect(context.destination);
       oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
-      oscillator.start(start); oscillator.stop(start + 0.5);
+      oscillator.start(start); oscillator.stop(start + duration);
       this.nodes.push(oscillator);
     }
     return true;

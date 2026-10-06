@@ -16,14 +16,14 @@ export function LevelAlert({ nivel }: { nivel: NivelJbs | null }) {
     anterior.current = nivel;
     if (!de || severidade[nivel] <= severidade[de]) return;
     setPendentes(lista => [...lista, { de, para: nivel }]);
-    if (!audio.current?.play()) {
+    if (!audio.current?.play(nivel)) {
       setHabilitado(false);
       setMensagem('Alerta sonoro indisponível. Habilite o som; o aviso visual permanece até reconhecimento.');
     }
   }, [nivel]);
   return <section className="level-alert-control" aria-label="Alertas de agravamento">
     <div className="audio-controls"><button type="button" onClick={async () => {
-      try { await audio.current?.enable(); audio.current?.play(); setHabilitado(true); setMensagem('Som habilitado nesta aba. Teste de três sinais curtos.'); }
+      try { await audio.current?.enable(); audio.current?.play('atencao'); setHabilitado(true); setMensagem('Som habilitado nesta aba. Teste suave de dois bipes.'); }
       catch { setHabilitado(false); setMensagem('Não foi possível habilitar o áudio. Verifique as permissões do navegador e tente novamente.'); }
     }}>{habilitado ? 'Testar som' : 'Habilitar som'}</button>
     {habilitado && <button type="button" onClick={() => { audio.current?.dispose(); audio.current = new AlertAudio(); setHabilitado(false); setMensagem('Som desabilitado nesta aba.'); }}>Desabilitar som</button>}
