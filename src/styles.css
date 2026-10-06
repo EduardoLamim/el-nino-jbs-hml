@@ -440,3 +440,20 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 @media (max-width: 850px) { .exposure > .concentrations { margin-top: 8px; } .exposure > h3 { margin-top: 18px; } }
 @media (max-width: 600px) { .map-bases { padding-top: 35px; } .map-toolbar { grid-template-columns: 44px 44px minmax(0,1fr); } .map-toolbar button:nth-child(3) { grid-column: auto; } }
 .operational > .collection-time { padding-bottom: 20px; }
+/* V1: avisos de transição e consulta do mapa do Terminal. */
+.level-alert-control { margin: 1rem 0; }
+.audio-controls, .decision-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:.65rem; }
+.audio-controls { font-size:.85rem; }
+.escalation-alert { margin-top:1rem; padding:1.25rem; border:3px solid #ffb454; border-radius:12px; background:#4a220d; color:#fff; box-shadow:0 0 0 3px #ffb45433; }
+.escalation-alert h2 { margin-top:0; color:#fff; }
+.escalation-alert a { color:#fff; margin-left:1rem; text-decoration:underline; }
+.escalation-alert li { font-size:1.25rem; }
+.decision-map { margin:1rem 0; }
+.decision-dialog { width:96vw; max-width:1800px; height:94dvh; max-height:96dvh; box-sizing:border-box; padding:1rem; border:1px solid #537089; border-radius:12px; background:#0b1d2b; color:#f4f8fb; }
+.decision-dialog[open] { display:flex; flex-direction:column; gap:.8rem; }
+.decision-dialog::backdrop { background:#000b; }
+.decision-toolbar { flex-shrink:0; }
+.decision-toolbar h2 { flex:1; margin:0; font-size:1.2rem; }
+.decision-toolbar button { min-height:44px; }
+.decision-viewport { flex:1; min-height:0; overflow:auto; background:#fff; touch-action:pan-x pan-y pinch-zoom; }
+.decision-viewport img { display:block; max-width:none; height:auto; }

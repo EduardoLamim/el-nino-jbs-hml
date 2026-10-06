@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { DecisionMap } from '../components/DecisionMap';
 import type { Status, Territorio } from '../domain/contracts';
 import { labelsImpacto, type EstadoImpacto } from '../domain/impact';
 import { planos, type NivelPlano } from '../content/action-plans';
@@ -21,6 +22,7 @@ export function ActionPlan({ status, territorio, impacto }: { status?: Status; t
       {!impacto.dado && <p className="meta">A condição do Terminal não foi confirmada. O plano ambiental disponível não confirma ausência de impacto físico.</p>}
       {impacto.qualidade === 'degradado' && <p className="stale">Último estado operacional conhecido preservado; confirmação pendente.</p>}
     </div>
+    <DecisionMap />
     <section className="plan-reasons" aria-label="Motivo do nível"><h3>Por que estamos neste nível?</h3>
       {impacto.dado?.ativo && <div><p><strong>{labelsImpacto[impacto.dado.tipo]}</strong> · Acionado em {horario(impacto.dado.acionado_em)}</p>
         <p>Condição ambiental: {ambiental ? simbolos[ambiental] : ''} {rotuloNivel(ambiental)}</p></div>}
