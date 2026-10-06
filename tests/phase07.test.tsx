@@ -26,6 +26,8 @@ const ativo: EstadoImpacto = { ...inativo, dado: { id: 1, revisao: 1, ativo: tru
 const desconhecido: EstadoImpacto = { dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' };
 let s: Status;
 beforeEach(() => {
+  HTMLDialogElement.prototype.showModal = function () { this.open = true; };
+  HTMLDialogElement.prototype.close = function () { this.open = false; };
   s = structuredClone(original); ctx.status = s; window.location.hash = '#/dashboard';
   ctx.store = new ImpactoStore({ consultar: async () => inativo.dado, executar: async () => ativo.dado, assinar: () => () => {} });
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => geo }));
