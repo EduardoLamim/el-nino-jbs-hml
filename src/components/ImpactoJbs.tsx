@@ -3,11 +3,22 @@ import { comandoImpactoSchema, labelsImpacto, tipoImpactoSchema, type EstadoImpa
 import { criarImpactoStore } from '../services/impact';
 import { horario } from '../utils/presentation';
 
-export function ImpactoJbs({ painelAmbiental, contextoAmbiental, onEstado }: { painelAmbiental?: ReactNode; contextoAmbiental?: ReactNode; onEstado?: (estado: EstadoImpacto) => void } = {}) {
+export function ImpactoJbs({ painelAmbiental, contextoAmbiental, onEstado, onAtivacao }: { painelAmbiental?: ReactNode; contextoAmbiental?: ReactNode; onEstado?: (estado: EstadoImpacto) => void; onAtivacao?: () => void } = {}) {
   const [store] = useState(criarImpactoStore);
   const estado = useSyncExternalStore(store.subscribe, store.snapshot);
   // Compartilha somente o snapshot público para apresentação; mantém um único store/Realtime.
   useEffect(() => { onEstado?.(estado); }, [estado, onEstado]);
+  // Presentation-only observer: preserve confirmed transitions even when React batches snapshots.
+  useEffect(() => {
+    let previous: boolean | null = null;
+    const observe = () => {
+      const current = store.snapshot();
+      if (current.qualidade !== 'confirmado' || !current.dado) return;
+      if (previous === false && current.dado.ativo) onAtivacao?.();
+      previous = current.dado.ativo;
+    };
+    observe(); return store.subscribe(observe);
+  }, [store, onAtivacao]);
   const [operacao, setOperacao] = useState<'ativar' | 'encerrar' | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [mensagem, setMensagem] = useState('');

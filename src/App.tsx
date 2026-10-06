@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { Navegacao } from './components/Navegacao';
 import { paginas, type Pagina } from './pages/Placeholder';
 import { useDados } from './hooks/useDados';
@@ -23,6 +23,8 @@ export default function App() {
   const dados = useDados();
   const [audioHost, setAudioHost] = useState<HTMLDivElement | null>(null);
   const [simulationActive, setSimulationActive] = useState(false);
+  const [impactEvent, setImpactEvent] = useState(0);
+  const onImpactActivation = useCallback(() => setImpactEvent(n => n + 1), []);
   const [impacto, setImpacto] = useState<EstadoImpacto>({ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' });
   useEffect(() => {
     const atualizar = () => setRota(rotaAtual());
@@ -34,8 +36,8 @@ export default function App() {
     <a className="skip-link" href="#conteudo" onClick={e => { e.preventDefault(); document.getElementById('conteudo')?.focus(); }}>Ir para o conteúdo</a>
     <header className="app-header"><div className="brand"><img className="brand-logo" src={logo} alt="JBS Terminais" width="120" height="69" /><div><p className="eyebrow">Itajaí · Santa Catarina</p><h1>Monitoramento El Niño</h1></div></div><Navegacao atual={rota.pagina} /><div className="header-audio" ref={setAudioHost} /></header>
     <main id="conteudo" tabIndex={-1}>
-      {__HML_SIMULATION__ ? <HmlAlertSimulator nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} onActiveChange={setSimulationActive} />
-        : <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} audioHost={audioHost} />}
+      {__HML_SIMULATION__ ? <HmlAlertSimulator nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} impactEvent={impactEvent} audioHost={audioHost} onActiveChange={setSimulationActive} />
+        : <LevelAlert nivel={carregado?.status.nivel_jbs.nivel ?? null} impactoAtivo={impacto.qualidade === 'confirmado' ? impacto.dado?.ativo ?? null : null} impactEvent={impactEvent} audioHost={audioHost} />}
       <div hidden={simulationActive}>
       {rota.pagina && rota.pagina !== 'dashboard' && <CompactOperational status={carregado?.status} impacto={impacto} />}
       <p className="snapshot-note">Retrato da última coleta disponível. Consulte os horários das leituras e da coleta JBS.</p>
@@ -43,7 +45,7 @@ export default function App() {
       {dados.estado === 'erro' && <p className="card" role="alert">{dados.mensagem}</p>}
       {dados.estado === 'carregado' && dados.aviso && <p className="snapshot-note" role="status">{dados.aviso}</p>}
       {/* Mantém a mesma assinatura/instância de Impacto JBS ao navegar. */}
-      <div hidden={rota.pagina !== 'dashboard'}><PainelOperacional status={carregado?.status} onEstado={setImpacto} />
+      <div hidden={rota.pagina !== 'dashboard'}><PainelOperacional status={carregado?.status} onEstado={setImpacto} onAtivacao={onImpactActivation} />
         {carregado && <Dashboard status={carregado.status} territorio={carregado.territorio} />}</div>
       {rota.pagina === 'monitoramento' && carregado && <Monitoramento status={carregado.status} secao={rota.secao} />}
       {rota.pagina === 'mapa' && carregado && <Suspense fallback={<p role="status">Carregando mapa…</p>}><TerritoryMapPage status={carregado.status} territorio={carregado.territorio} /></Suspense>}

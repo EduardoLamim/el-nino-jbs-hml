@@ -3,8 +3,8 @@ import type { NivelJbs } from '../domain/contracts';
 import { rotuloNivel } from '../utils/format';
 import { LevelAlert } from './LevelAlert';
 
-export function HmlAlertSimulator({ nivel, impactoAtivo, audioHost, onActiveChange }: {
-  nivel: NivelJbs | null; impactoAtivo: boolean | null; audioHost: HTMLElement | null; onActiveChange: (active: boolean) => void;
+export function HmlAlertSimulator({ nivel, impactoAtivo, impactEvent, audioHost, onActiveChange }: {
+  nivel: NivelJbs | null; impactoAtivo: boolean | null; impactEvent?: number; audioHost: HTMLElement | null; onActiveChange: (active: boolean) => void;
 }) {
   const [sim, setSim] = useState<{ nivel: NivelJbs; impacto: boolean; session: number } | null>(null);
   const [sequence, setSequence] = useState(0);
@@ -30,6 +30,6 @@ export function HmlAlertSimulator({ nivel, impactoAtivo, audioHost, onActiveChan
         <p>Use os níveis em sequência ou, após resetar, selecione diretamente Alerta/Emergência para testar saltos. Resetar limpa os avisos e retorna à Normalidade simulada, sem alarme.</p>
       </section>}
     </details>
-    <LevelAlert nivel={sim ? sim.nivel : nivel} impactoAtivo={sim ? sim.impacto : impactoAtivo} audioHost={audioHost} source={sim ? `sim-${sim.session}` : 'real'} />
+    <LevelAlert nivel={sim ? sim.nivel : nivel} impactoAtivo={sim ? sim.impacto : impactoAtivo} impactEvent={sim ? undefined : impactEvent} audioHost={audioHost} source={sim ? `sim-${sim.session}` : 'real'} />
   </>;
 }

@@ -20,7 +20,7 @@ export function QualidadeDados({ status }: { status: Status }) {
   return <div className="collection-time">Coleta JBS: {horario(status.atualizado_em)} · Horários de Brasília</div>;
 }
 
-export function PainelOperacional({ status, onEstado }: { status?: Status; onEstado?: (estado: EstadoImpacto) => void }) {
+export function PainelOperacional({ status, onEstado, onAtivacao }: { status?: Status; onEstado?: (estado: EstadoImpacto) => void; onAtivacao?: () => void }) {
   const nivel = status?.nivel_jbs.nivel ?? null;
   const contexto = <><p className="underlying">Condição ambiental: <strong>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</strong></p>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}</>;
@@ -29,5 +29,5 @@ export function PainelOperacional({ status, onEstado }: { status?: Status; onEst
     <p className="lead">{nivel === 'normalidade' ? 'Condição ambiental em Normalidade na última avaliação disponível.' : nivel ? 'A condição ambiental é sustentada pelas fontes abaixo.' : 'Não foi possível determinar a condição ambiental.'}</p></div>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}
   </section>;
-  return <ImpactoJbs painelAmbiental={painel} contextoAmbiental={contexto} onEstado={onEstado} />;
+  return <ImpactoJbs painelAmbiental={painel} contextoAmbiental={contexto} onEstado={onEstado} onAtivacao={onAtivacao} />;
 }

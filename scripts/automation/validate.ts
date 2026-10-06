@@ -46,7 +46,7 @@ export async function validarArtefato(root = 'dist', base = basePages()) {
   const { manifesto } = await validarDados(root);
   const paths = await arquivos(root);
   const data = ['data/status.json', 'data/territorio.json', 'data/bairros.geojson', 'data/historico/manifesto.json', ...manifesto.arquivos.map(a => `data/historico/${a.arquivo}`)];
-  const permitido = new Set(['index.html', '.vite/manifest.json', ...data]);
+  const permitido = new Set(['index.html', '.vite/manifest.json', ...data, ...[1, 2, 3].map(n => `assets/alarm_level_${n}.mp3`)]);
   for (const path of paths) {
     if (!permitido.has(path) && !/^assets\/[\w.-]+\.(?:js|css|png|svg|woff2?)$/.test(path)) throw new Error(`Arquivo não previsto no artefato: ${path}`);
     verificarConteudoPublico(await readFile(join(root, path), 'utf8'));

@@ -1,12 +1,13 @@
 // @vitest-environment jsdom
-import { afterEach, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { HmlAlertSimulator } from '../src/components/HmlAlertSimulator';
 import { AlertAudio } from '../src/services/alertAudio';
 import { simulationEnabled } from '../scripts/automation/simulation-config';
+beforeEach(() => { HTMLDialogElement.prototype.showModal = function () { this.open = true; }; HTMLDialogElement.prototype.close = function () { this.open = false; }; });
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 function setup() {
-  const play = vi.spyOn(AlertAudio.prototype, 'play').mockReturnValue(true);
+  const play = vi.spyOn(AlertAudio.prototype, 'play').mockResolvedValue(true);
   const stop = vi.spyOn(AlertAudio.prototype, 'stop').mockImplementation(() => {});
   vi.spyOn(AlertAudio.prototype, 'dispose').mockImplementation(() => {});
   const change = vi.fn();
@@ -33,7 +34,7 @@ it('simula Impacto e reconhecimento sem rede, persistência ou modificação de 
   const { play, stop } = setup();
   fireEvent.click(screen.getByText('Simular ativação de Impacto JBS')); expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
   fireEvent.click(screen.getByText('Simular ativação de Impacto JBS')); expect(play).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByText('Reconhecer alerta')); expect(stop).toHaveBeenCalled(); expect(screen.queryByRole('alert')).toBeNull();
+  fireEvent.click(screen.getByText('Reconhecer')); expect(stop).toHaveBeenCalled(); expect(screen.queryByRole('alert')).toBeNull();
   fireEvent.click(screen.getByText('Simular encerramento de Impacto JBS')); expect(play).toHaveBeenCalledTimes(1);
   expect(network).not.toHaveBeenCalled(); expect(storage).not.toHaveBeenCalled();
 });
