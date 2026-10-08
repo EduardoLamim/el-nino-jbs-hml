@@ -105,8 +105,8 @@ describe('Aquisição e isolamento de falhas', () => {
   it('consulta somente Defesa Civil e Epagri, sem CPTEC ou INMET', async () => {
     const chamadas: string[] = [];
     const status = await coletar(async (url, init) => { chamadas.push(url); return transport(url, init); });
-    expect(chamadas).toHaveLength(7);
-    expect(chamadas.every(url => ['monitoramento.defesacivil.itajai.sc.gov.br', 'ciram.epagri.sc.gov.br'].includes(new URL(url).hostname))).toBe(true);
+    expect(chamadas).toHaveLength(8); // Sete consultas locais preservadas + Blumenau informativo.
+    expect(chamadas.every(url => ['monitoramento.defesacivil.itajai.sc.gov.br', 'ciram.epagri.sc.gov.br', 'defesacivil.blumenau.sc.gov.br'].includes(new URL(url).hostname))).toBe(true);
     expect(chamadas.some(url => /cptec|inmet/i.test(url))).toBe(false);
     expect(status.fontes.epagri?.resultado).toBe('sucesso');
     expect(status.previsao.municipio).toBe('Itajaí');

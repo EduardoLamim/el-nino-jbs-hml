@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { blumenauSchema } from './blumenau';
 
 // Sem coerção: null é ausência de informação, nunca zero ou normalidade.
 const instante = z.string().datetime({ offset: true });
@@ -178,6 +179,7 @@ export const statusSchema = z.object({
   }),
   chuvas: z.record(estacaoPluviometricaSchema), barragens: z.record(barragemSchema),
   previsao: previsaoSchema,
+  blumenau: blumenauSchema.optional(),
   qualidade_monitoramento: z.object({
     estado: z.enum(['atualizado', 'parcialmente_degradado', 'degradado']),
     problemas: z.array(z.string()),

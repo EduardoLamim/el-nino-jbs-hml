@@ -62,8 +62,8 @@ jobs:
           git add -- public/data/status.json
           git diff --cached --quiet && exit 0
           git commit -m 'Atualizar snapshot operacional validado'
-          git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
-        # Push fast-forward: disputa aborta; nunca force ou rebase do snapshot.
+          npx tsx scripts/automation/push-snapshot.ts
+        # Até três tentativas transitórias da mesma revisão; disputa aborta, sem force/rebase.
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

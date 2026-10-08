@@ -5,6 +5,7 @@ import { extrairPagina } from './structured';
 import { normalizarAlertas, normalizarBarragens, normalizarChuvas, normalizarRios, normalizarSituacao } from './normalize';
 import { normalizarEpagri, validarMunicipioEpagri } from './epagri';
 import { aplicarMotor } from '../../src/domain/alert-engine';
+import { coletarBlumenau } from './blumenau';
 
 type Fonte = keyof typeof urls;
 type Fragmento = Partial<Pick<Status, 'situacao_oficial' | 'alertas_oficiais' | 'rios' | 'chuvas' | 'barragens' | 'previsao'>>;
@@ -47,6 +48,7 @@ async function fonte(id: Fonte, get: (url: string) => Promise<string>, requisico
 }
 export async function coletar(transport?: Transport, anterior?: unknown): Promise<Status> {
   const status = statusVazio();
+  const regional = coletarBlumenau(transport);
   const resultados = await Promise.all((Object.keys(urls) as Fonte[]).map(async id => {
     const requisicoes: Requisicao[] = [];
     try {
@@ -78,8 +80,12 @@ export async function coletar(transport?: Transport, anterior?: unknown): Promis
     for (const aviso of r.resultado?.avisos ?? []) problemas.push(`${r.id}: ${aviso}`);
     for (const e of medicoes) if (e.qualidade !== 'atualizado') problemas.push(`${r.id}/${e.nome}: qualidade ${e.qualidade ?? 'não informada'}.`);
   }
+  const blumenau = await regional;
   status.atualizado_em = new Date().toISOString(); // geração do artefato, não medição.
   const sucessos = resultados.filter(r => !r.erro).length;
   status.qualidade_monitoramento = { estado: sucessos === 0 ? 'degradado' : problemas.length ? 'parcialmente_degradado' : 'atualizado', problemas };
-  return aplicarMotor(parseStatus(status), anterior);
+  const operacional = aplicarMotor(parseStatus(status), anterior);
+  // Indicador informativo isolado: nunca é entrada, gatilho ou qualidade do motor local.
+  operacional.blumenau = blumenau;
+  return parseStatus(operacional);
 }

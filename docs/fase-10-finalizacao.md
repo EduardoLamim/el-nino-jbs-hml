@@ -1,5 +1,7 @@
 # Fase 10 — Refinamento visual, UX e fechamento da V1
 
+**Rodada funcional de 08/10/2026:** consultar [fechamento funcional da V1](fase-10-fechamento-funcional.md), que registra Blumenau informativo, Central de Planos/TI, temas e retry restrito de persistência. O estado de CI/publicação e dos 12 ciclos dessa revisão está discriminado no relatório; os resultados históricos abaixo não substituem sua homologação.
+
 Data: 04/10/2026. Ambiente: **HML**. Implementação: `e62a2a80f8336473a40a702cbf8d1120e87ea926`.
 
 **Fechamento adicional — Supabase Cron e quatro ajustes residuais:** [relatório específico](fase-10-supabase-cron.md). Implementação `93d4014`, 319 testes e CI aprovados, Edge/Cron ativos e ajustes publicados no HML pelo ciclo das 18:02 UTC de 05/10. Os 28 cenários visuais remotos, smokes GIS/fallback/nomes e mobile passaram. O bloco territorial desktop alinha ao topo dos indicadores; Monitoramento não apresenta a coleta global redundante; Chuva usa “Estações” e não apresenta a legenda removida; a fonte da previsão está próxima ao título. O mobile aprovado mantém sua distribuição e os horários individuais permanecem.

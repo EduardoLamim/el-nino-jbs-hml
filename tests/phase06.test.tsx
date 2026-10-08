@@ -35,6 +35,7 @@ describe('Fase 06 — Dashboard e Impacto JBS', () => {
     render(<PainelOperacional status={s} />);
     await screen.findByText('Nenhum impacto físico confirmado.');
     expect(screen.getByRole('region', { name: 'Nível de Alerta JBS' }).className).toContain(`level-${nivel}`);
+    expect(screen.queryByText('A condição ambiental é sustentada pelas fontes abaixo.')).toBeNull();
     expect(screen.getByRole('heading', { name: 'Condição do Terminal' })).toBeTruthy();
   });
   it('preto domina, mantém nível ambiental e não duplica condição do terminal', async () => {
@@ -109,7 +110,8 @@ describe('Fase 06 — Rios', () => {
     s.rios.DC01!.limites.atencao_m = 7.89; s.rios.DC01!.qualidade = 'atrasado'; s.motor!.rios.DC01!.stale = true;
     delete s.rios.DC02; s.motor!.rios.DC02!.nivel = null;
     render(<Rios status={s} />);
-    expect(screen.getAllByRole('article')).toHaveLength(11);
+    expect(screen.getAllByRole('article', { name: /^Estação DC/ })).toHaveLength(11);
+    expect(screen.getByRole('article', { name: 'Rio Itajaí-Açu — Blumenau' })).toBeTruthy();
     const rio = within(screen.getByRole('article', { name: 'Estação DC01' }));
     expect(rio.getByText('7,89 m')).toBeTruthy(); expect(rio.getByText(/Sem dado recente/)).toBeTruthy();
     expect(rio.getByText(/Última condição conhecida/)).toBeTruthy();
@@ -161,7 +163,8 @@ describe('Fase 06 — Chuva, previsão, barragens e navegação', () => {
   });
   it('chuva detalhada contém todas as janelas e estações, sem substituir null por zero', () => {
     Object.values(s.chuvas)[0]!.chuva_10_min_mm = null; render(<Chuva status={s} />);
-    for (const h of ['10 min', '1h', '6h', '12h', '24h', '48h']) expect(screen.getByRole('columnheader', { name: h })).toBeTruthy();
+    for (const h of ['10 min', '1h', '12h', '24h', '48h']) expect(screen.getByRole('columnheader', { name: h })).toBeTruthy();
+    expect(screen.queryByRole('columnheader', { name: '6h' })).toBeNull();
     expect(screen.getAllByRole('row')).toHaveLength(Object.keys(s.chuvas).length + 1);
     expect(screen.getAllByText('Não informado').length).toBeGreaterThan(0);
   });

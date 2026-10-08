@@ -28,6 +28,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     const s = await atualizar();
     const falhas = Object.entries(s.fontes).filter(([, f]) => f.resultado === 'falha').map(([id]) => id);
     for (const [id, f] of Object.entries(s.fontes)) console.log(`${id}: ${f.resultado}; consulta ${f.coletado_em}; qualidade ${f.qualidade ?? 'não informada'}`);
+    if (s.blumenau) console.log(`Blumenau (informativo): ${s.blumenau.qualidade}; leitura ${s.blumenau.medido_em ?? 'indisponível'}; consulta ${s.blumenau.coletado_em}.`);
     console.log(`Saída validada e gravada atomicamente: ${s.atualizado_em}; qualidade ${s.qualidade_monitoramento.estado}.`);
     if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, `degraded=${falhas.length > 0}\n`);
     if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `### Coleta operacional\n\nSnapshot: ${s.atualizado_em}. Qualidade: ${s.qualidade_monitoramento.estado}. Fontes com falha: ${falhas.join(', ') || 'nenhuma'}.\n`);

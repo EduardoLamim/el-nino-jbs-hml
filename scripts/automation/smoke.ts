@@ -30,7 +30,7 @@ try {
   await page.goto(url + '#/dashboard'); await page.getByRole('button', { name: 'Acionar Impacto JBS' }).waitFor();
   assert(!requests.some(u => /TerritoryMap|data\/historico\//.test(u)));
   await page.getByRole('button', { name: 'Acionar Impacto JBS' }).click(); await page.getByLabel('PIN', { exact: true }).waitFor(); await page.getByRole('button', { name: 'Cancelar', exact: true }).click();
-  for (const name of ['Monitoramento', 'Mapa', 'Plano de Ação', 'Dashboard']) { await page.getByRole('link', { name, exact: true }).click(); await page.waitForTimeout(150); }
+  for (const name of ['Monitoramento', 'Mapa', 'Central de Planos', 'Dashboard']) { await page.getByRole('link', { name, exact: true }).click(); await page.waitForTimeout(150); }
   report.checks.push('Navegação pelas quatro páginas; formulário Impacto acessível sem enviar comando; Dashboard sem chunks do mapa.');
   for (const route of ['dashboard', 'monitoramento/rios', 'monitoramento/chuva', 'monitoramento/barragens', 'monitoramento/previsao', 'mapa', 'plano-de-acao']) {
     await page.goto(url + '#/' + route); await page.reload(); await page.locator('main').waitFor();

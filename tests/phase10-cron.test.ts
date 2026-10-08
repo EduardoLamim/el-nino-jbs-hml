@@ -35,7 +35,8 @@ it('timeout é não confirmado, sem retry que possa duplicar execução', async 
 });
 it('orquestração mantém pipeline e isolamento; SQL não ativa Cron antes do provisionamento', () => {
   const w = readFileSync('.github/workflows/deploy-pages.yml','utf8');
-  for (const part of ['workflow_dispatch:', 'group: operational-pages', 'cancel-in-progress: false', 'npm run automation:update', 'npm run data:validate', 'npm run pages:validate', 'git push origin']) expect(w).toContain(part);
+  for (const part of ['workflow_dispatch:', 'group: operational-pages', 'cancel-in-progress: false', 'npm run automation:update', 'npm run data:validate', 'npm run pages:validate', 'npx tsx scripts/automation/push-snapshot.ts']) expect(w).toContain(part);
+  expect(w).not.toMatch(/^\s+schedule:/m);
   const sql = readFileSync('supabase/migrations/202610050001_monitoramento_cron.sql','utf8');
   expect(sql).toContain('vault.decrypted_secrets'); expect(sql).toContain('revoke all on function'); expect(sql).not.toContain('cron.schedule(');
   const edge = readFileSync('supabase/functions/trigger-monitoramento/handler.ts','utf8'); expect(edge).not.toMatch(/collectors|hydrology|status\.json|impacto-jbs/);

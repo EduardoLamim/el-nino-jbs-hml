@@ -3,12 +3,15 @@ import { rotuloNivel } from '../utils/format';
 import { horario, medida, tendencia } from '../utils/presentation';
 import { RiverChart } from '../components/RiverChart';
 import { PrevisaoDias } from '../components/Weather';
+import { blumenauUrl } from '../domain/blumenau';
 
 export const secoes = { rios: 'Rios', chuva: 'Chuva', previsao: 'Previsão', barragens: 'Barragens' } as const;
 export type SecaoMonitoramento = keyof typeof secoes;
 
 export function Rios({ status }: { status: Status }) {
-  return <div className="station-grid">{codigoHidrologicoSchema.options.map(codigo => {
+  const b = status.blumenau;
+  const stale = b?.qualidade === 'atrasado' || (b?.medido_em && Date.now() - Date.parse(b.medido_em) > 2 * 3600000);
+  return <><div className="station-grid">{codigoHidrologicoSchema.options.map(codigo => {
     const e = status.rios[codigo]; const estado = status.motor?.rios[codigo];
     const nivel = estado?.nivel ?? null;
     return <article className={`card river-station level-${nivel ?? 'desconhecido'}`} key={codigo} aria-label={`Estação ${codigo}`}>
@@ -26,12 +29,19 @@ export function Rios({ status }: { status: Status }) {
         {e ? <RiverChart estacao={e} /> : <p>Série de níveis indisponível.</p>}
       </details>
     </article>;
-  })}</div>;
+  })}</div><section className="regional-river"><h2>Monitoramento regional · Informativo</h2><article className={`card river-station level-${b?.nivel ?? 'desconhecido'}`} aria-label="Rio Itajaí-Açu — Blumenau">
+    <div className="station-heading"><span className="station-code">Blumenau</span><span className={`level-badge level-${b?.nivel ?? 'desconhecido'}`}>{rotuloNivel(b?.nivel ?? null)}{stale && b?.nivel ? ' · última leitura' : ''}</span></div>
+    <h3>Rio Itajaí-Açu — Blumenau</h3><p className="river-value">{medida(b?.nivel_m, 'm')} <span>{b?.tendencia ? { subindo: 'Subindo', descendo: 'Descendo', estavel: 'Estável' }[b.tendencia] : 'Tendência não informada'}</span></p>
+    <p className="meta">Leitura oficial: {horario(b?.medido_em)}</p>
+    {(!b || b.qualidade === 'indisponivel') && <p>Dado indisponível.</p>}{stale && <p className="stale">Sem dado recente.</p>}
+    <p className="meta">Classificação visual: abaixo de 3 m Normalidade; a partir de 3 m Atenção, 6 m Alerta e 8 m Emergência. Tendência calculada entre as duas últimas leituras oficiais disponíveis.</p>
+    <p className="meta">Indicador informativo. Não participa do nível operacional JBS nem determina condições em Itajaí.</p><a href={blumenauUrl} target="_blank" rel="noreferrer">Fonte: Defesa Civil de Blumenau</a>
+  </article></section></>;
 }
 
 export function Chuva({ status }: { status: Status }) {
   const estacoes = Object.values(status.chuvas);
-  const colunas = [['chuva_10_min_mm', '10 min'], ['chuva_1_h_mm', '1h'], ['chuva_6_h_mm', '6h'], ['chuva_12_h_mm', '12h'], ['chuva_24_h_mm', '24h'], ['chuva_48_h_mm', '48h']] as const;
+  const colunas = [['chuva_10_min_mm', '10 min'], ['chuva_1_h_mm', '1h'], ['chuva_12_h_mm', '12h'], ['chuva_24_h_mm', '24h'], ['chuva_48_h_mm', '48h']] as const;
   return <section className="card"><h2>Chuva — Estações</h2><p>Acumulados oficiais por estação, em milímetros.</p>
     {!estacoes.length ? <p>Dados de chuva indisponíveis.</p> : <div className="table-scroll" tabIndex={0} role="region" aria-label="Acumulados de chuva por estação"><table><thead><tr><th>Estação</th>{colunas.map(([,label]) => <th key={label}>{label}</th>)}<th>Atualização</th></tr></thead>
       <tbody>{estacoes.map(e => <tr key={e.codigo}><th scope="row">{e.codigo}<small>{e.nome}</small>{e.qualidade === 'indisponivel' && <small>Dado indisponível.</small>}{e.qualidade === 'atrasado' && <small>Sem dado recente.</small>}</th>{colunas.map(([key]) => <td key={key}>{medida(e[key])}</td>)}<td>{horario(e.medido_em)}</td></tr>)}</tbody></table></div>}
