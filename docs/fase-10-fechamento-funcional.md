@@ -22,7 +22,7 @@ Horários da leitura são interpretados em Brasília; consulta tem timestamp pr�
 
 O novo campo opcional `blumenau` fica fora de `rios`, `fontes` locais e das entradas do motor. A consulta ocorre em paralelo; o resultado só é anexado **depois** de `aplicarMotor`. Teste compara integralmente motor e nível JBS com e sem Blumenau em Emergência. Nenhum threshold local, histerese, gatilho, alarme ou estado do Terminal usa esse indicador.
 
-**Limitação de validação da fonte:** o acesso direto local encontrou falha de cadeia de certificado TLS. A estrutura textual foi conferida na página oficial indexada, e os casos de parsing/falha foram testados. A obtenção de uma leitura real no runner HML ainda precisa ser conferida no snapshot publicado. Não foi desabilitada validação de certificado nem substituída a fonte por dados simulados.
+**Validação da fonte:** a página oficial foi aberta e atualizada no navegador em 08/10/2026: leitura 15:00, 4,24m, anterior 14:00, 4,27m e classificação original Atenção. O HTML real tem `#river-level-table`, células com `div` e ícones de direção. Um recorte das duas tabelas foi incluído como fixture e passou pelo parser: Atenção, descendo, horário BRT correto. O acesso direto local pelo Node encontrou falha de cadeia de certificado TLS; a obtenção no runner HML ainda precisa ser conferida no snapshot publicado. Não foi desabilitada validação de certificado nem usada a fixture como dado operacional.
 
 ## Excel e TI
 
@@ -77,11 +77,11 @@ Supabase Cron continua único scheduler, a cada dez minutos; `workflow_dispatch`
 
 ## Gates e homologação
 
-- 387 testes Vitest aprovados, incluindo os nove casos Python exercitados pelo teste do importador. Nenhum teste anterior foi removido; assertions afetadas pelas mudanças autorizadas foram atualizadas.
+- 387 testes Vitest aprovados na suíte completa inicial, incluindo os nove casos Python exercitados pelo teste do importador; mais um caso com recorte real de Blumenau acrescentado na verificação da fonte. Nenhum teste anterior foi removido; assertions afetadas pelas mudanças autorizadas foram atualizadas.
 - Lint, typecheck/Edge, build Pages, data:validate, pages:validate e actionlint aprovados localmente. Actionlint sem validadores externos shellcheck/pyflakes, como no baseline.
 - Smoke existente de navegação, formulário sem envio, mapa/camadas/fallback e mobile aprovado.
 - 72 cenários visuais locais aprovados. Warning preexistente de chunk JS >500KB permanece.
-- CI e publicação HML: **a registrar após execução remota**.
+- [CI da implementação 228b0c3](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37821287615): aprovado em 08/10/2026 às 15:05:19 BRT. Publicação HML: a registrar após o ciclo automático.
 - Smoke remoto e coleta real de Blumenau: **pendentes da publicação**.
 - **12 ciclos consecutivos da revisão definitiva: pendentes.** Execuções anteriores à nova revisão não são usadas para homologar o retry novo. Não será mantido polling recorrente do agente para aguardá-los.
 - O token administrativo não estava disponível no processo desta rodada. Foi preparada consulta somente leitura e entrada oculta local, sem exposição de `cron`/`net` ao público ou registro de credenciais. Evidência administrativa permanece local.
