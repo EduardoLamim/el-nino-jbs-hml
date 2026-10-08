@@ -22,7 +22,7 @@ Horários da leitura são interpretados em Brasília; consulta tem timestamp pr�
 
 O novo campo opcional `blumenau` fica fora de `rios`, `fontes` locais e das entradas do motor. A consulta ocorre em paralelo; o resultado só é anexado **depois** de `aplicarMotor`. Teste compara integralmente motor e nível JBS com e sem Blumenau em Emergência. Nenhum threshold local, histerese, gatilho, alarme ou estado do Terminal usa esse indicador.
 
-**Validação da fonte:** a página oficial foi aberta e atualizada no navegador em 08/10/2026: leitura 15:00, 4,24m, anterior 14:00, 4,27m e classificação original Atenção. O HTML real tem `#river-level-table`, células com `div` e ícones de direção. Um recorte das duas tabelas foi incluído como fixture e passou pelo parser: Atenção, descendo, horário BRT correto. O acesso direto local pelo Node encontrou falha de cadeia de certificado TLS; a obtenção no runner HML ainda precisa ser conferida no snapshot publicado. Não foi desabilitada validação de certificado nem usada a fixture como dado operacional.
+**Validação da fonte:** a página oficial foi aberta e atualizada no navegador em 08/10/2026: leitura 15:00, 4,24m, anterior 14:00, 4,27m e classificação original Atenção. O HTML real tem `#river-level-table`, células com `div` e ícones de direção. Um recorte das duas tabelas foi incluído como fixture e passou pelo parser: Atenção, descendo, horário BRT correto. O acesso direto local pelo Node encontrou falha de cadeia de certificado TLS; o snapshot publicado pelo runner HML também apresentou indisponibilidade, conforme o resultado registrado abaixo. Não foi desabilitada validação de certificado nem usada a fixture como dado operacional.
 
 ## Excel e TI
 
@@ -77,15 +77,22 @@ Supabase Cron continua único scheduler, a cada dez minutos; `workflow_dispatch`
 
 ## Gates e homologação
 
-- 387 testes Vitest aprovados na suíte completa inicial, incluindo os nove casos Python exercitados pelo teste do importador; mais um caso com recorte real de Blumenau acrescentado na verificação da fonte. Nenhum teste anterior foi removido; assertions afetadas pelas mudanças autorizadas foram atualizadas.
+- 388 testes Vitest aprovados no CI final (33 arquivos), incluindo os nove casos Python exercitados pelo teste do importador e o recorte real de Blumenau. Nenhum teste anterior foi removido; assertions afetadas pelas mudanças autorizadas foram atualizadas.
 - Lint, typecheck/Edge, build Pages, data:validate, pages:validate e actionlint aprovados localmente. Actionlint sem validadores externos shellcheck/pyflakes, como no baseline.
 - Smoke existente de navegação, formulário sem envio, mapa/camadas/fallback e mobile aprovado.
 - 72 cenários visuais locais aprovados. Warning preexistente de chunk JS >500KB permanece.
-- [CI da implementação 228b0c3](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37821287615): aprovado em 08/10/2026 às 15:05:19 BRT. Publicação HML: a registrar após o ciclo automático.
-- Smoke remoto e coleta real de Blumenau: **pendentes da publicação**.
+- [CI final fbc79ab](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37822308373): aprovado. [Publicação automática](https://github.com/EduardoLamim/el-nino-jbs-hml/actions/runs/37822428699) iniciada às 15:12:02 BRT e concluída com sucesso às 15:13:22 BRT de 08/10/2026, sem dispatch manual.
+- HML: https://eduardolamim.github.io/el-nino-jbs-hml/ . Implementação `228b0c3ba2d3ac1674cbf30c3e975dbba3977c1b`; revisão final de teste/documentação `fbc79ab3777cf49348ee648eb84a7ba6b805c5ff`.
+- Smoke remoto: **72 cenários aprovados**, nas nove rotas, quatro larguras e dois temas, sem overflow ou erro JavaScript. Supabase e GIS foram interceptados apenas no navegador de teste, sem mutações; essa verificação não homologa integrações reais novamente. Evidências locais em `.codex_work/v1-closure-hml/`.
+- Snapshot de 08/10/2026 às **16:52:37 BRT** confirmado no Git e no Pages às 16:58 BRT, com SHA-256 idêntico: `64734d9b3eb18f91e1732c873b752776d50d235991ea3428a007a735bbd857d6`.
+- **Coleta real de Blumenau ainda não validada:** o runner publicou `qualidade: indisponivel`, sem valor ou classificação inventados. O diagnóstico local de TLS não prova sozinho a causa no runner; o motivo público é genérico. Não foi aplicado bypass de certificado. Essa integração permanece como limitação aberta, apesar dos testes do parser aprovados.
 - **12 ciclos consecutivos da revisão definitiva: pendentes.** Execuções anteriores à nova revisão não são usadas para homologar o retry novo. Não será mantido polling recorrente do agente para aguardá-los.
 - O token administrativo não estava disponível no processo desta rodada. Foi preparada consulta somente leitura e entrada oculta local, sem exposição de `cron`/`net` ao público ou registro de credenciais. Evidência administrativa permanece local.
 
 Critério de fechamento dos ciclos: correlacionar Cron, resposta de dispatch, run, coleta, commit e deploy de 12 horários consecutivos, sem contar apenas HTTP de aceitação. Uma falha deve ser investigada antes de declarar homologação.
+
+Consulta retrospectiva de GitHub em 08/10/2026: **11 runs consecutivas `workflow_dispatch` com sucesso**, após a revisão final, nos horários BRT 15:12, 15:22, 15:32, 15:42, 15:52, 16:02, 16:12, 16:22, 16:32, 16:42 e 16:52. IDs respectivamente: 37822428699, 37823714161, 37825020157, 37826299864, 37827574457, 37828872934, 37830142912, 37831402224, 37832661153, 37833898116 e 37835146101. São evidências de continuidade GitHub/Pages a cada dez minutos; não substituem a correlação administrativa Cron → dispatch de cada ciclo. O token segue ausente neste processo e o arquivo de exportação administrativa ainda não foi disponibilizado.
+
+Pendências de encerramento: obter o histórico administrativo por entrada oculta já preparada, correlacionar retrospectivamente os 12 ciclos completos e resolver/validar a obtenção real de Blumenau sem enfraquecer TLS. A entrega está publicada para avaliação; **homologação integral não declarada**.
 
 PRD, Praticagem/Condição da Barra, WhatsApp/Teams e GO-LIVE não fazem parte desta entrega.
