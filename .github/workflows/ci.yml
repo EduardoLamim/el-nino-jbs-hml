@@ -22,6 +22,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Diagnóstico público de Blumenau no runner
+        run: npx tsx scripts/qa/blumenau-diagnostic.ts
       - run: npm run lint
       - run: npm test
       - run: npm run data:validate
