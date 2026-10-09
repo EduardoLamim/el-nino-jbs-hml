@@ -5,8 +5,9 @@ import type { Status, Territorio } from '../domain/contracts';
 import type { EstadoImpacto } from '../domain/impact';
 
 function Metadata({ plan }: { plan: AreaPlan }) {
-  return <dl className="plan-metadata"><div><dt>Área</dt><dd>{plan.area}</dd></div><div><dt>Responsável pelo plano</dt><dd>{plan.responsavel}</dd></div><div><dt>Versão</dt><dd>{plan.versao}</dd></div><div><dt>Última atualização</dt><dd>{plan.atualizado}</dd></div></dl>;
+  return <dl className="plan-metadata"><div><dt>Responsável pelo plano</dt><dd>{plan.responsavel}</dd></div><div><dt>Versão</dt><dd>{plan.versao}</dd></div><div><dt>Última atualização</dt><dd>{plan.atualizado}</dd></div></dl>;
 }
+const columns = ['Ordem', 'Quem faz', 'Quem faz - Secundário', 'Quando faz', 'Onde faz', 'Como faz'] as const;
 export function AreaPlanView({ plan }: { plan: AreaPlan }) {
   const [level, setLevel] = useState<PlanLevel>('Emergência');
   const actions = plan.acoes.filter(a => a['Nível'] === level).sort((a, b) => Number(a.Ordem) - Number(b.Ordem));
@@ -16,7 +17,14 @@ export function AreaPlanView({ plan }: { plan: AreaPlan }) {
       if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) { e.preventDefault(); const next = e.key === 'Home' ? 0 : e.key === 'End' ? 1 : 1 - index; setLevel(planLevels[next]!); document.getElementById(`category-${next}`)?.focus(); }
     }}>{l}</button>)}</div>
     <div id="area-actions" role="tabpanel" aria-labelledby={`category-${planLevels.indexOf(level)}`} tabIndex={0}>
-      {actions.length ? actions.map(action => <article className="card area-action" key={action.Ordem}><h3>Ordem {action.Ordem}</h3><dl>{(['Quem faz', 'Quem faz - Secundário', 'Quando faz', 'Onde faz', 'Como faz'] as const).map(field => <div key={field} className={field === 'Como faz' ? 'action-method' : undefined}><dt>{field}</dt><dd>{action[field]}</dd></div>)}</dl></article>) : <p>Nenhuma ação cadastrada para {level}.</p>}
+      {actions.length ? <><p id="plan-scroll-help" className="meta">Role a tabela horizontalmente para consultar todas as colunas. A ordem permanece visível.</p>
+        <div className="table-scroll plan-table-scroll" role="region" aria-label={`Ações de ${level}`} aria-describedby="plan-scroll-help" tabIndex={0}>
+          <table className="plan-actions-table"><caption className="sr-only">Plano de Ação — {plan.area}: {level}</caption>
+            <colgroup>{columns.map((field, i) => <col key={field} className={`plan-col-${i}`} />)}</colgroup>
+            <thead><tr>{columns.map(field => <th key={field} scope="col">{field}</th>)}</tr></thead>
+            <tbody>{actions.map(action => <tr className="area-action" key={action.Ordem}><th scope="row">{action.Ordem}</th>{columns.slice(1).map(field => <td key={field}>{action[field]}</td>)}</tr>)}</tbody>
+          </table>
+        </div></> : <p>Nenhuma ação cadastrada para {level}.</p>}
     </div></section>;
 }
 export function PlansCenter({ status, territorio, impacto, secao = 'geral' }: { status?: Status; territorio?: Territorio; impacto: EstadoImpacto; secao?: string }) {

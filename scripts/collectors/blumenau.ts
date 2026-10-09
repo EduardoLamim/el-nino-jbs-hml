@@ -1,6 +1,7 @@
 import { parse, type DefaultTreeAdapterMap } from 'parse5';
 import { blumenauSchema, blumenauUrl, nivelBlumenau, type Blumenau } from '../../src/domain/blumenau';
 import { criarHttp, type Transport } from './http';
+import { blumenauTransport } from './blumenau-transport';
 type Node = DefaultTreeAdapterMap['node'];
 function text(node: Node): string { return 'value' in node ? node.value : 'childNodes' in node ? node.childNodes.map(text).join(' ') : ''; }
 function descendants(node: Node, tag: string): Node[] {
@@ -32,6 +33,6 @@ export function parseBlumenau(html: string, collected: string): Blumenau {
 }
 export async function coletarBlumenau(transport?: Transport): Promise<Blumenau> {
   const collected = new Date().toISOString();
-  try { return parseBlumenau(await criarHttp([], transport)(blumenauUrl), collected); }
+  try { return parseBlumenau(await criarHttp([], transport ?? blumenauTransport)(blumenauUrl), collected); }
   catch { return { nivel_m: null, medido_em: null, coletado_em: collected, classificacao_original: null, nivel: null, tendencia: null, qualidade: 'indisponivel', fonte: blumenauUrl, motivo: 'Fonte oficial indisponível ou estrutura não reconhecida.' }; }
 }

@@ -1,5 +1,7 @@
 # Fechamento funcional da V1 — HML
 
+**Correções posteriores:** consultar [correções finais HML de 09/10](fase-10-correcoes-finais-hml.md), com diagnóstico TLS comprovado, tabela operacional e nova situação da homologação. Os resultados abaixo registram a entrega anterior.
+
 Data: 08/10/2026. Escopo restrito ao HML. Esta entrega técnica não equivale à homologação dos 12 ciclos nem ao GO-LIVE.
 
 ## Implementação
