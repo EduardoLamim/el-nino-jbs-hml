@@ -1,5 +1,7 @@
 # Correções finais HML — 09/10/2026
 
+Atualização posterior: [homologação final da V1 e alinhamento do controle de som](fase-10-homologacao-v1-hml.md). Este documento conserva os resultados da rodada de correções.
+
 Escopo: Blumenau informativo, apresentação dos planos por área e evidências de continuidade. Sem PRD/GO-LIVE. Este relatório complementa o fechamento funcional anterior.
 
 ## Blumenau — causa comprovada e correção
