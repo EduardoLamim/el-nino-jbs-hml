@@ -49,12 +49,12 @@ export function LevelAlert({ nivel, impactoAtivo = null, impactEvent, audioHost,
     return () => { disposed = true; };
   }, [nivel, impactoAtivo, source, impactEvent]);
   const controles = <div className="audio-controls" role="group" aria-label="Controles de áudio">
-    <span role="status"><span aria-hidden="true">{habilitado ? '🔊 ' : '🔇 '}</span>{mensagem}</span>
-    <button type="button" onClick={async () => {
+    <span role="status" className="sr-only">{mensagem}</span>
+    <button type="button" aria-pressed={habilitado ? undefined : false} onClick={async () => {
       try { await audio.current?.enable(); if (!await audio.current?.play('atencao', true)) throw new Error('Áudio bloqueado'); setHabilitado(true); setMensagem('Som habilitado'); }
       catch { setHabilitado(false); setMensagem('Não foi possível habilitar o áudio'); }
     }}>{habilitado ? 'Testar som' : 'Habilitar som'}</button>
-    {habilitado && <button type="button" onClick={() => { audio.current?.dispose(); audio.current = new AlertAudio(setPlaying); setHabilitado(false); setMensagem('Som desabilitado'); }}>Desabilitar som</button>}
+    {habilitado && <button type="button" aria-pressed={true} onClick={() => { audio.current?.dispose(); audio.current = new AlertAudio(setPlaying); setHabilitado(false); setMensagem('Som desabilitado'); }}>Desabilitar som</button>}
     </div>;
   return <>
     {audioHost ? createPortal(controles, audioHost) : audioHost === undefined ? controles : null}

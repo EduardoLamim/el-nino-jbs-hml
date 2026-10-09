@@ -106,8 +106,11 @@ it('controles são renderizados no header sem ocupar uma linha no conteúdo', as
   const host = document.createElement('header'); document.body.append(host);
   const { container, unmount } = render(<LevelAlert nivel="normalidade" audioHost={host} />);
   expect(container.textContent).toBe(''); expect(host.textContent).toContain('Som desabilitado');
+  expect(screen.getByRole('status').className).toBe('sr-only');
+  expect(screen.getByRole('button', { name: 'Habilitar som' }).getAttribute('aria-pressed')).toBe('false');
   fireEvent.click(screen.getByText('Habilitar som')); await screen.findByText('Testar som');
   expect(host.textContent).toContain('Som habilitado'); expect(container.textContent).toBe('');
+  expect(screen.getByRole('button', { name: 'Desabilitar som' }).getAttribute('aria-pressed')).toBe('true');
   fireEvent.click(screen.getByText('Desabilitar som')); expect(host.textContent).toContain('Som desabilitado');
   unmount(); host.remove();
 });

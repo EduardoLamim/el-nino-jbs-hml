@@ -447,10 +447,9 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 .simulation-label { font-weight:800; letter-spacing:.05em; }
 .simulation-actions { display:flex; flex-wrap:wrap; gap:8px; }
 .app-header { flex-wrap:wrap; }
-.header-audio { margin-left:auto; max-width:100%; flex:0 1 245px; }
+.header-audio { margin-left:auto; max-width:100%; flex:0 1 auto; display:flex; align-items:center; }
 .header-audio .audio-controls { justify-content:flex-end; gap:4px 8px; font-size:.75rem; }
-.header-audio [role='status'] { flex-basis:100%; text-align:right; }
-.header-audio button { min-height:36px; padding:6px 9px; border:1px solid #517a90; font-size:.75rem; }
+.header-audio button { min-height:44px; padding:6px 9px; border:1px solid #517a90; font-size:.75rem; }
 @media (min-width:1101px) {
   .app-header { padding-right:24px; }
   .app-header nav { margin-left:auto; }
@@ -459,15 +458,14 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 @media (min-width:1101px) and (max-width:1350px) {
   .app-header { flex-wrap:nowrap; gap:12px; }
   .app-header nav a { padding:9px 7px; font-size:.8rem; }
-  .header-audio { flex-basis:220px; flex-shrink:0; }
+  .header-audio { flex-basis:auto; flex-shrink:0; }
   .app-header .brand { gap:12px; }
   .app-header .brand > div { padding-left:12px; }
   .app-header .brand-logo { width:88px; }
 }
 @media (max-width:1100px) {
-  .header-audio { flex:auto; margin-left:0; align-self:stretch; }
+  .header-audio { flex:auto; margin-left:0; align-self:center; }
   .header-audio .audio-controls { justify-content:flex-end; }
-  .header-audio [role='status'] { flex-basis:auto; }
   .header-audio button { min-height:44px; }
 }
 .audio-controls, .decision-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:.65rem; }
