@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-10T18:22:20.825Z",
+  "atualizado_em": "2026-10-10T18:32:20.336Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-10-10T18:20:15.102000+00:00",
@@ -69,7 +69,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-10T18:22:20.825Z",
+    "avaliado_em": "2026-10-10T18:32:20.336Z",
     "situacao_oficial": {
       "nivel": "atencao",
       "desde": "2026-10-09T14:36:44-03:00",
@@ -239,7 +239,7 @@
         "nivel": "normalidade",
         "desde": null,
         "stale": false,
-        "motivo": "Lacuna temporal interrompeu a sequência.",
+        "motivo": null,
         "ultima_valida": {
           "nivel_m": 0.15,
           "medido_em": "2026-10-10T18:20:41.964000+00:00",
@@ -9582,7 +9582,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-10T18:22:19.289Z",
+    "coletado_em": "2026-10-10T18:32:20.119Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -9695,7 +9695,7 @@
   "blumenau": {
     "nivel_m": 3.24,
     "medido_em": "2026-10-10T15:00:00-03:00",
-    "coletado_em": "2026-10-10T18:22:17.746Z",
+    "coletado_em": "2026-10-10T18:32:18.799Z",
     "classificacao_original": "Observação",
     "nivel": "atencao",
     "tendencia": "subindo",
@@ -9713,8 +9713,7 @@
       "barragens/Barragem Taió: qualidade atrasado.",
       "barragens/Barragem José Boiteux: qualidade atrasado.",
       "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC.",
-      "DC07: Lacuna temporal interrompeu a sequência."
+      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
     ]
   },
   "fontes": {
@@ -9724,7 +9723,7 @@
       "qualidade": null,
       "atualizado_em": "2026-10-10T13:07:09-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.770Z",
+      "coletado_em": "2026-10-10T18:32:18.819Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9733,7 +9732,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-10T18:22:17.770Z",
+          "coletado_em": "2026-10-10T18:32:18.819Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9746,14 +9745,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.801Z",
+      "coletado_em": "2026-10-10T18:32:18.847Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-10T18:22:17.801Z",
+          "coletado_em": "2026-10-10T18:32:18.847Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9766,7 +9765,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.802Z",
+      "coletado_em": "2026-10-10T18:32:18.848Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9775,7 +9774,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-10T18:22:17.802Z",
+          "coletado_em": "2026-10-10T18:32:18.848Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9788,7 +9787,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.803Z",
+      "coletado_em": "2026-10-10T18:32:18.849Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9797,7 +9796,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-10T18:22:17.803Z",
+          "coletado_em": "2026-10-10T18:32:18.849Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9810,14 +9809,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.804Z",
+      "coletado_em": "2026-10-10T18:32:18.850Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-10T18:22:17.804Z",
+          "coletado_em": "2026-10-10T18:32:18.850Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9830,7 +9829,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-10T18:22:17.805Z",
+      "coletado_em": "2026-10-10T18:32:18.851Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9840,14 +9839,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-10T18:22:17.805Z",
+          "coletado_em": "2026-10-10T18:32:18.851Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-10T18:22:19.289Z",
+          "coletado_em": "2026-10-10T18:32:20.119Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
