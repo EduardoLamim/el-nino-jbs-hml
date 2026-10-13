@@ -7,3 +7,7 @@ verify_jwt = false
 [functions.trigger-monitoramento]
 verify_jwt = false
 # Autorização dedicada server-side validada antes do dispatch; não usa chave pública.
+
+[functions.teams-notifications]
+verify_jwt = false
+# Credenciais dedicadas de invocação/admin; envio externo desabilitado por padrão.

@@ -2,6 +2,8 @@
 
 Data: 13/10/2026. **Proposta; nenhuma implementação, migration, deploy ou mensagem executada.** Matriz vinculante: [eventos V1](integracao-teams-matriz-eventos.md).
 
+> Registro histórico da inspeção. O plano foi posteriormente aprovado, com reconciliação periódica também para Impacto (sem listener permanente), cinco tentativas totais, entrega incerta sem retry cego e detalhes de tentativas por 30 dias. O solicitante confirmou a correção `string(item()?['content'])` dentro do loop, Workflow salvo e autenticação `Anyone`. Implementação, limites de ativação e situação dos testes estão em [implementação HML](integracao-teams-implementacao-hml.md); essas decisões posteriores prevalecem sobre as pendências originais abaixo.
+
 ## 1. Arquitetura existente e ponto de integração
 
 Inspecionados código e migrations versionadas, não a configuração administrativa viva do Supabase/Power Automate. HEAD local `83487e3`; ponta remota consultada `62e11a8`. A única diferença remota é `public/data/status.json`: a arquitetura homologada permanece igual.
