@@ -14,7 +14,7 @@ describe('Teams — cartão e transporte mock', () => {
       expect(payload.type).toBe('message'); expect(payload.attachments).toHaveLength(1);
       expect(payload.attachments[0]!.content.type).toBe('AdaptiveCard');
       expect(JSON.stringify(payload)).toContain('[HML — TESTE]'); expect(JSON.stringify(payload)).toContain('SIMULAÇÃO');
-      expect(JSON.stringify(payload)).toContain('12:00:00');
+      expect(JSON.stringify(payload)).toContain('13/10/2026 às 12:00');
     });
   it.each(['impact_open','impact_close'] as const)('identifica ação manual sintética %s', kind => {
     const payload = JSON.stringify(adaptiveCard({...event,kind})); expect(payload).toContain('manual autorizad'); expect(payload).toContain('SIMULAÇÃO');
@@ -63,3 +63,4 @@ describe('Teams — cartão e transporte mock', () => {
     expect(rpc.mock.calls).toEqual([['ingest','checkpoint'],['worker','probe_worker'],['admin','report']]);
   });
 });
+
