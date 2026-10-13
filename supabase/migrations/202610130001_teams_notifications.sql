@@ -67,7 +67,9 @@ begin
   if p_payload is null or jsonb_typeof(p_payload)<>'object' or octet_length(p_payload::text)>131072 then raise exception 'Invalid payload'; end if;
   select * into s from jbs_notifications.settings where id=true;
 
-  if p_action='checkpoint' then
+  if p_action='probe_worker' then
+    return '{"scope":"worker","ready":true}';
+  elsif p_action='checkpoint' then
     select * into c from jbs_notifications.cursor where id=true;
     return jsonb_build_object('commit',c.commit_sha);
   elsif p_action='bootstrap' then
@@ -227,7 +229,7 @@ returns jsonb language plpgsql security definer set search_path='' as $$
 declare needed text;
 begin
   needed := case when p_action in ('checkpoint','snapshot','impacts') then 'ingest'
-    when p_action in ('claim','freeze','sending','finish') then 'worker' else 'admin' end;
+    when p_action in ('probe_worker','claim','freeze','sending','finish') then 'worker' else 'admin' end;
   if p_token is null or length(p_token)<64 or not exists (
     select 1 from jbs_notifications.credentials where scope=needed
     and token_sha256=encode(sha256(convert_to(p_token,'UTF8')),'hex')) then

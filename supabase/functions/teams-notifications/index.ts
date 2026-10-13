@@ -13,5 +13,6 @@ const rpc: Rpc = async (scope, action, payload = {}) => {
   if (!response.ok) { await response.body?.cancel(); throw new Error('Notification persistence unavailable'); }
   return response.json();
 };
-Deno.serve(createHandler({ rpc, wakeToken: env('TEAMS_WAKE_TOKEN_HML'), adminToken: env('TEAMS_ADMIN_TOKEN_HML'),
-  webhook: env('TEAMS_WORKFLOW_URL_HML'), liveEnabled: env('TEAMS_SYNTHETIC_LIVE_HML') === 'true' }));
+// Read configuration for each request, including changes to the live-send switch.
+Deno.serve(request => createHandler({ rpc, wakeToken: env('TEAMS_WAKE_TOKEN_HML'), adminToken: env('TEAMS_ADMIN_TOKEN_HML'),
+  webhook: env('TEAMS_WORKFLOW_URL_HML'), liveEnabled: env('TEAMS_SYNTHETIC_LIVE_HML') === 'true' })(request));

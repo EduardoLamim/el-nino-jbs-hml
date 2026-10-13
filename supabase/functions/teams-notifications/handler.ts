@@ -108,6 +108,14 @@ export function createHandler(deps: { rpc: Rpc; wakeToken: string; adminToken: s
       raw += decoder.decode();
       const input = JSON.parse(raw) as { action?: string; payload?: Record<string, unknown> };
       const action = input.action ?? '';
+      if (action === 'health' && admin) {
+        const [, worker, report] = await Promise.all([
+          deps.rpc('ingest','checkpoint'), deps.rpc('worker','probe_worker'), deps.rpc('admin','report'),
+        ]);
+        if (!(worker as {ready?:boolean})?.ready) throw new Error('Worker credential unavailable');
+        return reply({ready:true, live_enabled:deps.liveEnabled, webhook_valid:validWebhook(deps.webhook ?? ''),
+          mode:(report as {mode:string}).mode});
+      }
       if (action === 'drain') return reply(await drainOne(deps.rpc, deps));
       if (['checkpoint', 'snapshot', 'impacts'].includes(action)) return reply(await deps.rpc('ingest', action, input.payload));
       if (admin && ['bootstrap','configure','synthetic','replay','resolve','prune','report'].includes(action)) return reply(await deps.rpc('admin', action, input.payload));

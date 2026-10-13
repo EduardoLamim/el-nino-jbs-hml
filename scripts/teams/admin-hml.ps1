@@ -18,7 +18,13 @@ $secureToken = Read-Host 'Token administrativo HML (entrada oculta)' -AsSecureSt
 $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureToken)
 try {
   $headers = @{ Authorization = 'Bearer ' + [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer) }
-  $body = @{ query = 'select jbs_notifications.execute($1,$2::jsonb) as result'; parameters = @($rpcAction, ($payload | ConvertTo-Json -Compress)) } | ConvertTo-Json -Depth 8
+  $query = 'select jbs_notifications.execute($1,$2::jsonb) as result'
+  if ($Action -eq 'disable') {
+    # Administrative path independent of the Edge function. While disabled, claim
+    # only sweeps expired leases; it cannot send or claim an event.
+    $query = "begin; select jbs_notifications.execute('configure','{`"mode`":`"disabled`"}'::jsonb); select jbs_notifications.execute('claim'); commit;"
+    $body = @{ query = $query } | ConvertTo-Json -Depth 8
+  } else { $body = @{ query = $query; parameters = @($rpcAction, ($payload | ConvertTo-Json -Compress)) } | ConvertTo-Json -Depth 8 }
   try {
     $result = Invoke-RestMethod -Uri 'https://api.supabase.com/v1/projects/ufeahglxwygvlugfsopi/database/query' -Method Post -Headers $headers -ContentType 'application/json' -Body $body -TimeoutSec 30
     $directory = Join-Path $PSScriptRoot '..\..\.codex_work'

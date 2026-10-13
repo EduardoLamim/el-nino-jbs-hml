@@ -2,6 +2,8 @@
 
 Data: 13/10/2026. Referências: [matriz oficial](integracao-teams-matriz-eventos.md) e [inspeção aprovada](integracao-teams-inspecao-hml.md).
 
+> A [revisão final do provisionamento](integracao-teams-revisao-provisionamento.md) identificou bloqueadores no helper original de `ecf6060` e os corrigiu. Use a versão revisada e seu procedimento de recuperação. Desligamento em encerramento forçado não é garantido pelo finally; há janela limitada e intervenção administrativa descritas no parecer.
+
 ## Estado desta entrega
 
 Código e testes locais implementados. **Migration e Edge ainda não aplicadas no HML; nenhuma mensagem real enviada.** A sessão de implementação não dispõe de `SUPABASE_ACCESS_TOKEN`; `gh` também não está instalado. Não confundir implementação local, aceite HTTP e confirmação visual no canal.
@@ -65,7 +67,7 @@ A recuperação depende do próximo término operacional ou acionamento administ
 
 4. Antes de qualquer alteração, o helper verifica ferramentas/autenticação, projeto, baseline confiável e instalação anterior. Aplica **somente a migration Teams**, registra a migration, cria credenciais aleatórias distintas e hashes privados, publica **somente teams-notifications**, registra baseline silenciosa e executa cinco cenários mock com reingestão duplicada. Sem o switch `-SyntheticTests`, não habilita envio externo.
 5. Com o switch, após mocks: janela de até 15 minutos, cinco mensagens no máximo (elevação com salto, redução, normalização, Impacto aberto e encerrado). Cada uma contém SIMULAÇÃO e `[HML — TESTE]`. Mesma identidade é reingerida para confirmar deduplicação. Falha interrompe a sequência, sem retry cego. Falhas/retentativas são provocadas somente nos testes automatizados de transporte mock, sem inundar o canal.
-6. Ao terminar ou falhar na rodada, desabilita envio no banco e no secret de habilitação. Apenas se o fechamento for confirmado habilita o workflow de **reconciliação**, nunca os envios operacionais. Guarda somente evidência sanitizada em `.codex_work/teams-hml-provision-result.json` (ignorado no Git). Uma repetição do provisionamento em instalação existente é recusada: inspecionar antes, sem rotacionar credenciais silenciosamente.
+6. Ao terminar ou falhar em qualquer etapa mutável, tenta desabilitar envio diretamente no banco e no secret; confirma o estado do banco por leitura. Apenas se ambas as operações forem confirmadas habilita o workflow de **reconciliação**, nunca os envios operacionais. Guarda somente evidência sanitizada em `.codex_work/teams-hml-provision-<instante>-<id>.json` (ignorado no Git). Em instalação parcial, recuperação explícita `-RecoverSetup` exige schema idêntico e ausência de envio/lease, preserva baseline/eventos e não envia testes nem habilita reconciliação. Não pode ser combinada com `-SyntheticTests`.
 7. Conferir os cinco cards no canal **Comitê El Niño → Alertas automáticos - El Niño** e o histórico do Flow. Aceitação HTTP não satisfaz essa confirmação. Informar apenas resultado/IDs da evidência, nunca URL/credencial. Se houver entrega incerta, verificar Flow/canal antes de replay.
 
 O backend contém os tokens `TEAMS_DB_INGEST_TOKEN_HML`, `TEAMS_DB_WORKER_TOKEN_HML`, `TEAMS_DB_ADMIN_TOKEN_HML`, `TEAMS_WAKE_TOKEN_HML`, `TEAMS_ADMIN_TOKEN_HML` e `TEAMS_SYNTHETIC_LIVE_HML=false`. GitHub recebe apenas `TEAMS_WAKE_TOKEN_HML`, com escopo de ingestão/despertar; não autoriza criação sintética, habilitação ou replay. `TEAMS_HML_ENABLED=true` significa reconciliar, não enviar eventos reais.

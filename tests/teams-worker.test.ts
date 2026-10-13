@@ -53,4 +53,13 @@ describe('Teams — cartão e transporte mock', () => {
     expect((await handler(req('checkpoint','bad'))).status).toBe(401);
     const failure=await handler(req('checkpoint','w'.repeat(64))); expect(failure.status).toBe(503); expect(await failure.text()).not.toContain('PRIVATE');
   });
+  it('health autentica os três escopos sem consumir fila nem expor URL e é exclusivo do admin',async()=>{
+    const rpc=vi.fn(async(scope:string)=>scope==='worker'?{ready:true}:scope==='admin'?{mode:'disabled'}:{commit:null});
+    const handler=createHandler({rpc,wakeToken:'w'.repeat(64),adminToken:'a'.repeat(64),webhook,liveEnabled:false});
+    const req=(token:string)=>new Request('https://local/',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({action:'health'})});
+    expect((await handler(req('w'.repeat(64)))).status).toBe(403);
+    const response=await handler(req('a'.repeat(64)));
+    expect(await response.json()).toEqual({ready:true,mode:'disabled',live_enabled:false,webhook_valid:true});
+    expect(rpc.mock.calls).toEqual([['ingest','checkpoint'],['worker','probe_worker'],['admin','report']]);
+  });
 });

@@ -1,5 +1,6 @@
-param([switch]$SyntheticTests)
+param([switch]$SyntheticTests, [switch]$RecoverSetup)
 $ErrorActionPreference = 'Stop'
+if ($SyntheticTests -and $RecoverSetup) { throw 'Recuperação não pode enviar mensagens. Use somente -RecoverSetup após inspeção.' }
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 if ((Get-Content -LiteralPath (Join-Path $workspace 'supabase\.temp\project-ref') -Raw).Trim() -ne 'ufeahglxwygvlugfsopi') {
   throw 'Projeto vinculado diferente do HML. Nenhuma alteração executada.'
@@ -14,6 +15,7 @@ try {
   try {
     $arguments = @('--import', 'tsx', 'scripts/teams/provision.ts')
     if ($SyntheticTests) { $arguments += '--synthetic-tests' }
+    if ($RecoverSetup) { $arguments += '--recover-setup' }
     & node @arguments
     if ($LASTEXITCODE -ne 0) { throw 'Provisionamento interrompido. Consulte somente a etapa sanitizada indicada; não repita sem verificar o estado remoto.' }
   } finally { Pop-Location }

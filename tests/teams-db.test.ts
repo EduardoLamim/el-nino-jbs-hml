@@ -96,6 +96,19 @@ describe('Teams — transações e isolamento PostgreSQL', () => {
     await admin('configure',{mode:'disabled'});
     await expect(rpc('worker','sending',{id:claim.id,lease:claim.lease,mode:'mock'})).rejects.toThrow();
   });
+  it('expiração da janela bloqueia novos claims e POST de uma lease ainda válida',async()=>{
+    await synthetic(); await admin('configure',{mode:'synthetic_live',live_until:new Date(Date.now()+60_000).toISOString()});
+    const claim=await rpc('worker','claim') as Claim;
+    await db.exec("update jbs_notifications.settings set live_until=clock_timestamp()-interval '1 second';");
+    await expect(rpc('worker','sending',{id:claim.id,lease:claim.lease,mode:'synthetic_live'})).rejects.toThrow();
+    expect(await rpc('worker','claim')).toBeNull();
+  });
+  it('probe worker verifica seu escopo sem alterar a fila',async()=>{
+    await synthetic(); const before=await rows('outbox');
+    expect(await rpc('worker','probe_worker')).toEqual({scope:'worker',ready:true});
+    await expect(rpc('ingest','probe_worker')).rejects.toThrow();
+    expect(await rows('outbox')).toEqual(before);
+  });
   it('payload fica congelado e entrega incerta bloqueia ultrapassagem até revisão auditada', async () => {
     await synthetic('test-first'); await synthetic('test-second'); await admin('configure',{mode:'mock'});
     const c = await rpc('worker','claim') as Claim;
