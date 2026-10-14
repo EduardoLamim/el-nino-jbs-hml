@@ -59,8 +59,33 @@ describe('Teams — cartão e transporte mock', () => {
     const req=(token:string)=>new Request('https://local/',{method:'POST',headers:{Authorization:`Bearer ${token}`},body:JSON.stringify({action:'health'})});
     expect((await handler(req('w'.repeat(64)))).status).toBe(403);
     const response=await handler(req('a'.repeat(64)));
-    expect(await response.json()).toEqual({ready:true,mode:'disabled',live_enabled:false,webhook_valid:true});
+    expect(await response.json()).toEqual({ready:true,mode:'disabled',live_enabled:false,webhook_valid:true,operational_enabled:false});
     expect(rpc.mock.calls).toEqual([['ingest','checkpoint'],['worker','probe_worker'],['admin','report']]);
+  });
+});
+
+describe('Teams — transporte operacional com destino mock', () => {
+  it('rejeita sintético no modo operacional mesmo com secret sintético habilitado', async () => {
+    const {rpc,fetcher}=setup({...claim,mode:'operational'});
+    expect(await drainOne(rpc,{webhook,liveEnabled:true,fetcher})).toEqual({status:'blocked'});
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+  it('não envia quando a autorização transacional sending falha', async () => {
+    const {rpc,fetcher}=setup({...claim,mode:'operational',event:{...event,is_test:false}});
+    const base=rpc.getMockImplementation()!;
+    rpc.mockImplementation(async(scope,action,payload)=>{
+      if(action==='sending') throw new Error('Disabled during lease');
+      return base(scope,action,payload);
+    });
+    await expect(drainOne(rpc,{webhook,liveEnabled:false,fetcher})).rejects.toThrow('Disabled');
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+  it.each([202,429,503])('real mantém classificação HTTP %s independente do secret de testes', async status => {
+    const {rpc,fetcher}=setup({...claim,mode:'operational',event:{...event,is_test:false}});
+    fetcher.mockResolvedValue(new Response(null,{status}));
+    expect((await drainOne(rpc,{webhook,liveEnabled:false,fetcher})).status).toBe(status===202?'accepted':status===429?'retry':'uncertain');
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect(String(fetcher.mock.calls[0]![1]!.body)).not.toContain('SIMULAÇÃO');
   });
 });
 

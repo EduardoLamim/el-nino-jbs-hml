@@ -1,8 +1,9 @@
 param(
-  [ValidateSet('report','resolve','replay','disable')][string]$Action = 'report',
+  [ValidateSet('report','resolve','replay','disable','enable-operational')][string]$Action = 'report',
   [string]$DeliveryId,
   [ValidateSet('confirmed','dismissed','blocked')][string]$Status = 'confirmed',
-  [string]$Reason
+  [string]$Reason,
+  [string]$ExpectedCommit
 )
 $ErrorActionPreference = 'Stop'
 $payload = @{}
@@ -14,7 +15,15 @@ if ($Action -in @('resolve','replay')) {
   }
   $payload = @{ id = $parsedId.ToString(); status = $Status; reason = $Reason }
 } elseif ($Action -eq 'disable') { $rpcAction = 'configure'; $payload = @{ mode = 'disabled' } }
-$secureToken = Read-Host 'Token administrativo HML (entrada oculta)' -AsSecureString
+if ($Action -eq 'enable-operational') {
+  if ($ExpectedCommit -cnotmatch '^[a-f0-9]{40}$' -or !$Reason -or $Reason.Trim().Length -lt 10 -or $Reason.Length -gt 500) { throw 'Informe ExpectedCommit reconciliado e justificativa de 10 a 500 caracteres.' }
+  Write-Output 'Ativação HML: apenas transições posteriores a este momento. Histórico e pendências anteriores permanecerão excluídos.'
+  $confirmation = Read-Host 'Digite exatamente ATIVAR TEAMS HML para autorizar envios operacionais'
+  if ($confirmation -cne 'ATIVAR TEAMS HML') { throw 'Ativação não confirmada; nenhuma operação remota.' }
+  $rpcAction = 'activate_operational'
+  $payload = @{ confirm=$confirmation; reason=$Reason; expected_commit=$ExpectedCommit }
+}
+$secureToken = Read-Host 'PAT administrativo Supabase HML (entrada oculta)' -AsSecureString
 $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureToken)
 try {
   $headers = @{ Authorization = 'Bearer ' + [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer) }

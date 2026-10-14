@@ -1,7 +1,7 @@
-/** Notification-only backend. No operational writes and no real-event delivery mode. */
+/** Notification-only backend. No operational writes; delivery requires database authorization. */
 export type Rpc = (scope: 'ingest' | 'worker' | 'admin', action: string, payload?: Record<string, unknown>) => Promise<unknown>;
 export type Event = { event_key: string; kind: 'level' | 'impact_open' | 'impact_close'; is_test: boolean; body: Record<string, unknown> };
-export type Claim = { id: string; lease: string; attempt: number; mode: 'mock' | 'synthetic_live'; event: Event; payload?: ReturnType<typeof adaptiveCard> | null };
+export type Claim = { id: string; lease: string; attempt: number; mode: 'mock' | 'synthetic_live' | 'operational'; event: Event; payload?: ReturnType<typeof adaptiveCard> | null };
 const levels = ['normalidade', 'atencao', 'alerta', 'emergencia'];
 const labels = ['Normalidade', 'Atenção', 'Alerta', 'Emergência'];
 const panel = 'https://eduardolamim.github.io/el-nino-jbs-hml/';
@@ -60,7 +60,7 @@ export async function drainOne(rpc: Rpc, options: { webhook?: string; liveEnable
   if (!claim) return { status: 'idle' };
   const ref = { id: claim.id, lease: claim.lease };
   const finish = (outcome: string, extra = {}) => rpc('worker', 'finish', { ...ref, outcome, ...extra });
-  if (!claim.event.is_test || !['mock', 'synthetic_live'].includes(claim.mode)) {
+  if (claim.mode === 'operational' ? claim.event.is_test : !claim.event.is_test || !['mock', 'synthetic_live'].includes(claim.mode)) {
     await finish('blocked'); return { status: 'blocked' };
   }
   let payload: ReturnType<typeof adaptiveCard>;
@@ -70,7 +70,7 @@ export async function drainOne(rpc: Rpc, options: { webhook?: string; liveEnable
     await rpc('worker', 'sending', { ...ref, mode: claim.mode });
     await finish('mock_delivered'); return { status: 'mock_delivered' };
   }
-  if (!options.liveEnabled || !options.webhook || !validWebhook(options.webhook)) {
+  if ((claim.mode === 'synthetic_live' && !options.liveEnabled) || !options.webhook || !validWebhook(options.webhook)) {
     await finish('blocked'); return { status: 'blocked' };
   }
   await rpc('worker', 'sending', { ...ref, mode: claim.mode });
@@ -120,7 +120,8 @@ export function createHandler(deps: { rpc: Rpc; wakeToken: string; adminToken: s
         ]);
         if (!(worker as {ready?:boolean})?.ready) throw new Error('Worker credential unavailable');
         return reply({ready:true, live_enabled:deps.liveEnabled, webhook_valid:validWebhook(deps.webhook ?? ''),
-          mode:(report as {mode:string}).mode});
+          mode:(report as {mode:string}).mode,
+          operational_enabled:(report as {mode:string}).mode === 'operational'});
       }
       if (action === 'drain') return reply(await drainOne(deps.rpc, deps));
       if (['checkpoint', 'snapshot', 'impacts'].includes(action)) return reply(await deps.rpc('ingest', action, input.payload));

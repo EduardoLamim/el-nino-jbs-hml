@@ -15,6 +15,7 @@ beforeAll(async () => {
   db = new PGlite(); await db.exec('create role anon; create role authenticated;');
   await db.exec(readFileSync('supabase/migrations/202610020001_impactos_jbs.sql','utf8'));
   await db.exec(readFileSync('supabase/migrations/202610130001_teams_notifications.sql','utf8'));
+  await db.exec(readFileSync('supabase/migrations/202610140001_teams_operational.sql','utf8'));
   for (const [scope, token] of Object.entries(tokens)) await db.query('insert into jbs_notifications.credentials values($1,$2)', [scope, createHash('sha256').update(token).digest('hex')]);
 }, 30000);
 beforeEach(async () => {
@@ -148,5 +149,74 @@ describe('Teams — transações e isolamento PostgreSQL', () => {
     await admin('prune'); expect(await rows('attempts')).toHaveLength(0);
     expect(await rows('events')).toHaveLength(1); expect((await rows('outbox'))[0]!.attempts).toBe(1);
     await synthetic(); expect(await rows('events')).toHaveLength(1);
+  });
+});
+
+describe('Teams — ativação operacional explícita', () => {
+  const activate = async () => {
+    const result=await admin('activate_operational', { confirm:'ATIVAR TEAMS HML', reason:'Ativação expressamente autorizada', expected_commit:'a'.repeat(40) });
+    // Deterministic fixture boundary; avoid millisecond clock resolution in WASM.
+    await db.exec("update jbs_notifications.settings set operational_since=clock_timestamp()-interval '1 second'");
+    return result;
+  };
+  const realImpact = async (old = false) => {
+    await db.exec(`insert into jbs_private.impactos_jbs(tipo,responsavel_acionamento,acionado_em) values('alagamento_terminal','Privado',clock_timestamp()${old ? "-interval '1 day'" : ''});`);
+    await rpc('ingest','impacts');
+  };
+  it('exige admin, confirmação, baseline e CAS; configure não ativa', async () => {
+    await expect(activate()).rejects.toThrow(); await seed();
+    await expect(rpc('ingest','activate_operational',{})).rejects.toThrow();
+    await expect(rpc('worker','activate_operational',{})).rejects.toThrow();
+    await expect(admin('activate_operational',{})).rejects.toThrow();
+    await expect(admin('configure',{mode:'operational'})).rejects.toThrow();
+    expect(await activate()).toMatchObject({mode:'operational'});
+    await expect(activate()).rejects.toThrow();
+  });
+  it('preserva pendências antigas, exclui histórico reconciliado depois e sintéticos', async () => {
+    await seed(); await realImpact();
+    const old = await rows('outbox'); await activate();
+    await db.exec("insert into jbs_private.impactos_jbs(tipo,responsavel_acionamento,acionado_em,encerrado_em,responsavel_encerramento) values('alagamento_terminal','Privado',clock_timestamp()-interval '2 days',clock_timestamp()-interval '1 day','Privado')");
+    await rpc('ingest','impacts'); await synthetic();
+    expect(await rpc('worker','claim')).toBeNull();
+    expect((await rows('outbox'))[0]).toEqual(old[0]);
+    await db.exec("update jbs_private.impactos_jbs set encerrado_em=clock_timestamp(),responsavel_encerramento='Privado' where encerrado_em is null");
+    await rpc('ingest','impacts');
+    const claim = await rpc('worker','claim') as Claim;
+    expect(claim.mode).toBe('operational'); expect(claim.event.kind).toBe('impact_close'); expect(claim.event.is_test).toBe(false);
+  });
+  it('envia apenas transição consolidada posterior e não repete snapshot', async () => {
+    await seed(); await activate();
+    const now = new Date().toISOString();
+    const payload={commit:'b'.repeat(40),previous_commit:'a'.repeat(40),snapshot:{level:'alerta',since:now,collected_at:now,reasons:['Motivo persistido']}};
+    await rpc('ingest','snapshot',payload); await rpc('ingest','snapshot',payload);
+    const requests: unknown[]=[];
+    expect(await drainOne(rpc,{liveEnabled:false,webhook:'https://example.logic.azure.com/test',fetcher:async (_url,init)=>{requests.push(JSON.parse(String(init?.body)));return new Response(null,{status:202});}})).toEqual({status:'accepted',http_status:202});
+    expect(requests).toHaveLength(1); expect(JSON.stringify(requests)).toContain('Motivo persistido'); expect(JSON.stringify(requests)).not.toContain('SIMULAÇÃO');
+    expect(await rpc('worker','claim')).toBeNull();
+  });
+  it('horário antigo ou indeterminado nunca libera backlog tardio', async () => {
+    await seed(); await activate();
+    for(const [i,since] of [null,'2026-10-13T12:00:00Z'].entries()) {
+      await rpc('ingest','snapshot',{commit:String(i+1).repeat(40),previous_commit:i?'1'.repeat(40):'a'.repeat(40),snapshot:{level:i?'emergencia':'alerta',since,collected_at:new Date(Date.now()-1000+i).toISOString(),reasons:[]}});
+    }
+    expect(await rpc('worker','claim')).toBeNull(); expect(await rows('outbox')).toHaveLength(2);
+  });
+  it('desativação bloqueia lease; reativação não recupera backlog automaticamente', async () => {
+    await seed(); await activate(); await realImpact();
+    const c = await rpc('worker','claim') as Claim;
+    await rpc('worker','freeze',{id:c.id,lease:c.lease,payload:{type:'message'}});
+    await admin('configure',{mode:'disabled'});
+    await expect(rpc('worker','sending',{id:c.id,lease:c.lease,mode:'operational'})).rejects.toThrow();
+    await expect(activate()).rejects.toThrow();
+    await rpc('worker','finish',{id:c.id,lease:c.lease,outcome:'retry'});
+    await activate(); expect(await rpc('worker','claim')).toBeNull();
+    expect((await rows('outbox'))[0]).toMatchObject({status:'retry',attempts:1});
+  });
+  it('incerteza impede próximo evento e nova ativação sem revisão', async () => {
+    await seed(); await activate(); await realImpact();
+    const c=await rpc('worker','claim') as Claim;
+    await rpc('worker','finish',{id:c.id,lease:c.lease,outcome:'uncertain'});
+    await db.exec("update jbs_private.impactos_jbs set encerrado_em=clock_timestamp(),responsavel_encerramento='Privado'"); await rpc('ingest','impacts');
+    expect(await rpc('worker','claim')).toBeNull(); await admin('configure',{mode:'disabled'}); await expect(activate()).rejects.toThrow();
   });
 });

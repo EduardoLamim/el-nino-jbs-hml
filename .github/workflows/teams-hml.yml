@@ -31,7 +31,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Reconciliar snapshots e historico privado; drenar somente testes autorizados
+      - name: Reconciliar snapshots e historico privado; drenar conforme autorização administrativa
         run: npx tsx scripts/teams/reconcile.ts
         env:
           GITHUB_TOKEN: ${{ github.token }}
