@@ -10,18 +10,19 @@ const date = (value: unknown) => typeof value === 'string' && Number.isFinite(Da
 
 export function adaptiveCard(event: Event) {
   const b = event.body;
-  let title: string, detail: string, color: string;
+  let title: string, detail: string, color: string, category: string;
   if (event.kind === 'level') {
     const before = levels.indexOf(String(b.before)), after = levels.indexOf(String(b.after));
     if (before < 0 || after < 0 || before === after) throw new Error('Invalid transition');
-    title = after === 0 ? 'Normalização' : after < before ? 'Redução de nível' : labels[after]!;
+    title = labels[after]!;
+    category = after === 0 ? 'ALTERAÇÃO DE NÍVEL · Normalização' : after < before ? 'ALTERAÇÃO DE NÍVEL · Redução' : 'ALTERAÇÃO DE NÍVEL';
     detail = `${labels[before]} → ${labels[after]}`;
     // Teams owns the palette; Warning is its native yellow/amber, not a custom orange.
-    color = after === 0 ? 'Good' : after < before ? 'Accent' : after === 3 ? 'Attention' : 'Warning';
+    color = after === 0 ? 'Good' : after === 3 ? 'Attention' : 'Warning';
   } else if (event.kind === 'impact_open') {
-    title = 'Impacto JBS confirmado'; color = 'Attention'; detail = 'Confirmação manual autorizada de impacto físico no Terminal.';
+    title = 'Impacto JBS confirmado'; color = 'Attention'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Confirmação manual autorizada de impacto físico no Terminal.';
   } else if (event.kind === 'impact_close') {
-    title = 'Impacto JBS encerrado'; color = 'Good'; detail = 'Encerramento manual autorizado do Impacto JBS.';
+    title = 'Impacto JBS encerrado'; color = 'Good'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Encerramento manual autorizado do Impacto JBS.';
   }
   else throw new Error('Invalid event');
   const text = (value: string) => ({ type: 'TextBlock', text: value, wrap: true });
@@ -29,18 +30,17 @@ export function adaptiveCard(event: Event) {
     $schema: 'http://adaptivecards.io/schemas/adaptive-card.json', type: 'AdaptiveCard', version: '1.2',
     body: [
       { ...text('Monitoramento El Niño — JBS Terminais'), weight: 'Bolder', size: 'Medium' },
-      { ...text('[HML — TESTE]'), weight: 'Bolder', spacing: 'Small' },
-      ...(event.is_test ? [text('SIMULAÇÃO — não representa ocorrência real.')] : []),
-      { type: 'Container', style: 'emphasis', spacing: 'Medium', items: [
+      ...(event.is_test ? [{ ...text('[HML — TESTE] · SIMULAÇÃO — não representa ocorrência real.'), size: 'Small', spacing: 'Small' }] : []),
+      { type: 'Container', style: color.toLowerCase(), spacing: 'Medium', items: [
+        { ...text(category), weight: 'Bolder', size: 'Small', spacing: 'None' },
         { ...text(title), weight: 'Bolder', size: 'Large', color },
-        { ...text(detail), weight: 'Bolder', spacing: 'Small' },
+        { ...text(detail), spacing: 'Small' },
+        { ...text(`Data e hora: ${date(b.occurred_at)}`), spacing: 'Small' },
       ] },
-      { ...text('Data e hora'), weight: 'Bolder', spacing: 'Medium' },
-      { ...text(date(b.occurred_at)), spacing: 'Small' },
       ...(date(b.occurred_at) === 'Não informado' && b.detected_at ? [text(`Detectado em ${date(b.detected_at)} (transição sem horário determinado).`)] : []),
       ...(event.kind === 'level' && !event.is_test && Array.isArray(b.reasons)
         ? b.reasons.filter((r): r is string => typeof r === 'string').slice(0, 12).map(r => text(r.slice(0, 600))) : []),
-      { ...text(event.is_test ? 'O painel apresenta os dados reais.' : 'Registro histórico. Publicação correspondente no painel não confirmada.'), isSubtle: true, spacing: 'Medium' },
+      ...(!event.is_test ? [{ ...text('Registro histórico. Publicação correspondente no painel não confirmada.'), isSubtle: true, size: 'Small', spacing: 'Small' }] : []),
       ...(event.kind === 'level' && levels.indexOf(String(b.after)) < levels.indexOf(String(b.before)) ? [text('A redução do nível ambiental não encerra Impacto JBS.')] : []),
     ], actions: [{ type: 'Action.OpenUrl', title: 'Abrir painel', url: panel }],
   } }] };

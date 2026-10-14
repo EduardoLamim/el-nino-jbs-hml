@@ -5,8 +5,8 @@ const card = (event = base) => adaptiveCard(event).attachments[0]!.content;
 describe('Teams renderer — apresentação', () => {
   it.each([
     ['normalidade','atencao','Atenção','Warning'], ['normalidade','alerta','Alerta','Warning'],
-    ['atencao','emergencia','Emergência','Attention'], ['emergencia','alerta','Redução de nível','Accent'],
-    ['alerta','normalidade','Normalização','Good'],
+    ['atencao','emergencia','Emergência','Attention'], ['emergencia','alerta','Alerta','Warning'],
+    ['alerta','normalidade','Normalidade','Good'],
   ])('%s → %s tem destaque semântico', (before,after,title,color) => {
     const value=JSON.stringify(card({...base,body:{...base.body,before,after}}));
     expect(value).toContain(`"text":"${title}"`); expect(value).toContain(`"color":"${color}"`);
@@ -39,5 +39,32 @@ describe('Teams renderer — apresentação', () => {
       if(n.type) expect(['AdaptiveCard','TextBlock','Container','Action.OpenUrl']).toContain(n.type);
       expect(n).not.toHaveProperty('width'); Object.values(n).forEach(v=>Array.isArray(v)?v.forEach(visit):visit(v));
     }; visit(value);
+  });
+  it.each([
+    ['normalidade','atencao','warning','ALTERAÇÃO DE NÍVEL','Atenção'],
+    ['normalidade','alerta','warning','ALTERAÇÃO DE NÍVEL','Alerta'],
+    ['alerta','emergencia','attention','ALTERAÇÃO DE NÍVEL','Emergência'],
+    ['emergencia','atencao','warning','ALTERAÇÃO DE NÍVEL · Redução','Atenção'],
+    ['emergencia','normalidade','good','ALTERAÇÃO DE NÍVEL · Normalização','Normalidade'],
+  ])('bloco semântico com nível de destino %s → %s', (before,after,style,category,title) => {
+    const value=card({...base,body:{before,after,occurred_at:'2026-10-14T14:09:00Z'}});
+    const block=value.body.find(b=>b.type==='Container');
+    expect(block).toMatchObject({style,items:[
+      {text:category},{text:title,size:'Large'},expect.objectContaining({text:expect.stringContaining('→')}),{text:'Data e hora: 14/10/2026 às 11:09'},
+    ]});
+    const decoded=Buffer.from(JSON.stringify(value),'utf8').toString('utf8');
+    expect(decoded).toContain(category);expect(decoded).toContain(title);
+    expect(decoded).not.toMatch(/\uFFFD|Ã[§£ª©]|Â[· ]|â€|Aten\?\?o/);
+  });
+  it.each(['level','impact_open','impact_close'] as const)('rótulos sintéticos nunca aparecem no card operacional %s',kind=>{
+    const value=JSON.stringify(card({...base,kind,is_test:false}));
+    for(const text of ['[HML — TESTE]','SIMULAÇÃO','O painel apresenta os dados reais.','"Ambiente"','"Evento"']) expect(value).not.toContain(text);
+    expect(value).toContain('Abrir painel');
+  });
+  it.each([['impact_open','attention'],['impact_close','good']] as const)('Impacto independente no bloco %s', (kind,style)=>{
+    const value=card({...base,kind});
+    expect(value.body.find(b=>b.type==='Container')).toMatchObject({style});
+    expect(JSON.stringify(value)).toContain('CONDIÇÃO DO TERMINAL');
+    expect(JSON.stringify(value)).not.toContain('ALTERAÇÃO DE NÍVEL');
   });
 });
