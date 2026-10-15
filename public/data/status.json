@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-15T21:12:26.844Z",
+  "atualizado_em": "2026-10-15T21:22:23.612Z",
   "nivel_jbs": {
     "nivel": "normalidade",
     "desde": "2026-10-15T08:21:35.236000+00:00",
@@ -8,7 +8,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-15T21:12:26.844Z",
+    "avaliado_em": "2026-10-15T21:22:23.612Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-12T02:08:14-03:00",
@@ -177,8 +177,8 @@
         "nome": "Ribeirão da Murta - Portal",
         "nivel": "normalidade",
         "desde": null,
-        "stale": false,
-        "motivo": null,
+        "stale": true,
+        "motivo": "Estação oficialmente atrasada.",
         "ultima_valida": {
           "nivel_m": 0.34,
           "medido_em": "2026-10-15T20:50:45.224000+00:00",
@@ -2629,7 +2629,7 @@
         "alerta_m": 1.4,
         "emergencia_m": 1.5
       },
-      "qualidade": "atualizado",
+      "qualidade": "atrasado",
       "medido_em": "2026-10-15T20:50:45.224000+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie_12h": [
@@ -2986,11 +2986,11 @@
       ],
       "qualidade_fonte": {
         "nivel_rio_m": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-15T20:50:45.224000+00:00"
         }
       },
-      "situacao_fonte": "monitoramento"
+      "situacao_fonte": "indisponivel"
     },
     "DC08": {
       "codigo": "DC08",
@@ -9491,7 +9491,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-15T21:12:26.291Z",
+    "coletado_em": "2026-10-15T21:22:23.350Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -9604,7 +9604,7 @@
   "blumenau": {
     "nivel_m": 2.21,
     "medido_em": "2026-10-15T18:00:00-03:00",
-    "coletado_em": "2026-10-15T21:12:22.990Z",
+    "coletado_em": "2026-10-15T21:22:18.474Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "estavel",
@@ -9617,12 +9617,14 @@
     "problemas": [
       "situacao_atual: Situação oficial não informa qualidade ou validade temporal.",
       "rios: Séries sem qualidade explícita mantêm qualidade null; validade não inferida.",
+      "rios/Ribeirão da Murta - Portal: qualidade atrasado.",
       "chuvas: Campos de chuva ausentes ficam null; acumulados e séries não são recalculados.",
       "barragens/Barragem Ituporanga: qualidade atrasado.",
       "barragens/Barragem Taió: qualidade atrasado.",
       "barragens/Barragem José Boiteux: qualidade atrasado.",
       "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
+      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC.",
+      "DC07: Estação oficialmente atrasada."
     ]
   },
   "fontes": {
@@ -9632,7 +9634,7 @@
       "qualidade": null,
       "atualizado_em": "2026-10-15T08:40:03-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.008Z",
+      "coletado_em": "2026-10-15T21:22:18.500Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9641,7 +9643,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-15T21:12:23.008Z",
+          "coletado_em": "2026-10-15T21:22:18.500Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9654,14 +9656,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.106Z",
+      "coletado_em": "2026-10-15T21:22:18.529Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-15T21:12:23.106Z",
+          "coletado_em": "2026-10-15T21:22:18.529Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9671,10 +9673,10 @@
     "rios": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-      "qualidade": "atualizado",
+      "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.107Z",
+      "coletado_em": "2026-10-15T21:22:18.530Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9683,7 +9685,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-15T21:12:23.107Z",
+          "coletado_em": "2026-10-15T21:22:18.530Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9696,7 +9698,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.108Z",
+      "coletado_em": "2026-10-15T21:22:18.531Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9705,7 +9707,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-15T21:12:23.108Z",
+          "coletado_em": "2026-10-15T21:22:18.531Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9718,14 +9720,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.109Z",
+      "coletado_em": "2026-10-15T21:22:18.532Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-15T21:12:23.109Z",
+          "coletado_em": "2026-10-15T21:22:18.532Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9738,7 +9740,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-15T21:12:23.110Z",
+      "coletado_em": "2026-10-15T21:22:18.533Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9748,14 +9750,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-15T21:12:23.110Z",
+          "coletado_em": "2026-10-15T21:22:18.533Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-15T21:12:26.291Z",
+          "coletado_em": "2026-10-15T21:22:23.350Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
