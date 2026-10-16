@@ -1,10 +1,19 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-16T21:02:19.784Z",
+  "atualizado_em": "2026-10-16T21:12:20.663Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-10-16T19:32:08.488000+00:00",
     "gatilhos": [
+      {
+        "tipo": "situacao_oficial",
+        "origem": "Defesa Civil de Itajaí",
+        "severidade": "atencao",
+        "descricao": "Situação oficial da Defesa Civil de Itajaí em Atenção.",
+        "atualizado_em": "2026-10-16T18:12:16-03:00",
+        "stale": false,
+        "motivo": null
+      },
       {
         "tipo": "estacao_hidrologica",
         "origem": "DC01",
@@ -26,16 +35,16 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-16T21:02:19.784Z",
+    "avaliado_em": "2026-10-16T21:12:20.663Z",
     "situacao_oficial": {
-      "nivel": "normalidade",
-      "desde": "2026-10-12T02:08:14-03:00",
-      "stale": true,
-      "motivo": "Situação oficial ausente, inválida, atrasada ou anterior à última conhecida.",
+      "nivel": "atencao",
+      "desde": "2026-10-16T18:12:16-03:00",
+      "stale": false,
+      "motivo": null,
       "ultima_valida": {
-        "flag": "Normalidade",
-        "conteudo": "Emergência, ligue 199 ou 193.\r\nSala Monitoramento e Alerta/Univali.",
-        "atualizado_em": "2026-10-16T07:26:16-03:00",
+        "flag": "Atenção",
+        "conteudo": "Nas próximas horas, o deslocamento de uma frente fria traz condições para a ocorrência de tempestades, com risco de alagamentos pontuais e ventos fortes.",
+        "atualizado_em": "2026-10-16T18:12:16-03:00",
         "qualidade": null
       }
     },
@@ -317,7 +326,12 @@
       }
     }
   },
-  "situacao_oficial": null,
+  "situacao_oficial": {
+    "flag": "Atenção",
+    "conteudo": "Nas próximas horas, o deslocamento de uma frente fria traz condições para a ocorrência de tempestades, com risco de alagamentos pontuais e ventos fortes.",
+    "atualizado_em": "2026-10-16T18:12:16-03:00",
+    "qualidade": null
+  },
   "alertas_oficiais": null,
   "rios": {
     "DC01": {
@@ -9439,7 +9453,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-16T21:02:18.130Z",
+    "coletado_em": "2026-10-16T21:12:20.491Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -9550,9 +9564,9 @@
     ]
   },
   "blumenau": {
-    "nivel_m": 3.07,
-    "medido_em": "2026-10-16T17:00:00-03:00",
-    "coletado_em": "2026-10-16T21:02:16.338Z",
+    "nivel_m": 3.09,
+    "medido_em": "2026-10-16T18:00:00-03:00",
+    "coletado_em": "2026-10-16T21:12:18.561Z",
     "classificacao_original": "Observação",
     "nivel": "atencao",
     "tendencia": "subindo",
@@ -9563,32 +9577,33 @@
   "qualidade_monitoramento": {
     "estado": "parcialmente_degradado",
     "problemas": [
-      "situacao_atual: [\n  {\n    \"received\": \"Aviso\",\n    \"code\": \"invalid_enum_value\",\n    \"options\": [\n      \"Normalidade\",\n      \"Atenção\",\n      \"Alerta\",\n      \"Emergência\"\n    ],\n    \"path\": [\n      \"data\",\n      \"flag\"\n    ],\n    \"message\": \"Invalid enum value. Expected 'Normalidade' | 'Atenção' | 'Alerta' | 'Emergência', received 'Aviso'\"\n  }\n]",
+      "situacao_atual: Situação oficial não informa qualidade ou validade temporal.",
       "rios: Séries sem qualidade explícita mantêm qualidade null; validade não inferida.",
       "chuvas: Campos de chuva ausentes ficam null; acumulados e séries não são recalculados.",
       "barragens/Barragem Ituporanga: qualidade atrasado.",
       "barragens/Barragem Taió: qualidade atrasado.",
       "barragens/Barragem José Boiteux: qualidade atrasado.",
       "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC.",
-      "Situação oficial: Situação oficial ausente, inválida, atrasada ou anterior à última conhecida."
+      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
     ]
   },
   "fontes": {
     "situacao_atual": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-      "qualidade": "indisponivel",
-      "atualizado_em": null,
+      "qualidade": null,
+      "atualizado_em": "2026-10-16T18:12:16-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.356Z",
-      "resultado": "falha",
-      "motivo": "[\n  {\n    \"received\": \"Aviso\",\n    \"code\": \"invalid_enum_value\",\n    \"options\": [\n      \"Normalidade\",\n      \"Atenção\",\n      \"Alerta\",\n      \"Emergência\"\n    ],\n    \"path\": [\n      \"data\",\n      \"flag\"\n    ],\n    \"message\": \"Invalid enum value. Expected 'Normalidade' | 'Atenção' | 'Alerta' | 'Emergência', received 'Aviso'\"\n  }\n]",
-      "avisos": [],
+      "coletado_em": "2026-10-16T21:12:18.579Z",
+      "resultado": "sucesso",
+      "motivo": null,
+      "avisos": [
+        "Situação oficial não informa qualidade ou validade temporal."
+      ],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-16T21:02:16.356Z",
+          "coletado_em": "2026-10-16T21:12:18.579Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9601,14 +9616,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.375Z",
+      "coletado_em": "2026-10-16T21:12:18.692Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-16T21:02:16.375Z",
+          "coletado_em": "2026-10-16T21:12:18.692Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9621,7 +9636,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.376Z",
+      "coletado_em": "2026-10-16T21:12:18.694Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9630,7 +9645,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-16T21:02:16.376Z",
+          "coletado_em": "2026-10-16T21:12:18.694Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9643,7 +9658,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.377Z",
+      "coletado_em": "2026-10-16T21:12:18.695Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9652,7 +9667,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-16T21:02:16.377Z",
+          "coletado_em": "2026-10-16T21:12:18.695Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9665,14 +9680,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.377Z",
+      "coletado_em": "2026-10-16T21:12:18.696Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-16T21:02:16.377Z",
+          "coletado_em": "2026-10-16T21:12:18.696Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9685,7 +9700,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-16T21:02:16.378Z",
+      "coletado_em": "2026-10-16T21:12:18.697Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9695,14 +9710,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-16T21:02:16.378Z",
+          "coletado_em": "2026-10-16T21:12:18.697Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-16T21:02:18.130Z",
+          "coletado_em": "2026-10-16T21:12:20.491Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
