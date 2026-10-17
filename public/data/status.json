@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-17T22:32:29.679Z",
+  "atualizado_em": "2026-10-17T22:42:15.821Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-10-17T13:51:52.586000+00:00",
@@ -26,7 +26,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-17T22:32:29.679Z",
+    "avaliado_em": "2026-10-17T22:42:15.821Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-16T21:20:10-03:00",
@@ -9629,7 +9629,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-17T22:32:20.807Z",
+    "coletado_em": "2026-10-17T22:42:14.341Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -9742,7 +9742,7 @@
   "blumenau": {
     "nivel_m": 2.76,
     "medido_em": "2026-10-17T19:00:00-03:00",
-    "coletado_em": "2026-10-17T22:32:16.106Z",
+    "coletado_em": "2026-10-17T22:42:13.098Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "descendo",
@@ -9754,7 +9754,6 @@
     "estado": "parcialmente_degradado",
     "problemas": [
       "situacao_atual: Situação oficial não informa qualidade ou validade temporal.",
-      "alertas_ativo: https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo: fetch failed",
       "rios: Séries sem qualidade explícita mantêm qualidade null; validade não inferida.",
       "chuvas: Campos de chuva ausentes ficam null; acumulados e séries não são recalculados.",
       "barragens/Barragem Ituporanga: qualidade atrasado.",
@@ -9771,7 +9770,7 @@
       "qualidade": null,
       "atualizado_em": "2026-10-17T06:00:09-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.124Z",
+      "coletado_em": "2026-10-17T22:42:13.113Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9780,7 +9779,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-17T22:32:16.124Z",
+          "coletado_em": "2026-10-17T22:42:13.113Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9790,19 +9789,19 @@
     "alertas_ativo": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-      "qualidade": "indisponivel",
+      "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.144Z",
-      "resultado": "falha",
-      "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo: fetch failed",
+      "coletado_em": "2026-10-17T22:42:13.129Z",
+      "resultado": "sucesso",
+      "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-17T22:32:16.144Z",
-          "http_status": null,
-          "erro": "fetch failed",
+          "coletado_em": "2026-10-17T22:42:13.129Z",
+          "http_status": 200,
+          "erro": null,
           "resposta_erro": null
         }
       ]
@@ -9813,7 +9812,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.146Z",
+      "coletado_em": "2026-10-17T22:42:13.130Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9822,7 +9821,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-17T22:32:16.146Z",
+          "coletado_em": "2026-10-17T22:42:13.130Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9835,7 +9834,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.147Z",
+      "coletado_em": "2026-10-17T22:42:13.130Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9844,7 +9843,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-17T22:32:16.147Z",
+          "coletado_em": "2026-10-17T22:42:13.130Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9857,14 +9856,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.147Z",
+      "coletado_em": "2026-10-17T22:42:13.131Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-17T22:32:16.147Z",
+          "coletado_em": "2026-10-17T22:42:13.131Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9877,7 +9876,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-17T22:32:16.148Z",
+      "coletado_em": "2026-10-17T22:42:13.132Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9887,14 +9886,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-17T22:32:16.148Z",
+          "coletado_em": "2026-10-17T22:42:13.132Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-17T22:32:20.807Z",
+          "coletado_em": "2026-10-17T22:42:14.341Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
