@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-19T16:31:01.469Z",
+  "atualizado_em": "2026-10-19T16:40:28.318Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-10-19T09:31:36.121000+00:00",
@@ -26,7 +26,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-19T16:31:01.469Z",
+    "avaliado_em": "2026-10-19T16:40:28.318Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-16T21:20:10-03:00",
@@ -195,8 +195,8 @@
         "nome": "Ribeirão da Murta - Portal",
         "nivel": "normalidade",
         "desde": null,
-        "stale": false,
-        "motivo": null,
+        "stale": true,
+        "motivo": "Estação oficialmente atrasada.",
         "ultima_valida": {
           "nivel_m": 0.33,
           "medido_em": "2026-10-19T16:01:01.654000+00:00",
@@ -2652,7 +2652,7 @@
         "alerta_m": 1.4,
         "emergencia_m": 1.5
       },
-      "qualidade": "atualizado",
+      "qualidade": "atrasado",
       "medido_em": "2026-10-19T16:01:01.654000+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie_12h": [
@@ -3004,11 +3004,11 @@
       ],
       "qualidade_fonte": {
         "nivel_rio_m": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         }
       },
-      "situacao_fonte": "monitoramento"
+      "situacao_fonte": "indisponivel"
     },
     "DC08": {
       "codigo": "DC08",
@@ -7374,28 +7374,28 @@
       "chuva_12_h_mm": 0,
       "chuva_24_h_mm": 0,
       "chuva_48_h_mm": 0,
-      "qualidade": "atualizado",
+      "qualidade": "atrasado",
       "medido_em": "2026-10-19T16:01:01.654000+00:00",
       "atualizacao_esperada_segundos": 600,
       "qualidade_fonte": {
         "chuva_10_min_mm": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         },
         "chuva_1_h_mm": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         },
         "chuva_12_h_mm": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         },
         "chuva_24_h_mm": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         },
         "chuva_48_h_mm": {
-          "estado": "atual",
+          "estado": "atrasado",
           "medido_em": "2026-10-19T16:01:01.654000+00:00"
         }
       },
@@ -9398,25 +9398,15 @@
       "nome": "Barragem Taió",
       "fonte": "Barragens MKS",
       "ocupacao_percentual": 6.67,
-      "montante_m": 8.84,
-      "ultima_variacao_m": -0.15,
+      "montante_m": 8.67,
+      "ultima_variacao_m": -0.17,
       "comportas_abertas": 6,
       "comportas_fechadas": 1,
       "extravasor_m": 0,
       "qualidade": "atrasado",
-      "medido_em": "2026-10-19T15:00:00+00:00",
+      "medido_em": "2026-10-19T16:00:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie": [
-        {
-          "ocupacao_percentual": null,
-          "montante_m": 10.75,
-          "ultima_variacao_m": null,
-          "comportas_abertas": null,
-          "comportas_fechadas": null,
-          "extravasor_m": null,
-          "medido_em": "2026-10-18T15:00:00+00:00",
-          "qualidade": null
-        },
         {
           "ocupacao_percentual": null,
           "montante_m": 10.69,
@@ -9666,6 +9656,16 @@
           "extravasor_m": null,
           "medido_em": "2026-10-19T15:00:00+00:00",
           "qualidade": null
+        },
+        {
+          "ocupacao_percentual": null,
+          "montante_m": 8.67,
+          "ultima_variacao_m": null,
+          "comportas_abertas": null,
+          "comportas_fechadas": null,
+          "extravasor_m": null,
+          "medido_em": "2026-10-19T16:00:00+00:00",
+          "qualidade": null
         }
       ]
     },
@@ -9724,7 +9724,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-19T16:31:01.284Z",
+    "coletado_em": "2026-10-19T16:40:27.036Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -9837,7 +9837,7 @@
   "blumenau": {
     "nivel_m": 1.91,
     "medido_em": "2026-10-19T13:00:00-03:00",
-    "coletado_em": "2026-10-19T16:30:58.924Z",
+    "coletado_em": "2026-10-19T16:40:25.624Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "descendo",
@@ -9850,12 +9850,15 @@
     "problemas": [
       "situacao_atual: Situação oficial não informa qualidade ou validade temporal.",
       "rios: Séries sem qualidade explícita mantêm qualidade null; validade não inferida.",
+      "rios/Ribeirão da Murta - Portal: qualidade atrasado.",
       "chuvas: Campos de chuva ausentes ficam null; acumulados e séries não são recalculados.",
+      "chuvas/Ribeirão da Murta - Portal: qualidade atrasado.",
       "barragens/Barragem Ituporanga: qualidade atrasado.",
       "barragens/Barragem Taió: qualidade atrasado.",
       "barragens/Barragem José Boiteux: qualidade atrasado.",
       "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
+      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC.",
+      "DC07: Estação oficialmente atrasada."
     ]
   },
   "fontes": {
@@ -9865,7 +9868,7 @@
       "qualidade": null,
       "atualizado_em": "2026-10-18T09:12:49-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.949Z",
+      "coletado_em": "2026-10-19T16:40:25.642Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9874,7 +9877,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-19T16:30:58.949Z",
+          "coletado_em": "2026-10-19T16:40:25.642Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9887,14 +9890,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.973Z",
+      "coletado_em": "2026-10-19T16:40:25.674Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-19T16:30:58.973Z",
+          "coletado_em": "2026-10-19T16:40:25.674Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9904,10 +9907,10 @@
     "rios": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-      "qualidade": "atualizado",
+      "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.974Z",
+      "coletado_em": "2026-10-19T16:40:25.675Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9916,7 +9919,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-19T16:30:58.974Z",
+          "coletado_em": "2026-10-19T16:40:25.675Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9926,10 +9929,10 @@
     "chuvas": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-      "qualidade": "atualizado",
+      "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.975Z",
+      "coletado_em": "2026-10-19T16:40:25.677Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9938,7 +9941,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-19T16:30:58.975Z",
+          "coletado_em": "2026-10-19T16:40:25.677Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9951,14 +9954,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.976Z",
+      "coletado_em": "2026-10-19T16:40:25.678Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-19T16:30:58.976Z",
+          "coletado_em": "2026-10-19T16:40:25.678Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9971,7 +9974,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-19T16:30:58.977Z",
+      "coletado_em": "2026-10-19T16:40:25.680Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9981,14 +9984,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-19T16:30:58.977Z",
+          "coletado_em": "2026-10-19T16:40:25.680Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-19T16:31:01.284Z",
+          "coletado_em": "2026-10-19T16:40:27.036Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
