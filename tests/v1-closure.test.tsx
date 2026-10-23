@@ -30,10 +30,10 @@ describe('Central de Planos', () => {
   it('mantém integralmente a importação autorizada do Excel de 08/10/2026', () => {
     expect(createHash('sha256').update(JSON.stringify(areaPlans.TI!.acoes)).digest('hex')).toBe('0c77aa7c36e60bf9d3b7bc5d8b9061d5d5cb91d21abe31522b567f7a6e8ace09');
   });
-  it('12 áreas, metadados completos e somente TI disponível', () => {
+  it('6 áreas, metadados completos e somente TI disponível', () => {
     render(<PlansCenter secao="areas" impacto={{ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' }} />);
     for (const area of areas) expect(screen.getByRole('heading', { name: area })).toBeTruthy();
-    expect(screen.getAllByText('Plano em elaboração')).toHaveLength(11);
+    expect(screen.getAllByText('Plano em elaboração')).toHaveLength(5);
     expect(screen.getAllByText('Consultar plano', { exact: false })).toHaveLength(1);
     expect(screen.getByText('Eduardo da Silva Lamim')).toBeTruthy();
     expect(screen.getByText('08/10/2026')).toBeTruthy();

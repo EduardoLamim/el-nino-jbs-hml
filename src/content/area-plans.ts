@@ -8,7 +8,7 @@ export interface AreaAction {
   'Quando faz': string; 'Onde faz': string; 'Como faz': string;
 }
 export interface AreaPlan { area: string; responsavel: string; versao: number; atualizado: string; acoes: AreaAction[] }
-export const areas = ['Operações', 'Comercial', 'QSSMS', 'Atendimento', 'Documentação', 'TI', 'RH', 'Financeiro', 'Faturamento', 'Suprimentos', 'Manutenção', 'Almoxarifado'] as const;
+export const areas = ['Operações', 'Comercial', 'QSSMS', 'TI', 'RH', 'Manutenção'] as const;
 export const areaPlans: Partial<Record<typeof areas[number], AreaPlan>> = {
   TI: { area: 'TI', responsavel: 'Eduardo da Silva Lamim', versao: 1, atualizado: '08/10/2026', acoes: actions },
 };

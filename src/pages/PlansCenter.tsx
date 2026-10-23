@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { EmergencyContacts } from '../components/EmergencyContacts';
 import { ActionPlan } from './ActionPlan';
 import { areas, areaPlans, areaSlug, findAreaPlan, planLevels, type AreaPlan, type PlanLevel } from '../content/area-plans';
 import type { Status, Territorio } from '../domain/contracts';
@@ -29,7 +30,7 @@ export function AreaPlanView({ plan }: { plan: AreaPlan }) {
 }
 export function PlansCenter({ status, territorio, impacto, secao = 'geral' }: { status?: Status; territorio?: Territorio; impacto: EstadoImpacto; secao?: string }) {
   const selected = findAreaPlan(secao);
-  return <><div className="page-heading"><h2>Central de Planos</h2></div><nav className="section-nav" aria-label="Seções da Central de Planos"><a href="#/plano-de-acao/geral" aria-current={secao === 'geral' ? 'page' : undefined}>Plano de Ação Geral</a><a href="#/plano-de-acao/areas" aria-current={secao !== 'geral' ? 'page' : undefined}>Planos de Ação por Área</a></nav>
+  return <><div className="page-heading plans-heading"><h2>Central de Planos</h2><EmergencyContacts /></div><nav className="section-nav" aria-label="Seções da Central de Planos"><a href="#/plano-de-acao/geral" aria-current={secao === 'geral' ? 'page' : undefined}>Plano de Ação Geral</a><a href="#/plano-de-acao/areas" aria-current={secao !== 'geral' ? 'page' : undefined}>Planos de Ação por Área</a></nav>
     {secao === 'geral' ? <ActionPlan status={status} territorio={territorio} impacto={impacto} /> : selected ? <AreaPlanView key={secao} plan={selected} /> : <section className="area-catalog" aria-label="Planos por área">{areas.map(area => { const plan = areaPlans[area]; return <article className="card" key={area}><h3>{area}</h3>{plan ? <><Metadata plan={plan} /><a className="plan-consult" href={`#/plano-de-acao/${areaSlug(area)}`}>Consultar plano<span className="sr-only"> de {area}</span></a></> : <p className="meta">Plano em elaboração</p>}</article>; })}</section>}
   </>;
 }
