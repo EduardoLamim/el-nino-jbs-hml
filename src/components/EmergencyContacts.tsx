@@ -5,7 +5,7 @@ export function ContactCard({ contact }: { contact: EmergencyContact }) {
   return <article className="contact-card" aria-labelledby={`contact-${contact.id}`}>
     <h3 id={`contact-${contact.id}`}>{contact.name}</h3>
     <p className="contact-phone">{contact.phone}</p>
-    {contact.category === 'external' && <dl><dt>Tempo de percurso</dt><dd>{contact.travelMinutes} minutos</dd></dl>}
+    {contact.category === 'external' && <dl><dt>Tempo de deslocamento até o terminal</dt><dd>{contact.travelMinutes} minutos</dd></dl>}
   </article>;
 }
 export function EmergencyContacts() {

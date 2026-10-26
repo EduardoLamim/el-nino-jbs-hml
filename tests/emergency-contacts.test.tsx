@@ -28,7 +28,7 @@ it('modal oferece contatos legíveis sem links, cópia, endereço ou rotas', () 
   expect(screen.getAllByText('10 minutos')).toHaveLength(3);
   fireEvent.keyDown(screen.getByRole('tab',{name:'Órgãos externos'}),{key:'ArrowRight'});
   expect(screen.getByText('CCCOM')).toBeTruthy();expect(screen.getByText('(47)9970-91600')).toBeTruthy();
-  expect(screen.queryByText('Tempo de percurso')).toBeNull();
+  expect(screen.queryByText('Tempo de deslocamento até o terminal')).toBeNull();
   fireEvent.click(screen.getByRole('button',{name:'Fechar contatos de emergência'}));
   expect(screen.queryByRole('dialog')).toBeNull();expect(document.activeElement).toBe(trigger);
 });
