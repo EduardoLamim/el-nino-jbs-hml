@@ -471,7 +471,6 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 .audio-controls, .decision-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:.65rem; }
 .audio-controls { font-size:.85rem; }
 .plan-links { display:flex; flex-wrap:wrap; align-items:center; }
-.plan-links .decision-map { margin:0 0 0 auto; max-width:100%; }
 .decision-map > button { max-width:100%; white-space:normal; }
 .decision-dialog { width:96vw; max-width:1800px; height:94dvh; max-height:96dvh; box-sizing:border-box; padding:1rem; border:1px solid #537089; border-radius:12px; background:#0b1d2b; color:#f4f8fb; }
 .decision-dialog[open] { display:flex; flex-direction:column; gap:.8rem; }
@@ -502,16 +501,18 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 .contacts-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
 .contact-card { border:1px solid var(--line); border-radius:10px; padding:20px; overflow-wrap:anywhere; }
 .contact-card h3 { font-size:1.15rem; margin-bottom:8px; }
-.contact-description, .contacts-note { color:var(--muted); font-size:.9rem; }
+.contacts-note { color:var(--muted); font-size:.9rem; }
 .contact-phone { font-size:1.4rem; font-weight:700; margin-bottom:12px; }
-.contact-actions { display:flex; flex-wrap:wrap; gap:10px; }
-.contact-actions a { display:inline-flex; align-items:center; padding:10px 18px; border:1px solid var(--line); border-radius:7px; font-weight:600; }
 .contacts-dialog a { color:var(--ink); }
 .contacts-dialog button, .contacts-dialog a { min-height:44px; }
 .contact-card dl { margin:8px 0 16px; }
 .contact-card dt { font-weight:600; margin-top:12px; }
 .contact-card dd { margin:0; }
-.contact-feedback { font-size:.85rem; margin:8px 0; }
 .contacts-note { margin:20px 0 0; }
 .contacts-empty { padding:24px 0; }
 @media(max-width:600px) { .contacts-dialog { padding:16px; } .contacts-grid { grid-template-columns:1fr; } .contact-card { padding:16px; } .contacts-heading { align-items:flex-start; gap:8px; } .contacts-heading h2 { font-size:1.15rem; } }
+
+.plans-tools { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+.plans-tools .decision-map { margin:0; }
+.plans-tools > button, .plans-tools .decision-map > button { min-height:44px; }
+.activation-sequence li { padding:12px; border-bottom:1px solid var(--line); }

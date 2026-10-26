@@ -1,81 +1,49 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { ContactCard, EmergencyContacts } from '../src/components/EmergencyContacts';
-import { contactRoute, externalContacts, internalContacts, phoneDigits, terminalOrigin } from '../src/content/emergency-contacts';
+import { ActivationHierarchy } from '../src/components/ActivationHierarchy';
+import { externalContacts, internalContacts } from '../src/content/emergency-contacts';
+import { activationHierarchy } from '../src/content/activation-hierarchy';
 import { areas } from '../src/content/area-plans';
 import { planos } from '../src/content/action-plans';
-
 beforeEach(() => {
-  Object.defineProperty(HTMLDialogElement.prototype, 'showModal', { configurable: true, value: function (this: HTMLDialogElement) { this.open = true; } });
-  Object.defineProperty(HTMLDialogElement.prototype, 'close', { configurable: true, value: function (this: HTMLDialogElement) { this.open = false; this.dispatchEvent(new Event('close')); } });
+  Object.defineProperty(HTMLDialogElement.prototype, 'showModal', { configurable:true, value:function(this:HTMLDialogElement){this.open=true;} });
+  Object.defineProperty(HTMLDialogElement.prototype, 'close', { configurable:true, value:function(this:HTMLDialogElement){this.open=false;this.dispatchEvent(new Event('close'));} });
 });
-afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
-it('abre, alterna categorias por teclado, fecha e devolve foco', () => {
+afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+it('preserva exatamente os sete contatos e tempos fornecidos pelo plano', () => {
+  expect(externalContacts.map(c => [c.name,c.phone,c.travelMinutes])).toEqual([
+    ['Polícia Militar','190',10],['SAMU','192',10],['Corpo de Bombeiros','193',10],['Defesa Civil','199',16],['CODETRAN','153',8],['Hospital Mat. Marieta','3349-9400',5],['Base da Ambulância','0800 488 488',20],
+  ]);
+  expect(internalContacts).toEqual([{id:'cccom',category:'internal',name:'CCCOM',phone:'(47)9970-91600'}]);
+});
+it('modal oferece contatos legíveis sem links, cópia, endereço ou rotas', () => {
   render(<EmergencyContacts />);
-  const trigger = screen.getByRole('button', { name: 'Contatos de Emergência' });
-  fireEvent.click(trigger);
-  expect(screen.getByRole('dialog').getAttribute('open')).not.toBeNull();
-  expect(screen.getAllByRole('article')).toHaveLength(5);
-  fireEvent.keyDown(screen.getByRole('tab', { name: 'Órgãos externos' }), { key: 'ArrowRight' });
-  expect(screen.getByText('Contatos internos ainda não cadastrados.')).toBeTruthy();
-  expect(screen.queryAllByRole('article')).toHaveLength(0);
-  expect(screen.getByRole('tab', { name: 'Contatos internos' }).getAttribute('aria-selected')).toBe('true');
-  fireEvent.keyDown(screen.getByRole('tab', { name: 'Contatos internos' }), { key: 'Home' });
-  expect(screen.getAllByRole('article')).toHaveLength(5);
-  fireEvent.click(screen.getByRole('button', { name: 'Fechar contatos de emergência' }));
-  expect(screen.queryByRole('dialog')).toBeNull();
-  expect(document.activeElement).toBe(trigger);
+  const trigger=screen.getByRole('button',{name:'Contatos de Emergência'});fireEvent.click(trigger);
+  expect(screen.getAllByRole('article')).toHaveLength(7);
+  expect(screen.queryAllByRole('link')).toHaveLength(0);
+  expect(screen.queryByRole('button',{name:/Copiar|Ligar/})).toBeNull();
+  expect(screen.queryByText(/Endereço|Google Maps|Rota indisponível/)).toBeNull();
+  expect(screen.getAllByText('10 minutos')).toHaveLength(3);
+  fireEvent.keyDown(screen.getByRole('tab',{name:'Órgãos externos'}),{key:'ArrowRight'});
+  expect(screen.getByText('CCCOM')).toBeTruthy();expect(screen.getByText('(47)9970-91600')).toBeTruthy();
+  expect(screen.queryByText('Tempo de percurso')).toBeNull();
+  fireEvent.click(screen.getByRole('button',{name:'Fechar contatos de emergência'}));
+  expect(screen.queryByRole('dialog')).toBeNull();expect(document.activeElement).toBe(trigger);
 });
-it('copia o telefone e comunica sucesso sem chamar o serviço', async () => {
-  const writeText = vi.fn().mockResolvedValue(undefined);
-  vi.stubGlobal('navigator', { clipboard: { writeText } });
-  render(<ContactCard contact={externalContacts[4]!} />);
-  fireEvent.click(screen.getByRole('button', { name: 'Copiar telefone de CELESC' }));
-  await waitFor(() => expect(screen.getByRole('status').textContent).toBe('Telefone copiado.'));
-  expect(writeText).toHaveBeenCalledWith('08000480196');
-});
-it('oferece cópia manual quando o clipboard não estiver disponível', async () => {
-  vi.stubGlobal('navigator', {});
-  render(<ContactCard contact={externalContacts[0]!} />);
-  fireEvent.click(screen.getByRole('button', { name: 'Copiar telefone de Defesa Civil' }));
-  await waitFor(() => expect(screen.getByRole('status').textContent).toContain('copie manualmente'));
-  expect(screen.getByText('199')).toBeTruthy();
-});
-it('mantém telefones corretos, links tel e pendências sem rotas presumidas', () => {
-  render(<EmergencyContacts />);
-  fireEvent.click(screen.getByRole('button', { name: 'Contatos de Emergência' }));
-  expect(screen.getAllByRole('link', { name: /^Ligar/ }).map(a => a.getAttribute('href'))).toEqual(['tel:199', 'tel:193', 'tel:192', 'tel:190', 'tel:08000480196']);
-  expect(screen.queryByRole('link', { name: /Ver rota/ })).toBeNull();
-  expect(screen.getAllByText('A confirmar').length).toBeGreaterThanOrEqual(5);
-  expect(internalContacts).toEqual([]);
-  expect(terminalOrigin.status).toBe('pending');
-  expect(phoneDigits('(47) 3333-4444')).toBe('4733334444');
-});
-it('constrói rota rodoviária somente com origem e destino confirmados', () => {
-  const contact = externalContacts[0]!;
-  const origin = { status: 'confirmed' as const, text: 'Origem de teste', source: 'https://example.com' };
-  const url = new URL(contactRoute(contact, origin)!);
-  expect(url.origin).toBe('https://www.google.com');
-  expect(url.searchParams.get('origin')).toBe(origin.text);
-  expect(url.searchParams.get('destination')).toBe(contact.address.status === 'confirmed' ? contact.address.text : '');
-  expect(url.searchParams.get('travelmode')).toBe('driving');
-  expect(contactRoute({ ...contact, address: { status: 'pending' } }, origin)).toBeNull();
-  expect(contactRoute({ ...contact, address: { status: 'not-applicable' } }, origin)).toBeNull();
-});
-it('usa o mesmo cartão para internos, sem endereço ou tempo', () => {
-  const { container } = render(<ContactCard contact={{ id: 'fixture', category: 'internal', name: 'Contato de teste', description: 'Função de teste', phone: '(47) 3333-4444', responsibility: 'Responsabilidade de teste' }} />);
+it('compartilha o cartão com internos sem campos externos', () => {
+  const {container}=render(<ContactCard contact={internalContacts[0]!} />);
   expect(container.querySelector('.contact-card')).toBeTruthy();
-  expect(screen.getByText('Responsabilidade de teste')).toBeTruthy();
-  expect(screen.getByRole('link').getAttribute('href')).toBe('tel:4733334444');
-  expect(screen.queryByText('Tempo de deslocamento')).toBeNull();
-  expect(screen.queryByText('Endereço de referência')).toBeNull();
+  expect(container.querySelectorAll('a,button,dl')).toHaveLength(0);
 });
-it('suporta minutos estáticos e endereço não aplicável', () => {
-  const { rerender } = render(<ContactCard contact={{ ...externalContacts[0]!, travelMinutes: 12 }} />);
-  expect(screen.getByText('12 min')).toBeTruthy();
-  rerender(<ContactCard contact={{ ...externalContacts[0]!, address: { status: 'not-applicable' } }} />);
-  expect(screen.getAllByText('Não aplicável')).toHaveLength(2);
+it('hierarquia vazia sem responsáveis inventados, fecha e retorna o foco', () => {
+  expect(activationHierarchy).toEqual([]);render(<ActivationHierarchy />);
+  const trigger=screen.getByRole('button',{name:'Hierarquia de Acionamento'});fireEvent.click(trigger);
+  expect(screen.getByRole('dialog',{name:'Hierarquia de Acionamento'})).toBeTruthy();
+  expect(screen.getByText('Hierarquia de acionamento ainda não cadastrada.')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'Fechar hierarquia de acionamento'}));
+  expect(screen.queryByRole('dialog')).toBeNull();expect(document.activeElement).toBe(trigger);
 });
 it('remove apenas as seis áreas e os itens 05 solicitados', () => {
   expect(areas).toEqual(['Operações', 'Comercial', 'QSSMS', 'TI', 'RH', 'Manutenção']);

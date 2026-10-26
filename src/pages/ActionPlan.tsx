@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { DecisionMap } from '../components/DecisionMap';
 import type { Status, Territorio } from '../domain/contracts';
 import { labelsImpacto, type EstadoImpacto } from '../domain/impact';
 import { planos, type NivelPlano } from '../content/action-plans';
@@ -34,7 +33,7 @@ export function ActionPlan({ status, territorio, impacto }: { status?: Status; t
       <h3>Orientações</h3><ol>{plano.orientacoes.map(o => <li key={o}>{o}</li>)}</ol>
       {(escolhido === 'emergencia' || escolhido === 'impacto') && <p className="meta">Decisões sobre pessoas, acessos e continuidade da operação permanecem com os responsáveis competentes.</p>}
     </article> : <p className="card">Não há nível confirmado para destacar automaticamente um plano. As orientações de referência podem ser consultadas abaixo.</p>}
-    <nav className="plan-links" aria-label="Links operacionais"><a href="#/monitoramento/rios">Avaliar evolução dos rios</a><a href="#/monitoramento/chuva">Acompanhar chuva</a><a href="#/monitoramento/previsao">Acompanhar previsão</a><a href="#/mapa">Consultar exposição territorial</a><DecisionMap /></nav>
+    <nav className="plan-links" aria-label="Links operacionais"><a href="#/monitoramento/rios">Avaliar evolução dos rios</a><a href="#/monitoramento/chuva">Acompanhar chuva</a><a href="#/monitoramento/previsao">Acompanhar previsão</a><a href="#/mapa">Consultar exposição territorial</a></nav>
     <div className="plan-selector"><label htmlFor="consulta-plano">Consultar orientações de outros níveis</label><select id="consulta-plano" value={consulta ?? 'vigente'} onChange={e => setConsulta(e.target.value === 'vigente' ? null : e.target.value as NivelPlano)}>
       <option value="vigente">Acompanhar o nível vigente</option>{Object.entries(planos).map(([n, p]) => <option key={n} value={n}>{p.titulo}</option>)}
     </select>{consulta && <button type="button" onClick={() => setConsulta(null)}>Voltar ao plano vigente</button>}</div>

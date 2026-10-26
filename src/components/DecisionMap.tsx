@@ -9,7 +9,7 @@ export function DecisionMap() {
   const [estado, setEstado] = useState<'carregando' | 'pronto' | 'erro'>('carregando');
   const [zoom, setZoom] = useState(100);
   return <div className="decision-map">
-    <button ref={trigger} type="button" onClick={() => { setEstado('carregando'); setZoom(100); setAberto(true); dialog.current?.showModal(); }}>Visualizar Mapa de Decisões do Terminal</button>
+    <button ref={trigger} type="button" onClick={() => { setEstado('carregando'); setZoom(100); setAberto(true); dialog.current?.showModal(); }}>Mapa de Decisões</button>
     <dialog ref={dialog} className="decision-dialog" aria-labelledby="decision-title" onClose={() => { setAberto(false); trigger.current?.focus(); }}>
       <div className="decision-toolbar"><h2 id="decision-title">Mapa de Decisões do Terminal</h2><button type="button" autoFocus onClick={() => dialog.current?.close()}>Fechar mapa</button></div>
       {aberto && <>
