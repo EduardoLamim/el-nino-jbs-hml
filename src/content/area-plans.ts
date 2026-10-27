@@ -1,4 +1,5 @@
 import actions from './plans/ti.json';
+import operationsActions from './plans/operacoes.json';
 import { z } from 'zod';
 
 export const planLevels = ['Emergência', 'Impacto JBS'] as const;
@@ -7,9 +8,11 @@ export interface AreaAction {
   'Nível': string; 'Ordem': string; 'Quem faz': string; 'Quem faz - Secundário': string;
   'Quando faz': string; 'Onde faz': string; 'Como faz': string;
 }
-export interface AreaPlan { area: string; responsavel: string; versao: number; atualizado: string; acoes: AreaAction[] }
+export interface AreaPlan { area: string; responsavel: string; versao: number; atualizado: string; acoes: AreaAction[]; mapa?: { arquivo: string; titulo: string } }
 export const areas = ['Operações', 'Comercial', 'QSSMS', 'TI', 'RH', 'Manutenção'] as const;
 export const areaPlans: Partial<Record<typeof areas[number], AreaPlan>> = {
+  Operações: { area: 'Operações', responsavel: 'Diego Rodrigo Juliani', versao: 1, atualizado: '26/10/2026', acoes: operationsActions,
+    mapa: { arquivo: 'operacoes-posicionamento-equipamentos.jpg', titulo: 'Posicionamento de equipamentos — Operações' } },
   TI: { area: 'TI', responsavel: 'Eduardo da Silva Lamim', versao: 1, atualizado: '08/10/2026', acoes: actions },
 };
 const actionSchema = z.object({ 'Nível': z.enum(planLevels), Ordem: z.string().regex(/^[1-9]\d*$/), 'Quem faz': z.string(), 'Quem faz - Secundário': z.string(), 'Quando faz': z.string(), 'Onde faz': z.string(), 'Como faz': z.string() }).strict();

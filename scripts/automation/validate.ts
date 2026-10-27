@@ -46,7 +46,8 @@ export async function validarArtefato(root = 'dist', base = basePages()) {
   const { manifesto } = await validarDados(root);
   const paths = await arquivos(root);
   const data = ['data/status.json', 'data/territorio.json', 'data/bairros.geojson', 'data/historico/manifesto.json', ...manifesto.arquivos.map(a => `data/historico/${a.arquivo}`)];
-  const permitido = new Set(['index.html', '.vite/manifest.json', ...data, ...[1, 2, 3].map(n => `assets/alarm_level_${n}.mp3`)]);
+  const operationsMap = 'assets/operacoes-posicionamento-equipamentos.jpg';
+  const permitido = new Set(['index.html', '.vite/manifest.json', operationsMap, ...data, ...[1, 2, 3].map(n => `assets/alarm_level_${n}.mp3`)]);
   for (const path of paths) {
     if (!permitido.has(path) && !/^assets\/[\w.-]+\.(?:js|css|png|svg|woff2?)$/.test(path)) throw new Error(`Arquivo não previsto no artefato: ${path}`);
     verificarConteudoPublico(await readFile(join(root, path), 'utf8'));
@@ -62,7 +63,7 @@ export async function validarArtefato(root = 'dist', base = basePages()) {
     for (const file of [chunk.file, ...(chunk.css ?? [])]) if (!paths.includes(file)) throw new Error(`Asset ausente: ${file}`);
     for (const key of [...(chunk.imports ?? []), ...(chunk.dynamicImports ?? [])]) if (!chunks[key]) throw new Error(`Import lazy ausente: ${key}`);
   }
-  for (const path of data) if (!(await readFile(join(root, path))).equals(await readFile(join('public', path)))) throw new Error(`Build diverge da entrada: ${path}`);
+  for (const path of [...data, operationsMap]) if (!(await readFile(join(root, path))).equals(await readFile(join('public', path)))) throw new Error(`Build diverge da entrada: ${path}`);
   return { base, arquivos: paths.length, bytes: (await Promise.all(paths.map(p => stat(join(root, p))))).reduce((s, a) => s + a.size, 0) };
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

@@ -103,11 +103,12 @@ describe('Fase 08 — Pages e artefato', () => {
     await writeFile(join(d, 'index.html'), '<script src="/painel/assets/main.js"></script><link href="/painel/assets/main.css">');
     await writeFile(join(d, 'assets/main.js'), '/* fixture */'); await writeFile(join(d, 'assets/main.css'), 'body {}');
     for (const n of [1, 2, 3]) await cp(`public/assets/alarm_level_${n}.mp3`, join(d, `assets/alarm_level_${n}.mp3`));
+    await cp('public/assets/operacoes-posicionamento-equipamentos.jpg', join(d, 'assets/operacoes-posicionamento-equipamentos.jpg'));
     await writeFile(join(d, '.vite/manifest.json'), JSON.stringify({ 'index.html': { file: 'assets/main.js', css: ['assets/main.css'], dynamicImports: ['src/pages/TerritoryMap.tsx'] }, 'src/pages/TerritoryMap.tsx': { file: 'assets/main.js' } }));
     return d;
   }
   it('valida o conjunto completo de dados e referências sob subpath', async () => {
-    expect((await validarArtefato(await artifact(), '/painel/')).arquivos).toBe(22);
+    expect((await validarArtefato(await artifact(), '/painel/')).arquivos).toBe(23);
   });
   it.each(['path', 'chunk', 'geometria', 'env', 'segredo', 'status'])('bloqueia artefato com falha em %s', async falha => {
     const d = await artifact();
