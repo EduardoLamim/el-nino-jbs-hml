@@ -32,10 +32,13 @@ it('mantém JPEG original byte a byte, sem recompressão',()=>{
 });
 it('abre mapa da área com zoom e foco, sem substituir mapa geral',()=>{
   view();
-  const trigger=screen.getByRole('button',{name:'Mapa de Decisões — Operações'});
-  expect(screen.getByRole('button',{name:'Mapa de Decisões'})).toBeTruthy();
+  const trigger=screen.getByRole('button',{name:'Mapa de Decisões'});
+  expect(screen.getAllByRole('button',{name:/Mapa de Decisões/})).toHaveLength(1);
+  expect(screen.queryByText('← Planos de Ação por Área')).toBeNull();
+  expect(screen.getByRole('link',{name:'Planos de Ação por Área'})).toBeTruthy();
   fireEvent.click(trigger);
-  const dialog=screen.getByRole('dialog',{name:'Posicionamento de equipamentos — Operações'});
+  fireEvent.change(screen.getByRole('combobox',{name:'Mapa em consulta'}),{target:{value:'operacoes'}});
+  const dialog=screen.getByRole('dialog',{name:'Mapa de Decisões do Terminal'});
   expect(within(dialog).getByText(/Diego Rodrigo Juliani.*26\/10\/2026/)).toBeTruthy();
   const img=within(dialog).getByAltText('Posicionamento de equipamentos — Operações') as HTMLImageElement;
   expect(img.getAttribute('src')).toContain('assets/operacoes-posicionamento-equipamentos.jpg');
@@ -48,7 +51,8 @@ it('abre mapa da área com zoom e foco, sem substituir mapa geral',()=>{
   expect(document.activeElement).toBe(trigger);
 });
 it('falha da imagem mantém plano acessível sem inventar conteúdo',()=>{
-  view(); fireEvent.click(screen.getByRole('button',{name:'Mapa de Decisões — Operações'}));
+  view(); fireEvent.click(screen.getByRole('button',{name:'Mapa de Decisões'}));
+  fireEvent.change(screen.getByRole('combobox',{name:'Mapa em consulta'}),{target:{value:'operacoes'}});
   fireEvent.error(screen.getByAltText('Posicionamento de equipamentos — Operações'));
   expect(screen.getByText(/ainda não disponibilizado ou temporariamente indisponível/)).toBeTruthy();
   expect(document.querySelectorAll('tr.area-action')).toHaveLength(3);

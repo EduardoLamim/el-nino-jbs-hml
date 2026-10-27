@@ -10,8 +10,14 @@ export const externalContacts: ExternalContact[] = [
   { id: 'defesa-civil', category: 'external', name: 'Defesa Civil', phone: '199', travelMinutes: 16 },
   { id: 'codetran', category: 'external', name: 'CODETRAN', phone: '153', travelMinutes: 8 },
   { id: 'marieta', category: 'external', name: 'Hospital Mat. Marieta', phone: '3349-9400', travelMinutes: 5 },
-  { id: 'ambulancia', category: 'external', name: 'Base da Ambulância', phone: '0800 488 488', travelMinutes: 20 },
+  { id: 'ambulancia', category: 'external', name: 'Base da Ambulância', phone: 'Canal de rádio 9', travelMinutes: 20 },
 ];
 export const internalContacts: InternalContact[] = [
-  { id: 'cccom', category: 'internal', name: 'CCCOM', phone: '(47)9970-91600' },
+  { id: 'cccom', category: 'internal', name: 'CCOS', phone: '(47)9970-91600' },
+  { id: 'airton-araujo', category: 'internal', name: 'Airton de Araujo', phone: '(47) 99116-0195' },
+  { id: 'daiani-woloszyn', category: 'internal', name: 'Daiani Woloszyn', phone: '(47) 99288-5022' },
+  { id: 'jefferson-pampuch', category: 'internal', name: 'Jefferson Pampuch', phone: '(47) 99258-2898' },
+  { id: 'thiago-alexi', category: 'internal', name: 'Thiago Alexi', phone: '(47) 98456-4734' },
+  { id: 'carlos-ferreira', category: 'internal', name: 'Carlos Ferreira', phone: '(47) 99123-0734' },
+  { id: 'fabio-reitz', category: 'internal', name: 'Fabio Reitz', phone: '(41) 9933-8540' },
 ];

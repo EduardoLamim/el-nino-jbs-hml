@@ -27,8 +27,8 @@ describe('Central de Planos', () => {
     expect(screen.queryAllByRole('article')).toHaveLength(0);
     expect(screen.getByRole('region', { name: 'Ações de Emergência' }).tabIndex).toBe(0);
   });
-  it('mantém integralmente a importação autorizada do Excel de 08/10/2026', () => {
-    expect(createHash('sha256').update(JSON.stringify(areaPlans.TI!.acoes)).digest('hex')).toBe('0c77aa7c36e60bf9d3b7bc5d8b9061d5d5cb91d21abe31522b567f7a6e8ace09');
+  it('preserva todas as ações TI, exceto as substituições de responsáveis autorizadas', () => {
+    expect(createHash('sha256').update(JSON.stringify(areaPlans.TI!.acoes).replaceAll('Técnico de sobreaviso', 'Eduardo Lamim').replaceAll('Jucinei Andrade', 'Amandus Muller')).digest('hex')).toBe('0c77aa7c36e60bf9d3b7bc5d8b9061d5d5cb91d21abe31522b567f7a6e8ace09');
   });
   it('6 áreas, metadados completos e planos TI e Operações disponíveis', () => {
     render(<PlansCenter secao="areas" impacto={{ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' }} />);
