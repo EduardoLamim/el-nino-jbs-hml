@@ -30,17 +30,17 @@ it('cadastra seis ações nas duas categorias com metadados oficiais',()=>{
 it('mantém JPEG original byte a byte, sem recompressão',()=>{
   expect(createHash('sha256').update(readFileSync('public/assets/operacoes-posicionamento-equipamentos.jpg')).digest('hex')).toBe('4690494854f45e79fe6da7fad68e1b6246994fc3419f6770787382e68de42ead');
 });
-it('abre mapa da área com zoom e foco, sem substituir mapa geral',()=>{
+it('abre diretamente o mapa oficial no botão principal, com zoom e foco',()=>{
   view();
   const trigger=screen.getByRole('button',{name:'Mapa de Decisões'});
   expect(screen.getAllByRole('button',{name:/Mapa de Decisões/})).toHaveLength(1);
   expect(screen.queryByText('← Planos de Ação por Área')).toBeNull();
   expect(screen.getByRole('link',{name:'Planos de Ação por Área'})).toBeTruthy();
   fireEvent.click(trigger);
-  fireEvent.change(screen.getByRole('combobox',{name:'Mapa em consulta'}),{target:{value:'operacoes'}});
+  expect(screen.queryByRole('combobox', { name: 'Mapa em consulta' })).toBeNull();
   const dialog=screen.getByRole('dialog',{name:'Mapa de Decisões do Terminal'});
   expect(within(dialog).getByText(/Diego Rodrigo Juliani.*26\/10\/2026/)).toBeTruthy();
-  const img=within(dialog).getByAltText('Posicionamento de equipamentos — Operações') as HTMLImageElement;
+  const img=within(dialog).getByAltText('Mapa de Decisões do Terminal') as HTMLImageElement;
   expect(img.getAttribute('src')).toContain('assets/operacoes-posicionamento-equipamentos.jpg');
   fireEvent.load(img);
   fireEvent.click(within(dialog).getByRole('button',{name:'Ampliar zoom'}));
@@ -52,8 +52,12 @@ it('abre mapa da área com zoom e foco, sem substituir mapa geral',()=>{
 });
 it('falha da imagem mantém plano acessível sem inventar conteúdo',()=>{
   view(); fireEvent.click(screen.getByRole('button',{name:'Mapa de Decisões'}));
-  fireEvent.change(screen.getByRole('combobox',{name:'Mapa em consulta'}),{target:{value:'operacoes'}});
-  fireEvent.error(screen.getByAltText('Posicionamento de equipamentos — Operações'));
+  expect(screen.queryByRole('combobox', { name: 'Mapa em consulta' })).toBeNull();
+  fireEvent.error(screen.getByAltText('Mapa de Decisões do Terminal'));
   expect(screen.getByText(/ainda não disponibilizado ou temporariamente indisponível/)).toBeTruthy();
   expect(document.querySelectorAll('tr.area-action')).toHaveLength(3);
+});
+
+it('preserva a imagem oficial atualizada da hierarquia sem recompressão', () => {
+  expect(createHash('sha256').update(readFileSync('public/assets/fluxo-acionamento-el-nino.png')).digest('hex')).toBe('5a31d9eaf6e3effd31cdb3fdeed2c53f02104bb57cecf5aa3b763e6cd7f251e2');
 });
