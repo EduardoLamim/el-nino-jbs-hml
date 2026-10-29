@@ -46,10 +46,10 @@ it('sem dado inicial estabelece referência; ausência temporária preserva a ú
 it('bloqueio de autoplay mantém visual e permite habilitar/testar/desabilitar por gesto', async () => {
   play.mockResolvedValue(false); const { rerender } = render(<LevelAlert nivel="normalidade" />); rerender(<LevelAlert nivel="alerta" />);
   expect(screen.getByRole('alert')).toBeTruthy(); expect(await screen.findByText(/Alerta sonoro indisponível/)).toBeTruthy();
-  enable.mockRejectedValueOnce(new Error('blocked')); fireEvent.click(screen.getByText('Habilitar som'));
+  enable.mockRejectedValueOnce(new Error('blocked')); fireEvent.click(screen.getByRole('button', {name:'Ativar som'}));
   await screen.findByText(/Não foi possível habilitar/);
-  play.mockResolvedValue(true); fireEvent.click(screen.getByText('Habilitar som')); await screen.findByText('Testar som');
-  fireEvent.click(screen.getByText('Desabilitar som')); expect(dispose).toHaveBeenCalled(); expect(screen.getByText('Habilitar som')).toBeTruthy();
+  play.mockResolvedValue(true); fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByText('Testar som');
+  fireEvent.click(screen.getByRole('button', {name:'Desativar som'})); expect(dispose).toHaveBeenCalled(); expect(screen.getByRole('button', {name:'Ativar som'})).toBeTruthy();
 });
 it('mapa abre sem imagem inventada, informa erro e restaura foco ao fechar', async () => {
   render(<DecisionMap />); const trigger = screen.getByText('Mapa de Decisões'); fireEvent.click(trigger);
@@ -108,10 +108,16 @@ it('controles são renderizados no header sem ocupar uma linha no conteúdo', as
   const { container, unmount } = render(<LevelAlert nivel="normalidade" audioHost={host} />);
   expect(container.textContent).toBe(''); expect(host.textContent).toContain('Som desabilitado');
   expect(screen.getByRole('status').className).toBe('sr-only');
-  expect(screen.getByRole('button', { name: 'Habilitar som' }).getAttribute('aria-pressed')).toBe('false');
-  fireEvent.click(screen.getByText('Habilitar som')); await screen.findByText('Testar som');
+  expect(screen.getByRole('button', { name: 'Ativar som' }).getAttribute('aria-pressed')).toBe('false');
+  expect(screen.getByRole('button', { name: 'Ativar som' }).getAttribute('title')).toBe('Ativar som');
+  expect(screen.getByRole('button', { name: 'Ativar som' }).textContent).toBe('');
+  expect(screen.getByRole('button', { name: 'Ativar som' }).querySelector('svg[aria-hidden="true"]')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByText('Testar som');
   expect(host.textContent).toContain('Som habilitado'); expect(container.textContent).toBe('');
-  expect(screen.getByRole('button', { name: 'Desabilitar som' }).getAttribute('aria-pressed')).toBe('true');
-  fireEvent.click(screen.getByText('Desabilitar som')); expect(host.textContent).toContain('Som desabilitado');
+  expect(screen.getByRole('button', { name: 'Desativar som' }).getAttribute('aria-pressed')).toBe('true');
+  expect(screen.getByRole('button', { name: 'Desativar som' }).getAttribute('title')).toBe('Desativar som');
+  expect(screen.getByRole('button', { name: 'Desativar som' }).textContent).toBe('');
+  expect(screen.getByRole('button', { name: 'Desativar som' }).querySelector('svg[aria-hidden="true"]')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', {name:'Desativar som'})); expect(host.textContent).toContain('Som desabilitado');
   unmount(); host.remove();
 });

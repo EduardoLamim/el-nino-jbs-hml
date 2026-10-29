@@ -1,6 +1,6 @@
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .header-tools { display:flex; align-items:center; gap:10px; flex-shrink:0; }
-.theme-toggle { background:transparent; border:1px solid #668697; padding:6px; min-width:44px; min-height:44px; font-size:1.3rem; line-height:1; color:white; }
+.theme-toggle, .header-audio .audio-toggle { background:transparent; border:1px solid #668697; padding:6px; min-width:44px; min-height:44px; font-size:1.3rem; line-height:1; color:white; }
 .area-catalog { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:20px; }
 .plan-metadata { display:flex; flex-wrap:wrap; gap:12px 30px; }
 .plan-metadata dd { margin:0; }
@@ -34,7 +34,7 @@
 .regional-river > .card { max-width:660px; }
 [data-theme='dark'] .river-chart path { stroke:#83cde9; }
 [data-theme='dark'] .river-chart circle { fill:#83cde9; }
-@media(max-width:1350px) { .app-header { flex-wrap:wrap; gap:16px; } .header-tools { margin-left:auto; } }
+@media(max-width:1350px) { .app-header { flex-wrap:wrap; row-gap:16px; } .header-tools { margin-left:auto; } }
 @media(max-width:1100px) { .header-tools { margin:0; align-self:stretch; justify-content:flex-end; } .header-tools .header-audio { min-width:0; } }
 @media(max-width:480px) { .header-tools { gap:8px; } }
 
@@ -105,3 +105,5 @@
 [data-theme='dark'] :focus-visible { outline-color:#8ce9fb; }
 [data-theme='dark'] .river-chart text { fill:#b4c8d5; }
 [data-theme='dark'] .skip-link { background:#192a36; color:#e3edf4; }
+
+.header-audio .audio-toggle { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; }
