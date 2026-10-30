@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-30T17:02:21.486Z",
+  "atualizado_em": "2026-10-30T17:12:22.911Z",
   "nivel_jbs": {
     "nivel": "normalidade",
     "desde": "2026-10-30T09:31:42.764000+00:00",
@@ -8,7 +8,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-30T17:02:21.486Z",
+    "avaliado_em": "2026-10-30T17:12:22.911Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-25T01:10:54-03:00",
@@ -313,7 +313,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-30T17:02:21.314Z",
+    "coletado_em": "2026-10-30T17:12:22.739Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -424,12 +424,12 @@
     ]
   },
   "blumenau": {
-    "nivel_m": 1.5,
-    "medido_em": "2026-10-30T13:00:00-03:00",
-    "coletado_em": "2026-10-30T17:02:17.135Z",
+    "nivel_m": 1.51,
+    "medido_em": "2026-10-30T14:00:00-03:00",
+    "coletado_em": "2026-10-30T17:12:17.628Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
-    "tendencia": "estavel",
+    "tendencia": "subindo",
     "qualidade": "atualizado",
     "fonte": "https://defesacivil.blumenau.sc.gov.br/d/nivel-do-rio",
     "motivo": null
@@ -465,14 +465,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.150Z",
+      "coletado_em": "2026-10-30T17:12:17.647Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-30T17:02:17.150Z",
+          "coletado_em": "2026-10-30T17:12:17.647Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\"message\":\"N\\u00e3o foi poss\\u00edvel concluir a consulta. Tente novamente mais tarde.\"}"
@@ -485,14 +485,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.173Z",
+      "coletado_em": "2026-10-30T17:12:17.677Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-30T17:02:17.173Z",
+          "coletado_em": "2026-10-30T17:12:17.677Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\"message\":\"N\\u00e3o foi poss\\u00edvel concluir a consulta. Tente novamente mais tarde.\"}"
@@ -505,14 +505,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.174Z",
+      "coletado_em": "2026-10-30T17:12:17.678Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-30T17:02:17.174Z",
+          "coletado_em": "2026-10-30T17:12:17.678Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -525,14 +525,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.175Z",
+      "coletado_em": "2026-10-30T17:12:17.679Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-30T17:02:17.175Z",
+          "coletado_em": "2026-10-30T17:12:17.679Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -545,14 +545,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.176Z",
+      "coletado_em": "2026-10-30T17:12:17.680Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-30T17:02:17.176Z",
+          "coletado_em": "2026-10-30T17:12:17.680Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -565,7 +565,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T17:02:17.176Z",
+      "coletado_em": "2026-10-30T17:12:17.681Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -575,14 +575,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-30T17:02:17.176Z",
+          "coletado_em": "2026-10-30T17:12:17.681Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-30T17:02:21.314Z",
+          "coletado_em": "2026-10-30T17:12:22.739Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
