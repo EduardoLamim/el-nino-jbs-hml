@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-30T09:32:19.153Z",
+  "atualizado_em": "2026-10-30T09:42:21.023Z",
   "nivel_jbs": {
     "nivel": "normalidade",
     "desde": "2026-10-30T09:31:42.764000+00:00",
@@ -8,7 +8,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-30T09:32:19.153Z",
+    "avaliado_em": "2026-10-30T09:42:21.023Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-25T01:10:54-03:00",
@@ -9516,22 +9516,22 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-30T09:32:17.901Z",
+    "coletado_em": "2026-10-30T09:42:19.548Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
         "data": "2026-10-30",
         "periodo": null,
-        "condicao": "Encoberto com chuva",
-        "descricao": "Encoberto com chuva",
-        "temperatura_min_c": 16,
-        "temperatura_max_c": 18,
+        "condicao": "Nebulosidade variável e chuva isolada",
+        "descricao": "Nebulosidade variável e chuva isolada",
+        "temperatura_min_c": 15,
+        "temperatura_max_c": 20,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 3.6,
+        "precipitacao_mm": 1.3,
         "vento": {
-          "direcao": "SSE/NW",
+          "direcao": "S/NW",
           "velocidade_media_kmh": 2,
-          "rajada_kmh": 9
+          "rajada_kmh": 12
         },
         "umidade": {
           "relativa_percentual": null,
@@ -9543,16 +9543,16 @@
       {
         "data": "2026-10-31",
         "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
+        "condicao": "Sol com muitas nuvens",
+        "descricao": "Sol com muitas nuvens",
         "temperatura_min_c": 16,
-        "temperatura_max_c": 24,
+        "temperatura_max_c": 23,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.2,
+        "precipitacao_mm": 0,
         "vento": {
-          "direcao": "W/NW",
+          "direcao": "E/NNW",
           "velocidade_media_kmh": 4,
-          "rajada_kmh": 12
+          "rajada_kmh": 13
         },
         "umidade": {
           "relativa_percentual": null,
@@ -9571,9 +9571,9 @@
         "probabilidade_precipitacao_percentual": null,
         "precipitacao_mm": 0,
         "vento": {
-          "direcao": "ENE/WNW",
+          "direcao": "ENE/N",
           "velocidade_media_kmh": 5,
-          "rajada_kmh": 12
+          "rajada_kmh": 16
         },
         "umidade": {
           "relativa_percentual": null,
@@ -9587,14 +9587,35 @@
         "periodo": null,
         "condicao": "Sol com muitas nuvens",
         "descricao": "Sol com muitas nuvens",
-        "temperatura_min_c": 17,
-        "temperatura_max_c": 25,
+        "temperatura_min_c": 18,
+        "temperatura_max_c": 24,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.6,
+        "precipitacao_mm": 0,
         "vento": {
-          "direcao": "ENE/W",
-          "velocidade_media_kmh": 5,
-          "rajada_kmh": 17
+          "direcao": "SSW/N",
+          "velocidade_media_kmh": 3,
+          "rajada_kmh": 18
+        },
+        "umidade": {
+          "relativa_percentual": null,
+          "minima_percentual": null,
+          "maxima_percentual": null
+        },
+        "fenomenos": []
+      },
+      {
+        "data": "2026-11-03",
+        "periodo": null,
+        "condicao": "Sol com muitas nuvens",
+        "descricao": "Sol com muitas nuvens",
+        "temperatura_min_c": 20,
+        "temperatura_max_c": 29,
+        "probabilidade_precipitacao_percentual": null,
+        "precipitacao_mm": 46.8,
+        "vento": {
+          "direcao": "ENE/NNW",
+          "velocidade_media_kmh": 4,
+          "rajada_kmh": 23
         },
         "umidade": {
           "relativa_percentual": null,
@@ -9608,7 +9629,7 @@
   "blumenau": {
     "nivel_m": 1.59,
     "medido_em": "2026-10-30T06:00:00-03:00",
-    "coletado_em": "2026-10-30T09:32:15.821Z",
+    "coletado_em": "2026-10-30T09:42:17.449Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "subindo",
@@ -9636,7 +9657,7 @@
       "qualidade": null,
       "atualizado_em": "2026-10-29T14:25:20-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.834Z",
+      "coletado_em": "2026-10-30T09:42:17.464Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9645,7 +9666,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-30T09:32:15.834Z",
+          "coletado_em": "2026-10-30T09:42:17.464Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9658,14 +9679,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.853Z",
+      "coletado_em": "2026-10-30T09:42:17.486Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-30T09:32:15.853Z",
+          "coletado_em": "2026-10-30T09:42:17.486Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9678,7 +9699,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.854Z",
+      "coletado_em": "2026-10-30T09:42:17.487Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9687,7 +9708,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-30T09:32:15.854Z",
+          "coletado_em": "2026-10-30T09:42:17.487Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9700,7 +9721,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.855Z",
+      "coletado_em": "2026-10-30T09:42:17.488Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9709,7 +9730,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-30T09:32:15.855Z",
+          "coletado_em": "2026-10-30T09:42:17.488Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9722,14 +9743,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.855Z",
+      "coletado_em": "2026-10-30T09:42:17.488Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-30T09:32:15.855Z",
+          "coletado_em": "2026-10-30T09:42:17.488Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -9742,7 +9763,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-30T09:32:15.856Z",
+      "coletado_em": "2026-10-30T09:42:17.489Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -9752,14 +9773,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-30T09:32:15.856Z",
+          "coletado_em": "2026-10-30T09:42:17.489Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-30T09:32:17.901Z",
+          "coletado_em": "2026-10-30T09:42:19.548Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
