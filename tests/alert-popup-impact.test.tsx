@@ -22,7 +22,7 @@ beforeEach(() => {
 afterEach(()=>{cleanup();vi.unstubAllGlobals();});
 it('Parar som silencia sem reconhecer; término natural mantém popup; Escape não dispensa',async()=>{
   const {rerender}=render(<LevelAlert nivel="normalidade"/>);
-  fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByText('Testar som');
+  fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByRole('button', {name:'Desativar som'});
   rerender(<LevelAlert nivel="alerta"/>);
   await waitFor(()=>expect((screen.getByText('Parar som') as HTMLButtonElement).disabled).toBe(false));
   fireEvent.click(screen.getByText('Parar som')); expect(Media.all[1]!.pause).toHaveBeenCalled(); expect(screen.getByRole('dialog')).toBeTruthy();
@@ -47,7 +47,7 @@ function backend(initial:boolean){
 }
 it('store real → componente → MP3: transição confirmada agrupada pelo React não é perdida nem repetida',async()=>{
   const {store,set}=backend(false); render(<Harness/>);
-  fireEvent.click(screen.getByRole('button', {name:'Ativar som'}));await screen.findByText('Testar som');
+  fireEvent.click(screen.getByRole('button', {name:'Ativar som'}));await screen.findByRole('button', {name:'Desativar som'});
   await act(async()=>{await store.reconciliar();set(true);await store.reconciliar();});
   await screen.findByRole('heading',{name:'IMPACTO NO TERMINAL CONFIRMADO'});
   await waitFor(()=>expect(Media.all[2]!.play).toHaveBeenCalledTimes(2)); // unlock + alarm

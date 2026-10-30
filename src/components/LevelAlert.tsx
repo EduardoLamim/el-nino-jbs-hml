@@ -58,7 +58,6 @@ export function LevelAlert({ nivel, impactoAtivo = null, impactEvent, audioHost,
       if (habilitado) { audio.current?.dispose(); audio.current = new AlertAudio(setPlaying); setHabilitado(false); setMensagem('Som desabilitado'); }
       else void enableAudio();
     }}><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" />{habilitado ? <><path d="M15.54 8.46a5 5 0 0 1 0 7.08" /><path d="M19.07 4.93a10 10 0 0 1 0 14.14" /></> : <path d="m23 9-6 6m0-6 6 6" />}</svg></button>
-    {habilitado && <button type="button" onClick={enableAudio}>Testar som</button>}
   </div>;
   return <>
     {audioHost ? createPortal(controles, audioHost) : audioHost === undefined ? controles : null}

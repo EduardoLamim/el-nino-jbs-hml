@@ -48,7 +48,7 @@ it('bloqueio de autoplay mantém visual e permite habilitar/testar/desabilitar p
   expect(screen.getByRole('alert')).toBeTruthy(); expect(await screen.findByText(/Alerta sonoro indisponível/)).toBeTruthy();
   enable.mockRejectedValueOnce(new Error('blocked')); fireEvent.click(screen.getByRole('button', {name:'Ativar som'}));
   await screen.findByText(/Não foi possível habilitar/);
-  play.mockResolvedValue(true); fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByText('Testar som');
+  play.mockResolvedValue(true); fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByRole('button', {name:'Desativar som'});
   fireEvent.click(screen.getByRole('button', {name:'Desativar som'})); expect(dispose).toHaveBeenCalled(); expect(screen.getByRole('button', {name:'Ativar som'})).toBeTruthy();
 });
 it('mapa abre sem imagem inventada, informa erro e restaura foco ao fechar', async () => {
@@ -112,9 +112,10 @@ it('controles são renderizados no header sem ocupar uma linha no conteúdo', as
   expect(screen.getByRole('button', { name: 'Ativar som' }).getAttribute('title')).toBe('Ativar som');
   expect(screen.getByRole('button', { name: 'Ativar som' }).textContent).toBe('');
   expect(screen.getByRole('button', { name: 'Ativar som' }).querySelector('svg[aria-hidden="true"]')).toBeTruthy();
-  fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByText('Testar som');
+  fireEvent.click(screen.getByRole('button', {name:'Ativar som'})); await screen.findByRole('button', {name:'Desativar som'});
   expect(host.textContent).toContain('Som habilitado'); expect(container.textContent).toBe('');
   expect(screen.getByRole('button', { name: 'Desativar som' }).getAttribute('aria-pressed')).toBe('true');
+  expect(screen.queryByRole('button', {name:'Testar som'})).toBeNull();
   expect(screen.getByRole('button', { name: 'Desativar som' }).getAttribute('title')).toBe('Desativar som');
   expect(screen.getByRole('button', { name: 'Desativar som' }).textContent).toBe('');
   expect(screen.getByRole('button', { name: 'Desativar som' }).querySelector('svg[aria-hidden="true"]')).toBeTruthy();
