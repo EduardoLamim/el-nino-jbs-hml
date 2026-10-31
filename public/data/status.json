@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-10-31T11:42:57.288Z",
+  "atualizado_em": "2026-10-31T11:53:10.384Z",
   "nivel_jbs": {
     "nivel": "normalidade",
     "desde": "2026-10-30T09:31:42.764000+00:00",
@@ -8,7 +8,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-10-31T11:42:57.288Z",
+    "avaliado_em": "2026-10-31T11:53:10.384Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-10-25T01:10:54-03:00",
@@ -307,126 +307,20 @@
   "previsao": {
     "fonte": "Epagri/Ciram",
     "modelo": null,
-    "abrangencia": "municipal",
-    "municipio": "Itajaí",
-    "codigo_municipio": "4208203",
+    "abrangencia": null,
+    "municipio": null,
+    "codigo_municipio": null,
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-10-31T11:42:57.118Z",
-    "disponibilidade": "disponivel",
-    "dias": [
-      {
-        "data": "2026-10-31",
-        "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
-        "temperatura_min_c": 16,
-        "temperatura_max_c": 22,
-        "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.2,
-        "vento": {
-          "direcao": "E/W",
-          "velocidade_media_kmh": 4,
-          "rajada_kmh": 10
-        },
-        "umidade": {
-          "relativa_percentual": null,
-          "minima_percentual": null,
-          "maxima_percentual": null
-        },
-        "fenomenos": []
-      },
-      {
-        "data": "2026-11-01",
-        "periodo": null,
-        "condicao": "Sol com muitas nuvens",
-        "descricao": "Sol com muitas nuvens",
-        "temperatura_min_c": 18,
-        "temperatura_max_c": 25,
-        "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.3,
-        "vento": {
-          "direcao": "ENE/NNW",
-          "velocidade_media_kmh": 4,
-          "rajada_kmh": 21
-        },
-        "umidade": {
-          "relativa_percentual": null,
-          "minima_percentual": null,
-          "maxima_percentual": null
-        },
-        "fenomenos": []
-      },
-      {
-        "data": "2026-11-02",
-        "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
-        "temperatura_min_c": 19,
-        "temperatura_max_c": 25,
-        "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 1.2,
-        "vento": {
-          "direcao": "ENE/S",
-          "velocidade_media_kmh": 3,
-          "rajada_kmh": 26
-        },
-        "umidade": {
-          "relativa_percentual": null,
-          "minima_percentual": null,
-          "maxima_percentual": null
-        },
-        "fenomenos": []
-      },
-      {
-        "data": "2026-11-03",
-        "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
-        "temperatura_min_c": 19,
-        "temperatura_max_c": 30,
-        "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 14.5,
-        "vento": {
-          "direcao": "ENE/N",
-          "velocidade_media_kmh": 4,
-          "rajada_kmh": 29
-        },
-        "umidade": {
-          "relativa_percentual": null,
-          "minima_percentual": null,
-          "maxima_percentual": null
-        },
-        "fenomenos": []
-      },
-      {
-        "data": "2026-11-04",
-        "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
-        "temperatura_min_c": 20,
-        "temperatura_max_c": 29,
-        "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 3.8,
-        "vento": {
-          "direcao": "W/N",
-          "velocidade_media_kmh": 5,
-          "rajada_kmh": 27
-        },
-        "umidade": {
-          "relativa_percentual": null,
-          "minima_percentual": null,
-          "maxima_percentual": null
-        },
-        "fenomenos": []
-      }
-    ]
+    "coletado_em": "2026-10-31T11:52:50.382Z",
+    "disponibilidade": "indisponivel",
+    "dias": []
   },
   "blumenau": {
     "nivel_m": 1.66,
     "medido_em": "2026-10-31T08:00:00-03:00",
-    "coletado_em": "2026-10-31T11:42:55.156Z",
+    "coletado_em": "2026-10-31T11:52:50.344Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "subindo",
@@ -442,8 +336,7 @@
       "rios: https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1: HTTP 500 Internal Server Error",
       "chuvas: https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1: HTTP 500 Internal Server Error",
       "barragens: https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1: HTTP 500 Internal Server Error",
-      "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-      "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC.",
+      "epagri: https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni: Timeout após 20000 ms",
       "Situação oficial: Situação oficial ausente, inválida, atrasada ou anterior à última conhecida.",
       "DC01: Estação ausente na coleta.",
       "DC02: Estação ausente na coleta.",
@@ -455,7 +348,8 @@
       "DC08: Estação ausente na coleta.",
       "DC09: Estação ausente na coleta.",
       "DC10: Estação ausente na coleta.",
-      "DC11: Estação ausente na coleta."
+      "DC11: Estação ausente na coleta.",
+      "Previsão do tempo indisponível"
     ]
   },
   "fontes": {
@@ -465,14 +359,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.171Z",
+      "coletado_em": "2026-10-31T11:52:50.359Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-10-31T11:42:55.171Z",
+          "coletado_em": "2026-10-31T11:52:50.359Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\"message\":\"N\\u00e3o foi poss\\u00edvel concluir a consulta. Tente novamente mais tarde.\"}"
@@ -485,14 +379,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.188Z",
+      "coletado_em": "2026-10-31T11:52:50.379Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-10-31T11:42:55.188Z",
+          "coletado_em": "2026-10-31T11:52:50.379Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\"message\":\"N\\u00e3o foi poss\\u00edvel concluir a consulta. Tente novamente mais tarde.\"}"
@@ -505,14 +399,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.189Z",
+      "coletado_em": "2026-10-31T11:52:50.380Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-10-31T11:42:55.189Z",
+          "coletado_em": "2026-10-31T11:52:50.380Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -525,14 +419,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.189Z",
+      "coletado_em": "2026-10-31T11:52:50.381Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-10-31T11:42:55.189Z",
+          "coletado_em": "2026-10-31T11:52:50.381Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -545,14 +439,14 @@
       "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.190Z",
+      "coletado_em": "2026-10-31T11:52:50.382Z",
       "resultado": "falha",
       "motivo": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1: HTTP 500 Internal Server Error",
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-10-31T11:42:55.190Z",
+          "coletado_em": "2026-10-31T11:52:50.382Z",
           "http_status": 500,
           "erro": "HTTP 500 Internal Server Error",
           "resposta_erro": "{\n    \"message\": \"Server Error\"\n}"
@@ -562,29 +456,19 @@
     "epagri": {
       "nome": "Epagri/Ciram",
       "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-      "qualidade": null,
+      "qualidade": "indisponivel",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-10-31T11:42:55.191Z",
-      "resultado": "sucesso",
-      "motivo": null,
-      "avisos": [
-        "Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
-        "UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
-      ],
+      "coletado_em": "2026-10-31T11:52:50.382Z",
+      "resultado": "falha",
+      "motivo": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni: Timeout após 20000 ms",
+      "avisos": [],
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-10-31T11:42:55.191Z",
-          "http_status": 200,
-          "erro": null,
-          "resposta_erro": null
-        },
-        {
-          "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-10-31T11:42:57.118Z",
-          "http_status": 200,
-          "erro": null,
+          "coletado_em": "2026-10-31T11:52:50.382Z",
+          "http_status": null,
+          "erro": "Timeout após 20000 ms",
           "resposta_erro": null
         }
       ]
