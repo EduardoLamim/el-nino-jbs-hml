@@ -37,7 +37,7 @@ try {
     if (route === 'mapa') await page.getByLabel('Consultar estação').waitFor();
     else if (route === 'plano-de-acao') await page.getByRole('heading', { name: /^Plano de Ação/ }).waitFor();
     else if (route.startsWith('monitoramento')) await page.getByRole('heading', { name: 'Monitoramento', exact: true }).waitFor();
-    else await page.getByRole('heading', { name: 'Exposição Territorial JBS' }).waitFor();
+    else await page.getByRole('heading', { name: 'Exposição Territorial' }).waitFor();
     assert.equal(await page.getByText('Página não encontrada', { exact: true }).count(), 0);
   }
   report.checks.push('Acesso direto e refresh em rotas hash, incluindo seções de Monitoramento.');
