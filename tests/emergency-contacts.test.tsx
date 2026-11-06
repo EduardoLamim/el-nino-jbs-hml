@@ -63,7 +63,7 @@ it('transfere avaliar e consolida sem duplicar, mantendo o restante de Impacto',
     'Aplicar os procedimentos de contingência correspondentes.',
     'Manter comunicação ativa durante a ocorrência.',
     'Acompanhar simultaneamente a condição ambiental subjacente.',
-    'Encerrar o Impacto JBS no sistema somente após confirmação de que a condição física registrada não permanece ativa.',
+    'Encerrar o Impacto Operacional no sistema somente após confirmação de que a condição física registrada não permanece ativa.',
   ]);
   const emergency = planos.emergencia.orientacoes;
   expect(emergency).toHaveLength(9);

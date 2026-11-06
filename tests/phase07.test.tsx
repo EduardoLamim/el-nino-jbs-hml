@@ -45,7 +45,7 @@ describe('Fase 07 — regressão funcional do mapa migrado', () => {
     expect(fakeMap.update).toHaveBeenLastCalledWith(s,territorio,geo,expect.any(Object),null);
   });
   it('liga apenas bairros, exposição e estações por padrão', () => {
-    mapa(); for (const label of ['Limites dos bairros','Exposição agregada JBS','Estações hidrológicas DC01–DC11']) expect((screen.getByRole('checkbox',{name:label}) as HTMLInputElement).checked).toBe(true);
+    mapa(); for (const label of ['Limites dos bairros','Exposição agregada','Estações hidrológicas DC01–DC11']) expect((screen.getByRole('checkbox',{name:label}) as HTMLInputElement).checked).toBe(true);
     for(const label of ['Histórico de inundação','Vias com histórico de inundação']) expect((screen.getByRole('checkbox',{name:label}) as HTMLInputElement).checked).toBe(false);
     expect(fetch).not.toHaveBeenCalled();
   });
@@ -71,7 +71,7 @@ describe('Fase 07 — regressão funcional do mapa migrado', () => {
   });
   it('bairro mostra agregados e história, sem cenários ou condição atual', async () => {
     mapa();await userEvent.selectOptions(screen.getByLabelText('Consultar bairro ou localidade'),territorio.bairros.find(b=>b.nome==='São Vicente')!.id);
-    const detail=within(screen.getByRole('article',{name:'Detalhe territorial São Vicente'}));expect(detail.getByText('Exposição JBS')).toBeTruthy();expect(detail.getByText('Contexto histórico')).toBeTruthy();expect(detail.queryByText(/cenário|Situação atual do bairro|colaboradores afetados|DC01/i)).toBeNull();
+    const detail=within(screen.getByRole('article',{name:'Detalhe territorial São Vicente'}));expect(detail.getByText('Exposição Operacional')).toBeTruthy();expect(detail.getByText('Contexto histórico')).toBeTruthy();expect(detail.queryByText(/cenário|Situação atual do bairro|colaboradores afetados|DC01/i)).toBeNull();
   });
   it.each(['Portal 2','Brilhante I'])('preserva %s separado',async nome=>{
     mapa();await userEvent.selectOptions(screen.getByLabelText('Consultar bairro ou localidade'),territorio.localidades.find(l=>l.nome_exibicao===nome)!.id);
@@ -99,9 +99,9 @@ describe('Fase 07 — Plano de Ação', () => {
     expect(screen.getByText(planos[nivel].objetivo)).toBeTruthy();
     for (const o of planos[nivel].orientacoes) expect(screen.getByText(o)).toBeTruthy();
   });
-  it('Impacto JBS ativo usa apenas projeção pública e preserva ambiental', () => {
+  it('Impacto Operacional ativo usa apenas projeção pública e preserva ambiental', () => {
     render(<ActionPlan status={s} territorio={territorio} impacto={ativo} />);
-    expect(screen.getByRole('heading', { name: 'Plano de Ação — Impacto JBS' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Plano de Ação — Impacto Operacional' })).toBeTruthy();
     expect(screen.getByText('Alagamento no Terminal')).toBeTruthy(); expect(screen.getByText(/Condição ambiental: 🟡 Atenção/)).toBeTruthy();
     expect(screen.queryByText(/responsavel_acionamento|observacao_acionamento/)).toBeNull();
   });
@@ -110,14 +110,14 @@ describe('Fase 07 — Plano de Ação', () => {
     render(<ActionPlan status={s} territorio={territorio} impacto={inativo} />);
     await userEvent.selectOptions(screen.getByLabelText('Consultar orientações de outros níveis'), 'emergencia');
     expect(screen.getByRole('heading', { name: 'Consulta — Emergência' })).toBeTruthy();
-    expect(screen.getByText('O Nível de Alerta JBS atual permanece 🟠 Alerta.')).toBeTruthy(); expect(s).toEqual(antes);
+    expect(screen.getByText('O Nível de Alerta atual permanece 🟠 Alerta.')).toBeTruthy(); expect(s).toEqual(antes);
     await userEvent.click(screen.getByRole('button', { name: 'Voltar ao plano vigente' }));
     expect(screen.getByRole('heading', { name: 'Plano de Ação — Alerta' })).toBeTruthy();
   });
   it('consulta preta sem ocorrência não inventa tipo nem acionamento', async () => {
     render(<ActionPlan status={s} territorio={territorio} impacto={inativo} />);
     await userEvent.selectOptions(screen.getByLabelText('Consultar orientações de outros níveis'), 'impacto');
-    expect(screen.getByText('Plano de referência para Impacto JBS. Esta consulta não indica uma ocorrência ativa.')).toBeTruthy();
+    expect(screen.getByText('Plano de referência para Impacto Operacional. Esta consulta não indica uma ocorrência ativa.')).toBeTruthy();
     expect(screen.queryByText('Alagamento no Terminal')).toBeNull(); expect(screen.queryByText(/Acionado em/)).toBeNull();
   });
   it('acompanha mudança de nível quando está no plano vigente', () => {
@@ -149,19 +149,19 @@ describe('Fase 07 — Plano de Ação', () => {
 describe('Fase 07 — barra global e integração', () => {
   it('barra mostra nível e gatilhos existentes sem recalcular', () => {
     render(<CompactOperational status={s} impacto={inativo} />);
-    expect(screen.getByText('🟡 Nível de Alerta JBS — Atenção')).toBeTruthy();
+    expect(screen.getByText('🟡 Nível de Alerta — Atenção')).toBeTruthy();
     expect(screen.getByText('Situação Oficial + DC01 + DC11')).toBeTruthy();
   });
   it('barra preta retida mostra degradação, tipo e condição subjacente', () => {
     render(<CompactOperational status={s} impacto={{ ...ativo, qualidade: 'degradado' }} />);
-    expect(screen.getByText('⚫ IMPACTO JBS ATIVO')).toBeTruthy(); expect(screen.getByText(/Condição ambiental: 🟡 Atenção/)).toBeTruthy();
+    expect(screen.getByText('⚫ IMPACTO OPERACIONAL ATIVO')).toBeTruthy(); expect(screen.getByText(/Condição ambiental: 🟡 Atenção/)).toBeTruthy();
     expect(screen.getByText('Impacto conhecido preservado — confirmação pendente.')).toBeTruthy();
   });
   it('barra com estado desconhecido não afirma terminal sem impacto', async () => {
     render(<CompactOperational status={s} impacto={desconhecido} />);
     expect(screen.getByText('Condição do Terminal sem confirmação atual.')).toBeTruthy();
     expect(screen.queryByText('Qualidade / confirmação')).toBeNull();
-    expect(screen.getByText(/Não foi possível verificar se existe Impacto JBS ativo/)).toBeTruthy();
+    expect(screen.getByText(/Não foi possível verificar se existe Impacto Operacional ativo/)).toBeTruthy();
   });
   it('navegação compartilha um único store, sem barra no Dashboard e com atualização no Plano', async () => {
     const iniciar = vi.spyOn(ctx.store!, 'iniciar'); const parar = vi.spyOn(ctx.store!, 'parar');
@@ -170,7 +170,7 @@ describe('Fase 07 — barra global e integração', () => {
     await act(async () => { window.location.hash = '#/plano-de-acao'; window.dispatchEvent(new Event('hashchange')); });
     expect(screen.getByRole('complementary', { name: 'Barra operacional' })).toBeTruthy();
     await act(async () => { await ctx.store!.executar({ action: 'ativar', pin: randomUUID(), tipo: 'alagamento_terminal', responsavel: 'Teste' }); });
-    expect(screen.getByRole('heading', { name: 'Plano de Ação — Impacto JBS' })).toBeTruthy();
-    expect(screen.getByText('⚫ IMPACTO JBS ATIVO')).toBeTruthy(); expect(iniciar).toHaveBeenCalledTimes(1); expect(parar).not.toHaveBeenCalled();
+    expect(screen.getByRole('heading', { name: 'Plano de Ação — Impacto Operacional' })).toBeTruthy();
+    expect(screen.getByText('⚫ IMPACTO OPERACIONAL ATIVO')).toBeTruthy(); expect(iniciar).toHaveBeenCalledTimes(1); expect(parar).not.toHaveBeenCalled();
   });
 });

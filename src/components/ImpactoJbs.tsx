@@ -27,20 +27,20 @@ export function ImpactoJbs({ painelAmbiental, contextoAmbiental, onEstado, onAti
   const alvo = useRef<string | null>(null);
   useEffect(() => { store.iniciar(); return () => store.parar(); }, [store]);
   const ativo = estado.dado?.ativo === true;
-  return <>{!ativo && painelAmbiental}<section aria-label="Impacto JBS" className={ativo ? 'operational impact-active' : 'terminal-card card'}>
-    <h2>{ativo ? '⚫ IMPACTO JBS' : painelAmbiental ? 'Condição do Terminal' : 'Impacto JBS'}</h2>
+  return <>{!ativo && painelAmbiental}<section aria-label="Impacto Operacional" className={ativo ? 'operational impact-active' : 'terminal-card card'}>
+    <h2>{ativo ? '⚫ IMPACTO OPERACIONAL' : painelAmbiental ? 'Condição do Terminal' : 'Impacto Operacional'}</h2>
     {ativo && <p className="lead">Impacto físico confirmado no Terminal, em infraestrutura crítica, área operacional ou acesso operacional imediato.</p>}
     <div aria-live="polite">
-      {!estado.dado && <p>Estado operacional JBS indisponível. Não foi possível verificar se existe Impacto JBS ativo.</p>}
+      {!estado.dado && <p>Estado operacional indisponível. Não foi possível verificar se existe Impacto Operacional ativo.</p>}
       {estado.dado?.ativo && <p className="impact-type">{labelsImpacto[estado.dado.tipo]} · Acionado em {horario(estado.dado.acionado_em)}</p>}
-      {estado.dado && !estado.dado.ativo && <p>{estado.qualidade === 'confirmado' ? painelAmbiental ? 'Nenhum impacto físico confirmado.' : 'Nenhum Impacto JBS ativo na última consulta confirmada.' : 'Último estado conhecido: inativo. A condição atual não foi confirmada.'}</p>}
+      {estado.dado && !estado.dado.ativo && <p>{estado.qualidade === 'confirmado' ? painelAmbiental ? 'Nenhum impacto físico confirmado.' : 'Nenhum Impacto Operacional ativo na última consulta confirmada.' : 'Último estado conhecido: inativo. A condição atual não foi confirmada.'}</p>}
       {estado.qualidade === 'degradado' && <p>Último estado conhecido preservado; confirmação atual pendente.</p>}
       <p className="meta">Última confirmação: {estado.confirmado_em ? horario(estado.confirmado_em) : 'Nenhuma'}.</p>
       {estado.realtime !== 'conectado' && <p className="meta">Sincronização em reconexão; atualização automática a cada minuto.</p>}
     </div>
     {ativo && contextoAmbiental}
     {!operacao && <button type="button" onClick={() => { alvo.current = estado.dado?.ativo ? estado.dado.impacto_id : null;
-      setOperacao(ativo ? 'encerrar' : 'ativar'); setMensagem(''); }}>{ativo ? 'Encerrar Impacto JBS' : 'Acionar Impacto JBS'}</button>}
+      setOperacao(ativo ? 'encerrar' : 'ativar'); setMensagem(''); }}>{ativo ? 'Encerrar Impacto Operacional' : 'Acionar Impacto Operacional'}</button>}
     {operacao && <form className="impact-form" autoComplete="off" onSubmit={async e => {
       e.preventDefault(); if (enviando) return;
       const form = e.currentTarget; const data = new FormData(form);

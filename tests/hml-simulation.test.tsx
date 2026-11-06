@@ -32,10 +32,10 @@ it('simula Impacto e reconhecimento sem rede, persistência ou modificação de 
   const network = vi.spyOn(globalThis, 'fetch');
   const storage = vi.spyOn(Storage.prototype, 'setItem');
   const { play, stop } = setup();
-  fireEvent.click(screen.getByText('Simular ativação de Impacto JBS')); expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
-  fireEvent.click(screen.getByText('Simular ativação de Impacto JBS')); expect(play).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByText('Simular ativação de Impacto Operacional')); expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
+  fireEvent.click(screen.getByText('Simular ativação de Impacto Operacional')); expect(play).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByText('Reconhecer')); expect(stop).toHaveBeenCalled(); expect(screen.queryByRole('alert')).toBeNull();
-  fireEvent.click(screen.getByText('Simular encerramento de Impacto JBS')); expect(play).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByText('Simular encerramento de Impacto Operacional')); expect(play).toHaveBeenCalledTimes(1);
   expect(network).not.toHaveBeenCalled(); expect(storage).not.toHaveBeenCalled();
 });
 it('reset e saída param áudio, limpam aviso e estabelecem referência real sem alarme falso', () => {

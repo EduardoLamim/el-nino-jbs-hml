@@ -2,7 +2,7 @@ import actions from './plans/ti.json';
 import operationsActions from './plans/operacoes.json';
 import { z } from 'zod';
 
-export const planLevels = ['Emergência', 'Impacto JBS'] as const;
+export const planLevels = ['Emergência', 'Impacto Operacional'] as const;
 export type PlanLevel = typeof planLevels[number];
 export interface AreaAction {
   'Nível': string; 'Ordem': string; 'Quem faz': string; 'Quem faz - Secundário': string;
@@ -12,10 +12,10 @@ export interface AreaPlan { area: string; responsavel: string; versao: number; a
 export const areas = ['Operações', 'Comercial', 'QSSMS', 'TI', 'RH', 'Manutenção'] as const;
 export const areaPlans: Partial<Record<typeof areas[number], AreaPlan>> = {
   Operações: { area: 'Operações', responsavel: 'Diego Rodrigo Juliani', versao: 1, atualizado: '26/10/2026', acoes: operationsActions,
-    mapa: { arquivo: 'operacoes-posicionamento-equipamentos.jpg', titulo: 'Posicionamento de equipamentos — Operações' } },
+    mapa: { arquivo: 'operacoes-posicionamento-equipamentos.png', titulo: 'Posicionamento de equipamentos — Operações' } },
   TI: { area: 'TI', responsavel: 'Eduardo da Silva Lamim', versao: 1, atualizado: '08/10/2026', acoes: actions },
 };
-const actionSchema = z.object({ 'Nível': z.enum(planLevels), Ordem: z.string().regex(/^[1-9]\d*$/), 'Quem faz': z.string(), 'Quem faz - Secundário': z.string(), 'Quando faz': z.string(), 'Onde faz': z.string(), 'Como faz': z.string() }).strict();
+const actionSchema = z.object({ 'Nível': z.union([z.enum(planLevels), z.literal('Impacto JBS')]).transform(v => v === 'Impacto JBS' ? 'Impacto Operacional' as const : v), Ordem: z.string().regex(/^[1-9]\d*$/), 'Quem faz': z.string(), 'Quem faz - Secundário': z.string(), 'Quando faz': z.string(), 'Onde faz': z.string(), 'Como faz': z.string() }).strict();
 export function validatePlanActions(value: unknown) {
   const result = z.array(actionSchema).min(1).parse(value);
   const orders = new Set<string>();

@@ -45,6 +45,12 @@ class ImportTests(unittest.TestCase):
             with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, 'Linha 2: Nível'):
                 module.import_plan(self.workbook([module.HEADERS, [invalid, *self.row[1:]]]))
 
+    def test_legacy_level_compatibility(self):
+        for level in ['Impacto JBS', 'Impacto Operacional']:
+            result = module.import_plan(self.workbook([module.HEADERS, [level, *self.row[1:]]]))
+            self.assertEqual(result[0]['Nível'], 'Impacto Operacional')
+            self.assertEqual(result[0]['Como faz'], self.row[-1])
+
     def test_headers(self):
         for headers in [module.HEADERS[::-1], module.HEADERS[:-1], [*module.HEADERS[:-1], 'Como Fazer']]:
             with self.subTest(headers=headers), self.assertRaisesRegex(ValueError, 'Linha 1'):
@@ -73,7 +79,7 @@ class ImportTests(unittest.TestCase):
         data = json.loads(Path('src/content/plans/ti.json').read_text(encoding='utf-8'))
         self.assertEqual(len(data), 13)
         self.assertEqual(sum(a['Nível'] == 'Emergência' for a in data), 7)
-        self.assertEqual(sum(a['Nível'] == 'Impacto JBS' for a in data), 6)
+        self.assertEqual(sum(a['Nível'] == 'Impacto Operacional' for a in data), 6)
         imported = module.import_plan(self.workbook([module.HEADERS, *[[a[h] for h in module.HEADERS] for a in data]]))
         self.assertEqual(imported, data)
 

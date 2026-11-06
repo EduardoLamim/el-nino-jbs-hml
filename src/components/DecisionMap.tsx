@@ -1,6 +1,6 @@
 import { useId, useRef, useState } from 'react';
 
-export const decisionMapUrl = `${import.meta.env.BASE_URL}assets/operacoes-posicionamento-equipamentos.jpg`;
+export const decisionMapUrl = `${import.meta.env.BASE_URL}assets/operacoes-posicionamento-equipamentos.png`;
 
 export function DecisionMap({ url = decisionMapUrl, title = 'Mapa de Decisões do Terminal', label = 'Mapa de Decisões', description }: { url?: string; title?: string; label?: string; description?: string }) {
   const titleId = useId();

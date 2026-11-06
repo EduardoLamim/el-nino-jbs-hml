@@ -16,7 +16,7 @@ export function StationDetails({ codigo, estacao, estado }: { codigo: string; es
 export function NeighborhoodDetails({ bairro }: { bairro: Territorio['bairros'][number] }) {
   return <article className="map-detail" aria-label={`Detalhe territorial ${bairro.nome}`}><h3>{bairro.nome}</h3>
     <p>Zona Administrativa da Defesa Civil: {bairro.zona_defesa_civil ?? 'Não informada'}</p>
-    <h4>Exposição JBS</h4><p><strong>{bairro.colaboradores_jbs}</strong> colaboradores residentes</p>
+    <h4>Exposição Operacional</h4><p><strong>{bairro.colaboradores_jbs}</strong> colaboradores residentes</p>
     <h4>Contexto histórico</h4>
     <p>{bairro.historico_inundacao.possui_registro ? 'Área presente em registros históricos de inundação.' : 'Sem interseção nos registros históricos consultados; não significa ausência de possibilidade de inundação.'}</p>
     {bairro.historico_inundacao.referencias.length > 0 && <p className="meta">Períodos registrados: {bairro.historico_inundacao.referencias.map(r => r.periodo).join(', ')}.</p>}

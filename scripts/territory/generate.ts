@@ -56,7 +56,7 @@ const fontes = [
   fonte('vias', 'Trechos com histórico de alagamento', 'historico', fonteVias, "Somente trecho_alagado = '1'; não representa mobilidade atual."),
   fonte('hand', 'Vias classificadas em cenários', 'modelagem', fonteHand, 'Interseção com catálogo 10–400 cm; sem cenário ativado, previsão ou equivalência com telemetria.'),
   fonte('v17', 'Plano de Contingência V17 — 22/12/2025', 'administrativo', 'https://defesacivil.itajai.sc.gov.br/documentos/Plano-de-Contingencia-de-Inundacao-ALTERADO-EM-22-12-25.pdf', 'Zonas administrativas/operacionais; não são unidades hidrológicas.'),
-  fonte('jbs', 'Agregados JBS validados pelo solicitante', 'agregado_validado', null, 'Transcrição exclusiva dos agregados autorizados para a Fase 04; sem dados individuais.'),
+  fonte('jbs', 'Agregados operacionais validados pelo solicitante', 'agregado_validado', null, 'Transcrição exclusiva dos agregados autorizados para a Fase 04; sem dados individuais.'),
 ];
 const bairros: Territorio['bairros'] = [];
 const bairroPorGeometria = new Map<string, string>();

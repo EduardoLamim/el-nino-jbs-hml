@@ -33,14 +33,14 @@ export const planos: Record<NivelPlano, { titulo: string; objetivo: string; orie
     'Avaliar, pelos responsáveis competentes, a necessidade de restrição, reorganização ou suspensão das atividades afetadas e de reorganização dos deslocamentos.',
     'Manter comunicação ativa com os responsáveis e colaboradores envolvidos.',
     'Aplicar as medidas previstas nos procedimentos de contingência conforme a situação observada.',
-    'Registrar imediatamente Impacto JBS caso seja confirmado impacto físico no Terminal, infraestrutura crítica, área operacional ou acesso operacional imediato.',
+    'Registrar imediatamente Impacto Operacional caso seja confirmado impacto físico no Terminal, infraestrutura crítica, área operacional ou acesso operacional imediato.',
   ] },
-  impacto: { titulo: 'Impacto JBS', objetivo: 'Responder ao impacto físico confirmado e preservar pessoas, infraestrutura e continuidade operacional.', orientacoes: [
+  impacto: { titulo: 'Impacto Operacional', objetivo: 'Responder ao impacto físico confirmado e preservar pessoas, infraestrutura e continuidade operacional.', orientacoes: [
     'Priorizar a segurança das pessoas nas áreas envolvidas.',
     'Manter o Comitê El Niño ativo durante o impacto.',
     'Aplicar os procedimentos de contingência correspondentes.',
     'Manter comunicação ativa durante a ocorrência.',
     'Acompanhar simultaneamente a condição ambiental subjacente.',
-    'Encerrar o Impacto JBS no sistema somente após confirmação de que a condição física registrada não permanece ativa.',
+    'Encerrar o Impacto Operacional no sistema somente após confirmação de que a condição física registrada não permanece ativa.',
   ] },
 };

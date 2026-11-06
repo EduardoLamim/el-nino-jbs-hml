@@ -24,7 +24,7 @@ try {
       await page.goto(`${base}#/${route}`); await page.reload();
       await page.getByRole('link', { name: 'Central de Planos', exact: true }).waitFor();
       await page.locator('.operational, .compact-operational').first().waitFor();
-      if (route === 'plano-de-acao/ti') { await page.getByRole('tab', { name: 'Emergência', exact: true }).waitFor(); assert.equal(await page.locator('.area-action').count(), 7); await page.getByRole('tab', { name: 'Impacto JBS', exact: true }).click(); assert.equal(await page.locator('.area-action').count(), 6); }
+      if (route === 'plano-de-acao/ti') { await page.getByRole('tab', { name: 'Emergência', exact: true }).waitFor(); assert.equal(await page.locator('.area-action').count(), 7); await page.getByRole('tab', { name: 'Impacto Operacional', exact: true }).click(); assert.equal(await page.locator('.area-action').count(), 6); }
       const metrics = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth, theme: document.documentElement.dataset.theme }));
       assert(metrics.scroll <= width + 1, `Overflow ${route} ${width}/${theme}: ${metrics.scroll}`);
       assert.equal(metrics.theme, theme);

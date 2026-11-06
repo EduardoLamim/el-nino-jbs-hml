@@ -56,10 +56,10 @@ try{
  const states=await browser.newPage({viewport:{width:1440,height:960}});
  await states.route('**/data/status.json',r=>r.fulfill({json:fixture}));
  await states.route('https://ufeahglxwygvlugfsopi.supabase.co/rest/v1/impacto_jbs_publico*',r=>r.fulfill({json:{id:1,revisao:1,ativo:true,impacto_id:'11111111-1111-4111-8111-111111111111',tipo:'alagamento_terminal',acionado_em:'2026-10-04T04:00:00Z',atualizado_em:'2026-10-04T04:00:00Z'}}));
- await states.goto(origin+base+'#/dashboard');await states.getByRole('button',{name:'Encerrar Impacto JBS'}).waitFor();
+ await states.goto(origin+base+'#/dashboard');await states.getByRole('button',{name:'Encerrar Impacto Operacional'}).waitFor();
  assert(await states.getByText('Condição ambiental:',{exact:false}).isVisible());
  await states.screenshot({path:`${output}/impacto-fixture.png`,fullPage:true});report.screenshots.push('impacto-fixture.png');
- await states.getByRole('button',{name:'Encerrar Impacto JBS'}).click();await states.getByLabel('PIN',{exact:true}).waitFor();await states.getByRole('button',{name:'Cancelar',exact:true}).click();
+ await states.getByRole('button',{name:'Encerrar Impacto Operacional'}).click();await states.getByLabel('PIN',{exact:true}).waitFor();await states.getByRole('button',{name:'Cancelar',exact:true}).click();
  await states.close();report.checks.push('Apresentação de Impacto preto e formulário testados por resposta local interceptada, sem escrita remota.');
  assert.deepEqual(report.errors,[]);
 }finally{await writeFile(`${output}/checks.json`,JSON.stringify(report,null,2)+'\n');await browser.close();}

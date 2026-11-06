@@ -20,7 +20,7 @@ try {
     await page.locator('.plan-actions-table tbody tr').first().waitFor();
     assert.equal(await page.locator('.plan-actions-table tbody tr').count(), 7);
     assert.equal(await page.locator('.plan-metadata dt').allTextContents().then(a => a.includes('Área')), false);
-    await page.getByRole('tab', { name: 'Impacto JBS', exact: true }).click();
+    await page.getByRole('tab', { name: 'Impacto Operacional', exact: true }).click();
     assert.equal(await page.locator('.plan-actions-table tbody tr').count(), 6);
     await page.getByRole('tab', { name: 'Emergência', exact: true }).click();
     for (const count of [7, 50]) {

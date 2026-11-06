@@ -28,7 +28,7 @@ describe('Central de Planos', () => {
     expect(screen.getByRole('region', { name: 'Ações de Emergência' }).tabIndex).toBe(0);
   });
   it('preserva todas as ações TI, exceto as substituições de responsáveis autorizadas', () => {
-    expect(createHash('sha256').update(JSON.stringify(areaPlans.TI!.acoes).replaceAll('Técnico de sobreaviso', 'Eduardo Lamim').replaceAll('Jucinei Andrade', 'Amandus Muller')).digest('hex')).toBe('0c77aa7c36e60bf9d3b7bc5d8b9061d5d5cb91d21abe31522b567f7a6e8ace09');
+    expect(createHash('sha256').update(JSON.stringify(areaPlans.TI!.acoes).replaceAll('Impacto Operacional', 'Impacto JBS').replaceAll('Técnico de sobreaviso', 'Eduardo Lamim').replaceAll('Jucinei Andrade', 'Amandus Muller')).digest('hex')).toBe('0c77aa7c36e60bf9d3b7bc5d8b9061d5d5cb91d21abe31522b567f7a6e8ace09');
   });
   it('6 áreas, metadados completos e planos TI e Operações disponíveis', () => {
     render(<PlansCenter secao="areas" impacto={{ dado: null, qualidade: 'desconhecido', confirmado_em: null, realtime: 'reconectando' }} />);
@@ -42,7 +42,7 @@ describe('Central de Planos', () => {
     const { container } = render(<AreaPlanView plan={areaPlans.TI!} />);
     expect(container.querySelectorAll('tbody tr')).toHaveLength(7);
     for (const action of areaPlans.TI!.acoes.filter(a => a['Nível'] === 'Emergência')) expect([...container.querySelectorAll('td')].some(e => e.textContent === action['Como faz'])).toBe(true);
-    fireEvent.click(screen.getByRole('tab', { name: 'Impacto JBS' }));
+    fireEvent.click(screen.getByRole('tab', { name: 'Impacto Operacional' }));
     expect(container.querySelectorAll('tbody tr')).toHaveLength(6);
     expect(screen.queryByText(areaPlans.TI!.acoes[0]!['Como faz'])).toBeNull();
     expect(container.querySelector('a[download]')).toBeNull();
@@ -52,7 +52,7 @@ describe('Central de Planos', () => {
     render(<AreaPlanView plan={{ ...areaPlans.TI!, acoes: [] }} />);
     expect(screen.getByText('Nenhuma ação cadastrada para Emergência.')).toBeTruthy();
     fireEvent.keyDown(screen.getByRole('tab', { name: 'Emergência' }), { key: 'ArrowRight' });
-    expect(screen.getByRole('tab', { name: 'Impacto JBS' }).getAttribute('aria-selected')).toBe('true');
+    expect(screen.getByRole('tab', { name: 'Impacto Operacional' }).getAttribute('aria-selected')).toBe('true');
   });
 });
 describe('Tema e ícone', () => {

@@ -20,16 +20,16 @@ export function adaptiveCard(event: Event) {
     // Teams owns the palette; Warning is its native yellow/amber, not a custom orange.
     color = after === 0 ? 'Good' : after === 3 ? 'Attention' : 'Warning';
   } else if (event.kind === 'impact_open') {
-    title = 'Impacto JBS confirmado'; color = 'Attention'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Confirmação manual autorizada de impacto físico no Terminal.';
+    title = 'Impacto Operacional confirmado'; color = 'Attention'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Confirmação manual autorizada de impacto físico no Terminal.';
   } else if (event.kind === 'impact_close') {
-    title = 'Impacto JBS encerrado'; color = 'Good'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Encerramento manual autorizado do Impacto JBS.';
+    title = 'Impacto Operacional encerrado'; color = 'Good'; category = 'CONDIÇÃO DO TERMINAL'; detail = 'Encerramento manual autorizado do Impacto Operacional.';
   }
   else throw new Error('Invalid event');
-  const text = (value: string) => ({ type: 'TextBlock', text: value, wrap: true });
+  const text = (value: string) => ({ type: 'TextBlock', text: value.replaceAll('Nível de Alerta JBS', 'Nível de Alerta').replaceAll('Impacto JBS', 'Impacto Operacional').replaceAll('Coleta JBS', 'Coleta Operacional'), wrap: true });
   return { type: 'message', attachments: [{ contentType: 'application/vnd.microsoft.card.adaptive', contentUrl: null, content: {
     $schema: 'http://adaptivecards.io/schemas/adaptive-card.json', type: 'AdaptiveCard', version: '1.2',
     body: [
-      { ...text('Monitoramento El Niño — JBS Terminais'), weight: 'Bolder', size: 'Medium' },
+      { ...text('Monitoramento El Niño'), weight: 'Bolder', size: 'Medium' },
       ...(event.is_test ? [{ ...text('[HML — TESTE] · SIMULAÇÃO — não representa ocorrência real.'), size: 'Small', spacing: 'Small' }] : []),
       { type: 'Container', style: color.toLowerCase(), spacing: 'Medium', items: [
         { ...text(category), weight: 'Bolder', size: 'Small', spacing: 'None' },
@@ -41,7 +41,7 @@ export function adaptiveCard(event: Event) {
       ...(event.kind === 'level' && !event.is_test && Array.isArray(b.reasons)
         ? b.reasons.filter((r): r is string => typeof r === 'string').slice(0, 12).map(r => text(r.slice(0, 600))) : []),
       ...(!event.is_test ? [{ ...text('Registro histórico. Publicação correspondente no painel não confirmada.'), isSubtle: true, size: 'Small', spacing: 'Small' }] : []),
-      ...(event.kind === 'level' && levels.indexOf(String(b.after)) < levels.indexOf(String(b.before)) ? [text('A redução do nível ambiental não encerra Impacto JBS.')] : []),
+      ...(event.kind === 'level' && levels.indexOf(String(b.after)) < levels.indexOf(String(b.before)) ? [text('A redução do nível ambiental não encerra Impacto Operacional.')] : []),
     ], actions: [{ type: 'Action.OpenUrl', title: 'Abrir painel', url: panel }],
   } }] };
 }

@@ -519,3 +519,6 @@ footer { max-width: 1320px; font-size: .78rem; padding: 22px 28px; color: #516c7
 .plans-tools .decision-map { margin:0; }
 .plans-tools > button, .plans-tools .decision-map > button { min-height:44px; }
 .activation-sequence li { padding:12px; border-bottom:1px solid var(--line); }
+
+/* Identification remains in the existing header grid, without an institutional logo. */
+.brand > div { border-left: 0; padding-left: 0; }

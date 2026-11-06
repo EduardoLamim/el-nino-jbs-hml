@@ -104,7 +104,7 @@ describe('Fase 08 — Pages e artefato', () => {
     await writeFile(join(d, 'assets/main.js'), '/* fixture */'); await writeFile(join(d, 'assets/main.css'), 'body {}');
     for (const n of [1, 2, 3]) await cp(`public/assets/alarm_level_${n}.mp3`, join(d, `assets/alarm_level_${n}.mp3`));
     await cp('public/assets/fluxo-acionamento-el-nino.png', join(d, 'assets/fluxo-acionamento-el-nino.png'));
-    await cp('public/assets/operacoes-posicionamento-equipamentos.jpg', join(d, 'assets/operacoes-posicionamento-equipamentos.jpg'));
+    await cp('public/assets/operacoes-posicionamento-equipamentos.png', join(d, 'assets/operacoes-posicionamento-equipamentos.png'));
     await writeFile(join(d, '.vite/manifest.json'), JSON.stringify({ 'index.html': { file: 'assets/main.js', css: ['assets/main.css'], dynamicImports: ['src/pages/TerritoryMap.tsx'] }, 'src/pages/TerritoryMap.tsx': { file: 'assets/main.js' } }));
     return d;
   }

@@ -20,9 +20,9 @@ const renderMap=()=>render(<TerritoryMap status={status} territorio={territorio}
 describe('Fase 07.1 — controles, lazy loading e falhas independentes',()=>{
   it('inicia em Simplificada sem consultas históricas',()=>{renderMap();expect((screen.getByRole('radio',{name:'Simplificada'}) as HTMLInputElement).checked).toBe(true);expect(fetch).not.toHaveBeenCalled();expect(state.engine.base).toHaveBeenCalledWith('simplificada');});
   it('troca de base preserva seleção e camadas',async()=>{
-    renderMap();await userEvent.selectOptions(screen.getByLabelText('Consultar estação'),'DC01');await userEvent.click(screen.getByRole('checkbox',{name:'Exposição agregada JBS'}));
+    renderMap();await userEvent.selectOptions(screen.getByLabelText('Consultar estação'),'DC01');await userEvent.click(screen.getByRole('checkbox',{name:'Exposição agregada'}));
     for(const base of ['Aérea','Cartográfica','Simplificada'])await userEvent.click(screen.getByRole('radio',{name:base}));
-    expect((screen.getByLabelText('Consultar estação') as HTMLSelectElement).value).toBe('DC01');expect((screen.getByRole('checkbox',{name:'Exposição agregada JBS'}) as HTMLInputElement).checked).toBe(false);
+    expect((screen.getByLabelText('Consultar estação') as HTMLSelectElement).value).toBe('DC01');expect((screen.getByRole('checkbox',{name:'Exposição agregada'}) as HTMLInputElement).checked).toBe(false);
   });
   it('carrega apenas histórico ativado, troca referência e desliga sem manter geometria',async()=>{
     renderMap();await userEvent.click(screen.getByRole('checkbox',{name:'Histórico de inundação'}));await waitFor(()=>expect(state.engine.history).toHaveBeenCalledWith('historico',expect.objectContaining({type:'FeatureCollection'})));

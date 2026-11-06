@@ -39,7 +39,7 @@ export function LevelAlert({ nivel, impactoAtivo = null, impactEvent, audioHost,
     if (!agravou && !ativou) return;
     setPendentes(lista => [...lista,
       ...(agravou ? [{ de: rotuloNivel(de), para: rotuloNivel(nivel), destino: nivel! }] : []),
-      ...(ativou ? [{ de: 'Impacto JBS inativo', para: 'Impacto JBS ativo', destino: 'emergencia' as const, impacto: true }] : []),
+      ...(ativou ? [{ de: 'Impacto Operacional inativo', para: 'Impacto Operacional ativo', destino: 'emergencia' as const, impacto: true }] : []),
     ]);
     let disposed = false;
     void audio.current?.play(ativou ? 'emergencia' : nivel!).then(ok => { if (!ok && !disposed) {
@@ -66,7 +66,7 @@ export function LevelAlert({ nivel, impactoAtivo = null, impactEvent, audioHost,
       {source !== 'real' && <p className="simulation-label">SIMULAÇÃO / HML — sem ocorrência operacional real</p>}
       <h2 id="alarm-title">{pendentes.some(p => p.impacto) ? 'IMPACTO NO TERMINAL CONFIRMADO' : 'NÍVEL OPERACIONAL ALTERADO'}</h2>
       <ul>{pendentes.map((p, i) => <li key={i}><strong>{p.de} → {p.para}</strong>{p.impacto && <p>Impacto físico no Terminal confirmado.</p>}</li>)}</ul>
-      <p>Nível atual: {rotuloNivel(nivel)}. {impactoAtivo === true ? 'Impacto JBS ativo.' : impactoAtivo === false ? 'Impacto JBS inativo.' : 'Estado atual do Impacto JBS não confirmado.'} Consulte o Plano de Ação. Reconhecer este aviso não altera o nível.</p>
+      <p>Nível atual: {rotuloNivel(nivel)}. {impactoAtivo === true ? 'Impacto Operacional ativo.' : impactoAtivo === false ? 'Impacto Operacional inativo.' : 'Estado atual do Impacto Operacional não confirmado.'} Consulte o Plano de Ação. Reconhecer este aviso não altera o nível.</p>
       <p id="alarm-instruction">Reconheça a ocorrência para fechar este aviso.</p>
       {!habilitado && <p>Som desabilitado ou bloqueado. Após reconhecer, habilite o som no header.</p>}
       <div className="alarm-actions"><button type="button" disabled={!playing} onClick={() => audio.current?.stop()}>Parar som</button>

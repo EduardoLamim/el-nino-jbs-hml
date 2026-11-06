@@ -1,4 +1,4 @@
-/** Valores fornecidos pelo responsável, conforme Plano de Contingência JBS. Dados públicos autorizados. */
+/** Valores fornecidos pelo responsável, conforme Plano de Contingência Operacional. Dados públicos autorizados. */
 interface ContactBase { id: string; name: string; phone: string }
 export interface ExternalContact extends ContactBase { category: 'external'; travelMinutes: number }
 export interface InternalContact extends ContactBase { category: 'internal' }

@@ -69,7 +69,9 @@ def import_plan(source):
         actions, seen = [], set()
         for number, values in rows[1:]:
             level, order = values[:2]
-            if level not in ('Emergência', 'Impacto JBS'):
+            if level == 'Impacto JBS':
+                level = values[0] = 'Impacto Operacional'
+            if level not in ('Emergência', 'Impacto Operacional'):
                 raise ValueError(f'Linha {number}: Nível inválido.')
             if not re.fullmatch(r'[1-9]\d*', order):
                 raise ValueError(f'Linha {number}: Ordem deve ser inteiro positivo.')

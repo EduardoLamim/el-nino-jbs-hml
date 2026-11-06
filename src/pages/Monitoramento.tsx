@@ -35,7 +35,7 @@ export function Rios({ status }: { status: Status }) {
     <p className="meta">Leitura oficial: {horario(b?.medido_em)}</p>
     {(!b || b.qualidade === 'indisponivel') && <p>Dado indisponível.</p>}{stale && <p className="stale">Sem dado recente.</p>}
     <p className="meta">Classificação visual: abaixo de 3 m Normalidade; a partir de 3 m Atenção, 6 m Alerta e 8 m Emergência. Tendência calculada entre as duas últimas leituras oficiais disponíveis.</p>
-    <p className="meta">Indicador informativo. Não participa do nível operacional JBS nem determina condições em Itajaí.</p><a href={blumenauUrl} target="_blank" rel="noreferrer">Fonte: Defesa Civil de Blumenau</a>
+    <p className="meta">Indicador informativo. Não participa do nível operacional nem determina condições em Itajaí.</p><a href={blumenauUrl} target="_blank" rel="noreferrer">Fonte: Defesa Civil de Blumenau</a>
   </article></section></>;
 }
 

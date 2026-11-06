@@ -17,7 +17,7 @@ it('cadastra seis ações nas duas categorias com metadados oficiais',()=>{
   expect(plan.acoes).toHaveLength(6);
   const {container}=view();
   expect(screen.getByText('Diego Rodrigo Juliani')).toBeTruthy();
-  for(const level of ['Emergência','Impacto JBS']) {
+  for(const level of ['Emergência','Impacto Operacional']) {
     fireEvent.click(screen.getByRole('tab',{name:level}));
     expect(container.querySelectorAll('tr.area-action')).toHaveLength(3);
     for(const action of plan.acoes.filter(a=>a['Nível']===level)) {
@@ -27,8 +27,8 @@ it('cadastra seis ações nas duas categorias com metadados oficiais',()=>{
   }
   expect(plan.acoes[2]!['Onde faz']).toBe('Pátios / Cais ');
 });
-it('mantém JPEG original byte a byte, sem recompressão',()=>{
-  expect(createHash('sha256').update(readFileSync('public/assets/operacoes-posicionamento-equipamentos.jpg')).digest('hex')).toBe('4690494854f45e79fe6da7fad68e1b6246994fc3419f6770787382e68de42ead');
+it('mantém asset neutro aprovado, com edição localizada e pixels externos preservados',()=>{
+  expect(createHash('sha256').update(readFileSync('public/assets/operacoes-posicionamento-equipamentos.png')).digest('hex')).toBe('1abf53162582bc9aabb19bbeca90f74ba28eb10fb521b3e793b4c4225592a4aa');
 });
 it('abre diretamente o mapa oficial no botão principal, com zoom e foco',()=>{
   view();
@@ -41,7 +41,7 @@ it('abre diretamente o mapa oficial no botão principal, com zoom e foco',()=>{
   const dialog=screen.getByRole('dialog',{name:'Mapa de Decisões do Terminal'});
   expect(within(dialog).getByText(/Diego Rodrigo Juliani.*26\/10\/2026/)).toBeTruthy();
   const img=within(dialog).getByAltText('Mapa de Decisões do Terminal') as HTMLImageElement;
-  expect(img.getAttribute('src')).toContain('assets/operacoes-posicionamento-equipamentos.jpg');
+  expect(img.getAttribute('src')).toContain('assets/operacoes-posicionamento-equipamentos.png');
   fireEvent.load(img);
   fireEvent.click(within(dialog).getByRole('button',{name:'Ampliar zoom'}));
   expect(img.style.width).toBe('150%');

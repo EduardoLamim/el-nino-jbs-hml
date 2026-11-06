@@ -29,36 +29,36 @@ beforeEach(() => {
 });
 afterEach(cleanup);
 
-describe('Fase 06 — Dashboard e Impacto JBS', () => {
+describe('Fase 06 — Dashboard e Impacto Operacional', () => {
   it.each(['normalidade', 'atencao', 'alerta', 'emergencia'] as const)('apresenta nível %s sem recalcular alertas', async nivel => {
     s.nivel_jbs.nivel = nivel;
     render(<PainelOperacional status={s} />);
     await screen.findByText('Nenhum impacto físico confirmado.');
-    expect(screen.getByRole('region', { name: 'Nível de Alerta JBS' }).className).toContain(`level-${nivel}`);
+    expect(screen.getByRole('region', { name: 'Nível de Alerta' }).className).toContain(`level-${nivel}`);
     expect(screen.queryByText('A condição ambiental é sustentada pelas fontes abaixo.')).toBeNull();
     expect(screen.getByRole('heading', { name: 'Condição do Terminal' })).toBeTruthy();
   });
   it('preto domina, mantém nível ambiental e não duplica condição do terminal', async () => {
     ctx.store = new ImpactoStore({ consultar: async () => ativo, executar: vi.fn(), assinar: () => () => {} });
     render(<PainelOperacional status={s} />);
-    await screen.findByRole('heading', { name: '⚫ IMPACTO JBS' });
+    await screen.findByRole('heading', { name: '⚫ IMPACTO OPERACIONAL' });
     expect(screen.queryByRole('heading', { name: 'Condição do Terminal' })).toBeNull();
-    expect(screen.queryByRole('region', { name: 'Nível de Alerta JBS' })).toBeNull();
+    expect(screen.queryByRole('region', { name: 'Nível de Alerta' })).toBeNull();
     expect(screen.getByText(/Condição ambiental:/)).toBeTruthy();
     expect(screen.getByText(/Alagamento no Terminal/)).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Encerrar Impacto JBS' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Encerrar Impacto Operacional' })).toBeTruthy();
   });
   it('preserva preto com cache degradado e consulta falhando', async () => {
     ctx.store = new ImpactoStore({ consultar: async () => { throw Error('offline'); }, executar: vi.fn(), assinar: () => () => {} },
       { ler: () => JSON.stringify({ versao: 1, dado: ativo, confirmado_em: '2020-01-01T00:00:00Z' }), gravar: vi.fn() });
     render(<PainelOperacional status={s} />);
     expect(await screen.findByText(/Último estado conhecido preservado; confirmação atual pendente/)).toBeTruthy();
-    expect(screen.getByRole('heading', { name: '⚫ IMPACTO JBS' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: '⚫ IMPACTO OPERACIONAL' })).toBeTruthy();
   });
   it('cliente sem confirmação não afirma ausência de impacto', async () => {
     ctx.store = new ImpactoStore({ consultar: async () => { throw Error('offline'); }, executar: vi.fn(), assinar: () => () => {} });
     render(<PainelOperacional status={s} />);
-    expect(await screen.findByText('Estado operacional JBS indisponível. Não foi possível verificar se existe Impacto JBS ativo.')).toBeTruthy();
+    expect(await screen.findByText('Estado operacional indisponível. Não foi possível verificar se existe Impacto Operacional ativo.')).toBeTruthy();
     expect(screen.queryByText('Nenhum impacto físico confirmado.')).toBeNull();
   });
   it('nível ambiental nulo nunca vira Normalidade', async () => {
@@ -190,7 +190,7 @@ describe('Fase 06 — Chuva, previsão, barragens e navegação', () => {
     expect(screen.getByRole('link', { name: 'Chuva' }).getAttribute('aria-current')).toBe('page');
     expect(screen.getByRole('region', { name: 'Acumulados de chuva por estação' }).tabIndex).toBe(0);
   });
-  it('troca de página preserva uma instância de Impacto JBS', async () => {
+  it('troca de página preserva uma instância de Impacto Operacional', async () => {
     const iniciar = vi.spyOn(ctx.store!, 'iniciar'); const parar = vi.spyOn(ctx.store!, 'parar');
     render(<App />); await screen.findByText('Nenhum impacto físico confirmado.');
     await act(async () => { window.location.hash = '#/monitoramento/barragens'; window.dispatchEvent(new Event('hashchange')); });
@@ -203,7 +203,7 @@ describe('Fase 06 — Chuva, previsão, barragens e navegação', () => {
   });
   it('erro no carregamento ambiental preserva a apresentação do impacto ativo', async () => {
     ctx.dados = 'erro'; ctx.store = new ImpactoStore({ consultar: async () => ativo, executar: vi.fn(), assinar: () => () => {} });
-    render(<App />); expect(await screen.findByRole('heading', { name: '⚫ IMPACTO JBS' })).toBeTruthy();
+    render(<App />); expect(await screen.findByRole('heading', { name: '⚫ IMPACTO OPERACIONAL' })).toBeTruthy();
     expect(screen.getByRole('alert')).toBeTruthy(); expect(screen.getByText(/Desconhecido — dados insuficientes/)).toBeTruthy();
   });
 });

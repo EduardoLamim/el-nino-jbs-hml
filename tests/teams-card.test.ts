@@ -13,7 +13,7 @@ describe('Teams renderer — apresentação', () => {
     expect(value).toContain('→'); expect(value).toContain('[HML — TESTE]'); expect(value).toContain('SIMULAÇÃO');
   });
   it.each([['impact_open','Attention','confirmado'],['impact_close','Good','encerrado']] as const)('ação manual %s', (kind,color,label) => {
-    const value=JSON.stringify(card({...base,kind})); expect(value).toContain(`Impacto JBS ${label}`);
+    const value=JSON.stringify(card({...base,kind})); expect(value).toContain(`Impacto Operacional ${label}`);
     expect(value).toContain(`"color":"${color}"`); expect(value).toContain('manual autorizad');
   });
   it('formata data local, não expõe auditoria e não altera evento', () => {

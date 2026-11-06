@@ -17,15 +17,15 @@ export function Gatilhos({ status, titulo = true }: { status: Status; titulo?: b
 }
 
 export function QualidadeDados({ status }: { status: Status }) {
-  return <div className="collection-time">Coleta JBS: {horario(status.atualizado_em)} · Horários de Brasília</div>;
+  return <div className="collection-time">Coleta Operacional: {horario(status.atualizado_em)} · Horários de Brasília</div>;
 }
 
 export function PainelOperacional({ status, onEstado, onAtivacao }: { status?: Status; onEstado?: (estado: EstadoImpacto) => void; onAtivacao?: () => void }) {
   const nivel = status?.nivel_jbs.nivel ?? null;
   const contexto = <><p className="underlying">Condição ambiental: <strong>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</strong></p>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}</>;
-  const painel = <section className={`operational level-${nivel ?? 'desconhecido'}`} aria-label="Nível de Alerta JBS">
-    <div className="level-overview"><p className="eyebrow">Nível de Alerta JBS</p><h2>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</h2>
+  const painel = <section className={`operational level-${nivel ?? 'desconhecido'}`} aria-label="Nível de Alerta">
+    <div className="level-overview"><p className="eyebrow">Nível de Alerta</p><h2>{nivel ? `${simbolos[nivel]} ` : ''}{rotuloNivel(nivel)}</h2>
     {(nivel === 'normalidade' || !nivel) && <p className="lead">{nivel === 'normalidade' ? 'Condição ambiental em Normalidade na última avaliação disponível.' : 'Não foi possível determinar a condição ambiental.'}</p>}</div>
     {status && <><Gatilhos status={status} /><QualidadeDados status={status} /></>}
   </section>;

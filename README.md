@@ -1,8 +1,8 @@
-# Monitoramento El Niño — JBS Terminais
+# Monitoramento El Niño
 
 Painel estático de apoio à decisão em Itajaí/SC. Fases 01–07.1 preservadas; Fase 08 prepara atualização operacional automatizada e GitHub Pages. Homologação final de falhas/HML e refinamento visual continuam fora desta etapa.
 
-Defesa Civil + Epagri/Ciram → coletores aprovados → normalização → motor com memória anterior → status.json validado → frontend React. Supabase mantém exclusivamente o Impacto JBS manual. OpenLayers apresenta as bases Aérea, Cartográfica e Simplificada, bairros, estações, exposição agregada e geometrias históricas locais.
+Defesa Civil + Epagri/Ciram → coletores aprovados → normalização → motor com memória anterior → status.json validado → frontend React. Supabase mantém exclusivamente o Impacto Operacional manual. OpenLayers apresenta as bases Aérea, Cartográfica e Simplificada, bairros, estações, exposição agregada e geometrias históricas locais.
 
 ## Executar
 
@@ -34,7 +34,7 @@ Consulte o [guia de operação](docs/operacao.md) para configurar Pages, permiss
 - [Fase 07.1 — mapa geoespacial](docs/fase-07-1-implementacao.md).
 - [Fase 07 — baseline funcional](docs/fase-07.md).
 - [Fase 06 — Dashboard e Monitoramento](docs/fase-06.md).
-- [Fase 05 — Impacto JBS e Supabase](docs/fase-05.md).
+- [Fase 05 — Impacto Operacional e Supabase](docs/fase-05.md).
 - [Fase 04 — base territorial e agregados](docs/fase-04.md).
 - [Fase 03 — motor e histerese](docs/fase-03.md).
 

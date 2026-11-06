@@ -17,7 +17,7 @@ try{for(const width of [1440,768,390,320]){
    assert(totals&&heading); if(width>850)assert(Math.abs(totals.y-heading.y)<=4,'Concentrações devem alinhar ao topo dos indicadores');
    else assert(heading.y>=totals.y+totals.height,'Mobile preserva concentrações abaixo dos indicadores');
   }
-  if(route.startsWith('monitoramento/'))assert(!visible.includes('Coleta JBS:'));
+  if(route.startsWith('monitoramento/'))assert(!visible.includes('Coleta Operacional:'));
   if(route==='monitoramento/chuva'){assert(!visible.includes('Valores da última coleta'));assert(await p.getByRole('heading',{name:'Chuva — Estações',exact:true}).isVisible());assert(await p.getByRole('columnheader',{name:'Atualização',exact:true}).isVisible());}
   if(route==='monitoramento/previsao'){
    const h=await p.locator('.forecast-section > h2').boundingBox(), source=await p.locator('.forecast-section > .source-context').boundingBox();

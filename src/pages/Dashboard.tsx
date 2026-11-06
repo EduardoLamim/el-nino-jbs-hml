@@ -29,7 +29,7 @@ export function Dashboard({ status, territorio }: { status: Status; territorio: 
     </section>
     <ResumoChuva status={status} />
     <PrevisaoDias previsao={status.previsao} resumo />
-    <section className="card exposure"><h2>Exposição Territorial JBS</h2><p className="source-context">Contexto territorial</p>
+    <section className="card exposure"><h2>Exposição Territorial</h2><p className="source-context">Contexto territorial</p>
       <div className="exposure-totals"><p><strong>{territorio.resumo_jbs.colaboradores_itajai}</strong> colaboradores residentes em Itajaí</p><p><strong>{territorio.resumo_jbs.colaboradores_outros_municipios}</strong> colaboradores residentes fora de Itajaí</p></div>
       <h3>Principais concentrações de residentes</h3><ul className="concentrations">{concentracoes.map(b => <li key={b.id}><span>{b.nome}</span><strong>{b.colaboradores_jbs} residentes</strong></li>)}</ul>
       <p>Informações territoriais representam exposição e vulnerabilidade histórica e não significam impacto real atual.</p>

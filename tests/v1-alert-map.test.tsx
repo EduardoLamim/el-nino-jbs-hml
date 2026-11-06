@@ -93,7 +93,7 @@ it('Emergência e Impacto simultâneos exibem ambos os avisos e solicitam soment
   rerender(<LevelAlert nivel="emergencia" impactoAtivo={true} />);
   expect(play).toHaveBeenCalledExactlyOnceWith('emergencia');
   expect(screen.getByText('Normalidade → Emergência')).toBeTruthy();
-  expect(screen.getByText('Impacto JBS inativo → Impacto JBS ativo')).toBeTruthy();
+  expect(screen.getByText('Impacto Operacional inativo → Impacto Operacional ativo')).toBeTruthy();
 });
 it('falha de autoplay não suprime aviso de Impacto e ausência temporária não reseta referência', async () => {
   play.mockResolvedValue(false);
