@@ -22,3 +22,25 @@ describe('Teams — reconciliação independente', () => {
     expect(trustedSnapshotCommit(bot,'Atualizar snapshot operacional validado',['public/data/status.json','src/motor.ts'])).toBe(false);
   });
 });
+
+it('retoma lote a partir do checkpoint confirmado, sem saltar snapshots nem criar baseline',async()=>{
+ const a='a'.repeat(40),b='b'.repeat(40),c='c'.repeat(40);
+ let cursor=a;
+ const call=vi.fn(async(action:string,payload?:Record<string,unknown>)=>{
+   if(action==='checkpoint')return {commit:cursor};
+   if(action==='snapshot'){expect(payload?.previous_commit).toBe(cursor);cursor=payload!.commit as string;return {};}
+   return action==='impacts'?{reconciled:0}:{status:'idle'};
+ });
+ const deps={call,commits:(sha:string)=>sha===a?[b,c]:[c],snapshot:async()=>({collected_at:'2026-10-26T16:08:30Z',level:'atencao',since:null,reasons:[]}),maxSnapshots:1};
+ expect((await reconcile(deps)).snapshots).toBe('partial');expect(cursor).toBe(b);
+ expect((await reconcile(deps)).snapshots).toBe('ok');expect(cursor).toBe(c);
+ expect(call.mock.calls.filter(([action])=>action==='snapshot')).toHaveLength(2);
+ expect(call.mock.calls.every(([action])=>['checkpoint','snapshot','impacts','drain'].includes(action))).toBe(true);
+});
+it('falha de prova nao avanca checkpoint nem persiste o snapshot',async()=>{
+ const call=vi.fn(async(action:string)=>action==='checkpoint'?{commit:'a'.repeat(40)}:action==='impacts'?{reconciled:0}:{status:'idle'});
+ const diagnostic=vi.fn();
+ const result=await reconcile({call,commits:()=>['b'.repeat(40)],snapshot:async()=>{throw new Error('private');},diagnostic});
+ expect(result.snapshots).toBe('blocked');expect(call.mock.calls.some(([action])=>action==='snapshot')).toBe(false);
+ expect(diagnostic).toHaveBeenCalledWith('snapshot_or_checkpoint_rejected');
+});

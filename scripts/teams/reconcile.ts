@@ -1,3 +1,5 @@
+import { createProvenanceVerifier, ProvenanceError } from './snapshot-provenance';
+import { requireHmlRepository } from '../automation/hml-repository';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { validarStatusPublicavel } from '../automation/status';
@@ -17,6 +19,9 @@ export async function reconcile(deps: {
   call: (action: string, payload?: Record<string, unknown>) => Promise<unknown>;
   commits: (cursor: string) => string[];
   snapshot: (sha: string) => Promise<Snapshot>;
+  maxSnapshots?: number;
+  deadline?: number;
+  diagnostic?: (category: string) => void;
 }) {
   // Streams are independent: a damaged Git sequence must not prevent Impacto reconciliation or pending delivery.
   const outcomes: Record<string, string> = {};
@@ -24,13 +29,20 @@ export async function reconcile(deps: {
     const cursor = await deps.call('checkpoint') as { commit: string | null };
     if (!cursor.commit || !/^[0-9a-f]{40}$/.test(cursor.commit)) throw new Error('Explicit baseline required');
     let previous = cursor.commit;
-    for (const commit of deps.commits(previous)) {
+    const commits = deps.commits(previous);
+    let processed = 0;
+    for (const commit of commits) {
+      if (processed >= (deps.maxSnapshots ?? Infinity) || Date.now() >= (deps.deadline ?? Infinity)) break;
       const snapshot = await deps.snapshot(commit);
       await deps.call('snapshot', { commit, previous_commit: previous, snapshot, pages_confirmed: false });
       previous = commit;
+      processed++;
     }
-    outcomes.snapshots = 'ok';
-  } catch { outcomes.snapshots = 'blocked'; }
+    outcomes.snapshots = processed === commits.length ? 'ok' : 'partial';
+  } catch (error) {
+    outcomes.snapshots = 'blocked';
+    deps.diagnostic?.(error instanceof ProvenanceError ? error.category : 'snapshot_or_checkpoint_rejected');
+  }
   try {
     for (let page = 0; page < 10; page++) {
       const result = await deps.call('impacts') as { reconciled: number };
@@ -49,27 +61,32 @@ export async function reconcile(deps: {
 }
 
 async function main() {
-  if (process.env.GITHUB_REPOSITORY !== 'EduardoLamim/el-nino-jbs-hml') throw new Error('HML repository required');
+  const repository = requireHmlRepository(process.env);
   const credential = process.env.TEAMS_WAKE_TOKEN_HML ?? '';
   const github = process.env.GITHUB_TOKEN ?? '';
   if (credential.length < 64 || !github) throw new Error('Missing notification credential');
-  const call = async (action: string, payload = {}) => {
+  const progress: { snapshots: number; checkpoint: string | null } = { snapshots: 0, checkpoint: null };
+  const call = async (action: string, payload: Record<string, unknown> = {}) => {
     const r = await fetch('https://ufeahglxwygvlugfsopi.supabase.co/functions/v1/teams-notifications', {
       method: 'POST', headers: { Authorization: `Bearer ${credential}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ action, payload }), signal: AbortSignal.timeout(40_000), redirect: 'error',
     });
     if (!r.ok) { await r.body?.cancel(); throw new Error('Notification endpoint failed'); }
-    return r.json();
+    const response = await r.json();
+    if (action === 'snapshot') { progress.snapshots++; progress.checkpoint = payload.commit as string; }
+    return response;
   };
   const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024, stdio: ['ignore','pipe','pipe'] }).trim();
   const api = async (path: string) => {
-    const r = await fetch(`https://api.github.com/repos/EduardoLamim/el-nino-jbs-hml/${path}`, {
+    const r = await fetch(`https://api.github.com/repos/${repository}/${path}`, {
       headers: { Authorization: `Bearer ${github}`, Accept: 'application/vnd.github+json' }, signal: AbortSignal.timeout(15_000), redirect: 'error',
     });
-    if (!r.ok) { await r.body?.cancel(); throw new Error('Provenance lookup failed'); }
+    if (!r.ok) { await r.body?.cancel(); throw new ProvenanceError('github_api_failure'); }
     return r.json();
   };
-  const result = await reconcile({ call,
+  const verify = createProvenanceVerifier(api);
+  const result = await reconcile({ call, maxSnapshots: 100, deadline: Date.now() + 6 * 60_000,
+    diagnostic: category => console.error(JSON.stringify({ snapshots_error: category })),
     commits(cursor) {
       git('merge-base', '--is-ancestor', cursor, 'HEAD');
       return git('log', '--first-parent', '--reverse', '--format=%H', `${cursor}..HEAD`, '--', 'public/data/status.json').split('\n').filter(Boolean);
@@ -77,23 +94,13 @@ async function main() {
     async snapshot(sha) {
       const [author, subject, committed] = git('show','-s','--format=%ae%n%s%n%cI',sha).split('\n');
       if (!trustedSnapshotCommit(author!, subject!, git('diff-tree','--no-commit-id','--name-only','-r',sha).split('\n'))) throw new Error('Untrusted snapshot');
-      // Verify the persistence step, not the overall job: later artifact upload/Pages can fail.
-      const at = Date.parse(committed!);
-      const start = new Date(at - 24 * 3600_000).toISOString(), end = new Date(at + 3600_000).toISOString();
-      const runs = await api(`actions/workflows/deploy-pages.yml/runs?event=workflow_dispatch&branch=main&per_page=100&created=${encodeURIComponent(`${start}..${end}`)}`) as { workflow_runs: { id: number; run_started_at: string; head_repository: { full_name: string } }[] };
-      let verified = false;
-      for (const run of runs.workflow_runs.filter(r => r.head_repository.full_name === 'EduardoLamim/el-nino-jbs-hml' && Math.abs(at - Date.parse(r.run_started_at)) < 15 * 60_000)) {
-        const jobs = await api(`actions/runs/${run.id}/jobs?per_page=100`) as { jobs: { name: string; steps: { name: string; conclusion: string; started_at: string; completed_at: string }[] }[] };
-        if (jobs.jobs.some(j => j.name === 'prepare' && j.steps.some(step =>
-          step.name === 'Persistir somente o snapshot validado para o próximo ciclo' && step.conclusion === 'success'
-          && Date.parse(step.started_at) <= at && at <= Date.parse(step.completed_at)))) { verified = true; break; }
-      }
-      if (!verified) throw new Error('No pipeline evidence for snapshot');
+      await verify(Date.parse(committed!));
       return projectSnapshot(JSON.parse(git('show',`${sha}:public/data/status.json`)));
     },
   });
   console.log(JSON.stringify(result));
-  if (Object.values(result).some(s => s !== 'ok')) process.exitCode = 1;
+  console.log(JSON.stringify({ reconciliation_progress: progress }));
+  if (Object.values(result).some(s => s === 'blocked')) process.exitCode = 1;
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch(() => { console.error('Notification reconciliation failed (sanitized). Operational pipeline unaffected.'); process.exitCode = 1; });
