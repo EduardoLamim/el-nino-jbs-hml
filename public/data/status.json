@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-11-13T09:33:07.243Z",
+  "atualizado_em": "2026-11-13T09:43:09.670Z",
   "nivel_jbs": {
     "nivel": "normalidade",
     "desde": "2026-11-13T09:11:35.536000+00:00",
@@ -8,7 +8,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-11-13T09:33:07.243Z",
+    "avaliado_em": "2026-11-13T09:43:09.670Z",
     "situacao_oficial": {
       "nivel": "normalidade",
       "desde": "2026-11-10T06:45:07-03:00",
@@ -10396,7 +10396,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-11-13T09:33:07.080Z",
+    "coletado_em": "2026-11-13T09:43:09.514Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -10404,14 +10404,14 @@
         "periodo": null,
         "condicao": "Sol com muitas nuvens",
         "descricao": "Sol com muitas nuvens",
-        "temperatura_min_c": 18,
+        "temperatura_min_c": 17,
         "temperatura_max_c": 27,
         "probabilidade_precipitacao_percentual": null,
         "precipitacao_mm": 0,
         "vento": {
-          "direcao": "E/NNW",
+          "direcao": "ENE/WSW",
           "velocidade_media_kmh": 5,
-          "rajada_kmh": 15
+          "rajada_kmh": 18
         },
         "umidade": {
           "relativa_percentual": null,
@@ -10423,14 +10423,14 @@
       {
         "data": "2026-11-14",
         "periodo": null,
-        "condicao": "Nebulosidade variável e chuva isolada",
-        "descricao": "Nebulosidade variável e chuva isolada",
-        "temperatura_min_c": 17,
-        "temperatura_max_c": 27,
+        "condicao": "Sol com algumas nuvens",
+        "descricao": "Sol com algumas nuvens",
+        "temperatura_min_c": 16,
+        "temperatura_max_c": 26,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.5,
+        "precipitacao_mm": 0.8,
         "vento": {
-          "direcao": "ENE/NNW",
+          "direcao": "ENE/WNW",
           "velocidade_media_kmh": 5,
           "rajada_kmh": 16
         },
@@ -10447,13 +10447,13 @@
         "condicao": "Nebulosidade variável e chuva isolada",
         "descricao": "Nebulosidade variável e chuva isolada",
         "temperatura_min_c": 18,
-        "temperatura_max_c": 28,
+        "temperatura_max_c": 21,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 1.1,
+        "precipitacao_mm": 3.4,
         "vento": {
-          "direcao": "ENE/N",
-          "velocidade_media_kmh": 4,
-          "rajada_kmh": 14
+          "direcao": "NE/N",
+          "velocidade_media_kmh": 2,
+          "rajada_kmh": 17
         },
         "umidade": {
           "relativa_percentual": null,
@@ -10465,16 +10465,37 @@
       {
         "data": "2026-11-16",
         "periodo": null,
-        "condicao": "Sol com muitas nuvens",
-        "descricao": "Sol com muitas nuvens",
-        "temperatura_min_c": 19,
-        "temperatura_max_c": 28,
+        "condicao": "Nebulosidade variável e chuva isolada",
+        "descricao": "Nebulosidade variável e chuva isolada",
+        "temperatura_min_c": 18,
+        "temperatura_max_c": 24,
         "probabilidade_precipitacao_percentual": null,
-        "precipitacao_mm": 0.1,
+        "precipitacao_mm": 2,
         "vento": {
-          "direcao": "WSW/NNW",
+          "direcao": "S/S",
+          "velocidade_media_kmh": 4,
+          "rajada_kmh": 15
+        },
+        "umidade": {
+          "relativa_percentual": null,
+          "minima_percentual": null,
+          "maxima_percentual": null
+        },
+        "fenomenos": []
+      },
+      {
+        "data": "2026-11-17",
+        "periodo": null,
+        "condicao": "Nebulosidade variável e chuva isolada",
+        "descricao": "Nebulosidade variável e chuva isolada",
+        "temperatura_min_c": 19,
+        "temperatura_max_c": 26,
+        "probabilidade_precipitacao_percentual": null,
+        "precipitacao_mm": 0.8,
+        "vento": {
+          "direcao": "ENE/N",
           "velocidade_media_kmh": 5,
-          "rajada_kmh": 18
+          "rajada_kmh": 19
         },
         "umidade": {
           "relativa_percentual": null,
@@ -10488,7 +10509,7 @@
   "blumenau": {
     "nivel_m": 3.59,
     "medido_em": "2026-11-13T06:00:00-03:00",
-    "coletado_em": "2026-11-13T09:33:04.548Z",
+    "coletado_em": "2026-11-13T09:43:07.298Z",
     "classificacao_original": "Observação",
     "nivel": "atencao",
     "tendencia": "subindo",
@@ -10516,7 +10537,7 @@
       "qualidade": null,
       "atualizado_em": "2026-11-10T09:32:27-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.566Z",
+      "coletado_em": "2026-11-13T09:43:07.317Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10525,7 +10546,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-11-13T09:33:04.566Z",
+          "coletado_em": "2026-11-13T09:43:07.317Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10538,14 +10559,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.588Z",
+      "coletado_em": "2026-11-13T09:43:07.345Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-11-13T09:33:04.588Z",
+          "coletado_em": "2026-11-13T09:43:07.345Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10558,7 +10579,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.589Z",
+      "coletado_em": "2026-11-13T09:43:07.346Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10567,7 +10588,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-11-13T09:33:04.589Z",
+          "coletado_em": "2026-11-13T09:43:07.346Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10580,7 +10601,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.590Z",
+      "coletado_em": "2026-11-13T09:43:07.347Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10589,7 +10610,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-11-13T09:33:04.590Z",
+          "coletado_em": "2026-11-13T09:43:07.347Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10602,14 +10623,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.591Z",
+      "coletado_em": "2026-11-13T09:43:07.348Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-11-13T09:33:04.591Z",
+          "coletado_em": "2026-11-13T09:43:07.348Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10622,7 +10643,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-13T09:33:04.592Z",
+      "coletado_em": "2026-11-13T09:43:07.349Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10632,14 +10653,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-11-13T09:33:04.592Z",
+          "coletado_em": "2026-11-13T09:43:07.349Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-11-13T09:33:07.080Z",
+          "coletado_em": "2026-11-13T09:43:09.514Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
