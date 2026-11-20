@@ -1,23 +1,33 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-11-20T12:03:03.801Z",
+  "atualizado_em": "2026-11-20T12:12:50.787Z",
   "nivel_jbs": {
-    "nivel": "normalidade",
-    "desde": "2026-11-20T04:11:36.220000+00:00",
-    "gatilhos": []
+    "nivel": "atencao",
+    "desde": "2026-11-20T09:09:37-03:00",
+    "gatilhos": [
+      {
+        "tipo": "situacao_oficial",
+        "origem": "Defesa Civil de Itajaí",
+        "severidade": "atencao",
+        "descricao": "Situação oficial da Defesa Civil de Itajaí em Atenção.",
+        "atualizado_em": "2026-11-20T09:09:37-03:00",
+        "stale": false,
+        "motivo": null
+      }
+    ]
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-11-20T12:03:03.801Z",
+    "avaliado_em": "2026-11-20T12:12:50.787Z",
     "situacao_oficial": {
-      "nivel": "normalidade",
-      "desde": "2026-11-10T06:45:07-03:00",
+      "nivel": "atencao",
+      "desde": "2026-11-20T09:09:37-03:00",
       "stale": false,
       "motivo": null,
       "ultima_valida": {
-        "flag": "Normalidade",
-        "conteudo": "Fique atento aos avisos!\r\nEmergência, ligue 199 ou 193.\r\nSala Monitoramento e Alerta/Univali.",
-        "atualizado_em": "2026-11-20T00:44:54-03:00",
+        "flag": "Atenção",
+        "conteudo": "Nas próximas horas, há risco de tempestades no Vale do Itajaí e Litoral, acompanhadas de possibilidade de alagamentos pontuais, queda localizada de granizo e rajadas fortes de vento. Fiquem atentos aos Alertas.\r\n\r\nEmergência, ligue 199 ou 193.\r\n\r\nSala Monitoramento e Alerta/",
+        "atualizado_em": "2026-11-20T09:09:37-03:00",
         "qualidade": null
       }
     },
@@ -300,9 +310,9 @@
     }
   },
   "situacao_oficial": {
-    "flag": "Normalidade",
-    "conteudo": "Fique atento aos avisos!\r\nEmergência, ligue 199 ou 193.\r\nSala Monitoramento e Alerta/Univali.",
-    "atualizado_em": "2026-11-20T00:44:54-03:00",
+    "flag": "Atenção",
+    "conteudo": "Nas próximas horas, há risco de tempestades no Vale do Itajaí e Litoral, acompanhadas de possibilidade de alagamentos pontuais, queda localizada de granizo e rajadas fortes de vento. Fiquem atentos aos Alertas.\r\n\r\nEmergência, ligue 199 ou 193.\r\n\r\nSala Monitoramento e Alerta/",
+    "atualizado_em": "2026-11-20T09:09:37-03:00",
     "qualidade": null
   },
   "alertas_oficiais": null,
@@ -9906,7 +9916,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-11-20T12:03:03.619Z",
+    "coletado_em": "2026-11-20T12:12:50.617Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -10019,7 +10029,7 @@
   "blumenau": {
     "nivel_m": 2.33,
     "medido_em": "2026-11-20T09:00:00-03:00",
-    "coletado_em": "2026-11-20T12:03:02.174Z",
+    "coletado_em": "2026-11-20T12:12:49.152Z",
     "classificacao_original": "Normalidade",
     "nivel": "normalidade",
     "tendencia": "descendo",
@@ -10045,9 +10055,9 @@
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
       "qualidade": null,
-      "atualizado_em": "2026-11-20T00:44:54-03:00",
+      "atualizado_em": "2026-11-20T09:09:37-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.193Z",
+      "coletado_em": "2026-11-20T12:12:49.169Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10056,7 +10066,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-11-20T12:03:02.193Z",
+          "coletado_em": "2026-11-20T12:12:49.169Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10069,14 +10079,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.224Z",
+      "coletado_em": "2026-11-20T12:12:49.190Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-11-20T12:03:02.224Z",
+          "coletado_em": "2026-11-20T12:12:49.190Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10089,7 +10099,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.225Z",
+      "coletado_em": "2026-11-20T12:12:49.191Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10098,7 +10108,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-11-20T12:03:02.225Z",
+          "coletado_em": "2026-11-20T12:12:49.191Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10111,7 +10121,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.226Z",
+      "coletado_em": "2026-11-20T12:12:49.192Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10120,7 +10130,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-11-20T12:03:02.226Z",
+          "coletado_em": "2026-11-20T12:12:49.192Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10133,14 +10143,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.227Z",
+      "coletado_em": "2026-11-20T12:12:49.193Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-11-20T12:03:02.227Z",
+          "coletado_em": "2026-11-20T12:12:49.193Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10153,7 +10163,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-20T12:03:02.228Z",
+      "coletado_em": "2026-11-20T12:12:49.194Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10163,14 +10173,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-11-20T12:03:02.228Z",
+          "coletado_em": "2026-11-20T12:12:49.194Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-11-20T12:03:03.619Z",
+          "coletado_em": "2026-11-20T12:12:50.617Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
