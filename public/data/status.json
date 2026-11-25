@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-11-25T07:33:01.774Z",
+  "atualizado_em": "2026-11-25T07:42:53.517Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-11-25T06:50:12.479000+00:00",
@@ -69,7 +69,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-11-25T07:33:01.774Z",
+    "avaliado_em": "2026-11-25T07:42:53.517Z",
     "situacao_oficial": {
       "nivel": "atencao",
       "desde": "2026-11-24T15:02:09-03:00",
@@ -9458,36 +9458,31 @@
       "chuva_24_h_mm": 6.35,
       "chuva_48_h_mm": 6.35,
       "qualidade": "atualizado",
-      "medido_em": "2026-11-25T07:20:00+00:00",
+      "medido_em": "2026-11-25T07:30:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "qualidade_fonte": {
         "chuva_10_min_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T07:20:00+00:00"
+          "medido_em": "2026-11-25T07:30:00+00:00"
         },
         "chuva_1_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T07:20:00+00:00"
+          "medido_em": "2026-11-25T07:30:00+00:00"
         },
         "chuva_12_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T07:20:00+00:00"
+          "medido_em": "2026-11-25T07:30:00+00:00"
         },
         "chuva_24_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T07:20:00+00:00"
+          "medido_em": "2026-11-25T07:30:00+00:00"
         },
         "chuva_48_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T07:20:00+00:00"
+          "medido_em": "2026-11-25T07:30:00+00:00"
         }
       },
       "serie_12h": [
-        {
-          "medido_em": "2026-11-24T19:25:00+00:00",
-          "chuva_mm": 0,
-          "qualidade": null
-        },
         {
           "medido_em": "2026-11-24T19:35:00+00:00",
           "chuva_mm": 0,
@@ -9812,6 +9807,11 @@
           "medido_em": "2026-11-25T07:20:00+00:00",
           "chuva_mm": 0,
           "qualidade": null
+        },
+        {
+          "medido_em": "2026-11-25T07:30:00+00:00",
+          "chuva_mm": 0,
+          "qualidade": null
         }
       ]
     }
@@ -9820,26 +9820,16 @@
     "barragemSul": {
       "nome": "Barragem Ituporanga",
       "fonte": "Barragens MKS",
-      "ocupacao_percentual": 39.55,
-      "montante_m": 23.3,
+      "ocupacao_percentual": 40.22,
+      "montante_m": 23.41,
       "ultima_variacao_m": 0.11,
       "comportas_abertas": 0,
       "comportas_fechadas": 5,
       "extravasor_m": 0,
       "qualidade": "atrasado",
-      "medido_em": "2026-11-25T06:00:00+00:00",
+      "medido_em": "2026-11-25T07:00:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie": [
-        {
-          "ocupacao_percentual": null,
-          "montante_m": 20.64,
-          "ultima_variacao_m": null,
-          "comportas_abertas": null,
-          "comportas_fechadas": null,
-          "extravasor_m": null,
-          "medido_em": "2026-11-24T06:00:00+00:00",
-          "qualidade": null
-        },
         {
           "ocupacao_percentual": null,
           "montante_m": 20.68,
@@ -10079,32 +10069,32 @@
           "extravasor_m": null,
           "medido_em": "2026-11-25T06:00:00+00:00",
           "qualidade": null
+        },
+        {
+          "ocupacao_percentual": null,
+          "montante_m": 23.41,
+          "ultima_variacao_m": null,
+          "comportas_abertas": null,
+          "comportas_fechadas": null,
+          "extravasor_m": null,
+          "medido_em": "2026-11-25T07:00:00+00:00",
+          "qualidade": null
         }
       ]
     },
     "barragemOeste": {
       "nome": "Barragem Taió",
       "fonte": "Barragens MKS",
-      "ocupacao_percentual": 32.44,
-      "montante_m": 14.76,
+      "ocupacao_percentual": 33.09,
+      "montante_m": 14.86,
       "ultima_variacao_m": 0.1,
       "comportas_abertas": 0,
       "comportas_fechadas": 7,
       "extravasor_m": 0,
       "qualidade": "atrasado",
-      "medido_em": "2026-11-25T06:00:00+00:00",
+      "medido_em": "2026-11-25T07:00:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie": [
-        {
-          "ocupacao_percentual": null,
-          "montante_m": 13.56,
-          "ultima_variacao_m": null,
-          "comportas_abertas": null,
-          "comportas_fechadas": null,
-          "extravasor_m": null,
-          "medido_em": "2026-11-24T06:00:00+00:00",
-          "qualidade": null
-        },
         {
           "ocupacao_percentual": null,
           "montante_m": 13.59,
@@ -10344,6 +10334,16 @@
           "extravasor_m": null,
           "medido_em": "2026-11-25T06:00:00+00:00",
           "qualidade": null
+        },
+        {
+          "ocupacao_percentual": null,
+          "montante_m": 14.86,
+          "ultima_variacao_m": null,
+          "comportas_abertas": null,
+          "comportas_fechadas": null,
+          "extravasor_m": null,
+          "medido_em": "2026-11-25T07:00:00+00:00",
+          "qualidade": null
         }
       ]
     },
@@ -10402,7 +10402,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-11-25T07:33:01.580Z",
+    "coletado_em": "2026-11-25T07:42:52.021Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -10494,7 +10494,7 @@
   "blumenau": {
     "nivel_m": 3.4,
     "medido_em": "2026-11-25T04:00:00-03:00",
-    "coletado_em": "2026-11-25T07:32:59.664Z",
+    "coletado_em": "2026-11-25T07:42:49.469Z",
     "classificacao_original": "Observação",
     "nivel": "atencao",
     "tendencia": "subindo",
@@ -10522,7 +10522,7 @@
       "qualidade": null,
       "atualizado_em": "2026-11-25T03:08:21-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.679Z",
+      "coletado_em": "2026-11-25T07:42:49.482Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10531,7 +10531,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-11-25T07:32:59.679Z",
+          "coletado_em": "2026-11-25T07:42:49.482Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10544,14 +10544,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.702Z",
+      "coletado_em": "2026-11-25T07:42:49.500Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-11-25T07:32:59.702Z",
+          "coletado_em": "2026-11-25T07:42:49.500Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10564,7 +10564,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.702Z",
+      "coletado_em": "2026-11-25T07:42:49.501Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10573,7 +10573,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-11-25T07:32:59.702Z",
+          "coletado_em": "2026-11-25T07:42:49.501Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10586,7 +10586,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.703Z",
+      "coletado_em": "2026-11-25T07:42:49.503Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10595,7 +10595,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-11-25T07:32:59.703Z",
+          "coletado_em": "2026-11-25T07:42:49.503Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10608,14 +10608,14 @@
       "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.704Z",
+      "coletado_em": "2026-11-25T07:42:49.503Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-11-25T07:32:59.704Z",
+          "coletado_em": "2026-11-25T07:42:49.503Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10628,7 +10628,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-25T07:32:59.705Z",
+      "coletado_em": "2026-11-25T07:42:49.504Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10638,14 +10638,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-11-25T07:32:59.705Z",
+          "coletado_em": "2026-11-25T07:42:49.504Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-11-25T07:33:01.580Z",
+          "coletado_em": "2026-11-25T07:42:52.021Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
