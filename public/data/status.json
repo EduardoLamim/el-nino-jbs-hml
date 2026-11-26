@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "atualizado_em": "2026-11-26T00:02:51.393Z",
+  "atualizado_em": "2026-11-26T00:12:56.484Z",
   "nivel_jbs": {
     "nivel": "atencao",
     "desde": "2026-11-25T06:50:12.479000+00:00",
@@ -18,7 +18,7 @@
   },
   "motor": {
     "versao": 1,
-    "avaliado_em": "2026-11-26T00:02:51.393Z",
+    "avaliado_em": "2026-11-26T00:12:56.484Z",
     "situacao_oficial": {
       "nivel": "atencao",
       "desde": "2026-11-24T15:02:09-03:00",
@@ -9449,39 +9449,34 @@
       "chuva_1_h_mm": 0,
       "chuva_6_h_mm": null,
       "chuva_12_h_mm": 0,
-      "chuva_24_h_mm": 0.762,
+      "chuva_24_h_mm": 0,
       "chuva_48_h_mm": 6.35,
       "qualidade": "atualizado",
-      "medido_em": "2026-11-25T23:50:00+00:00",
+      "medido_em": "2026-11-26T00:00:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "qualidade_fonte": {
         "chuva_10_min_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T23:50:00+00:00"
+          "medido_em": "2026-11-26T00:00:00+00:00"
         },
         "chuva_1_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T23:50:00+00:00"
+          "medido_em": "2026-11-26T00:00:00+00:00"
         },
         "chuva_12_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T23:50:00+00:00"
+          "medido_em": "2026-11-26T00:00:00+00:00"
         },
         "chuva_24_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T23:50:00+00:00"
+          "medido_em": "2026-11-26T00:00:00+00:00"
         },
         "chuva_48_h_mm": {
           "estado": "atual",
-          "medido_em": "2026-11-25T23:50:00+00:00"
+          "medido_em": "2026-11-26T00:00:00+00:00"
         }
       },
       "serie_12h": [
-        {
-          "medido_em": "2026-11-25T11:55:00+00:00",
-          "chuva_mm": 0,
-          "qualidade": null
-        },
         {
           "medido_em": "2026-11-25T12:05:00+00:00",
           "chuva_mm": 0,
@@ -9806,6 +9801,11 @@
           "medido_em": "2026-11-25T23:50:00+00:00",
           "chuva_mm": 0,
           "qualidade": null
+        },
+        {
+          "medido_em": "2026-11-26T00:00:00+00:00",
+          "chuva_mm": 0,
+          "qualidade": null
         }
       ]
     }
@@ -9820,7 +9820,7 @@
       "comportas_abertas": 5,
       "comportas_fechadas": 0,
       "extravasor_m": 0,
-      "qualidade": "atualizado",
+      "qualidade": "atrasado",
       "medido_em": "2026-11-25T23:35:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie": [
@@ -10105,7 +10105,7 @@
       "comportas_abertas": 5,
       "comportas_fechadas": 2,
       "extravasor_m": 0,
-      "qualidade": "atualizado",
+      "qualidade": "atrasado",
       "medido_em": "2026-11-25T23:40:00+00:00",
       "atualizacao_esperada_segundos": 600,
       "serie": [
@@ -10436,7 +10436,7 @@
     "uf": null,
     "regiao": null,
     "atualizado_em": null,
-    "coletado_em": "2026-11-26T00:02:51.183Z",
+    "coletado_em": "2026-11-26T00:12:56.321Z",
     "disponibilidade": "disponivel",
     "dias": [
       {
@@ -10547,9 +10547,9 @@
     ]
   },
   "blumenau": {
-    "nivel_m": 4.07,
-    "medido_em": "2026-11-25T20:00:00-03:00",
-    "coletado_em": "2026-11-26T00:02:47.072Z",
+    "nivel_m": 4.06,
+    "medido_em": "2026-11-25T21:00:00-03:00",
+    "coletado_em": "2026-11-26T00:12:54.171Z",
     "classificacao_original": "Atenção",
     "nivel": "atencao",
     "tendencia": "descendo",
@@ -10563,6 +10563,8 @@
       "situacao_atual: Situação oficial não informa qualidade ou validade temporal.",
       "rios: Séries sem qualidade explícita mantêm qualidade null; validade não inferida.",
       "chuvas: Campos de chuva ausentes ficam null; acumulados e séries não são recalculados.",
+      "barragens/Barragem Ituporanga: qualidade atrasado.",
+      "barragens/Barragem Taió: qualidade atrasado.",
       "barragens/Barragem José Boiteux: qualidade atrasado.",
       "epagri: Produto municipal JSON oficial não identifica modelo nem timestamp de emissão; campos mantidos null.",
       "epagri: UF não informada no payload observado; município validado por nome e código oficial 4208203 de Itajaí/SC."
@@ -10575,7 +10577,7 @@
       "qualidade": null,
       "atualizado_em": "2026-11-25T17:32:43-03:00",
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.083Z",
+      "coletado_em": "2026-11-26T00:12:54.189Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10584,7 +10586,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/situacao-atual",
-          "coletado_em": "2026-11-26T00:02:47.083Z",
+          "coletado_em": "2026-11-26T00:12:54.189Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10597,14 +10599,14 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.098Z",
+      "coletado_em": "2026-11-26T00:12:54.207Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/api/v1/alertas/ativo",
-          "coletado_em": "2026-11-26T00:02:47.098Z",
+          "coletado_em": "2026-11-26T00:12:54.207Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10617,7 +10619,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.098Z",
+      "coletado_em": "2026-11-26T00:12:54.208Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10626,7 +10628,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/rios?municipio_id=1",
-          "coletado_em": "2026-11-26T00:02:47.098Z",
+          "coletado_em": "2026-11-26T00:12:54.208Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10639,7 +10641,7 @@
       "qualidade": "atualizado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.099Z",
+      "coletado_em": "2026-11-26T00:12:54.208Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10648,7 +10650,7 @@
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/chuvas?municipio_id=1",
-          "coletado_em": "2026-11-26T00:02:47.099Z",
+          "coletado_em": "2026-11-26T00:12:54.208Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10658,17 +10660,17 @@
     "barragens": {
       "nome": "Defesa Civil de Itajaí",
       "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-      "qualidade": null,
+      "qualidade": "atrasado",
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.099Z",
+      "coletado_em": "2026-11-26T00:12:54.209Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [],
       "requisicoes": [
         {
           "url": "https://monitoramento.defesacivil.itajai.sc.gov.br/monitoramento/barragens?municipio_id=1",
-          "coletado_em": "2026-11-26T00:02:47.099Z",
+          "coletado_em": "2026-11-26T00:12:54.209Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
@@ -10681,7 +10683,7 @@
       "qualidade": null,
       "atualizado_em": null,
       "atualizacao_esperada_segundos": null,
-      "coletado_em": "2026-11-26T00:02:47.100Z",
+      "coletado_em": "2026-11-26T00:12:54.210Z",
       "resultado": "sucesso",
       "motivo": null,
       "avisos": [
@@ -10691,14 +10693,14 @@
       "requisicoes": [
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/muni",
-          "coletado_em": "2026-11-26T00:02:47.100Z",
+          "coletado_em": "2026-11-26T00:12:54.210Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
         },
         {
           "url": "https://ciram.epagri.sc.gov.br/api/prevmuni-server/resources/listaJson/prevMuniDia?cdCidade=4208203",
-          "coletado_em": "2026-11-26T00:02:51.183Z",
+          "coletado_em": "2026-11-26T00:12:56.321Z",
           "http_status": 200,
           "erro": null,
           "resposta_erro": null
